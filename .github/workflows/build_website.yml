@@ -1,0 +1,47 @@
+# Sourced from: https://github.com/darribas/gds_course/blob/2df966b7028b11f50ef65e47d9fcfe74bf2c7bc8/.github/workflows/build_website.yml
+name: Build Jupyter book
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-html-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          auto-activate-base: false
+          miniconda-version: "latest"
+          python-version: 3.7
+          environment-file: ga_environment.yml
+          activate-environment: book
+
+      - name: Build PDF
+        shell: bash -l {0}
+        continue-on-error: false
+        run: |
+          pyppeteer-install
+          make pdf
+      - name: Build HTML
+        shell: bash -l {0}
+        continue-on-error: false
+        run: |
+          make html
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs content/gds_course.pdf
+          git commit -m "Build Jupyter book | HTML + PDF" -a --allow-empty
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
