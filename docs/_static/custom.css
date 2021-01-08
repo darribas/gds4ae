@@ -1,0 +1,33 @@
+/* Font size */
+body {
+    font-size: large;
+}
+
+/* Other links */
+a {
+    color: #ffa500;
+}
+
+/* Main body links */
+main.bd-content #main-content a, main.bd-content #main-content a:visited {
+    color: #ffa500;
+}
+
+/* Menu bar links, selected page */
+.bd-sidebar nav ul.nav a:hover, .bd-sidebar nav ul.nav li.active > a, .bd-sidebar nav ul.nav li.active > a:hover {
+    color: #ffa500;
+}
+
+/* Page menu bar links */
+.bd-toc nav a:hover, .bd-toc nav li.active > a.active {
+    color: #cc8400;
+}
+.bd-toc nav li.active > a.active {
+    border-left-color: #cc8400;
+}
+
+/* Code */
+code {
+  color: #e59400;
+  background-color: #ffedcc;
+}
