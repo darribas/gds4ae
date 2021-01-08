@@ -13,14 +13,14 @@ A PDF version of this course is available for download {download}`here <./gds4ae
 
 ### Contact
 
-> Dani Arribas-Bel - `D.Arribas-Bel [at] liverpool.ac.uk`  
+> **Dani Arribas-Bel** - `D.Arribas-Bel [at] liverpool.ac.uk`  
 Senior Lecturer in Geographic Data Science  
 Office 508, Roxby Building,  
 University of Liverpool - 74 Bedford St S,  
 Liverpool, L69 7ZT,  
 United Kingdom.
 
-> Diego Puga - `diego.puga [at] cemfi.es`  
+> **Diego Puga** - `diego.puga [at] cemfi.es`  
 Professor  
 CEMFI,  
 Casado del Alisal 5,  
