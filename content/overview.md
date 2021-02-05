@@ -1,3 +1,3 @@
 # Overview
 
-[Description of the course to be added here]
+This resource provides an introduction to Geographic Data Science for applied economists using Python. 
