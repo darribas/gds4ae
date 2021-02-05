@@ -7,7 +7,7 @@
 
 ````{margin}
 ```{note}
-A PDF version of this course is available for download {download}`here <./gds4ae.pdf>`
+A PDF version of this course is available for download {download}`here <../gds4ae.pdf>`
 ```
 ````
 
@@ -26,3 +26,16 @@ CEMFI,
 Casado del Alisal 5,  
 28014 Madrid,  
 Spain.
+
+### Citation
+
+If you use materials from this resource in your own work, we recommend the following citation:
+
+```bibtex
+@article{darribas_gds_course,
+  author = {Dani Arribas-Bel and Diego Puga},
+  title = {Geographic Data Science for Applied Economists},
+  year = 2021,
+  annote = {\href{https://darribas.org/gds4ae}}
+}
+```
