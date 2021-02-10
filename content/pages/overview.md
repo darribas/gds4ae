@@ -9,6 +9,12 @@ This resource provides an introduction to Geographic Data Science for applied ec
 1. A computer set up with the Jupyter Lab environment and all the required libraries (please see the {ref}`Software stack <software_stack>` part in the [Infrastructure](infrastructure) section for instructions)
 1. A local copy of the materials that you can run on your own computer (see the {ref}`repository <github_repo>` section in the [Infrastructure](infrastructure) section for instructions)
 
+Blocks have different components:
+
+- 📖 *Ahead of time...*: materials to go on your own ahead of the live session
+- 💻 *Hands-on coding*: content for the live session
+- 🐾 *Next steps*: a few pointers to continue your journey on the area the block covers
+
 ## Content
 
 The structure of content is divided in nine blocks:
@@ -16,14 +22,17 @@ The structure of content is divided in nine blocks:
 - [*Introduction*](../notebooks/01-Introduction): get familiar with the computational envirionment of modern data science
 - [*Spatial Data*](../notebooks/02-Spatial_data): what do spatial data look like in Python?
 - [*Geovisualisation*](../notebooks/03-Geovisualisation): make (good) data maps
-- *Spatial Feature Engineering* ([Part I](../notebooks/04-Spatial_feature_eng_i) and [Part II](../notebooks/05-Spatial_feature_eng_ii))
-- *Spatial Networks* ([Part I](../notebooks/06-Spatial_networks_i) and [Part II](../notebooks/07-Spatial_networks_ii))
-- [*Transport Costs*](../notebooks/08-Transport_costs)
-- [*Visual challenges*](../notebooks/09-Visual_challenges)
+- *Spatial Feature Engineering* ([Part I](../notebooks/04-Spatial_feature_eng_i) and [Part II](../notebooks/05-Spatial_feature_eng_ii)): augment and massage your data using Geography before you feed them into your model
+- *Spatial Networks* ([Part I](../notebooks/06-Spatial_networks_i) and [Part II](../notebooks/07-Spatial_networks_ii)): understand, acquire and work with spatial graphs
+- [*Transport Costs*](../notebooks/08-Transport_costs): "getting there" doesn't always cost the same
+- [*Visual challenges*](../notebooks/09-Visual_challenges): all the details nobody told you (but should have) about visualising geographic data
 
 Each block has its own section and is designed to be delivered in 1.5 hours approximately. The content of some of these blocks relies on external resources, all of them freely available. When that is the case, enough detail is provided in the  to understand how additional material fits in.
 
 ## *Why Python?*
+
+There are several reasons why we have made this choice. Many of them are summarised nicely in [this article by The Economist](https://www.economist.com/science-and-technology/2018/07/19/python-has-brought-computer-programming-to-a-vast-new-audience) (paywalled).:w
+
 
 ```{margin}
 Source: [XKCD](https://xkcd.com/353/)

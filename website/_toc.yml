@@ -1,9 +1,9 @@
-- file: content/home
+- file: content/pages/home
 
 - part: Overview
   chapters:
-  - file: content/overview
-  - file: content/infrastructure
+  - file: content/pages/overview
+  - file: content/pages/infrastructure
 
 - part: Content
   chapters:
@@ -21,4 +21,5 @@
 - part: Epilogue
   chapters:
   - file: content/data/datasets
-  - file: content/z_bibliography
+  - file: content/pages/further
+  - file: content/pages/z_bibliography
