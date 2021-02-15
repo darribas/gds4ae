@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Geographic Data Science for Applied Economists</title>
+    <title>Spatial Data &#8212; Geographic Data Science for Applied Economists</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -47,6 +47,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -87,7 +89,7 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../home.html">
+  <a class="reference internal" href="../pages/home.html">
    Home
   </a>
  </li>
@@ -99,12 +101,12 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../overview.html">
+  <a class="reference internal" href="../pages/overview.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../infrastructure.html">
+  <a class="reference internal" href="../pages/infrastructure.html">
    Infrastructure
   </a>
  </li>
@@ -114,10 +116,15 @@
   Content
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="01-Introduction.html">
    Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Spatial Data
   </a>
  </li>
  <li class="toctree-l1">
@@ -127,22 +134,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04-Spatial_feature_eng_i.html">
-   Spatial Feature Engineering (pt.I)
+   Spatial Feature Engineering (I)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05-Spatial_feature_eng_ii.html">
-   Spatial Feature Engineering (pt.II)
+   Spatial Feature Engineering (II)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06-Spatial_networks_i.html">
-   Spatial Networks (pt.I)
+   Spatial Networks (I)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="07-Spatial_networks_ii.html">
-   Spatial Networks (pt.II)
+   Spatial Networks (II)
   </a>
  </li>
  <li class="toctree-l1">
@@ -153,11 +160,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="09-Visual_challenges.html">
    Visual challenges and opportunities
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10-Student_presentations.html">
-   Student presentations
   </a>
  </li>
 </ul>
@@ -173,7 +175,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../z_bibliography.html">
+  <a class="reference internal" href="../pages/further.html">
+   Further Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/z_bibliography.html">
    Bibliography
   </a>
  </li>
@@ -263,7 +270,83 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ahead-of-time">
+   📖 Ahead of time…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hands-on-coding">
+   💻 Hands-on coding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geographic-tables">
+     (Geographic) tables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#points">
+       Points
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lines">
+       Lines
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#polygons">
+       Polygons
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#surfaces">
+     Surfaces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualisation">
+     Visualisation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spatial-operations">
+     Spatial operations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#re-projections">
+       (Re-)Projections
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#centroids">
+       Centroids
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#areas">
+       Areas
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#distances">
+       Distances
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   🐾 Next steps
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -275,7 +358,338 @@
         
               <div>
                 
-  
+  <div class="section" id="spatial-data">
+<h1>Spatial Data<a class="headerlink" href="#spatial-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ahead-of-time">
+<h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
+<p>This block is all about understanding spatial data, both conceptually and practically. Before your fingers get on the keyboard, the following readings will help you get going and familiar with core ideas:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/02_geo_thinking.html">Chapter 2</a> of the GDS Book <a class="bibtex reference internal" href="../pages/z_bibliography.html#reyabwolf" id="id1">[RABWng]</a>, which provides a conceptual overview of representing Geography in data</p></li>
+<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/03_spatial_data.html">Chapter 3</a> of the GDS Book <a class="bibtex reference internal" href="../pages/z_bibliography.html#reyabwolf" id="id2">[RABWng]</a>, a sister chapter with a more applied perspective on how concepts are implemented in computer data structures</p></li>
+</ul>
+<p>Additionally, parts of this block are based and source from <a class="reference external" href="https://darribas.org/gds_course/content/bC/lab_C.html">Block C</a> in the GDS Course <a class="bibtex reference internal" href="../pages/z_bibliography.html#darribas-gds-course" id="id3">[AB19]</a>.</p>
+</div>
+<div class="section" id="hands-on-coding">
+<h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="geographic-tables">
+<h3>(Geographic) tables<a class="headerlink" href="#geographic-tables" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">geopandas</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="points">
+<h4>Points<a class="headerlink" href="#points" title="Permalink to this headline">¶</a></h4>
+<div class="tabbed-set docutils">
+<input checked="checked" id="8867ddcd-ee49-4b49-ac1d-1929f17824f1" name="87a3d83b-9758-4295-9167-9846882c2f73" type="radio">
+</input><label class="tabbed-label" for="8867ddcd-ee49-4b49-ac1d-1929f17824f1">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="108726bf-d62b-4041-867d-7011c675dee4" name="87a3d83b-9758-4295-9167-9846882c2f73" type="radio">
+</input><label class="tabbed-label" for="108726bf-d62b-4041-867d-7011c675dee4">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+    <span class="s2">&quot;https://github.com/GDSL-UL/san/raw/v0.1.0/data/assignment_1_madrid/madrid_abb.gpkg&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Point geometries from columns</p>
+<p>Sometimes, points are provided as separate columns in an otherwise non-spatial table. For example imagine we have an object <code class="docutils literal notranslate"><span class="pre">cols</span></code> which looks like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>          <span class="n">X</span>         <span class="n">Y</span>
+<span class="mi">0</span>  <span class="mf">0.259602</span>  <span class="mf">0.854351</span>
+<span class="mi">1</span>  <span class="mf">0.661662</span>  <span class="mf">0.782427</span>
+<span class="mi">2</span>  <span class="mf">0.932211</span>  <span class="mf">0.319130</span>
+<span class="mi">3</span>  <span class="mf">0.395249</span>  <span class="mf">0.469885</span>
+<span class="mi">4</span>  <span class="mf">0.303446</span>  <span class="mf">0.008525</span>
+</pre></div>
+</div>
+<p>In this case, we can convert those into proper geometries by:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span>
+    <span class="n">geopandas</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">],</span> <span class="n">cols</span><span class="p">[</span><span class="s2">&quot;Y&quot;</span><span class="p">])</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;geopandas.geodataframe.GeoDataFrame&#39;&gt;
+RangeIndex: 18399 entries, 0 to 18398
+Data columns (total 16 columns):
+ #   Column           Non-Null Count  Dtype   
+---  ------           --------------  -----   
+ 0   price            18399 non-null  object  
+ 1   price_usd        18399 non-null  float64 
+ 2   log1p_price_usd  18399 non-null  float64 
+ 3   accommodates     18399 non-null  int64   
+ 4   bathrooms        18399 non-null  object  
+ 5   bedrooms         18399 non-null  float64 
+ 6   beds             18399 non-null  float64 
+ 7   neighbourhood    18399 non-null  object  
+ 8   room_type        18399 non-null  object  
+ 9   property_type    18399 non-null  object  
+ 10  WiFi             18399 non-null  object  
+ 11  Coffee           18399 non-null  object  
+ 12  Gym              18399 non-null  object  
+ 13  Parking          18399 non-null  object  
+ 14  km_to_retiro     18399 non-null  float64 
+ 15  geometry         18399 non-null  geometry
+dtypes: float64(5), geometry(1), int64(1), object(9)
+memory usage: 2.2+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>price</th>
+      <th>price_usd</th>
+      <th>log1p_price_usd</th>
+      <th>accommodates</th>
+      <th>bathrooms</th>
+      <th>bedrooms</th>
+      <th>beds</th>
+      <th>neighbourhood</th>
+      <th>room_type</th>
+      <th>property_type</th>
+      <th>WiFi</th>
+      <th>Coffee</th>
+      <th>Gym</th>
+      <th>Parking</th>
+      <th>km_to_retiro</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>$60.00</td>
+      <td>60.0</td>
+      <td>4.110874</td>
+      <td>2</td>
+      <td>1 shared bath</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>Hispanoamérica</td>
+      <td>Private room</td>
+      <td>Private room in apartment</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5.116664</td>
+      <td>POINT (-3.67688 40.45724)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>$31.00</td>
+      <td>31.0</td>
+      <td>3.465736</td>
+      <td>1</td>
+      <td>1 bath</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>Cármenes</td>
+      <td>Private room</td>
+      <td>Private room in apartment</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>5.563869</td>
+      <td>POINT (-3.74084 40.40341)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>$60.00</td>
+      <td>60.0</td>
+      <td>4.110874</td>
+      <td>6</td>
+      <td>2 baths</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>Legazpi</td>
+      <td>Entire home/apt</td>
+      <td>Entire apartment</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3.048442</td>
+      <td>POINT (-3.69304 40.38695)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>$115.00</td>
+      <td>115.0</td>
+      <td>4.753590</td>
+      <td>4</td>
+      <td>1.5 baths</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>Justicia</td>
+      <td>Entire home/apt</td>
+      <td>Entire apartment</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2.075484</td>
+      <td>POINT (-3.69764 40.41995)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>$26.00</td>
+      <td>26.0</td>
+      <td>3.295837</td>
+      <td>1</td>
+      <td>1 private bath</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>Legazpi</td>
+      <td>Private room</td>
+      <td>Private room in house</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2.648058</td>
+      <td>POINT (-3.69011 40.38985)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="lines">
+<h4>Lines<a class="headerlink" href="#lines" title="Permalink to this headline">¶</a></h4>
+<div class="tabbed-set docutils">
+<input checked="checked" id="b46a91f0-869e-4aaf-8a42-d714b895cc9c" name="614b9190-88f5-476e-943b-023e4734a76d" type="radio">
+</input><label class="tabbed-label" for="b46a91f0-869e-4aaf-8a42-d714b895cc9c">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="4db44ca6-ea53-4174-bd16-f84e26cda285" name="614b9190-88f5-476e-943b-023e4734a76d" type="radio">
+</input><label class="tabbed-label" for="4db44ca6-ea53-4174-bd16-f84e26cda285">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+    <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/67d5480f98453027d59bf49606a7ad92/arturo_streets.gpkg&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;geopandas.geodataframe.GeoDataFrame&#39;&gt;
+RangeIndex: 66499 entries, 0 to 66498
+Data columns (total 7 columns):
+ #   Column      Non-Null Count  Dtype   
+---  ------      --------------  -----   
+ 0   OGC_FID     66499 non-null  object  
+ 1   dm_id       66499 non-null  object  
+ 2   dist_barri  66483 non-null  object  
+ 3   X           66499 non-null  float64 
+ 4   Y           66499 non-null  float64 
+ 5   value       5465 non-null   float64 
+ 6   geometry    66499 non-null  geometry
+dtypes: float64(3), geometry(1), object(3)
+memory usage: 3.6+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02-Spatial_data_16_0.svg" src="../../_images/02-Spatial_data_16_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="polygons">
+<h4>Polygons<a class="headerlink" href="#polygons" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="surfaces">
+<h3>Surfaces<a class="headerlink" href="#surfaces" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="visualisation">
+<h3>Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="spatial-operations">
+<h3>Spatial operations<a class="headerlink" href="#spatial-operations" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="re-projections">
+<h4>(Re-)Projections<a class="headerlink" href="#re-projections" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="centroids">
+<h4>Centroids<a class="headerlink" href="#centroids" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="areas">
+<h4>Areas<a class="headerlink" href="#areas" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="distances">
+<h4>Distances<a class="headerlink" href="#distances" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,

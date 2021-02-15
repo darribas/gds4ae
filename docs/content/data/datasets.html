@@ -47,6 +47,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -56,8 +58,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Bibliography" href="../z_bibliography.html" />
-    <link rel="prev" title="Student presentations" href="../notebooks/10-Student_presentations.html" />
+    <link rel="next" title="Further Resources" href="../pages/further.html" />
+    <link rel="prev" title="Visual challenges and opportunities" href="../notebooks/09-Visual_challenges.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -87,7 +89,7 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../home.html">
+  <a class="reference internal" href="../pages/home.html">
    Home
   </a>
  </li>
@@ -99,12 +101,12 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../overview.html">
+  <a class="reference internal" href="../pages/overview.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../infrastructure.html">
+  <a class="reference internal" href="../pages/infrastructure.html">
    Infrastructure
   </a>
  </li>
@@ -121,28 +123,33 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-Spatial_data.html">
+   Spatial Data
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/03-Geovisualisation.html">
    Geovisualisation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/04-Spatial_feature_eng_i.html">
-   Spatial Feature Engineering (pt.I)
+   Spatial Feature Engineering (I)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/05-Spatial_feature_eng_ii.html">
-   Spatial Feature Engineering (pt.II)
+   Spatial Feature Engineering (II)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/06-Spatial_networks_i.html">
-   Spatial Networks (pt.I)
+   Spatial Networks (I)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/07-Spatial_networks_ii.html">
-   Spatial Networks (pt.II)
+   Spatial Networks (II)
   </a>
  </li>
  <li class="toctree-l1">
@@ -153,11 +160,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/09-Visual_challenges.html">
    Visual challenges and opportunities
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/10-Student_presentations.html">
-   Student presentations
   </a>
  </li>
 </ul>
@@ -173,7 +175,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../z_bibliography.html">
+  <a class="reference internal" href="../pages/further.html">
+   Further Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/z_bibliography.html">
    Bibliography
   </a>
  </li>
@@ -242,6 +249,74 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#madrid">
+   Madrid
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#airbnb-properties">
+     Airbnb properties
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-abb-neis">
+     Airbnb properties
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arturo">
+     Arturo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-2-120m-mosaic">
+     Sentinel 2 - 120m mosaic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-2-10m-ghs-composite">
+     Sentinel 2 - 10m GHS composite
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cambodia">
+   Cambodia
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pollution">
+     Pollution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#friction-surfaces">
+     Friction surfaces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regional-aggregates">
+     Regional aggregates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cambodian-cities">
+     Cambodian cities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -251,6 +326,123 @@
                 
   <div class="section" id="datasets">
 <h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h1>
+<p>This section covers the datasets required to run the course interactively. For archival reasons, all of those listed here have been mirrored in the repository for this course so, if you have <a class="reference internal" href="../pages/infrastructure.html#github-repo"><span class="std std-ref">downloaded the course</span></a>, you already have a local copy of them.</p>
+<div class="section" id="madrid">
+<h2>Madrid<a class="headerlink" href="#madrid" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="airbnb-properties">
+<span id="data-abb"></span><h3>Airbnb properties<a class="headerlink" href="#airbnb-properties" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-source admonition">
+<p class="admonition-title">Source</p>
+<p>This dataset has been sourced from the course <a class="reference external" href="https://gdsl-ul.github.io/san/">“Spatial Modelling for Data Scientists”</a>. The file imported here corresponds to the <a class="reference external" href="https://github.com/GDSL-UL/san/releases/tag/v0.1.0"><code class="docutils literal notranslate"><span class="pre">v0.1.0</span></code></a> version.</p>
+</div>
+<p>This dataset contains a pre-processed set of properties advertised on the AirBnb website within the region of Madrid (Spain), together with house characteristics.</p>
+<ul class="simple">
+<li><p>🗃️ Data file <a class="reference external" href="https://github.com/GDSL-UL/san/raw/v0.1.0/data/assignment_1_madrid/madrid_abb.gpkg"><code class="docutils literal notranslate"><span class="pre">madrid_abb.gpkg</span></code></a></p></li>
+<li><p>🤖 Code used to generate the file <a class="reference external" href="https://github.com/GDSL-UL/san/raw/v0.1.0/data/assignment_1_madrid/clean_data.ipynb"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
+<li><p>ℹ️ Furhter information <a class="reference external" href="https://github.com/GDSL-UL/san/blob/v0.1.0/docs/11-datasets.md#madrid-airbnb"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
+</ul>
+<p><a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img alt="License" style="border-width:0" src="https://licensebuttons.net/l/zero/1.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal Public Domain Dedication</a>.</p>
+</div>
+<div class="section" id="data-abb-neis">
+<span id="id1"></span><h3>Airbnb properties<a class="headerlink" href="#data-abb-neis" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-source admonition">
+<p class="admonition-title">Source</p>
+<p>This dataset has been directly sourced from the website <a class="reference external" href="http://insideairbnb.com">Inside Airbnb</a>. The file was imported on February 10th 2021.</p>
+</div>
+<p>This dataset contains neighbourhood boundaries for the city of Madrid, as provided by Inside Airbnb.</p>
+<ul class="simple">
+<li><p>🗃️ Data file <a class="reference download internal" download="" href="../../_downloads/44b4bc22c042386c2c0f8dc6685ef17c/neighbourhoods.geojson"><code class="xref download docutils literal notranslate"><span class="pre">neighbourhoods.geojson</span></code></a></p></li>
+<li><p>ℹ️ Furhter information <a class="reference external" href="http://insideairbnb.com/madrid/"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
+</ul>
+<p><a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img alt="License" style="border-width:0" src="https://licensebuttons.net/l/zero/1.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal Public Domain Dedication</a>.</p>
+</div>
+<div class="section" id="arturo">
+<span id="data-arturo"></span><h3>Arturo<a class="headerlink" href="#arturo" title="Permalink to this headline">¶</a></h3>
+<p>This dataset contains the street layout of Madrid as well as scores of habitability, where available, associated with street segments. The data originate from the <a class="reference external" href="http://arturo.300000kms.net">Arturo Project</a>, by <a class="reference external" href="https://300000kms.net">300,000Km/s</a>, and the available file here is a slimmed down version of their official <a class="reference external" href="http://arturo.300000kms.net/#10">street layout</a> distributed by the project.</p>
+<ul class="simple">
+<li><p>🗃️ Data file <a class="reference download internal" download="" href="../../_downloads/67d5480f98453027d59bf49606a7ad92/arturo_streets.gpkg"><code class="xref download docutils literal notranslate"><span class="pre">arturo_streets.gpkg</span></code></a></p></li>
+<li><p>🤖 Code used to generate the file <a class="reference internal" href="arturo_streets_prep.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">[Page]</span></code></span></a></p></li>
+<li><p>ℹ️ Furhter information <a class="reference external" href="https://arturo.300000kms.net"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
+</ul>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+</div>
+<div class="section" id="sentinel-2-120m-mosaic">
+<span id="data-s2-120"></span><h3>Sentinel 2 - 120m mosaic<a class="headerlink" href="#sentinel-2-120m-mosaic" title="Permalink to this headline">¶</a></h3>
+<p>This dataset contains four scenes for the region of Madrid (Spain) extracted from the <a class="reference external" href="https://medium.com/sentinel-hub/digital-twin-sandbox-sentinel-2-collection-available-to-everyone-20f3b5de846e">Digital Twin Sandbox Sentinel-2 collection</a>, by the SentinelHub. Each scene corresponds to the following dates in 2019:</p>
+<ul class="simple">
+<li><p>January 1st</p></li>
+<li><p>April 1st</p></li>
+<li><p>July 10th</p></li>
+<li><p>November 17th</p></li>
+</ul>
+<p>Each scene includes red, green, blue and near-infrared bands.</p>
+<ul class="simple">
+<li><p>🗃️ Data files (<a class="reference download internal" download="" href="../../_downloads/da949a403ddbc1fab3602ee944ee4ea2/madrid_scene_s2_120_2019-1-1.tif"><code class="xref download docutils literal notranslate"><span class="pre">Jan</span> <span class="pre">1st</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/b7233f1b024dc18693ea9fc4f2c85895/madrid_scene_s2_120_2019-4-1.tif"><code class="xref download docutils literal notranslate"><span class="pre">Apr</span> <span class="pre">1st</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/45e42fc50bf4cddbcaed2c435696115e/madrid_scene_s2_120_2019-7-10.tif"><code class="xref download docutils literal notranslate"><span class="pre">Jul</span> <span class="pre">10th</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/98fa58758109deb8bd198dafc03f8fe7/madrid_scene_s2_120_2019-11-27.tif"><code class="xref download docutils literal notranslate"><span class="pre">Nov</span> <span class="pre">27th</span></code></a>)</p></li>
+<li><p>🤖 Code used to generate the file <a class="reference internal" href="madrid_s2.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">[Page]</span></code></span></a></p></li>
+<li><p>ℹ️ Furhter information <a class="reference external" href="https://github.com/sentinel-hub/public-collections/tree/main/collections/sentinel-s2-l2a-mosaic-120"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
+</ul>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+</div>
+<div class="section" id="sentinel-2-10m-ghs-composite">
+<span id="data-s2-10"></span><h3>Sentinel 2 - 10m GHS composite<a class="headerlink" href="#sentinel-2-10m-ghs-composite" title="Permalink to this headline">¶</a></h3>
+<p>This dataset contains a scene for the region of Madrid (Spain) extracted from the <a class="reference external" href="https://ghsl.jrc.ec.europa.eu/ghs_s2composite.php">GHS Composite S2</a>, by the European Commission.</p>
+<ul class="simple">
+<li><p>🗃️ Data file <a class="reference download internal" download="" href="../../_downloads/cafed4de0cfde63e6d2ffcb92264b431/madrid_scene_s2_10_tc.tif"><code class="xref download docutils literal notranslate"><span class="pre">madrid_scene_s2_10_tc.tif</span></code></a></p></li>
+<li><p>🤖 Code used to generate the file <a class="reference internal" href="madrid_s2.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">[Page]</span></code></span></a></p></li>
+<li><p>ℹ️ Furhter information <a class="reference external" href="https://ghsl.jrc.ec.europa.eu/ghs_s2composite.php"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
+</ul>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+</div>
+</div>
+<div class="section" id="cambodia">
+<h2>Cambodia<a class="headerlink" href="#cambodia" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pollution">
+<span id="data-cam-s5"></span><h3>Pollution<a class="headerlink" href="#pollution" title="Permalink to this headline">¶</a></h3>
+<p>Surface with <span class="math notranslate nohighlight">\(NO_2\)</span> measurements (tropospheric column) information attached from Sentinel 5.</p>
+<ul class="simple">
+<li><p>🗃️ Data file <a class="reference download internal" download="" href="../../_downloads/0d14506cd792aecf73dd0f7f027e95b4/cambodia_s5_no2.tif"><code class="xref download docutils literal notranslate"><span class="pre">cambodia_s5_no2.tif</span></code></a></p></li>
+<li><p>🤖 Code used to generate the file <a class="reference internal" href="cambodia_pollution.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">[Page]</span></code></span></a></p></li>
+<li><p>ℹ️ Furhter information <a class="reference external" href="https://github.com/Sentinel-5P/data-on-s3"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
+</ul>
+</div>
+<div class="section" id="friction-surfaces">
+<span id="data-cam-friction"></span><h3>Friction surfaces<a class="headerlink" href="#friction-surfaces" title="Permalink to this headline">¶</a></h3>
+<p>This dataset is an extraction of the following two data products by Weiss et al. (2020) <a class="bibtex reference internal" href="../pages/z_bibliography.html#weiss2020global" id="id2">[WNVR+20]</a> and distributed through the <a class="reference external" href="https://malariaatlas.org/explorer/#/">Malaria Atlas Project</a>:</p>
+<ul class="simple">
+<li><p>Global friction surface enumerating land-based travel walking-only speed without access to motorized transport for a nominal year 2019 (Minutes required to travel one metre)</p></li>
+<li><p>Global friction surface enumerating land-based travel speed with access to motorized transport for a nominal year 2019 (Minutes required to travel one metre)</p></li>
+</ul>
+<p>Each is provided on a separate file.</p>
+<ul class="simple">
+<li><p>🗃️ Data files (<a class="reference download internal" download="" href="../../_downloads/f41b238a4d072a8a3eb5ce1794cd126a/cambodia_2020_motorized_friction_surface.tif"><code class="xref download docutils literal notranslate"><span class="pre">Motorized</span></code></a> and <a class="reference download internal" download="" href="../../_downloads/481f40ab3d2922d5e00b084b3668314b/cambodia_2020_walking_friction_surface.tif"><code class="xref download docutils literal notranslate"><span class="pre">Walking</span></code></a></p></li>
+<li><p>🤖 Code used to generate the file <a class="reference internal" href="cambodia_road_friction.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">[Page]</span></code></span></a></p></li>
+<li><p>ℹ️ Furhter information <a class="reference external" href="https://malariaatlas.org"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
+</ul>
+</div>
+<div class="section" id="regional-aggregates">
+<span id="data-cam-friction-reg"></span><h3>Regional aggregates<a class="headerlink" href="#regional-aggregates" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-source admonition">
+<p class="admonition-title">Source</p>
+<p>This dataset relies on boundaries from the <a class="reference external" href="https://data.humdata.org/">Humanitarian Data Exchange</a>. <a class="reference external" href="https://data.humdata.org/dataset/wfp-geonode-cambodia-admin-boundaries-level-2-districts?force_layout=desktop">The file</a> is provided by the World Food Programme through the Humanitarian Data Exchange and was accessed on February 15th 2021.</p>
+</div>
+<p><a class="reference internal" href="#data-cam-s5"><span class="std std-ref">Pollution</span></a> and <a class="reference internal" href="#data-cam-friction"><span class="std std-ref">friction</span></a> aggregated at Level 2 (municipality) administrative boundaries for Cambodia.</p>
+<ul class="simple">
+<li><p>🗃️ Data file <a class="reference download internal" download="" href="../../_downloads/9366d230310a8a68b2ce6cf2787a2f1c/cambodia_regional.gpkg"><code class="xref download docutils literal notranslate"><span class="pre">cambodia_regional.gpkg</span></code></a></p></li>
+<li><p>🤖 Code used to generate the file <a class="reference internal" href="cambodia_regional.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">[Page]</span></code></span></a></p></li>
+</ul>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+</div>
+<div class="section" id="cambodian-cities">
+<span id="data-cam-cities"></span><h3>Cambodian cities<a class="headerlink" href="#cambodian-cities" title="Permalink to this headline">¶</a></h3>
+<p>Extract from the Urban Centre Database (UCDB), version 1.2, of the centroid for Cambodian cities.</p>
+<ul class="simple">
+<li><p>🗃️ Data file <a class="reference download internal" download="" href="../../_downloads/b2bc4ad46ffb5fcec467286c022adf14/cambodian_cities.geojson"><code class="xref download docutils literal notranslate"><span class="pre">cambodian_cities.geojson</span></code></a></p></li>
+<li><p>🤖 Code used to generate the file <a class="reference internal" href="cambodia_cities.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">[Page]</span></code></span></a></p></li>
+<li><p>ℹ️ Furhter information <a class="reference external" href="https://ghsl.jrc.ec.europa.eu/ucdb2018visual.php"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
+</ul>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -281,8 +473,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../notebooks/10-Student_presentations.html" title="previous page">Student presentations</a>
-    <a class='right-next' id="next-link" href="../z_bibliography.html" title="next page">Bibliography</a>
+    <a class='left-prev' id="prev-link" href="../notebooks/09-Visual_challenges.html" title="previous page">Visual challenges and opportunities</a>
+    <a class='right-next' id="next-link" href="../pages/further.html" title="next page">Further Resources</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
