@@ -20,7 +20,7 @@ This dataset contains a pre-processed set of properties advertised on the AirBnb
 <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img alt="License" style="border-width:0" src="https://licensebuttons.net/l/zero/1.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal Public Domain Dedication</a>.
 
 (data_abb_neis)=
-### Airbnb properties
+### Airbnb neighbourhoods
 
 ```{admonition} Source
 This dataset has been directly sourced from the website [Inside Airbnb](http://insideairbnb.com). The file was imported on February 10th 2021.

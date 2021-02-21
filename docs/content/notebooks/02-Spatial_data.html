@@ -329,6 +329,11 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#spatial-joins">
+       Spatial joins
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#areas">
        Areas
       </a>
@@ -377,6 +382,9 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
 <span class="kn">import</span> <span class="nn">geopandas</span>
+<span class="kn">import</span> <span class="nn">xarray</span><span class="o">,</span> <span class="nn">rioxarray</span>
+<span class="kn">import</span> <span class="nn">contextily</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -384,16 +392,16 @@
 <div class="section" id="points">
 <h4>Points<a class="headerlink" href="#points" title="Permalink to this headline">¶</a></h4>
 <div class="tabbed-set docutils">
-<input checked="checked" id="8867ddcd-ee49-4b49-ac1d-1929f17824f1" name="87a3d83b-9758-4295-9167-9846882c2f73" type="radio">
-</input><label class="tabbed-label" for="8867ddcd-ee49-4b49-ac1d-1929f17824f1">
+<input checked="checked" id="9f0616a3-1a23-4b29-bfee-37f099bb399b" name="18b0fc6c-d2b0-4103-bdc4-ca70afe13448" type="radio">
+</input><label class="tabbed-label" for="9f0616a3-1a23-4b29-bfee-37f099bb399b">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="108726bf-d62b-4041-867d-7011c675dee4" name="87a3d83b-9758-4295-9167-9846882c2f73" type="radio">
-</input><label class="tabbed-label" for="108726bf-d62b-4041-867d-7011c675dee4">
+<input id="5582586b-f9bb-4da9-b8ee-03c2274f076c" name="18b0fc6c-d2b0-4103-bdc4-ca70afe13448" type="radio">
+</input><label class="tabbed-label" for="5582586b-f9bb-4da9-b8ee-03c2274f076c">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -605,16 +613,16 @@ memory usage: 2.2+ MB
 <div class="section" id="lines">
 <h4>Lines<a class="headerlink" href="#lines" title="Permalink to this headline">¶</a></h4>
 <div class="tabbed-set docutils">
-<input checked="checked" id="b46a91f0-869e-4aaf-8a42-d714b895cc9c" name="614b9190-88f5-476e-943b-023e4734a76d" type="radio">
-</input><label class="tabbed-label" for="b46a91f0-869e-4aaf-8a42-d714b895cc9c">
+<input checked="checked" id="b8a05c96-ec7b-47d0-8cb2-5765d714c34b" name="27a15ffc-29c4-4eb6-af8b-4919f90e3901" type="radio">
+</input><label class="tabbed-label" for="b8a05c96-ec7b-47d0-8cb2-5765d714c34b">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="4db44ca6-ea53-4174-bd16-f84e26cda285" name="614b9190-88f5-476e-943b-023e4734a76d" type="radio">
-</input><label class="tabbed-label" for="4db44ca6-ea53-4174-bd16-f84e26cda285">
+<input id="71ae3028-6072-4493-8370-0bcb08eaf2db" name="27a15ffc-29c4-4eb6-af8b-4919f90e3901" type="radio">
+</input><label class="tabbed-label" for="71ae3028-6072-4493-8370-0bcb08eaf2db">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -661,32 +669,1832 @@ memory usage: 3.6+ MB
 </div>
 <div class="section" id="polygons">
 <h4>Polygons<a class="headerlink" href="#polygons" title="Permalink to this headline">¶</a></h4>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.display.GeoJSON object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="d3eb5838-5995-466b-acd0-647dbb24ee0d" name="0d245c1b-bfe9-431d-904c-bef4ea851e28" type="radio">
+</input><label class="tabbed-label" for="d3eb5838-5995-466b-acd0-647dbb24ee0d">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/neighbourhoods.geojson&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="157c57a6-3398-4a0a-a675-d1b3fa4e92f3" name="0d245c1b-bfe9-431d-904c-bef4ea851e28" type="radio">
+</input><label class="tabbed-label" for="157c57a6-3398-4a0a-a675-d1b3fa4e92f3">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+    <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/44b4bc22c042386c2c0f8dc6685ef17c/neighbourhoods.geojson&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>neighbourhood</th>
+      <th>neighbourhood_group</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Palacio</td>
+      <td>Centro</td>
+      <td>MULTIPOLYGON (((-3.70584 40.42030, -3.70625 40...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Embajadores</td>
+      <td>Centro</td>
+      <td>MULTIPOLYGON (((-3.70384 40.41432, -3.70277 40...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Cortes</td>
+      <td>Centro</td>
+      <td>MULTIPOLYGON (((-3.69796 40.41929, -3.69645 40...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Justicia</td>
+      <td>Centro</td>
+      <td>MULTIPOLYGON (((-3.69546 40.41898, -3.69645 40...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Universidad</td>
+      <td>Centro</td>
+      <td>MULTIPOLYGON (((-3.70107 40.42134, -3.70155 40...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;neighbourhood_group == &#39;Retiro&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>neighbourhood</th>
+      <th>neighbourhood_group</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>13</th>
+      <td>Pacífico</td>
+      <td>Retiro</td>
+      <td>MULTIPOLYGON (((-3.67015 40.40654, -3.67017 40...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Adelfas</td>
+      <td>Retiro</td>
+      <td>MULTIPOLYGON (((-3.67283 40.39468, -3.67343 40...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Estrella</td>
+      <td>Retiro</td>
+      <td>MULTIPOLYGON (((-3.66506 40.40647, -3.66512 40...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Ibiza</td>
+      <td>Retiro</td>
+      <td>MULTIPOLYGON (((-3.66916 40.41796, -3.66927 40...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Jerónimos</td>
+      <td>Retiro</td>
+      <td>MULTIPOLYGON (((-3.67874 40.40751, -3.67992 40...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Niño Jesús</td>
+      <td>Retiro</td>
+      <td>MULTIPOLYGON (((-3.66994 40.40850, -3.67012 40...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span><span class="o">.</span><span class="n">neighbourhood_group</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Centro&#39;, &#39;Arganzuela&#39;, &#39;Retiro&#39;, &#39;Salamanca&#39;, &#39;Chamartín&#39;,
+       &#39;Moratalaz&#39;, &#39;Tetuán&#39;, &#39;Chamberí&#39;, &#39;Fuencarral - El Pardo&#39;,
+       &#39;Moncloa - Aravaca&#39;, &#39;Puente de Vallecas&#39;, &#39;Latina&#39;, &#39;Carabanchel&#39;,
+       &#39;Usera&#39;, &#39;Ciudad Lineal&#39;, &#39;Hortaleza&#39;, &#39;Villaverde&#39;,
+       &#39;Villa de Vallecas&#39;, &#39;Vicálvaro&#39;, &#39;San Blas - Canillejas&#39;,
+       &#39;Barajas&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="surfaces">
 <h3>Surfaces<a class="headerlink" href="#surfaces" title="Permalink to this headline">¶</a></h3>
+<div class="tabbed-set docutils">
+<input checked="checked" id="428ea373-6061-4379-9598-3a11969e9e5d" name="f8466bb1-1265-4c28-a01f-74f950f4a67f" type="radio">
+</input><label class="tabbed-label" for="428ea373-6061-4379-9598-3a11969e9e5d">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="s2">&quot;../data/madrid_scene_s2_10_tc.tif&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="a8e5e2c0-618f-4f44-b763-cea0e371d50a" name="f8466bb1-1265-4c28-a01f-74f950f4a67f" type="radio">
+</input><label class="tabbed-label" for="a8e5e2c0-618f-4f44-b763-cea0e371d50a">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
+    <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/cafed4de0cfde63e6d2ffcb92264b431/madrid_scene_s2_10_tc.tif&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt, dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray (band: 3, y: 3681, x: 3129)&gt;
+[34553547 values with dtype=uint8]
+Coordinates:
+  * band     (band) int64 1 2 3
+  * y        (y) float64 4.499e+06 4.499e+06 4.499e+06 ... 4.463e+06 4.463e+06
+  * x        (x) float64 4.248e+05 4.248e+05 4.248e+05 ... 4.56e+05 4.56e+05
+Attributes:
+    transform:      (10.0, 0.0, 424760.0, 0.0, -10.0, 4499370.0)
+    crs:            +init=epsg:32630
+    res:            (10.0, 10.0)
+    is_tiled:       0
+    nodatavals:     (nan, nan, nan)
+    scales:         (1.0, 1.0, 1.0)
+    offsets:        (0.0, 0.0, 0.0)
+    AREA_OR_POINT:  Area</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>band</span>: 3</li><li><span class='xr-has-index'>y</span>: 3681</li><li><span class='xr-has-index'>x</span>: 3129</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-243bc9bc-70b8-43ff-b8db-fee0de7a391e' class='xr-array-in' type='checkbox' checked><label for='section-243bc9bc-70b8-43ff-b8db-fee0de7a391e' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>...</span></div><div class='xr-array-data'><pre>[34553547 values with dtype=uint8]</pre></div></div></li><li class='xr-section-item'><input id='section-c1f0324f-9c74-4985-b85e-1cb8fbe3121c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c1f0324f-9c74-4985-b85e-1cb8fbe3121c' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>band</span></div><div class='xr-var-dims'>(band)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1 2 3</div><input id='attrs-cfd62d3a-d77d-4400-8d3b-6b67858ed16b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-cfd62d3a-d77d-4400-8d3b-6b67858ed16b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-77b670cb-b2ec-4d59-8f99-064d2f8f37f4' class='xr-var-data-in' type='checkbox'><label for='data-77b670cb-b2ec-4d59-8f99-064d2f8f37f4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1, 2, 3])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.499e+06 4.499e+06 ... 4.463e+06</div><input id='attrs-199d330b-3b84-4631-a308-a050286f77c3' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-199d330b-3b84-4631-a308-a050286f77c3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f786c4cf-e327-429a-a820-85d5a5b9bfb7' class='xr-var-data-in' type='checkbox'><label for='data-f786c4cf-e327-429a-a820-85d5a5b9bfb7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([4499365., 4499355., 4499345., ..., 4462585., 4462575., 4462565.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.248e+05 4.248e+05 ... 4.56e+05</div><input id='attrs-f6926c94-7db6-4aee-b768-effd278871c7' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f6926c94-7db6-4aee-b768-effd278871c7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-05852df4-2592-4688-a0ff-a08df9de46b0' class='xr-var-data-in' type='checkbox'><label for='data-05852df4-2592-4688-a0ff-a08df9de46b0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([424765., 424775., 424785., ..., 456025., 456035., 456045.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-49a6d950-e2f2-420f-9ee5-d5609c7516ce' class='xr-section-summary-in' type='checkbox'  checked><label for='section-49a6d950-e2f2-420f-9ee5-d5609c7516ce' class='xr-section-summary' >Attributes: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>transform :</span></dt><dd>(10.0, 0.0, 424760.0, 0.0, -10.0, 4499370.0)</dd><dt><span>crs :</span></dt><dd>+init=epsg:32630</dd><dt><span>res :</span></dt><dd>(10.0, 10.0)</dd><dt><span>is_tiled :</span></dt><dd>0</dd><dt><span>nodatavals :</span></dt><dd>(nan, nan, nan)</dd><dt><span>scales :</span></dt><dd>(1.0, 1.0, 1.0)</dd><dt><span>offsets :</span></dt><dd>(0.0, 0.0, 0.0)</dd><dt><span>AREA_OR_POINT :</span></dt><dd>Area</dd></dl></div></li></ul></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">band</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt, dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray (y: 3681, x: 3129)&gt;
+[11517849 values with dtype=uint8]
+Coordinates:
+    band     int64 1
+  * y        (y) float64 4.499e+06 4.499e+06 4.499e+06 ... 4.463e+06 4.463e+06
+  * x        (x) float64 4.248e+05 4.248e+05 4.248e+05 ... 4.56e+05 4.56e+05
+Attributes:
+    transform:      (10.0, 0.0, 424760.0, 0.0, -10.0, 4499370.0)
+    crs:            +init=epsg:32630
+    res:            (10.0, 10.0)
+    is_tiled:       0
+    nodatavals:     (nan, nan, nan)
+    scales:         (1.0, 1.0, 1.0)
+    offsets:        (0.0, 0.0, 0.0)
+    AREA_OR_POINT:  Area</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 3681</li><li><span class='xr-has-index'>x</span>: 3129</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-aabcc9c4-7f21-4894-a2dd-94dc2743bda0' class='xr-array-in' type='checkbox' checked><label for='section-aabcc9c4-7f21-4894-a2dd-94dc2743bda0' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>...</span></div><div class='xr-array-data'><pre>[11517849 values with dtype=uint8]</pre></div></div></li><li class='xr-section-item'><input id='section-9703a4ed-4c61-42f5-ad06-c705545025e1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-9703a4ed-4c61-42f5-ad06-c705545025e1' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>band</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1</div><input id='attrs-84c5d664-675f-4230-91ee-43f536de3fca' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-84c5d664-675f-4230-91ee-43f536de3fca' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-db403239-3e3e-4b98-8345-71b78c8263a6' class='xr-var-data-in' type='checkbox'><label for='data-db403239-3e3e-4b98-8345-71b78c8263a6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(1)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.499e+06 4.499e+06 ... 4.463e+06</div><input id='attrs-634d38a9-a0fa-4a7b-b3ca-40435379ae9d' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-634d38a9-a0fa-4a7b-b3ca-40435379ae9d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d3ce4702-87fc-44fa-b806-5028c7a762c2' class='xr-var-data-in' type='checkbox'><label for='data-d3ce4702-87fc-44fa-b806-5028c7a762c2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([4499365., 4499355., 4499345., ..., 4462585., 4462575., 4462565.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.248e+05 4.248e+05 ... 4.56e+05</div><input id='attrs-0544a3d7-9dac-4a9c-a80f-2e476fd00ee2' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0544a3d7-9dac-4a9c-a80f-2e476fd00ee2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6b56bc8c-3228-4626-96ce-10ad5d2e9e2c' class='xr-var-data-in' type='checkbox'><label for='data-6b56bc8c-3228-4626-96ce-10ad5d2e9e2c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([424765., 424775., 424785., ..., 456025., 456035., 456045.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3d83b709-bf21-4ffe-865a-b978530f5728' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3d83b709-bf21-4ffe-865a-b978530f5728' class='xr-section-summary' >Attributes: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>transform :</span></dt><dd>(10.0, 0.0, 424760.0, 0.0, -10.0, 4499370.0)</dd><dt><span>crs :</span></dt><dd>+init=epsg:32630</dd><dt><span>res :</span></dt><dd>(10.0, 10.0)</dd><dt><span>is_tiled :</span></dt><dd>0</dd><dt><span>nodatavals :</span></dt><dd>(nan, nan, nan)</dd><dt><span>scales :</span></dt><dd>(1.0, 1.0, 1.0)</dd><dt><span>offsets :</span></dt><dd>(0.0, 0.0, 0.0)</dd><dt><span>AREA_OR_POINT :</span></dt><dd>Area</dd></dl></div></li></ul></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">430000</span><span class="p">,</span> <span class="mi">440000</span><span class="p">),</span>  <span class="c1"># x is ascending</span>
+    <span class="n">y</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">4480000</span><span class="p">,</span> <span class="mi">4470000</span><span class="p">)</span> <span class="c1"># y is descending</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt, dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray (band: 3, y: 1000, x: 1000)&gt;
+[3000000 values with dtype=uint8]
+Coordinates:
+  * band     (band) int64 1 2 3
+  * y        (y) float64 4.48e+06 4.48e+06 4.48e+06 ... 4.47e+06 4.47e+06
+  * x        (x) float64 4.3e+05 4.3e+05 4.3e+05 ... 4.4e+05 4.4e+05 4.4e+05
+Attributes:
+    transform:      (10.0, 0.0, 424760.0, 0.0, -10.0, 4499370.0)
+    crs:            +init=epsg:32630
+    res:            (10.0, 10.0)
+    is_tiled:       0
+    nodatavals:     (nan, nan, nan)
+    scales:         (1.0, 1.0, 1.0)
+    offsets:        (0.0, 0.0, 0.0)
+    AREA_OR_POINT:  Area</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>band</span>: 3</li><li><span class='xr-has-index'>y</span>: 1000</li><li><span class='xr-has-index'>x</span>: 1000</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-2e654498-64af-4a50-8118-30b87ea6eeb8' class='xr-array-in' type='checkbox' checked><label for='section-2e654498-64af-4a50-8118-30b87ea6eeb8' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>...</span></div><div class='xr-array-data'><pre>[3000000 values with dtype=uint8]</pre></div></div></li><li class='xr-section-item'><input id='section-fb7ad3b4-152b-48d3-bb77-9bc5d4410a53' class='xr-section-summary-in' type='checkbox'  checked><label for='section-fb7ad3b4-152b-48d3-bb77-9bc5d4410a53' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>band</span></div><div class='xr-var-dims'>(band)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1 2 3</div><input id='attrs-3eae2a0d-9bb8-4300-9aff-8307b07f4e3e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3eae2a0d-9bb8-4300-9aff-8307b07f4e3e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bfa456cb-1483-4d5f-bb48-d04b0cf73986' class='xr-var-data-in' type='checkbox'><label for='data-bfa456cb-1483-4d5f-bb48-d04b0cf73986' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1, 2, 3])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.48e+06 4.48e+06 ... 4.47e+06</div><input id='attrs-902b3444-ebf4-4b07-bb85-464ed08fec7b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-902b3444-ebf4-4b07-bb85-464ed08fec7b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e64f5c60-3fd9-4e2d-a611-258128ddeac5' class='xr-var-data-in' type='checkbox'><label for='data-e64f5c60-3fd9-4e2d-a611-258128ddeac5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([4479995., 4479985., 4479975., ..., 4470025., 4470015., 4470005.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.3e+05 4.3e+05 ... 4.4e+05 4.4e+05</div><input id='attrs-34b6479d-350d-46f3-a357-40b0030a7d49' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-34b6479d-350d-46f3-a357-40b0030a7d49' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-529a39f4-b5b0-4880-8f0e-75ee070e74ea' class='xr-var-data-in' type='checkbox'><label for='data-529a39f4-b5b0-4880-8f0e-75ee070e74ea' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([430005., 430015., 430025., ..., 439975., 439985., 439995.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2f0b802c-df6b-4e8c-a81b-027e27a25f54' class='xr-section-summary-in' type='checkbox'  checked><label for='section-2f0b802c-df6b-4e8c-a81b-027e27a25f54' class='xr-section-summary' >Attributes: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>transform :</span></dt><dd>(10.0, 0.0, 424760.0, 0.0, -10.0, 4499370.0)</dd><dt><span>crs :</span></dt><dd>+init=epsg:32630</dd><dt><span>res :</span></dt><dd>(10.0, 10.0)</dd><dt><span>is_tiled :</span></dt><dd>0</dd><dt><span>nodatavals :</span></dt><dd>(nan, nan, nan)</dd><dt><span>scales :</span></dt><dd>(1.0, 1.0, 1.0)</dd><dt><span>offsets :</span></dt><dd>(0.0, 0.0, 0.0)</dd><dt><span>AREA_OR_POINT :</span></dt><dd>Area</dd></dl></div></li></ul></div></div></div></div>
+</div>
 </div>
 <div class="section" id="visualisation">
 <h3>Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/02-Spatial_data_31_1.png" src="../../_images/02-Spatial_data_31_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">lines</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">lines</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02-Spatial_data_32_0.png" src="../../_images/02-Spatial_data_32_0.png" />
+</div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>See more basemap options <a class="reference external" href="https://contextily.readthedocs.io/en/latest/providers_deepdive.html">here</a>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span>
+    <span class="n">crs</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">DarkMatter</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02-Spatial_data_34_0.png" src="../../_images/02-Spatial_data_34_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7feeb28d8130&gt;
+</pre></div>
+</div>
+<img alt="../../_images/02-Spatial_data_35_1.png" src="../../_images/02-Spatial_data_35_1.png" />
+</div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title">IMPORTANT</p>
+<p>You will need version 1.1.0 of <code class="docutils literal notranslate"><span class="pre">contextily</span></code> to use label layers. Install it with:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install <span class="se">\</span>
+    -U --no-deps <span class="se">\</span>
+    contextily
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">sat</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span>
+    <span class="n">crs</span><span class="o">=</span><span class="n">sat</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">Stamen</span><span class="o">.</span><span class="n">TonerLabels</span><span class="p">,</span>
+    <span class="n">zoom</span><span class="o">=</span><span class="mi">11</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02-Spatial_data_37_0.png" src="../../_images/02-Spatial_data_37_0.png" />
+</div>
+</div>
 </div>
 <div class="section" id="spatial-operations">
 <h3>Spatial operations<a class="headerlink" href="#spatial-operations" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="re-projections">
 <h4>(Re-)Projections<a class="headerlink" href="#re-projections" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span><span class="o">.</span><span class="n">crs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Geographic 2D CRS: EPSG:4326&gt;
+Name: WGS 84
+Axis Info [ellipsoidal]:
+- Lat[north]: Geodetic latitude (degree)
+- Lon[east]: Geodetic longitude (degree)
+Area of Use:
+- name: World
+- bounds: (-180.0, -90.0, 180.0, 90.0)
+Datum: World Geodetic System 1984
+- Ellipsoid: WGS 84
+- Prime Meridian: Greenwich
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CRS.from_epsg(32630)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">sat</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span><span class="o">.</span><span class="n">crs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Projected CRS: EPSG:32630&gt;
+Name: WGS 84 / UTM zone 30N
+Axis Info [cartesian]:
+- [east]: Easting (metre)
+- [north]: Northing (metre)
+Area of Use:
+- undefined
+Coordinate Operation:
+- name: UTM zone 30N
+- method: Transverse Mercator
+Datum: World Geodetic System 1984
+- Ellipsoid: WGS 84
+- Prime Meridian: Greenwich
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">reproject</span><span class="p">(</span><span class="n">pts</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CRS.from_epsg(4326)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># All into Web Mercator (EPSG:3857)</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="c1">## Satellite image</span>
+<span class="n">sat</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">reproject</span><span class="p">(</span>
+    <span class="s2">&quot;EPSG:3857&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span>
+<span class="p">)</span>
+<span class="c1">## Neighbourhoods</span>
+<span class="n">polys</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+    <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;xkcd:lime&quot;</span><span class="p">,</span> 
+    <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span>
+<span class="p">)</span>
+<span class="c1">## Labels</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span> <span class="c1"># No need to reproject</span>
+    <span class="n">ax</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">Stamen</span><span class="o">.</span><span class="n">TonerLabels</span><span class="p">,</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02-Spatial_data_44_0.png" src="../../_images/02-Spatial_data_44_0.png" />
+</div>
+</div>
 </div>
 <div class="section" id="centroids">
 <h4>Centroids<a class="headerlink" href="#centroids" title="Permalink to this headline">¶</a></h4>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note the warning that geometric operations with non-project CRS object result in biases.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span><span class="o">.</span><span class="n">centroid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-46-5ec1eefde6d0&gt;:1: UserWarning: Geometry is in a geographic CRS. Results from &#39;centroid&#39; are likely incorrect. Use &#39;GeoSeries.to_crs()&#39; to re-project geometries to a projected CRS before this operation.
+
+  polys.centroid
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      POINT (-3.71398 40.41543)
+1      POINT (-3.70237 40.40925)
+2      POINT (-3.69674 40.41485)
+3      POINT (-3.69657 40.42367)
+4      POINT (-3.70698 40.42568)
+                 ...            
+123    POINT (-3.59135 40.45656)
+124    POINT (-3.59723 40.48441)
+125    POINT (-3.55847 40.47613)
+126    POINT (-3.57889 40.47471)
+127    POINT (-3.60718 40.46415)
+Length: 128, dtype: geometry
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span><span class="o">.</span><span class="n">centroid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        POINT (444133.737 4482808.936)
+1        POINT (444192.064 4482878.034)
+2        POINT (444134.563 4482885.414)
+3        POINT (445612.661 4479335.686)
+4        POINT (445606.311 4479354.437)
+                      ...              
+66494    POINT (451980.378 4478407.920)
+66495    POINT (436975.438 4473143.749)
+66496    POINT (442218.600 4478415.561)
+66497    POINT (442213.869 4478346.700)
+66498    POINT (442233.760 4478278.748)
+Length: 66499, dtype: geometry
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">polys</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>
+<span class="n">polys</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;lime&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-52-47fdeef35535&gt;:2: UserWarning: Geometry is in a geographic CRS. Results from &#39;centroid&#39; are likely incorrect. Use &#39;GeoSeries.to_crs()&#39; to re-project geometries to a projected CRS before this operation.
+
+  polys.centroid.plot(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/02-Spatial_data_49_2.png" src="../../_images/02-Spatial_data_49_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="spatial-joins">
+<h4>Spatial joins<a class="headerlink" href="#spatial-joins" title="Permalink to this headline">¶</a></h4>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>More information about spatial joins in <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> is available on its <a class="reference external" href="https://geopandas.org/mergingdata.html#spatial-joins">documentation page</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sj</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span>
+    <span class="n">lines</span><span class="p">,</span>
+    <span class="n">polys</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">lines</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_margin docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Subset of lines</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sj</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="s2">&quot;neighbourhood == &#39;Jerónimos&#39;&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;xkcd:bright turquoise&quot;</span><span class="p">)</span>
+
+<span class="c1"># Subset of line centroids</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sj</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="s2">&quot;neighbourhood == &#39;Jerónimos&#39;&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;xkcd:bright violet&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span>
+<span class="p">)</span>
+
+<span class="c1"># Local basemap</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span>
+    <span class="n">crs</span><span class="o">=</span><span class="n">sj</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="s2">&quot;../data/madrid_scene_s2_10_tc.tif&quot;</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02-Spatial_data_53_0.png" src="../../_images/02-Spatial_data_53_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sj</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;geopandas.geodataframe.GeoDataFrame&#39;&gt;
+Int64Index: 69420 entries, 0 to 66438
+Data columns (total 10 columns):
+ #   Column               Non-Null Count  Dtype   
+---  ------               --------------  -----   
+ 0   OGC_FID              69420 non-null  object  
+ 1   dm_id                69420 non-null  object  
+ 2   dist_barri           69414 non-null  object  
+ 3   X                    69420 non-null  float64 
+ 4   Y                    69420 non-null  float64 
+ 5   value                5769 non-null   float64 
+ 6   geometry             69420 non-null  geometry
+ 7   index_right          69420 non-null  int64   
+ 8   neighbourhood        69420 non-null  object  
+ 9   neighbourhood_group  69420 non-null  object  
+dtypes: float64(3), geometry(1), int64(1), object(5)
+memory usage: 5.8+ MB
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="areas">
 <h4>Areas<a class="headerlink" href="#areas" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">areas</span> <span class="o">=</span> <span class="n">polys</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+    <span class="n">epsg</span><span class="o">=</span><span class="mi">25830</span>
+<span class="p">)</span><span class="o">.</span><span class="n">area</span> <span class="o">*</span> <span class="mf">1e-6</span> <span class="c1"># Km2</span>
+<span class="n">areas</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1.471037
+1    1.033253
+2    0.592049
+3    0.742031
+4    0.947616
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="distances">
 <h4>Distances<a class="headerlink" href="#distances" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cemfi</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">geocode</span><span class="p">(</span>
+    <span class="s2">&quot;Calle Casado del Alisal, 5, Madrid&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">25830</span><span class="p">)</span>
+<span class="n">cemfi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geometry</th>
+      <th>address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>POINT (441473.624 4473943.520)</td>
+      <td>Calle de Casado del Alisal 5, 28014 Madrid, Sp...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+    <span class="n">cemfi</span><span class="o">.</span><span class="n">crs</span>
+<span class="p">)</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span>
+    <span class="n">cemfi</span><span class="o">.</span><span class="n">geometry</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/geopandas/base.py:39: UserWarning: The indices of the two GeoSeries are different.
+  warn(&quot;The indices of the two GeoSeries are different.&quot;)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      1487.894214
+1              NaN
+2              NaN
+3              NaN
+4              NaN
+          ...     
+123            NaN
+124            NaN
+125            NaN
+126            NaN
+127            NaN
+Length: 128, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_margin docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">polys</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">dist</span><span class="o">=</span><span class="n">d2cemfi</span><span class="o">/</span><span class="mi">1000</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;dist&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">cemfi</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+    <span class="n">polys</span><span class="o">.</span><span class="n">crs</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> 
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> 
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CEMFI&quot;</span><span class="p">,</span> 
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span>
+<span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
+    <span class="s2">&quot;Distance to CEMFI&quot;</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02-Spatial_data_60_0.png" src="../../_images/02-Spatial_data_60_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d2cemfi</span> <span class="o">=</span> <span class="n">polys</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+    <span class="n">cemfi</span><span class="o">.</span><span class="n">crs</span>
+<span class="p">)</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span>
+    <span class="n">cemfi</span><span class="o">.</span><span class="n">geometry</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># NO index</span>
+<span class="p">)</span>
+<span class="n">d2cemfi</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1487.894214
+1     567.196279
+2     275.166923
+3     645.807884
+4    1191.537001
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="section" id="next-steps">
 <h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>If you are interested in following up on some of the topics explored in this block, the following pointers might be useful:</p>
+<ul class="simple">
+<li><p>Although we have seen here <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> only, all non-geographic operations on geo-tables are really thanks to <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, the workhorse for tabular data in Python. Their <a class="reference external" href="https://pandas.pydata.org/docs/">official documentation</a> is an excellent first stop. If you prefer a book, McKinney (2012) <a class="bibtex reference internal" href="../pages/z_bibliography.html#mckinney2012python" id="id4">[McK12]</a> is a great one.</p></li>
+<li><p>For more detail on geographic operations on geo-tables, the <a class="reference external" href="https://geopandas.org/">Geopandas official documentation</a> is a great place to continue the journey.</p></li>
+<li><p>Surfaces, as covered here, are really an example of multi-dimensional labelled arrays. The library we use, <code class="docutils literal notranslate"><span class="pre">xarray</span></code> represents the cutting edge for working with these data structures in Python, and <a class="reference external" href="https://xarray.pydata.org/">their documentation</a> is a great place to wrap your head around how data of this type can be manipulated. For geographic extensions (CRS handling, reprojections, etc.), we have used <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> under the hood, and <a class="reference external" href="https://corteva.github.io/rioxarray/">its documentation</a> is also well worth checking.</p></li>
+</ul>
 </div>
 </div>
 

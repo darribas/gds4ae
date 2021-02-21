@@ -266,6 +266,68 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ahead-of-time">
+   📖 Ahead of time…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hands-on-coding">
+   💻 Hands-on coding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choropleths">
+     Choropleths
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-classiffication-problem">
+       A classiffication problem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-many-colors">
+       How many colors?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-the-right-color">
+       Using the
+       <em>
+        right
+       </em>
+       color
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choropleths-on-geo-tables">
+     Choropleths on Geo-Tables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#surface-visualisation">
+     Surface visualisation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   🐾 Next steps
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -275,6 +337,254 @@
                 
   <div class="section" id="geovisualisation">
 <h1>Geovisualisation<a class="headerlink" href="#geovisualisation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ahead-of-time">
+<h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
+<p>This block is all about visualising statistical data on top of a geography. Although this task looks simple, there are a few technical and conceptual building blocks that it helps to understand before we try to make our own maps. Aim to complete the following readings by the time we get our hands on the keyboard:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://darribas.org/gds_course/content/bD/concepts_D.html">Block D</a> of the GDS course <a class="bibtex reference internal" href="../pages/z_bibliography.html#darribas-gds-course" id="id1">[AB19]</a>, which provides an introduction to choropleths (statistical maps)</p></li>
+<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/05_choropleth.html">Chapter 5</a> of the GDS Book <a class="bibtex reference internal" href="../pages/z_bibliography.html#reyabwolf" id="id2">[RABWng]</a>, discussing choropleths in more detail</p></li>
+</ul>
+</div>
+<div class="section" id="hands-on-coding">
+<h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span>
+<span class="kn">import</span> <span class="nn">contextily</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="2d88cbde-ce1e-4322-b9e0-d583a6418c29" name="e5eb4c16-e972-49c1-be62-b74b66bee37f" type="radio">
+</input><label class="tabbed-label" for="2d88cbde-ce1e-4322-b9e0-d583a6418c29">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="598145d4-60da-4f69-b704-1ef5c22db45e" name="e5eb4c16-e972-49c1-be62-b74b66bee37f" type="radio">
+</input><label class="tabbed-label" for="598145d4-60da-4f69-b704-1ef5c22db45e">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+    <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/9366d230310a8a68b2ce6cf2787a2f1c/cambodia_regional.gpkg&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title">Data</p>
+<p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
+</div>
+<div class="cell tag_margin tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+    <span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">Esri</span><span class="o">.</span><span class="n">NatGeoWorldMap</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_7_0.png" src="../../_images/03-Geovisualisation_7_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;geopandas.geodataframe.GeoDataFrame&#39;&gt;
+RangeIndex: 198 entries, 0 to 197
+Data columns (total 6 columns):
+ #   Column      Non-Null Count  Dtype   
+---  ------      --------------  -----   
+ 0   adm2_name   198 non-null    object  
+ 1   adm2_altnm  122 non-null    object  
+ 2   motor_mean  198 non-null    float64 
+ 3   walk_mean   198 non-null    float64 
+ 4   no2_mean    198 non-null    float64 
+ 5   geometry    198 non-null    geometry
+dtypes: float64(3), geometry(1), object(2)
+memory usage: 9.4+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will use the average measurement of <a class="reference external" href="http://www.tropomi.eu/data-products/nitrogen-dioxide">nitrogen dioxide</a> (<code class="docutils literal notranslate"><span class="pre">no2_mean</span></code>) by region throughout the block.</p>
+<p>To make visualisation a bit easier below, we create an additional column with values rescaled:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_mean&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This way, numbers are larger and will fit more easily on legends:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[[</span><span class="s2">&quot;no2_mean&quot;</span><span class="p">,</span> <span class="s2">&quot;no2_viz&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>no2_mean</th>
+      <th>no2_viz</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>198.000000</td>
+      <td>198.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.000032</td>
+      <td>3.236567</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.000017</td>
+      <td>1.743538</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000014</td>
+      <td>1.377641</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.000024</td>
+      <td>2.427438</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.000029</td>
+      <td>2.922031</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.000034</td>
+      <td>3.390426</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.000123</td>
+      <td>12.323324</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="choropleths">
+<h3>Choropleths<a class="headerlink" href="#choropleths" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+    <span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;no2_mean&quot;</span><span class="p">,</span> 
+    <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span> 
+    <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">VoyagerOnlyLabels</span><span class="p">,</span>
+    <span class="n">zoom</span><span class="o">=</span><span class="mi">7</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_14_0.png" src="../../_images/03-Geovisualisation_14_0.png" />
+</div>
+</div>
+<div class="section" id="a-classiffication-problem">
+<h4>A classiffication problem<a class="headerlink" href="#a-classiffication-problem" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(198,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_17_0.png" src="../../_images/03-Geovisualisation_17_0.png" />
+</div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">mapclassify</span></code> to cover:</p>
+<ul class="simple">
+<li><p>Equal interval</p></li>
+<li><p>Choropleths</p></li>
+<li><p>Fisher-Jenks</p></li>
+</ul>
+<p>Point to further algos</p>
+</div>
+<div class="section" id="how-many-colors">
+<h4>How many colors?<a class="headerlink" href="#how-many-colors" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="using-the-right-color">
+<h4>Using the <em>right</em> color<a class="headerlink" href="#using-the-right-color" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="choropleths-on-geo-tables">
+<h3>Choropleths on Geo-Tables<a class="headerlink" href="#choropleths-on-geo-tables" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="surface-visualisation">
+<h3>Surface visualisation<a class="headerlink" href="#surface-visualisation" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
