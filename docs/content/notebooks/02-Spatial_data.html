@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spatial Data &#8212; Geographic Data Science for Applied Economists</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -32,11 +32,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/custom-checkpoint.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -369,10 +368,10 @@
 <h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
 <p>This block is all about understanding spatial data, both conceptually and practically. Before your fingers get on the keyboard, the following readings will help you get going and familiar with core ideas:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/02_geo_thinking.html">Chapter 2</a> of the GDS Book <a class="bibtex reference internal" href="../pages/z_bibliography.html#reyabwolf" id="id1">[RABWng]</a>, which provides a conceptual overview of representing Geography in data</p></li>
-<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/03_spatial_data.html">Chapter 3</a> of the GDS Book <a class="bibtex reference internal" href="../pages/z_bibliography.html#reyabwolf" id="id2">[RABWng]</a>, a sister chapter with a more applied perspective on how concepts are implemented in computer data structures</p></li>
+<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/02_geo_thinking.html">Chapter 2</a> of the GDS Book <a href="#id1"><span class="problematic" id="id2">:cite:`reyABwolf`</span></a>, which provides a conceptual overview of representing Geography in data</p></li>
+<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/03_spatial_data.html">Chapter 3</a> of the GDS Book <a href="#id3"><span class="problematic" id="id4">:cite:`reyABwolf`</span></a>, a sister chapter with a more applied perspective on how concepts are implemented in computer data structures</p></li>
 </ul>
-<p>Additionally, parts of this block are based and source from <a class="reference external" href="https://darribas.org/gds_course/content/bC/lab_C.html">Block C</a> in the GDS Course <a class="bibtex reference internal" href="../pages/z_bibliography.html#darribas-gds-course" id="id3">[AB19]</a>.</p>
+<p>Additionally, parts of this block are based and source from <a class="reference external" href="https://darribas.org/gds_course/content/bC/lab_C.html">Block C</a> in the GDS Course <a href="#id5"><span class="problematic" id="id6">:cite:`darribas_gds_course`</span></a>.</p>
 </div>
 <div class="section" id="hands-on-coding">
 <h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
@@ -392,16 +391,16 @@
 <div class="section" id="points">
 <h4>Points<a class="headerlink" href="#points" title="Permalink to this headline">¶</a></h4>
 <div class="tabbed-set docutils">
-<input checked="checked" id="dd588487-c230-4deb-be05-aad34add81b6" name="32ebfb69-8a2a-4e11-99fd-ee1503fa9886" type="radio">
-</input><label class="tabbed-label" for="dd588487-c230-4deb-be05-aad34add81b6">
+<input checked="checked" id="95d65641-a208-49a6-a3cb-54d48c52d90d" name="12ca406a-898d-413d-badb-2dc180a9ab70" type="radio">
+</input><label class="tabbed-label" for="95d65641-a208-49a6-a3cb-54d48c52d90d">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="433e12bb-7cda-4195-a4ce-25633ed0fb16" name="32ebfb69-8a2a-4e11-99fd-ee1503fa9886" type="radio">
-</input><label class="tabbed-label" for="433e12bb-7cda-4195-a4ce-25633ed0fb16">
+<input id="1f99f2f6-604d-4fed-ad38-23b22d7fb9e1" name="12ca406a-898d-413d-badb-2dc180a9ab70" type="radio">
+</input><label class="tabbed-label" for="1f99f2f6-604d-4fed-ad38-23b22d7fb9e1">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -613,16 +612,16 @@ memory usage: 2.2+ MB
 <div class="section" id="lines">
 <h4>Lines<a class="headerlink" href="#lines" title="Permalink to this headline">¶</a></h4>
 <div class="tabbed-set docutils">
-<input checked="checked" id="35d9ecd7-ce4a-46da-b34b-da077c3749fb" name="30d3519c-dda3-450d-96ad-b03c463c76ba" type="radio">
-</input><label class="tabbed-label" for="35d9ecd7-ce4a-46da-b34b-da077c3749fb">
+<input checked="checked" id="b7275143-caf3-408b-988a-1d6135ec6487" name="45324f6b-655d-4e38-a98b-23d6f1d5edde" type="radio">
+</input><label class="tabbed-label" for="b7275143-caf3-408b-988a-1d6135ec6487">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="311c62f2-bb84-4fb1-a5f9-1fea9829fb91" name="30d3519c-dda3-450d-96ad-b03c463c76ba" type="radio">
-</input><label class="tabbed-label" for="311c62f2-bb84-4fb1-a5f9-1fea9829fb91">
+<input id="3de77e1b-84ac-46db-88e0-cfa80de4a67a" name="45324f6b-655d-4e38-a98b-23d6f1d5edde" type="radio">
+</input><label class="tabbed-label" for="3de77e1b-84ac-46db-88e0-cfa80de4a67a">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -677,16 +676,16 @@ memory usage: 3.6+ MB
 </div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="e0447c9f-c867-48b1-a0c6-250091caf3cb" name="da310e63-02ba-40fb-a54b-a51178192c63" type="radio">
-</input><label class="tabbed-label" for="e0447c9f-c867-48b1-a0c6-250091caf3cb">
+<input checked="checked" id="4b371ba4-edea-4252-804a-fad950477f1d" name="63433b69-c9b1-48ea-b96b-e3823e9abe5a" type="radio">
+</input><label class="tabbed-label" for="4b371ba4-edea-4252-804a-fad950477f1d">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/neighbourhoods.geojson&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="c7f30a81-6eff-4e38-83a8-5baf9a9c81c2" name="da310e63-02ba-40fb-a54b-a51178192c63" type="radio">
-</input><label class="tabbed-label" for="c7f30a81-6eff-4e38-83a8-5baf9a9c81c2">
+<input id="a5ff3df7-c894-4e73-a20f-a989b0fa13d4" name="63433b69-c9b1-48ea-b96b-e3823e9abe5a" type="radio">
+</input><label class="tabbed-label" for="a5ff3df7-c894-4e73-a20f-a989b0fa13d4">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -854,16 +853,16 @@ Online read</label><div class="tabbed-content docutils">
 <div class="section" id="surfaces">
 <h3>Surfaces<a class="headerlink" href="#surfaces" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="8780ef16-c4d3-4b0f-918e-74311d4d44ff" name="08d4cdbf-2efe-4870-852e-25d6be2d4fd0" type="radio">
-</input><label class="tabbed-label" for="8780ef16-c4d3-4b0f-918e-74311d4d44ff">
+<input checked="checked" id="2b183fed-26bb-430c-8535-1c462afc0c38" name="282e0446-2cf8-47b3-b251-f1d912334b3f" type="radio">
+</input><label class="tabbed-label" for="2b183fed-26bb-430c-8535-1c462afc0c38">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="s2">&quot;../data/madrid_scene_s2_10_tc.tif&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="f40cd6f2-04dd-49f3-8002-5e4af1fa97bd" name="08d4cdbf-2efe-4870-852e-25d6be2d4fd0" type="radio">
-</input><label class="tabbed-label" for="f40cd6f2-04dd-49f3-8002-5e4af1fa97bd">
+<input id="9443a85d-18f1-4aad-8564-1c755755450a" name="282e0446-2cf8-47b3-b251-f1d912334b3f" type="radio">
+</input><label class="tabbed-label" for="9443a85d-18f1-4aad-8564-1c755755450a">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -2491,7 +2490,7 @@ dtype: float64
 <h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>If you are interested in following up on some of the topics explored in this block, the following pointers might be useful:</p>
 <ul class="simple">
-<li><p>Although we have seen here <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> only, all non-geographic operations on geo-tables are really thanks to <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, the workhorse for tabular data in Python. Their <a class="reference external" href="https://pandas.pydata.org/docs/">official documentation</a> is an excellent first stop. If you prefer a book, McKinney (2012) <a class="bibtex reference internal" href="../pages/z_bibliography.html#mckinney2012python" id="id4">[McK12]</a> is a great one.</p></li>
+<li><p>Although we have seen here <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> only, all non-geographic operations on geo-tables are really thanks to <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, the workhorse for tabular data in Python. Their <a class="reference external" href="https://pandas.pydata.org/docs/">official documentation</a> is an excellent first stop. If you prefer a book, McKinney (2012) <a href="#id7"><span class="problematic" id="id8">:cite:`mckinney2012python`</span></a> is a great one.</p></li>
 <li><p>For more detail on geographic operations on geo-tables, the <a class="reference external" href="https://geopandas.org/">Geopandas official documentation</a> is a great place to continue the journey.</p></li>
 <li><p>Surfaces, as covered here, are really an example of multi-dimensional labelled arrays. The library we use, <code class="docutils literal notranslate"><span class="pre">xarray</span></code> represents the cutting edge for working with these data structures in Python, and <a class="reference external" href="https://xarray.pydata.org/">their documentation</a> is a great place to wrap your head around how data of this type can be manipulated. For geographic extensions (CRS handling, reprojections, etc.), we have used <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> under the hood, and <a class="reference external" href="https://corteva.github.io/rioxarray/">its documentation</a> is also well worth checking.</p></li>
 </ul>
@@ -2550,7 +2549,7 @@ dtype: float64
     </div>
 
     
-  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

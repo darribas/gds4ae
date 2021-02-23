@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geovisualisation &#8212; Geographic Data Science for Applied Economists</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -32,11 +32,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/custom-checkpoint.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -345,8 +344,8 @@
 <h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
 <p>This block is all about visualising statistical data on top of a geography. Although this task looks simple, there are a few technical and conceptual building blocks that it helps to understand before we try to make our own maps. Aim to complete the following readings by the time we get our hands on the keyboard:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://darribas.org/gds_course/content/bD/concepts_D.html">Block D</a> of the GDS course <a class="bibtex reference internal" href="../pages/z_bibliography.html#darribas-gds-course" id="id1">[AB19]</a>, which provides an introduction to choropleths (statistical maps)</p></li>
-<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/05_choropleth.html">Chapter 5</a> of the GDS Book <a class="bibtex reference internal" href="../pages/z_bibliography.html#reyabwolf" id="id2">[RABWng]</a>, discussing choropleths in more detail</p></li>
+<li><p><a class="reference external" href="https://darribas.org/gds_course/content/bD/concepts_D.html">Block D</a> of the GDS course <a href="#id1"><span class="problematic" id="id2">:cite:`darribas_gds_course`</span></a>, which provides an introduction to choropleths (statistical maps)</p></li>
+<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/05_choropleth.html">Chapter 5</a> of the GDS Book <a href="#id3"><span class="problematic" id="id4">:cite:`reyABwolf`</span></a>, discussing choropleths in more detail</p></li>
 </ul>
 </div>
 <div class="section" id="hands-on-coding">
@@ -366,16 +365,16 @@
 </div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="f4aa7978-c1eb-4e45-b65b-2baf3d0c1370" name="e3ec9af9-d615-48b7-83a5-dfc436cee517" type="radio">
-</input><label class="tabbed-label" for="f4aa7978-c1eb-4e45-b65b-2baf3d0c1370">
+<input checked="checked" id="1f17bd2c-1695-49d0-9ad6-ff22c6bcc053" name="a99b3ded-090c-4e43-8824-ed436fb8682f" type="radio">
+</input><label class="tabbed-label" for="1f17bd2c-1695-49d0-9ad6-ff22c6bcc053">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="edeb6620-4421-4e2c-ba7d-b63d0f348be5" name="e3ec9af9-d615-48b7-83a5-dfc436cee517" type="radio">
-</input><label class="tabbed-label" for="edeb6620-4421-4e2c-ba7d-b63d0f348be5">
+<input id="cc990e3d-08b6-41ef-88c4-a7ed776c28b9" name="a99b3ded-090c-4e43-8824-ed436fb8682f" type="radio">
+</input><label class="tabbed-label" for="cc990e3d-08b6-41ef-88c4-a7ed776c28b9">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -939,8 +938,8 @@ style="width:300px;height:50px;vertical-align:middle;border:0px;" class="fragmen
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="fa5e0e52-94d7-49c5-84b0-5217bec74d2e" name="c0193954-2178-4ab9-acf5-0cffc1d45554" type="radio">
-</input><label class="tabbed-label" for="fa5e0e52-94d7-49c5-84b0-5217bec74d2e">
+<input checked="checked" id="1dcbfffc-88a6-44b8-9d23-65dc12a233e4" name="33859bf5-db6c-4e25-805c-f23de8c4f24b" type="radio">
+</input><label class="tabbed-label" for="1dcbfffc-88a6-44b8-9d23-65dc12a233e4">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -949,8 +948,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="325bff63-4f78-443d-8a41-95cb0872348e" name="c0193954-2178-4ab9-acf5-0cffc1d45554" type="radio">
-</input><label class="tabbed-label" for="325bff63-4f78-443d-8a41-95cb0872348e">
+<input id="c6edc392-7460-432f-88b7-9a05e8b3dabc" name="33859bf5-db6c-4e25-805c-f23de8c4f24b" type="radio">
+</input><label class="tabbed-label" for="c6edc392-7460-432f-88b7-9a05e8b3dabc">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -1099,7 +1098,7 @@ Online read</label><div class="tabbed-content docutils">
 <p>If you are interested in statistical maps based on classification, here are two recommendations to check out next:</p>
 <ul class="simple">
 <li><p>On the technical side, the <a class="reference external" href="https://pysal.org/mapclassify/">documentation for <code class="docutils literal notranslate"><span class="pre">mapclassify</span></code></a> (including its <a class="reference external" href="https://pysal.org/mapclassify/tutorial.html">tutorials</a>) provides more detail and illustrates more classification algorithms than those reviewed in this block</p></li>
-<li><p>On a more conceptual note, Cynthia Brewer’s “Designing better maps” <a class="bibtex reference internal" href="../pages/z_bibliography.html#brewer2015designing" id="id3">[Bre15]</a> is an excellent blueprint for good map making.</p></li>
+<li><p>On a more conceptual note, Cynthia Brewer’s “Designing better maps” <a href="#id5"><span class="problematic" id="id6">:cite:`brewer2015designing`</span></a> is an excellent blueprint for good map making.</p></li>
 </ul>
 </div>
 </div>
@@ -1156,7 +1155,7 @@ Online read</label><div class="tabbed-content docutils">
     </div>
 
     
-  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     
