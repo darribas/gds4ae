@@ -293,7 +293,11 @@
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#how-many-colors">
-       How many colors?
+       How
+       <em>
+        many
+       </em>
+       colors?
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -350,23 +354,28 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span>
+<span class="kn">import</span> <span class="nn">xarray</span><span class="o">,</span> <span class="nn">rioxarray</span>
 <span class="kn">import</span> <span class="nn">contextily</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">pysal.viz</span> <span class="kn">import</span> <span class="n">mapclassify</span> <span class="k">as</span> <span class="n">mc</span>
+<span class="kn">from</span> <span class="nn">legendgram</span> <span class="kn">import</span> <span class="n">legendgram</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">palettable.matplotlib</span> <span class="k">as</span> <span class="nn">palmpl</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2d88cbde-ce1e-4322-b9e0-d583a6418c29" name="e5eb4c16-e972-49c1-be62-b74b66bee37f" type="radio">
-</input><label class="tabbed-label" for="2d88cbde-ce1e-4322-b9e0-d583a6418c29">
+<input checked="checked" id="f4aa7978-c1eb-4e45-b65b-2baf3d0c1370" name="e3ec9af9-d615-48b7-83a5-dfc436cee517" type="radio">
+</input><label class="tabbed-label" for="f4aa7978-c1eb-4e45-b65b-2baf3d0c1370">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="598145d4-60da-4f69-b704-1ef5c22db45e" name="e5eb4c16-e972-49c1-be62-b74b66bee37f" type="radio">
-</input><label class="tabbed-label" for="598145d4-60da-4f69-b704-1ef5c22db45e">
+<input id="edeb6620-4421-4e2c-ba7d-b63d0f348be5" name="e3ec9af9-d615-48b7-83a5-dfc436cee517" type="radio">
+</input><label class="tabbed-label" for="edeb6620-4421-4e2c-ba7d-b63d0f348be5">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -518,7 +527,7 @@ memory usage: 9.4+ KB
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
     <span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span>
 <span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="s2">&quot;no2_mean&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;no2_viz&quot;</span><span class="p">,</span> 
     <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
 <span class="p">)</span>
@@ -560,30 +569,538 @@ memory usage: 9.4+ KB
 <img alt="../../_images/03-Geovisualisation_17_0.png" src="../../_images/03-Geovisualisation_17_0.png" />
 </div>
 </div>
-<p>Use <code class="docutils literal notranslate"><span class="pre">mapclassify</span></code> to cover:</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>To build an intuition behind each classification algorithm more easily, we create a helper method (<code class="docutils literal notranslate"><span class="pre">plot_classi</span></code>) that generates a visualisation of a given classification.</p>
+<p>Toggle the cell below if you are interested in the code behind it.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_classi</span><span class="p">(</span><span class="n">classi</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Illustrate a classiffication</span>
+<span class="sd">    ...</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    classi : mapclassify.classifiers</span>
+<span class="sd">             Classification object</span>
+<span class="sd">    col    : str</span>
+<span class="sd">             Column name used for `classi`</span>
+<span class="sd">    db     : geopandas.GeoDataFrame</span>
+<span class="sd">             Geo-table with data for</span>
+<span class="sd">             the classification    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">classi</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="c1"># KDE</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">classi</span><span class="o">.</span><span class="n">bins</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">classi</span><span class="o">.</span><span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+    <span class="c1"># Map</span>
+    <span class="n">aux</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="o">.</span><span class="mi">6</span><span class="p">,</span> <span class="o">.</span><span class="mi">45</span><span class="p">,</span> <span class="o">.</span><span class="mi">32</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">])</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">lbls</span><span class="o">=</span><span class="n">classi</span><span class="o">.</span><span class="n">yb</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="s2">&quot;lbls&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">aux</span>
+    <span class="p">)</span>
+    <span class="n">aux</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
 <ul class="simple">
-<li><p>Equal interval</p></li>
-<li><p>Choropleths</p></li>
+<li><p>Equal intervals</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classi</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">EqualInterval</span><span class="p">(</span><span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">classi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EqualInterval         
+
+   Interval      Count
+----------------------
+[ 1.38,  2.94] |   103
+( 2.94,  4.50] |    80
+( 4.50,  6.07] |     6
+( 6.07,  7.63] |     1
+( 7.63,  9.20] |     3
+( 9.20, 10.76] |     0
+(10.76, 12.32] |     5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_22_0.png" src="../../_images/03-Geovisualisation_22_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Quantiles</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classi</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">Quantiles</span><span class="p">(</span><span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">classi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quantiles             
+
+   Interval      Count
+----------------------
+[ 1.38,  2.24] |    29
+( 2.24,  2.50] |    28
+( 2.50,  2.76] |    28
+( 2.76,  3.02] |    28
+( 3.02,  3.35] |    28
+( 3.35,  3.76] |    28
+( 3.76, 12.32] |    29
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_25_0.png" src="../../_images/03-Geovisualisation_25_0.png" />
+</div>
+</div>
+<ul class="simple">
 <li><p>Fisher-Jenks</p></li>
 </ul>
-<p>Point to further algos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classi</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">FisherJenks</span><span class="p">(</span><span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">classi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FisherJenks           
+
+   Interval      Count
+----------------------
+[ 1.38,  2.06] |    20
+( 2.06,  2.69] |    58
+( 2.69,  3.30] |    62
+( 3.30,  4.19] |    42
+( 4.19,  5.64] |     7
+( 5.64,  9.19] |     4
+( 9.19, 12.32] |     5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_28_0.png" src="../../_images/03-Geovisualisation_28_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Fisher-Jenks</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classi</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">FisherJenks</span><span class="p">(</span><span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">classi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FisherJenks           
+
+   Interval      Count
+----------------------
+[ 1.38,  2.06] |    20
+( 2.06,  2.69] |    58
+( 2.69,  3.30] |    62
+( 3.30,  4.19] |    42
+( 4.19,  5.64] |     7
+( 5.64,  9.19] |     4
+( 9.19, 12.32] |     5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_31_0.png" src="../../_images/03-Geovisualisation_31_0.png" />
+</div>
+</div>
+<hr class="docutils" />
+<p>Now let’s dig into the internals of <code class="docutils literal notranslate"><span class="pre">classi</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FisherJenks           
+
+   Interval      Count
+----------------------
+[ 1.38,  2.06] |    20
+( 2.06,  2.69] |    58
+( 2.69,  3.30] |    62
+( 3.30,  4.19] |    42
+( 4.19,  5.64] |     7
+( 5.64,  9.19] |     4
+( 9.19, 12.32] |     5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classi</span><span class="o">.</span><span class="n">k</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classi</span><span class="o">.</span><span class="n">bins</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2.05617382,  2.6925931 ,  3.30281182,  4.19124954,  5.63804861,
+        9.19190206, 12.32332434])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classi</span><span class="o">.</span><span class="n">yb</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 3, 3, 1, 1, 2, 1, 1, 1, 0, 0, 3, 2, 1, 1, 1, 3, 1, 1, 1, 2, 0,
+       0, 4, 2, 1, 3, 1, 0, 0, 0, 1, 2, 2, 6, 5, 4, 2, 1, 3, 2, 3, 2, 1,
+       2, 3, 2, 3, 1, 1, 3, 1, 2, 3, 3, 1, 3, 3, 1, 0, 1, 1, 3, 2, 0, 0,
+       2, 1, 0, 0, 0, 2, 0, 1, 3, 3, 3, 2, 3, 2, 3, 1, 2, 3, 1, 1, 1, 1,
+       2, 1, 2, 2, 1, 2, 2, 2, 1, 3, 2, 3, 2, 2, 2, 1, 2, 3, 3, 2, 0, 3,
+       1, 0, 1, 2, 1, 1, 2, 1, 2, 6, 5, 6, 2, 2, 3, 6, 3, 4, 3, 4, 2, 3,
+       0, 2, 5, 6, 4, 5, 2, 2, 2, 1, 1, 1, 2, 1, 2, 3, 3, 2, 2, 2, 3, 2,
+       1, 1, 3, 4, 2, 1, 3, 1, 2, 3, 4, 0, 1, 1, 2, 1, 2, 2, 2, 2, 1, 2,
+       2, 2, 0, 0, 1, 2, 3, 3, 3, 3, 3, 2, 1, 2, 1, 1, 1, 2, 2, 1, 3, 1])
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="how-many-colors">
-<h4>How many colors?<a class="headerlink" href="#how-many-colors" title="Permalink to this headline">¶</a></h4>
+<h4>How <em>many</em> colors?<a class="headerlink" href="#how-many-colors" title="Permalink to this headline">¶</a></h4>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The code used to generate this figure uses more advanced features than planned for this course.</p>
+<p>If you want to inspect it, toggle the cell below.</p>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="n">algos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;equal_interval&quot;</span><span class="p">,</span> <span class="s2">&quot;quantiles&quot;</span><span class="p">,</span> <span class="s2">&quot;fisherjenks&quot;</span><span class="p">]</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">algos</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">),</span> <span class="mi">3</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">algos</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">algos</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">)):</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="s2">&quot;no2_viz&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="n">algos</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="n">vals</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;k=</span><span class="si">{</span><span class="n">vals</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">j</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+                <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> 
+                <span class="mf">0.5</span><span class="p">,</span> 
+                <span class="n">algos</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+                <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> 
+                <span class="n">transform</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span>
+                <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_39_0.png" src="../../_images/03-Geovisualisation_39_0.png" />
+</div>
+</div>
 </div>
 <div class="section" id="using-the-right-color">
 <h4>Using the <em>right</em> color<a class="headerlink" href="#using-the-right-color" title="Permalink to this headline">¶</a></h4>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>For a safe choice, make sure to visit <a class="reference external" href="https://colorbrewer2.org/">ColorBrewer</a></p>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jiffyclub.github.io/palettable/wesanderson/#fantasticfox2_5"><img src="../figs/l04_pal_qual.png" alt="Qualitative"
+style="width:300px;height:50px;vertical-align:middle;border:0px;" class="fragment"/></a> <strong>Categories</strong>, non-ordered</p></li>
+<li><p><a class="reference external" href="https://jiffyclub.github.io/palettable/colorbrewer/sequential/#rdpu_5"><img src="../figs/l04_pal_seq.png" alt="Sequential"
+style="width:300px;height:50px;vertical-align:middle;border:0px;" class="fragment"/></a> Graduated, <strong>sequential</strong></p></li>
+<li><p><a class="reference external" href="https://jiffyclub.github.io/palettable/colorbrewer/diverging/#rdylgn_5"><img src="../figs/l04_pal_div.png" alt="Divergent"
+style="width:300px;height:50px;vertical-align:middle;border:0px;" class="fragment"/></a> Graduated, <strong>divergent</strong></p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="choropleths-on-geo-tables">
 <h3>Choropleths on Geo-Tables<a class="headerlink" href="#choropleths-on-geo-tables" title="Permalink to this headline">¶</a></h3>
+<p>How can we create classifications from data on geo-tables? Two ways:</p>
+<ul class="simple">
+<li><p>Directly within <code class="docutils literal notranslate"><span class="pre">plot</span></code> (only for some algorithms)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;no2_viz&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;quantiles&quot;</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_44_0.png" src="../../_images/03-Geovisualisation_44_0.png" />
+</div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>See <a class="reference external" href="https://pysal.org/mapclassify/notebooks/03_choropleth.html">this tutorial</a> for more details on fine tuning choropleths manually</p>
+</div>
+<ul class="simple">
+<li><p>Manually attaching the data (for any algorithm)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classi</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">Quantiles</span><span class="p">(</span><span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">classes</span><span class="o">=</span><span class="n">classi</span><span class="o">.</span><span class="n">yb</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;classes&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_46_0.png" src="../../_images/03-Geovisualisation_46_0.png" />
+</div>
+</div>
+<hr class="docutils" />
+<p><em>Legendgrams</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+
+<span class="n">classi</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">Quantiles</span><span class="p">(</span><span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="n">db</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">classes</span><span class="o">=</span><span class="n">classi</span><span class="o">.</span><span class="n">yb</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;classes&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">legendgram</span><span class="p">(</span>
+    <span class="n">f</span><span class="p">,</span>                   <span class="c1"># Figure object</span>
+    <span class="n">ax</span><span class="p">,</span>                  <span class="c1"># Axis object of the map</span>
+    <span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">],</span>       <span class="c1"># Values for the histogram</span>
+    <span class="n">classi</span><span class="o">.</span><span class="n">bins</span><span class="p">,</span>         <span class="c1"># Bin boundaries</span>
+    <span class="n">pal</span><span class="o">=</span><span class="n">palmpl</span><span class="o">.</span><span class="n">Viridis_7</span><span class="p">,</span><span class="c1"># color palette (as palettable object)</span>
+    <span class="n">legend_size</span><span class="o">=</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="o">.</span><span class="mi">2</span><span class="p">),</span> <span class="c1"># legend size in fractions of the axis</span>
+    <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;lower right&#39;</span><span class="p">,</span> <span class="c1"># matplotlib-style legend locations</span>
+    <span class="n">clip</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>        <span class="c1"># clip the displayed range of the histogram</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_48_0.png" src="../../_images/03-Geovisualisation_48_0.png" />
+</div>
+</div>
 </div>
 <div class="section" id="surface-visualisation">
 <h3>Surface visualisation<a class="headerlink" href="#surface-visualisation" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title">Data</p>
+<p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="fa5e0e52-94d7-49c5-84b0-5217bec74d2e" name="c0193954-2178-4ab9-acf5-0cffc1d45554" type="radio">
+</input><label class="tabbed-label" for="fa5e0e52-94d7-49c5-84b0-5217bec74d2e">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
+    <span class="s2">&quot;../data/cambodia_s5_no2.tif&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">band</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="325bff63-4f78-443d-8a41-95cb0872348e" name="c0193954-2178-4ab9-acf5-0cffc1d45554" type="radio">
+</input><label class="tabbed-label" for="325bff63-4f78-443d-8a41-95cb0872348e">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
+    <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/0d14506cd792aecf73dd0f7f027e95b4/cambodia_s5_no2.tif&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">band</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>(Implicit) continuous equal interval</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">grid</span> <span class="o">!=</span> <span class="n">grid</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_53_0.png" src="../../_images/03-Geovisualisation_53_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">grid</span> <span class="o">!=</span> <span class="n">grid</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_54_0.png" src="../../_images/03-Geovisualisation_54_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Discrete equal interval</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">grid</span> <span class="o">!=</span> <span class="n">grid</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f47b175f610&gt;
+</pre></div>
+</div>
+<img alt="../../_images/03-Geovisualisation_56_1.png" src="../../_images/03-Geovisualisation_56_1.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Combining with <code class="docutils literal notranslate"><span class="pre">mapclassify</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_nona</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">grid</span> <span class="o">!=</span> <span class="n">grid</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
+<span class="p">)</span>
+
+<span class="n">classi</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">Quantiles</span><span class="p">(</span>
+    <span class="n">grid_nona</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span> <span class="n">k</span><span class="o">=</span><span class="mi">7</span>
+<span class="p">)</span>
+
+<span class="n">grid_nona</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">classi</span><span class="o">.</span><span class="n">bins</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">classi</span><span class="o">.</span><span class="n">name</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_58_0.png" src="../../_images/03-Geovisualisation_58_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_nona</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">grid</span> <span class="o">!=</span> <span class="n">grid</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
+<span class="p">)</span>
+
+<span class="n">classi</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">FisherJenksSampled</span><span class="p">(</span>
+    <span class="n">grid_nona</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">7</span>
+<span class="p">)</span>
+
+<span class="n">grid_nona</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">classi</span><span class="o">.</span><span class="n">bins</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">classi</span><span class="o">.</span><span class="n">name</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_59_0.png" src="../../_images/03-Geovisualisation_59_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_nona</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">grid</span> <span class="o">!=</span> <span class="n">grid</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
+<span class="p">)</span>
+
+<span class="n">classi</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">StdMean</span><span class="p">(</span>
+    <span class="n">grid_nona</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+<span class="p">)</span>
+
+<span class="n">grid_nona</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">classi</span><span class="o">.</span><span class="n">bins</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">classi</span><span class="o">.</span><span class="n">name</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_60_0.png" src="../../_images/03-Geovisualisation_60_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_nona</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">grid</span> <span class="o">!=</span> <span class="n">grid</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
+<span class="p">)</span>
+
+<span class="n">classi</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">BoxPlot</span><span class="p">(</span>
+    <span class="n">grid_nona</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+<span class="p">)</span>
+
+<span class="n">grid_nona</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">classi</span><span class="o">.</span><span class="n">bins</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">classi</span><span class="o">.</span><span class="n">name</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_61_0.png" src="../../_images/03-Geovisualisation_61_0.png" />
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="next-steps">
 <h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>If you are interested in statistical maps based on classification, here are two recommendations to check out next:</p>
+<ul class="simple">
+<li><p>On the technical side, the <a class="reference external" href="https://pysal.org/mapclassify/">documentation for <code class="docutils literal notranslate"><span class="pre">mapclassify</span></code></a> (including its <a class="reference external" href="https://pysal.org/mapclassify/tutorial.html">tutorials</a>) provides more detail and illustrates more classification algorithms than those reviewed in this block</p></li>
+<li><p>On a more conceptual note, Cynthia Brewer’s “Designing better maps” <a class="bibtex reference internal" href="../pages/z_bibliography.html#brewer2015designing" id="id3">[Bre15]</a> is an excellent blueprint for good map making.</p></li>
+</ul>
 </div>
 </div>
 
