@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -45,7 +45,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -200,21 +200,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -232,16 +232,16 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -260,11 +260,11 @@
     </div>
 </div>
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -331,6 +331,7 @@
 
         </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -344,8 +345,8 @@
 <h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
 <p>This block is all about visualising statistical data on top of a geography. Although this task looks simple, there are a few technical and conceptual building blocks that it helps to understand before we try to make our own maps. Aim to complete the following readings by the time we get our hands on the keyboard:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://darribas.org/gds_course/content/bD/concepts_D.html">Block D</a> of the GDS course <a href="#id1"><span class="problematic" id="id2">:cite:`darribas_gds_course`</span></a>, which provides an introduction to choropleths (statistical maps)</p></li>
-<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/05_choropleth.html">Chapter 5</a> of the GDS Book <a href="#id3"><span class="problematic" id="id4">:cite:`reyABwolf`</span></a>, discussing choropleths in more detail</p></li>
+<li><p><a class="reference external" href="https://darribas.org/gds_course/content/bD/concepts_D.html">Block D</a> of the GDS course <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id4"><span>AB19</span></a>]</span>, which provides an introduction to choropleths (statistical maps)</p></li>
+<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/05_choropleth.html">Chapter 5</a> of the GDS Book <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span>, discussing choropleths in more detail</p></li>
 </ul>
 </div>
 <div class="section" id="hands-on-coding">
@@ -364,17 +365,21 @@
 </div>
 </div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title">Data</p>
+<p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
+</div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="48b52305-8787-4887-94a1-ad67ece9757d" name="fb8b87b1-7625-47d0-984d-4588d0f37ac4" type="radio">
-</input><label class="tabbed-label" for="48b52305-8787-4887-94a1-ad67ece9757d">
+<input checked="checked" id="139c44f1-33ac-47c6-a6eb-92119c815ed3" name="e90def87-2720-4e41-9bf4-ec9011b781b3" type="radio">
+</input><label class="tabbed-label" for="139c44f1-33ac-47c6-a6eb-92119c815ed3">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="a81a21cc-d307-4e53-8ca9-ea91c1bf2c8d" name="fb8b87b1-7625-47d0-984d-4588d0f37ac4" type="radio">
-</input><label class="tabbed-label" for="a81a21cc-d307-4e53-8ca9-ea91c1bf2c8d">
+<input id="81716268-af32-4312-8764-21281e7e8e1e" name="e90def87-2720-4e41-9bf4-ec9011b781b3" type="radio">
+</input><label class="tabbed-label" for="81716268-af32-4312-8764-21281e7e8e1e">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -383,10 +388,6 @@ Online read</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-</div>
-<div class="margin sidebar">
-<p class="sidebar-title">Data</p>
-<p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="cell tag_margin tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -853,12 +854,9 @@ memory usage: 9.4+ KB
 <p>For a safe choice, make sure to visit <a class="reference external" href="https://colorbrewer2.org/">ColorBrewer</a></p>
 </div>
 <ul class="simple">
-<li><p><a class="reference external" href="https://jiffyclub.github.io/palettable/wesanderson/#fantasticfox2_5"><img src="../figs/l04_pal_qual.png" alt="Qualitative"
-style="width:300px;height:50px;vertical-align:middle;border:0px;" class="fragment"/></a> <strong>Categories</strong>, non-ordered</p></li>
-<li><p><a class="reference external" href="https://jiffyclub.github.io/palettable/colorbrewer/sequential/#rdpu_5"><img src="../figs/l04_pal_seq.png" alt="Sequential"
-style="width:300px;height:50px;vertical-align:middle;border:0px;" class="fragment"/></a> Graduated, <strong>sequential</strong></p></li>
-<li><p><a class="reference external" href="https://jiffyclub.github.io/palettable/colorbrewer/diverging/#rdylgn_5"><img src="../figs/l04_pal_div.png" alt="Divergent"
-style="width:300px;height:50px;vertical-align:middle;border:0px;" class="fragment"/></a> Graduated, <strong>divergent</strong></p></li>
+<li><p><a class="reference external" href="https://jiffyclub.github.io/palettable/wesanderson/#fantasticfox2_5"><img alt="Qualitative" class="fragment" src="../../_images/l04_pal_qual.png" /></a> <strong>Categories</strong>, non-ordered</p></li>
+<li><p><a class="reference external" href="https://jiffyclub.github.io/palettable/colorbrewer/sequential/#rdpu_5"><img alt="Sequential" class="fragment" src="../../_images/l04_pal_seq.png" /></a> Graduated, <strong>sequential</strong></p></li>
+<li><p><a class="reference external" href="https://jiffyclub.github.io/palettable/colorbrewer/diverging/#rdylgn_5"><img alt="Divergent" class="fragment" src="../../_images/l04_pal_div.png" /></a> Graduated, <strong>divergent</strong></p></li>
 </ul>
 </div>
 </div>
@@ -938,8 +936,8 @@ style="width:300px;height:50px;vertical-align:middle;border:0px;" class="fragmen
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="7c36ae1a-af3d-43e3-8bad-bb401329b3d7" name="be615411-171c-4486-be55-a1e5046924d7" type="radio">
-</input><label class="tabbed-label" for="7c36ae1a-af3d-43e3-8bad-bb401329b3d7">
+<input checked="checked" id="2e2bf10c-3ab7-4e7a-885c-b179dd877014" name="98563273-a7bd-466f-9add-164bc5260f8a" type="radio">
+</input><label class="tabbed-label" for="2e2bf10c-3ab7-4e7a-885c-b179dd877014">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -948,8 +946,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="2fd9acab-e5fb-4eef-85ef-9eaf111b0f88" name="be615411-171c-4486-be55-a1e5046924d7" type="radio">
-</input><label class="tabbed-label" for="2fd9acab-e5fb-4eef-85ef-9eaf111b0f88">
+<input id="15adaf4f-1470-4813-8ac2-449ba1737788" name="98563273-a7bd-466f-9add-164bc5260f8a" type="radio">
+</input><label class="tabbed-label" for="15adaf4f-1470-4813-8ac2-449ba1737788">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -998,10 +996,14 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f47b175f610&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/xarray/plot/plot.py:970: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
+  primitive = ax.pcolormesh(x, y, z, **kwargs)
 </pre></div>
 </div>
-<img alt="../../_images/03-Geovisualisation_56_1.png" src="../../_images/03-Geovisualisation_56_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f2eb886d450&gt;
+</pre></div>
+</div>
+<img alt="../../_images/03-Geovisualisation_56_2.png" src="../../_images/03-Geovisualisation_56_2.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1025,7 +1027,11 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_58_0.png" src="../../_images/03-Geovisualisation_58_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/xarray/plot/plot.py:970: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
+  primitive = ax.pcolormesh(x, y, z, **kwargs)
+</pre></div>
+</div>
+<img alt="../../_images/03-Geovisualisation_58_1.png" src="../../_images/03-Geovisualisation_58_1.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1046,7 +1052,11 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_59_0.png" src="../../_images/03-Geovisualisation_59_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/xarray/plot/plot.py:970: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
+  primitive = ax.pcolormesh(x, y, z, **kwargs)
+</pre></div>
+</div>
+<img alt="../../_images/03-Geovisualisation_59_1.png" src="../../_images/03-Geovisualisation_59_1.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1067,7 +1077,11 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_60_0.png" src="../../_images/03-Geovisualisation_60_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/xarray/plot/plot.py:970: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
+  primitive = ax.pcolormesh(x, y, z, **kwargs)
+</pre></div>
+</div>
+<img alt="../../_images/03-Geovisualisation_60_1.png" src="../../_images/03-Geovisualisation_60_1.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1088,7 +1102,11 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_61_0.png" src="../../_images/03-Geovisualisation_61_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/xarray/plot/plot.py:970: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
+  primitive = ax.pcolormesh(x, y, z, **kwargs)
+</pre></div>
+</div>
+<img alt="../../_images/03-Geovisualisation_61_1.png" src="../../_images/03-Geovisualisation_61_1.png" />
 </div>
 </div>
 </div>
@@ -1098,7 +1116,7 @@ Online read</label><div class="tabbed-content docutils">
 <p>If you are interested in statistical maps based on classification, here are two recommendations to check out next:</p>
 <ul class="simple">
 <li><p>On the technical side, the <a class="reference external" href="https://pysal.org/mapclassify/">documentation for <code class="docutils literal notranslate"><span class="pre">mapclassify</span></code></a> (including its <a class="reference external" href="https://pysal.org/mapclassify/tutorial.html">tutorials</a>) provides more detail and illustrates more classification algorithms than those reviewed in this block</p></li>
-<li><p>On a more conceptual note, Cynthia Brewer’s “Designing better maps” <a href="#id5"><span class="problematic" id="id6">:cite:`brewer2015designing`</span></a> is an excellent blueprint for good map making.</p></li>
+<li><p>On a more conceptual note, Cynthia Brewer’s “Designing better maps” <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id38"><span>Bre15</span></a>]</span> is an excellent blueprint for good map making.</p></li>
 </ul>
 </div>
 </div>
@@ -1125,15 +1143,15 @@ Online read</label><div class="tabbed-content docutils">
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="02-Spatial_data.html" title="previous page">Spatial Data</a>
     <a class='right-next' id="next-link" href="04-Spatial_feature_eng_i.html" title="next page">Spatial Feature Engineering (I)</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
