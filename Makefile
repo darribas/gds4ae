@@ -48,4 +48,4 @@ test:
 reset_docs:
 	rm -r docs/*
 	git checkout HEAD docs/
-	git checkout HEAD content/data_science_studio.pdf
+	git checkout HEAD content/gds4ae.pdf
