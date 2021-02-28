@@ -94,7 +94,7 @@ This dataset is an extraction of the following two data products by Weiss et al.
 
 Each is provided on a separate file.
 
-- 🗃️ Data files ({download}`Motorized <cambodia_2020_motorized_friction_surface.tif>` and {download}`Walking <cambodia_2020_walking_friction_surface.tif>`
+- 🗃️ Data files ({download}`Motorized <cambodia_2020_motorized_friction_surface.tif>` and {download}`Walking <cambodia_2020_walking_friction_surface.tif>`)
 - 🤖 Code used to generate the file [`[Page]`](cambodia_road_friction)
 - ℹ️ Furhter information [`[URL]`](https://malariaatlas.org)
 
