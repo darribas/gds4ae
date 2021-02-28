@@ -4,7 +4,18 @@ author: Dani Arribas-Bel & Diego Puga
 #logo: logo.jpeg
 
 parse:
-  myst_extended_syntax: true
+  myst_enable_extensions: [
+    "amsmath",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "html_admonition",
+    "html_image",
+    "linkify",
+    "replacements",
+    "smartquotes",
+    "substitution"
+]
 
 execute:
   execute_notebooks: "off"
@@ -21,3 +32,6 @@ html:
 sphinx:
   config:
     html_show_copyright: false
+    
+bibtex_bibfiles:
+   - content/pages/bibliography.bib
