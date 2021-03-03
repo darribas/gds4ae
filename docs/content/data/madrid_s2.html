@@ -342,14 +342,15 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s2">&quot;https://github.com/developmentseed/titiler-digitaltwin/&quot;</span>\
-    <span class="s2">&quot;raw/main/data/MGRS_filtered.geojson&quot;</span>
+    <span class="s2">&quot;raw/36bf4cca96b84c79b2a299f7b5fde82ec87bb2e4/&quot;</span>\
+    <span class="s2">&quot;titiler_digitaltwin/data/grid.geojson&quot;</span>
 <span class="p">)</span>
 <span class="n">p</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://github.com/developmentseed/titiler-digitaltwin/raw/main/data/MGRS_filtered.geojson&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://github.com/developmentseed/titiler-digitaltwin/raw/36bf4cca96b84c79b2a299f7b5fde82ec87bb2e4/titiler_digitaltwin/data/grid.geojson&#39;
 </pre></div>
 </div>
 </div>
@@ -375,8 +376,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     GZD                                           geometry
-350  30T  POLYGON ((-0.00000 40.00000, -6.00000 40.00000...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    name                                           geometry
+211  30T  POLYGON ((-5.67287 47.82258, -5.62777 46.92300...
 </pre></div>
 </div>
 <img alt="../../_images/madrid_s2_7_1.png" src="../../_images/madrid_s2_7_1.png" />
@@ -409,10 +410,10 @@
 <span class="p">):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">day</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">tile</span><span class="si">}</span><span class="s2">/XbX.tif&quot;</span>
     <span class="c1"># Connect to separate bands</span>
-    <span class="n">full_red</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;XbX&quot;</span><span class="p">,</span> <span class="s2">&quot;B04&quot;</span><span class="p">))</span>
-    <span class="n">full_green</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;XbX&quot;</span><span class="p">,</span> <span class="s2">&quot;B03&quot;</span><span class="p">))</span>
-    <span class="n">full_blue</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;XbX&quot;</span><span class="p">,</span> <span class="s2">&quot;B02&quot;</span><span class="p">))</span>
-    <span class="n">full_ir</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;XbX&quot;</span><span class="p">,</span> <span class="s2">&quot;B08&quot;</span><span class="p">))</span>
+    <span class="n">full_red</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;XbX&quot;</span><span class="p">,</span> <span class="s2">&quot;B04&quot;</span><span class="p">))</span>
+    <span class="n">full_green</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;XbX&quot;</span><span class="p">,</span> <span class="s2">&quot;B03&quot;</span><span class="p">))</span>
+    <span class="n">full_blue</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;XbX&quot;</span><span class="p">,</span> <span class="s2">&quot;B02&quot;</span><span class="p">))</span>
+    <span class="n">full_ir</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;XbX&quot;</span><span class="p">,</span> <span class="s2">&quot;B08&quot;</span><span class="p">))</span>
     <span class="n">bands</span> <span class="o">=</span> <span class="p">[</span><span class="n">full_red</span><span class="p">,</span> <span class="n">full_green</span><span class="p">,</span> <span class="n">full_blue</span><span class="p">,</span> <span class="n">full_ir</span><span class="p">]</span>
     <span class="c1"># Clip to bb</span>
     <span class="n">scene</span> <span class="o">=</span> <span class="p">[]</span>
@@ -422,8 +423,6 @@
     <span class="n">scene</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="s2">&quot;band&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">rio</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
     <span class="c1"># Patch up meta-data</span>
     <span class="n">scene</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;band&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;NIR&quot;</span><span class="p">]</span>
-    <span class="n">scene</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;scales&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scene</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;scales&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">scene</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">count</span>
-    <span class="n">scene</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scene</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">scene</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">count</span>
     <span class="k">return</span> <span class="n">scene</span>
 </pre></div>
 </div>
@@ -461,39 +460,15 @@ for date in dates:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>~~~~~Building 2019-1-1
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/pyproj/crs/crs.py:280: FutureWarning: &#39;+init=&lt;authority&gt;:&lt;code&gt;&#39; syntax is deprecated. &#39;&lt;authority&gt;:&lt;code&gt;&#39; is the preferred initialization method. When making the change, be mindful of axis order changes: https://pyproj4.github.io/pyproj/stable/gotchas.html#axis-order-changes-in-proj-6
-  projstring = _prepare_from_string(projparams)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>636K	madrid_scene_s2_120_2019-1-1.tif
+628K	madrid_scene_s2_120_2019-1-1.tif
 ~~~~~Building 2019-4-1
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/pyproj/crs/crs.py:280: FutureWarning: &#39;+init=&lt;authority&gt;:&lt;code&gt;&#39; syntax is deprecated. &#39;&lt;authority&gt;:&lt;code&gt;&#39; is the preferred initialization method. When making the change, be mindful of axis order changes: https://pyproj4.github.io/pyproj/stable/gotchas.html#axis-order-changes-in-proj-6
-  projstring = _prepare_from_string(projparams)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>636K	madrid_scene_s2_120_2019-4-1.tif
+628K	madrid_scene_s2_120_2019-4-1.tif
 ~~~~~Building 2019-7-10
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/pyproj/crs/crs.py:280: FutureWarning: &#39;+init=&lt;authority&gt;:&lt;code&gt;&#39; syntax is deprecated. &#39;&lt;authority&gt;:&lt;code&gt;&#39; is the preferred initialization method. When making the change, be mindful of axis order changes: https://pyproj4.github.io/pyproj/stable/gotchas.html#axis-order-changes-in-proj-6
-  projstring = _prepare_from_string(projparams)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>636K	madrid_scene_s2_120_2019-7-10.tif
+628K	madrid_scene_s2_120_2019-7-10.tif
 ~~~~~Building 2019-11-27
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/pyproj/crs/crs.py:280: FutureWarning: &#39;+init=&lt;authority&gt;:&lt;code&gt;&#39; syntax is deprecated. &#39;&lt;authority&gt;:&lt;code&gt;&#39; is the preferred initialization method. When making the change, be mindful of axis order changes: https://pyproj4.github.io/pyproj/stable/gotchas.html#axis-order-changes-in-proj-6
-  projstring = _prepare_from_string(projparams)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>636K	madrid_scene_s2_120_2019-11-27.tif
-CPU times: user 4.33 s, sys: 1.11 s, total: 5.44 s
-Wall time: 1min 31s
+628K	madrid_scene_s2_120_2019-11-27.tif
+CPU times: user 12.5 s, sys: 2.42 s, total: 14.9 s
+Wall time: 1min 48s
 </pre></div>
 </div>
 </div>
@@ -542,12 +517,6 @@ Wall time: 1min 31s
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/pyproj/crs/crs.py:280: FutureWarning: &#39;+init=&lt;authority&gt;:&lt;code&gt;&#39; syntax is deprecated. &#39;&lt;authority&gt;:&lt;code&gt;&#39; is the preferred initialization method. When making the change, be mindful of axis order changes: https://pyproj4.github.io/pyproj/stable/gotchas.html#axis-order-changes-in-proj-6
-  projstring = _prepare_from_string(projparams)
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="color-correct">
@@ -579,7 +548,9 @@ Wall time: 1min 31s
 <span class="n">mad_scene</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;band&quot;</span><span class="p">)</span>\
          <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">minmax</span><span class="p">)</span>\
          <span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">mad</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">mad_scene</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;xkcd:lime green&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">mad</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">mad_scene</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;xkcd:lime green&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </div>
