@@ -284,6 +284,28 @@
   <a class="reference internal nav-link" href="#hands-on-coding">
    💻 Hands-on coding
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distance-buffers">
+     Distance buffers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distance-rings">
+     Distance rings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-membership-points">
+     Cluster membership (points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-membership-polygons">
+     Cluster membership (polygons)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#next-steps">
@@ -313,15 +335,147 @@
 </div>
 <div class="section" id="hands-on-coding">
 <h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
-<p>“Dataset enhancement through space”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span><span class="o">,</span> <span class="nn">geopandas</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title">Data</p>
+<p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="c5a896d4-e2b0-4af3-a342-e8c31d75565b" name="947cb9f2-585d-44ac-8323-0b46178743e4" type="radio">
+</input><label class="tabbed-label" for="c5a896d4-e2b0-4af3-a342-e8c31d75565b">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="504e4f33-15b4-416d-b53f-98240b1ef33b" name="947cb9f2-585d-44ac-8323-0b46178743e4" type="radio">
+</input><label class="tabbed-label" for="504e4f33-15b4-416d-b53f-98240b1ef33b">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+    <span class="s2">&quot;https://github.com/GDSL-UL/san/raw/v0.1.0/data/assignment_1_madrid/madrid_abb.gpkg&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will be working with a modified version of <code class="docutils literal notranslate"><span class="pre">pts</span></code>:</p>
 <ul class="simple">
-<li><p>[ ] Distance buffer counts (within and between datasets)</p></li>
-<li><p>[ ] Ring buffers (within and between datasets)</p></li>
-<li><p>[ ] Clustering as map synthesis (example with DBSCAN and LISAs)</p></li>
+<li><p>Since we will require distance calculations, we will switch to the Spanish official projection</p></li>
+<li><p>To make calculations in the illustration near-instantaneous, we will work with a smaller (random) sample of Airbnb properties (20% of the total)</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+    <span class="n">frac</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span>
+<span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">25830</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see in the description, the new CRS is expressed in metres:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">crs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Projected CRS: EPSG:25830&gt;
+Name: ETRS89 / UTM zone 30N
+Axis Info [cartesian]:
+- E[east]: Easting (metre)
+- N[north]: Northing (metre)
+Area of Use:
+- name: Europe - 6°W to 0°W and ETRS89 by country
+- bounds: (-6.0, 35.26, 0.0, 80.53)
+Coordinate Operation:
+- name: UTM zone 30N
+- method: Transverse Mercator
+Datum: European Terrestrial Reference System 1989
+- Ellipsoid: GRS 1980
+- Prime Meridian: Greenwich
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="distance-buffers">
+<h3>Distance buffers<a class="headerlink" href="#distance-buffers" title="Permalink to this headline">¶</a></h3>
+<p><em>How many Airbnb’s are within 500m of each Airbnb?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pysal.lib</span> <span class="kn">import</span> <span class="n">weights</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">DistanceBand</span></code>, we can build a spatial weights matrix that assigns <code class="docutils literal notranslate"><span class="pre">1</span></code> to each observation within 500m, and <code class="docutils literal notranslate"><span class="pre">0</span></code> otherwise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w500m</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">DistanceBand</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The number of neighbors can be accessed through the <code class="docutils literal notranslate"><span class="pre">cardinalities</span></code> attribute:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_neis</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">w500m</span><span class="o">.</span><span class="n">cardinalities</span><span class="p">)</span>
+<span class="n">n_neis</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11297    213
+2659       5
+16242     21
+15565      9
+14707    159
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">n_neis</span><span class="o">=</span><span class="n">n_neis</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;n_neis&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">0.1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/05-Spatial_feature_eng_ii_19_0.png" src="../../_images/05-Spatial_feature_eng_ii_19_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="distance-rings">
+<h3>Distance rings<a class="headerlink" href="#distance-rings" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="cluster-membership-points">
+<h3>Cluster membership (points)<a class="headerlink" href="#cluster-membership-points" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="cluster-membership-polygons">
+<h3>Cluster membership (polygons)<a class="headerlink" href="#cluster-membership-polygons" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 <div class="section" id="next-steps">
 <h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>If you want a bit more background into some of the techniques reviewed in this block, the following might be of interest:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://darribas.org/gds_course/content/bE/concepts_E.html">Block E</a> of the GDS Course <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id4"><span>AB19</span></a>]</span> will introduce you to more techniques like the LISAs seen above to explore the spatial dimension of the statistical properties of your data. If you want a more detailed read, <a class="reference external" href="https://geographicdata.science/book/notebooks/04_spatial_weights.html">Chapter 4</a> of the GDS Book <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span> will do just that.</p></li>
+<li><p><a class="reference external" href="http://darribas.org/gds_course/content/bF/concepts_F.html">Block F</a> of the GDS Course <span id="id4">[<a class="reference internal" href="../pages/z_bibliography.html#id4"><span>AB19</span></a>]</span> will introduce you to more techniques like the LISAs seen above to explore the spatial dimension of the statistical properties of your data. If you want a more detailed read, <a class="reference external" href="https://geographicdata.science/book/notebooks/07_local_autocorrelation.html">Chapter 7</a> of the GDS Book <span id="id5">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span> will do just that.</p></li>
+<li><p><a class="reference external" href="http://darribas.org/gds_course/content/bH/concepts_H.html">Block H</a> of the GDS Course <span id="id6">[<a class="reference internal" href="../pages/z_bibliography.html#id4"><span>AB19</span></a>]</span> will introduce you to more techniques for exploring point patterns. If you want a more comprehensive read, <a class="reference external" href="https://geographicdata.science/book/notebooks/08_point_pattern_analysis.html">Chapter 8</a> of the GDS Book <span id="id7">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span> will do just that.</p></li>
+</ul>
 </div>
 </div>
 

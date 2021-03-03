@@ -374,8 +374,8 @@
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="8a3ad65f-05fb-4168-9164-ce83cda8b4b3" name="b42ca146-442a-45dd-9712-90ebf8165d64" type="radio">
-</input><label class="tabbed-label" for="8a3ad65f-05fb-4168-9164-ce83cda8b4b3">
+<input checked="checked" id="39d10857-575d-4946-bc92-40b856a2fcbb" name="2818413a-d108-4eda-9341-aec614f601ca" type="radio">
+</input><label class="tabbed-label" for="39d10857-575d-4946-bc92-40b856a2fcbb">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
@@ -389,8 +389,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="89b06e66-0133-4152-b965-45f3ea95c1e7" name="b42ca146-442a-45dd-9712-90ebf8165d64" type="radio">
-</input><label class="tabbed-label" for="89b06e66-0133-4152-b965-45f3ea95c1e7">
+<input id="8bb02d7f-e95f-40ee-ab8d-00cdd76f73dd" name="2818413a-d108-4eda-9341-aec614f601ca" type="radio">
+</input><label class="tabbed-label" for="8bb02d7f-e95f-40ee-ab8d-00cdd76f73dd">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -419,6 +419,10 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/pyproj/crs/crs.py:280: FutureWarning: &#39;+init=&lt;authority&gt;:&lt;code&gt;&#39; syntax is deprecated. &#39;&lt;authority&gt;:&lt;code&gt;&#39; is the preferred initialization method. When making the change, be mindful of axis order changes: https://pyproj4.github.io/pyproj/stable/gotchas.html#axis-order-changes-in-proj-6
+  projstring = _prepare_from_string(projparams)
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
@@ -889,7 +893,7 @@ memory usage: 10.8+ KB
 <span class="n">station_ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">bb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bb</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">stations</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span>
     <span class="n">geopandas</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">station_xs</span><span class="p">,</span> <span class="n">station_ys</span><span class="p">),</span>
-    <span class="n">crs</span><span class="o">=</span><span class="n">pollution</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -959,7 +963,7 @@ memory usage: 10.8+ KB
 <p>For this illustration, we will use a <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors regression that estimates the value for each target point (<code class="docutils literal notranslate"><span class="pre">cities</span></code> in our case) as the average weighted by distance of its <span class="math notranslate nohighlight">\(k\)</span> nearest neigbors. In this illustration we will use <span class="math notranslate nohighlight">\(k=10\)</span>.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>Note how <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> relies only on array data structures, so we first had to express all the required information in that format</p>
+<p>Note how <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> relies only on array data structures, hence why we first had to express all the required information in that format</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -980,6 +984,128 @@ memory usage: 10.8+ KB
 </div>
 </div>
 </div>
+<p>These can be compared with the originally observed values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p2p_comparison</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;Observed&quot;</span><span class="p">:</span> <span class="n">city_pollution</span><span class="p">,</span>
+        <span class="s2">&quot;Predicted&quot;</span><span class="p">:</span> <span class="n">predictions</span>
+    <span class="p">},</span>
+    <span class="n">index</span><span class="o">=</span><span class="n">cities</span><span class="p">[</span><span class="s2">&quot;UC_NM_MN&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_margin docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">p2p_comparison</span><span class="p">[</span><span class="s2">&quot;Observed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">p2p_comparison</span><span class="p">[</span><span class="s2">&quot;Predicted&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/04-Spatial_feature_eng_i_57_0.png" src="../../_images/04-Spatial_feature_eng_i_57_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p2p_comparison</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Observed</th>
+      <th>Predicted</th>
+    </tr>
+    <tr>
+      <th>UC_NM_MN</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Sampov Lun</th>
+      <td>0.000039</td>
+      <td>0.000031</td>
+    </tr>
+    <tr>
+      <th>Khum Pech Chenda</th>
+      <td>0.000035</td>
+      <td>0.000029</td>
+    </tr>
+    <tr>
+      <th>Poipet</th>
+      <td>0.000038</td>
+      <td>0.000033</td>
+    </tr>
+    <tr>
+      <th>Sisophon</th>
+      <td>0.000041</td>
+      <td>0.000036</td>
+    </tr>
+    <tr>
+      <th>Battambang</th>
+      <td>0.000031</td>
+      <td>0.000033</td>
+    </tr>
+    <tr>
+      <th>Siem Reap</th>
+      <td>0.000051</td>
+      <td>0.000033</td>
+    </tr>
+    <tr>
+      <th>Sihanoukville</th>
+      <td>0.000023</td>
+      <td>0.000016</td>
+    </tr>
+    <tr>
+      <th>N/A</th>
+      <td>0.000041</td>
+      <td>0.000025</td>
+    </tr>
+    <tr>
+      <th>Kampong Chhnang</th>
+      <td>0.000024</td>
+      <td>0.000027</td>
+    </tr>
+    <tr>
+      <th>Phnom Penh</th>
+      <td>0.000129</td>
+      <td>0.000029</td>
+    </tr>
+    <tr>
+      <th>Kampong Cham</th>
+      <td>0.000033</td>
+      <td>0.000028</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </div>
 <div class="section" id="points-to-surface">
 <h3>Points to surface<a class="headerlink" href="#points-to-surface" title="Permalink to this headline">¶</a></h3>
@@ -987,7 +1113,7 @@ memory usage: 10.8+ KB
 <p>We will set as out target locations those of the pixels in the target surface we have seen <a class="reference internal" href="#sfe-s2s"><span class="std std-ref">above</span></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tgt_friction_mt</span> <span class="o">=</span> <span class="n">tgt_friction</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tgt_pollution_mt</span> <span class="o">=</span> <span class="n">tgt_pollution</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span>
     <span class="s2">&quot;EPSG:4326&quot;</span>
 <span class="p">)</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">reproject</span><span class="p">(</span><span class="s2">&quot;EPSG:5726&quot;</span><span class="p">)</span>
 </pre></div>
@@ -996,32 +1122,21 @@ memory usage: 10.8+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xys</span> <span class="o">=</span> <span class="n">tgt_friction_mt</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">to_index</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xy_pairs</span> <span class="o">=</span> <span class="n">tgt_pollution_mt</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">index</span>
+<span class="n">xys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">xy_pairs</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">),</span>
+        <span class="n">xy_pairs</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>To obtain pollution estimates at each location, we can <code class="docutils literal notranslate"><span class="pre">predict</span></code> with <code class="docutils literal notranslate"><span class="pre">model</span></code>:</p>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If performance is a concern, you can build the array of XY coordinates directly from the original object:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">predictions_grid</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>    
-    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
-        <span class="n">tgt_friction</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
-        <span class="n">tgt_friction</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
-    <span class="p">])</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions_grid</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xys</span><span class="o">.</span><span class="n">to_list</span><span class="p">())</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions_grid</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">xys</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1029,12 +1144,14 @@ memory usage: 10.8+ KB
 <p>And with these at hand, we can convert them into a surface:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions_series</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
-    <span class="n">predictions_grid</span><span class="p">,</span>
-    <span class="n">index</span><span class="o">=</span><span class="n">xys</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions_series</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;predictions_grid&quot;</span><span class="p">:</span> <span class="n">predictions_grid</span><span class="p">}</span>
+<span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">xys</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">])</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">])</span>
+
 <span class="n">predictions_surface</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span><span class="p">()</span><span class="o">.</span><span class="n">from_series</span><span class="p">(</span>
-    <span class="n">predictions_series</span>
+    <span class="n">predictions_series</span><span class="p">[</span><span class="s2">&quot;predictions_grid&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1045,19 +1162,140 @@ memory usage: 10.8+ KB
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
 <span class="n">tgt_pollution</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tgt_pollution</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Observed&quot;</span><span class="p">)</span>
+
 <span class="n">predictions_surface</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Predicted&quot;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04-Spatial_feature_eng_i_64_0.png" src="../../_images/04-Spatial_feature_eng_i_64_0.png" />
+<img alt="../../_images/04-Spatial_feature_eng_i_67_0.png" src="../../_images/04-Spatial_feature_eng_i_67_0.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">tgt_pollution</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">tgt_pollution</span><span class="o">&gt;</span><span class="mi">0</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+    <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Observed&quot;</span>
+<span class="p">)</span>
+<span class="n">predictions_surface</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+    <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;predicted&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/04-Spatial_feature_eng_i_68_0.png" src="../../_images/04-Spatial_feature_eng_i_68_0.png" />
+</div>
+</div>
+<p>Room for improvement but, remember this was a rough first pass!</p>
 </div>
 <div class="section" id="polygons-to-polygons">
 <h3>Polygons to polygons<a class="headerlink" href="#polygons-to-polygons" title="Permalink to this headline">¶</a></h3>
+<p>In this final example, we transfer data from a polygon geography to <em>another</em> polygon geography. Effectively, we re-apportion values from one set of areas to another based on the extent of shared area.</p>
+<p>Our illustration will cover how to move pollution estimates from <code class="docutils literal notranslate"><span class="pre">regions</span></code> into a uniform hexagonal grid we will first create.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This code requires <code class="docutils literal notranslate"><span class="pre">tobler</span></code> 0.7.0 or above</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tobler</span>
+
+<span class="n">hex_grid</span> <span class="o">=</span> <span class="n">tobler</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">h3fy</span><span class="p">(</span>
+    <span class="n">regions</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">5</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      POLYGON ((103.25650 13.38422, 103.25488 13.384...
+1      POLYGON ((103.40637 13.65945, 103.40628 13.658...
+2      POLYGON ((103.02788 13.70057, 103.02710 13.699...
+3      POLYGON ((102.68794 13.36189, 102.68832 13.322...
+4      POLYGON ((104.71444 12.25376, 104.71421 12.251...
+                             ...                        
+193    POLYGON ((105.67862 11.79815, 105.67989 11.794...
+194    POLYGON ((105.83266 11.89801, 105.83397 11.897...
+195    POLYGON ((105.78846 12.08928, 105.78820 12.088...
+196    POLYGON ((102.63039 13.60343, 102.63094 13.560...
+197    POLYGON ((103.73408 13.25975, 103.73474 13.259...
+Length: 198, dtype: geometry
+</pre></div>
+</div>
+</div>
+</div>
+<p>Not that pollution is expressed as an <em>intesive</em> (rate) variable. We need to recognise this when specifying the interpolation model:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This feature requires <code class="docutils literal notranslate"><span class="pre">tobler</span></code> 6.0 or above</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">pollution_hex</span> <span class="o">=</span> <span class="n">tobler</span><span class="o">.</span><span class="n">area_weighted</span><span class="o">.</span><span class="n">area_interpolate</span><span class="p">(</span>
+    <span class="n">regions</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">regions</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">5726</span><span class="p">),</span>
+    <span class="n">hex_grid</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">5726</span><span class="p">),</span> 
+    <span class="n">intensive_variables</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;no2_mean&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.69 s, sys: 26.5 ms, total: 3.72 s
+Wall time: 3.7 s
+</pre></div>
+</div>
+</div>
+</div>
+<p>And the results look like:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">regions</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;no2_mean&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;quantiles&quot;</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+
+<span class="n">hex_grid</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+
+<span class="n">pollution_hex</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;no2_mean&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;quantiles&quot;</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/04-Spatial_feature_eng_i_77_0.png" src="../../_images/04-Spatial_feature_eng_i_77_0.png" />
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="next-steps">
