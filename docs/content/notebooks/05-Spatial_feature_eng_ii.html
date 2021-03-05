@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spatial Feature Engineering (II) &#8212; Geographic Data Science for Applied Economists</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -26,17 +26,16 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/custom-checkpoint.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -46,7 +45,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -201,21 +200,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -233,16 +232,16 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -261,11 +260,63 @@
     </div>
 </div>
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#map-synthesis">
+   Map Synthesis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ahead-of-time">
+   📖 Ahead of time…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hands-on-coding">
+   💻 Hands-on coding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distance-buffers">
+     Distance buffers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distance-rings">
+     Distance rings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-membership-points">
+     Cluster membership (points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-membership-polygons">
+     Cluster membership (polygons)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   🐾 Next steps
+  </a>
+ </li>
+</ul>
+
+        </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -275,6 +326,432 @@
                 
   <div class="section" id="spatial-feature-engineering-ii">
 <h1>Spatial Feature Engineering (II)<a class="headerlink" href="#spatial-feature-engineering-ii" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="map-synthesis">
+<h2>Map Synthesis<a class="headerlink" href="#map-synthesis" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="ahead-of-time">
+<h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
+<p>In this second part of Spatial Feature Engineering, we turn to Map Synthesis. There is only one reading to complete for this block, <a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html">Chapter 12</a> of the GDS Book <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span>. This block of Spatial Feature Engineering in this course loosely follows the second part of the chapter (<a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html#feature-engineering-using-map-synthesis">Map Synthesis</a>).</p>
+</div>
+<div class="section" id="hands-on-coding">
+<h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span><span class="o">,</span> <span class="nn">geopandas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">contextily</span>
+<span class="kn">import</span> <span class="nn">tobler</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title">Data</p>
+<p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="0b56fc9c-2ca2-4de7-a4c4-b06fc43d52e6" name="2924dbfb-06f0-4813-b87f-04533d07a424" type="radio">
+</input><label class="tabbed-label" for="0b56fc9c-2ca2-4de7-a4c4-b06fc43d52e6">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="78977691-834c-44f4-bca4-6b32f184f8cc" name="2924dbfb-06f0-4813-b87f-04533d07a424" type="radio">
+</input><label class="tabbed-label" for="78977691-834c-44f4-bca4-6b32f184f8cc">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+    <span class="s2">&quot;https://github.com/GDSL-UL/san/raw/v0.1.0/data/assignment_1_madrid/madrid_abb.gpkg&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will be working with a modified version of <code class="docutils literal notranslate"><span class="pre">pts</span></code>:</p>
+<ul class="simple">
+<li><p>Since we will require distance calculations, we will switch to the Spanish official projection</p></li>
+<li><p>To make calculations in the illustration near-instantaneous, we will work with a smaller (random) sample of Airbnb properties (20% of the total)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+    <span class="n">frac</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span>
+<span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">25830</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see in the description, the new CRS is expressed in metres:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">crs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Projected CRS: EPSG:25830&gt;
+Name: ETRS89 / UTM zone 30N
+Axis Info [cartesian]:
+- E[east]: Easting (metre)
+- N[north]: Northing (metre)
+Area of Use:
+- name: Europe between 6°W and 0°W: Faroe Islands offshore; Ireland - offshore; Jan Mayen - offshore; Norway including Svalbard - offshore; Spain - onshore and offshore.
+- bounds: (-6.0, 35.26, 0.0, 80.53)
+Coordinate Operation:
+- name: UTM zone 30N
+- method: Transverse Mercator
+Datum: European Terrestrial Reference System 1989
+- Ellipsoid: GRS 1980
+- Prime Meridian: Greenwich
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="distance-buffers">
+<h3>Distance buffers<a class="headerlink" href="#distance-buffers" title="Permalink to this headline">¶</a></h3>
+<p><em>How many Airbnb’s are within 500m of each Airbnb?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pysal.lib</span> <span class="kn">import</span> <span class="n">weights</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">DistanceBand</span></code>, we can build a spatial weights matrix that assigns <code class="docutils literal notranslate"><span class="pre">1</span></code> to each observation within 500m, and <code class="docutils literal notranslate"><span class="pre">0</span></code> otherwise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">w500m</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">DistanceBand</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/libpysal/weights/weights.py:172: UserWarning: The weights matrix is not fully connected: 
+ There are 86 disconnected components.
+ There are 47 islands with ids: 6878, 16772, 15006, 1336, 3168, 15193, 1043, 5257, 4943, 12849, 10609, 11309, 10854, 10123, 3388, 9380, 10288, 13071, 3523, 15316, 3856, 205, 7720, 10454, 18307, 3611, 12405, 10716, 14813, 15467, 1878, 16597, 14329, 7933, 16215, 13525, 13722, 11932, 14456, 8848, 15197, 8277, 9922, 13072, 13852, 5922, 17151.
+  warnings.warn(message)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.21 s, sys: 44 ms, total: 1.25 s
+Wall time: 1.25 s
+</pre></div>
+</div>
+</div>
+</div>
+<p>The number of neighbors can be accessed through the <code class="docutils literal notranslate"><span class="pre">cardinalities</span></code> attribute:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_neis</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">w500m</span><span class="o">.</span><span class="n">cardinalities</span><span class="p">)</span>
+<span class="n">n_neis</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11297    213
+2659       5
+16242     21
+15565      9
+14707    159
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">n_neis</span><span class="o">=</span><span class="n">n_neis</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;n_neis&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">0.1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/05-Spatial_feature_eng_ii_19_0.png" src="../../_images/05-Spatial_feature_eng_ii_19_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="distance-rings">
+<h3>Distance rings<a class="headerlink" href="#distance-rings" title="Permalink to this headline">¶</a></h3>
+<p><em>How many Airbnb’s are between 500m and 1km of each Airbnb?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">w1km</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">DistanceBand</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/libpysal/weights/weights.py:172: UserWarning: The weights matrix is not fully connected: 
+ There are 20 disconnected components.
+ There are 5 islands with ids: 4943, 12849, 15467, 13525, 11932.
+  warnings.warn(message)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.88 s, sys: 228 ms, total: 3.1 s
+Wall time: 3.12 s
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we could do simply a subtraction:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_ring_neis</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">w1km</span><span class="o">.</span><span class="n">cardinalities</span><span class="p">)</span> <span class="o">-</span> <span class="n">n_neis</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or, if we need to know <em>which is which</em>, we can use set operations on weights:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w_ring</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">w_difference</span><span class="p">(</span><span class="n">w1km</span><span class="p">,</span> <span class="n">w500m</span><span class="p">,</span> <span class="n">constrained</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/libpysal/weights/weights.py:172: UserWarning: The weights matrix is not fully connected: 
+ There are 34 disconnected components.
+ There are 23 islands with ids: 3744, 4143, 4857, 4943, 6986, 8345, 8399, 9062, 10592, 10865, 11574, 11613, 11785, 11840, 11932, 12015, 12635, 12714, 12849, 13091, 13317, 13525, 15467.
+  warnings.warn(message)
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we can confirm they’re both the same:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">w_ring</span><span class="o">.</span><span class="n">cardinalities</span><span class="p">)</span> <span class="o">-</span> <span class="n">n_ring_neis</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cluster-membership-points">
+<h3>Cluster membership (points)<a class="headerlink" href="#cluster-membership-points" title="Permalink to this headline">¶</a></h3>
+<p>We can use the spatial configuration of observations to classify them as part of clusters or not, which can then be encoded, for example, as dummy variables in a model.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>These <em>magic</em> numbers need to be pre-set and you can play with both <code class="docutils literal notranslate"><span class="pre">min_pct</span></code> (or <code class="docutils literal notranslate"><span class="pre">min_pts</span></code> directly) and <code class="docutils literal notranslate"><span class="pre">eps</span></code> to see how they affect the results (spoiler: a lot!)</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">DBSCAN</span>
+
+<span class="n">min_pct</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">min_pts</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">db</span><span class="p">)</span> <span class="o">*</span> <span class="n">min_pct</span> <span class="o">//</span> <span class="mi">100</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="mi">500</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will illustrate it with a minimum number of points of <code class="docutils literal notranslate"><span class="pre">min_pct</span></code> % of the sample and a maximum radious of <code class="docutils literal notranslate"><span class="pre">eps</span></code> metres.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">DBSCAN</span><span class="p">(</span><span class="n">min_samples</span><span class="o">=</span><span class="n">min_pts</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">db</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will attach the labels to <code class="docutils literal notranslate"><span class="pre">db</span></code> for easy access:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">labels_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can define boundaries to turn point clusters into polygons if that fits our needs better:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The code in this cell is a bit more advanced than expected for this course, but is used here as an illustration.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pysal.lib</span> <span class="kn">import</span> <span class="n">cg</span>
+
+<span class="n">boundaries</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">cl_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">db</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span><span class="o">!=-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">cl_id</span> <span class="ow">in</span> <span class="n">cl_ids</span><span class="p">:</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;labels == </span><span class="si">{</span><span class="n">cl_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">cluster_boundaries</span> <span class="o">=</span> <span class="n">cg</span><span class="o">.</span><span class="n">alpha_shape_auto</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">sub</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">sub</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">boundaries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cluster_boundaries</span><span class="p">)</span>
+<span class="n">boundaries</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span>
+    <span class="n">boundaries</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">cl_ids</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">crs</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we can see what the clusters look like:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+    <span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">markersize</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;lime&quot;</span>
+<span class="p">)</span>
+<span class="n">boundaries</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+    <span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span>
+<span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">DarkMatterNoLabels</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/05-Spatial_feature_eng_ii_39_0.png" src="../../_images/05-Spatial_feature_eng_ii_39_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="cluster-membership-polygons">
+<h3>Cluster membership (polygons)<a class="headerlink" href="#cluster-membership-polygons" title="Permalink to this headline">¶</a></h3>
+<p>We can take a similar approach as above if we have polygon geographies instead of points. Rather than using DBSCAN, here we can rely on local indicators of spatial association (LISAs) to pick up spatial concentrations of high or low values.</p>
+<p>For the illustration, we will aggregate the location of Airbnb properties to a regular hexagonal grid, similar to how we generated it when <a class="reference internal" href="04-Spatial_feature_eng_i.html#sfe-p2p"><span class="std std-ref">transfering from polygons to polygons</span></a>. First we create a polygon covering the extent of points:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">one</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">cg</span><span class="o">.</span><span class="n">alpha_shape_auto</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">db</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+    <span class="p">)],</span>
+    <span class="n">crs</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">crs</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we can tessellate:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abb_hex</span> <span class="o">=</span> <span class="n">tobler</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">h3fy</span><span class="p">(</span>
+    <span class="n">one</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">8</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And obtain a count of points in each polygon:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">abb_hex</span>
+<span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+    <span class="s2">&quot;index_right&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+
+<span class="n">abb_hex</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span>
+<span class="n">abb_hex</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">abb_hex</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">abb_hex</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;fisherjenks&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/05-Spatial_feature_eng_ii_46_0.png" src="../../_images/05-Spatial_feature_eng_ii_46_0.png" />
+</div>
+</div>
+<p>To identify spatial clusters, we rely on <code class="docutils literal notranslate"><span class="pre">esda</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pysal.explore</span> <span class="kn">import</span> <span class="n">esda</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And compute the LISA statistics:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">Queen</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span><span class="n">abb_hex</span><span class="p">)</span>
+<span class="n">lisa</span> <span class="o">=</span> <span class="n">esda</span><span class="o">.</span><span class="n">Moran_Local</span><span class="p">(</span><span class="n">abb_hex</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">],</span> <span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a visual inspection of the clusters, <code class="docutils literal notranslate"><span class="pre">splot</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pysal.viz</span> <span class="kn">import</span> <span class="n">splot</span>
+<span class="kn">from</span> <span class="nn">splot.esda</span> <span class="kn">import</span> <span class="n">lisa_cluster</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lisa_cluster</span><span class="p">(</span><span class="n">lisa</span><span class="p">,</span> <span class="n">abb_hex</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.01</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/05-Spatial_feature_eng_ii_53_0.png" src="../../_images/05-Spatial_feature_eng_ii_53_0.png" />
+</div>
+</div>
+<p>And, if we want to extract the labels for each polygon, we can do so from the <code class="docutils literal notranslate"><span class="pre">lisa</span></code> object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lisa</span><span class="o">.</span><span class="n">q</span> <span class="o">*</span> <span class="p">(</span><span class="n">lisa</span><span class="o">.</span><span class="n">p_sim</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0,
+       0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 0, 1, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3,
+       0, 0, 0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3,
+       3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 3, 0, 0,
+       0, 0, 3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 0, 0, 0, 3,
+       0, 0, 3, 0, 0, 3, 0, 0, 1, 0, 0, 0, 3, 0, 0, 1, 3, 0, 0, 0, 0, 1,
+       0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 3, 0, 0, 0, 0, 0, 3, 1, 0, 3, 0,
+       0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 3, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3, 0])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>If you want a bit more background into some of the techniques reviewed in this block, the following might be of interest:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://darribas.org/gds_course/content/bE/concepts_E.html">Block E</a> of the GDS Course <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id4"><span>AB19</span></a>]</span> will introduce you to more techniques like the LISAs seen above to explore the spatial dimension of the statistical properties of your data. If you want a more detailed read, <a class="reference external" href="https://geographicdata.science/book/notebooks/04_spatial_weights.html">Chapter 4</a> of the GDS Book <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span> will do just that.</p></li>
+<li><p><a class="reference external" href="http://darribas.org/gds_course/content/bF/concepts_F.html">Block F</a> of the GDS Course <span id="id4">[<a class="reference internal" href="../pages/z_bibliography.html#id4"><span>AB19</span></a>]</span> will introduce you to more techniques like the LISAs seen above to explore the spatial dimension of the statistical properties of your data. If you want a more detailed read, <a class="reference external" href="https://geographicdata.science/book/notebooks/07_local_autocorrelation.html">Chapter 7</a> of the GDS Book <span id="id5">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span> will do just that.</p></li>
+<li><p><a class="reference external" href="http://darribas.org/gds_course/content/bH/concepts_H.html">Block H</a> of the GDS Course <span id="id6">[<a class="reference internal" href="../pages/z_bibliography.html#id4"><span>AB19</span></a>]</span> will introduce you to more techniques for exploring point patterns. If you want a more comprehensive read, <a class="reference external" href="https://geographicdata.science/book/notebooks/08_point_pattern_analysis.html">Chapter 8</a> of the GDS Book <span id="id7">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span> will do just that.</p></li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -299,15 +776,15 @@
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="04-Spatial_feature_eng_i.html" title="previous page">Spatial Feature Engineering (I)</a>
     <a class='right-next' id="next-link" href="06-Spatial_networks_i.html" title="next page">Spatial Networks (I)</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -329,7 +806,7 @@
     </div>
 
     
-  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

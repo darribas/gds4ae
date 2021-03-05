@@ -14,7 +14,7 @@ Instructions on how to install a software stack that allows you to run the mater
 > [https://gdsl-ul.github.io/soft_install/](https://gdsl-ul.github.io/soft_install/)
 ```
 
-[<img alt="@gdsl-ul/soft_install" width=130px height=65px style="border-width:0;margin-left: 0px" src="../figs/gdsl.png" />](https://gdsl-ul.github.io/soft_install/)
+[<img alt="gdsl-ul/soft_install" width=130px height=65px style="border-width:0;margin-left: 0px" src="../figs/gdsl.png" />](https://gdsl-ul.github.io/soft_install/)
 
 (github_repo)=
 ### Github repository
@@ -25,7 +25,7 @@ All the materials for this course and this website are available on the followin
 > [https://github.com/darribas/gds4ae](https://github.com/darribas/gds4ae)
 ```
 
-[<img alt="@darribas/gds4ae" style="border-width:0;margin-left: 0px" src="../figs/GitHub-Mark-64px.png" />](https://github.com/darribas/gds4ae)
+[<img alt="darribas/gds4ae" style="border-width:0;margin-left: 0px" src="../figs/GitHub-Mark-64px.png" />](https://github.com/darribas/gds4ae)
 
 If you are interested, you can download a compressed `.zip` file with the most up-to-date version of all the materials, including the HTML for this website at:
 
@@ -39,7 +39,7 @@ If you are interested, you can download a compressed `.zip` file with the most u
 > [https://github.com/darribas/data_science_studio/archive/master.zip](https://github.com/darribas/data_science_studio/archive/master.zip)
 ```
 
-[<img alt="@darribas/gds4ae_zip" style="border-width:0;margin-left: 0px" src="../figs/zip-file-format.png" />](https://github.com/darribas/gds4ae/archive/master.zip)
+[<img alt="darribas/gds4ae_zip" style="border-width:0;margin-left: 0px" src="../figs/zip-file-format.png" />](https://github.com/darribas/gds4ae/archive/master.zip)
 
 ### Containerised backend
 
@@ -49,7 +49,7 @@ The course is developed, built and tested using the [`gds_env`](https://darribas
 > [https://darribas.org/gds_env/](https://darribas.org/gds_env/)
 ```
 
-[<img alt="@darribas/gds_env" width=200px height=65px style="border-width:0;margin-left: 0px" src="https://github.com/darribas/gds_env/raw/master/website/logo.png" />](https://darribas.org/gds_env/)
+[<img alt="darribas/gds_env" width=200px height=65px style="border-width:0;margin-left: 0px" src="https://github.com/darribas/gds_env/raw/master/website/logo.png" />](https://darribas.org/gds_env/)
 
 
 ### Binder

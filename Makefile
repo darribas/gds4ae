@@ -41,6 +41,7 @@ test:
                       --execute \
                       --output-dir=tests \
                       --ExecutePreprocessor.timeout=600 \
+                      --ExecutePreprocessor.ipython_hist_file='' \
                       content/notebooks/*.ipynb 
 
 	rm -rf tests
@@ -48,4 +49,4 @@ test:
 reset_docs:
 	rm -r docs/*
 	git checkout HEAD docs/
-	git checkout HEAD content/data_science_studio.pdf
+	git checkout HEAD content/gds4ae.pdf

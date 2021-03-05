@@ -7,7 +7,7 @@
 
 ````{margin}
 ```{note}
-A PDF version of this course is available for download {download}`here <../gds4ae.pdf>`
+A PDF version of this course is available for download {download}`here <../../gds4ae.pdf>`
 ```
 ````
 
