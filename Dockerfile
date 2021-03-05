@@ -1,4 +1,4 @@
-FROM darribas/gds_py:5.0
+FROM darribas/gds_py:6.0
 
 # Local docs
 RUN rm -R work/
@@ -6,7 +6,7 @@ RUN mkdir ${HOME}/content
 COPY ./content ${HOME}/content
 
 # Update to recent libs
-RUN pip install -U --no-deps contextily
+#RUN pip install -U --no-deps contextily seaborn
 
 # Fix permissions
 USER root
