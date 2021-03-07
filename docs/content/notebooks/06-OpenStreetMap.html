@@ -380,23 +380,23 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span>
 <span class="kn">import</span> <span class="nn">contextily</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span><span class="p">,</span> <span class="n">GeoJSON</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">GeoJSON</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Since some of the query options we will discuss involve pre-defined extents, we will read the Madrid neighbourhoods dataset first:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="f14d2428-7659-4879-9361-17841453c593" name="60472db1-0769-47b8-9467-694c9f7e957f" type="radio">
-</input><label class="tabbed-label" for="f14d2428-7659-4879-9361-17841453c593">
+<input checked="checked" id="bdeda44d-dc77-4ecf-b0d6-515ff595132c" name="fafed8fa-a9f2-4f5c-8f03-b7fa4d7a6b48" type="radio">
+</input><label class="tabbed-label" for="bdeda44d-dc77-4ecf-b0d6-515ff595132c">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">neis</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/neighbourhoods.geojson&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="c63a3f40-8431-4f66-b570-92979224dbc7" name="60472db1-0769-47b8-9467-694c9f7e957f" type="radio">
-</input><label class="tabbed-label" for="c63a3f40-8431-4f66-b570-92979224dbc7">
+<input id="e3f31d33-305e-4fe8-80ec-0680f003f0ba" name="fafed8fa-a9f2-4f5c-8f03-b7fa4d7a6b48" type="radio">
+</input><label class="tabbed-label" for="e3f31d33-305e-4fe8-80ec-0680f003f0ba">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -481,7 +481,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>Here is a trick to pin all your queries to OpenStreetMap to a specific date, so results are always reproducible, even if the map changes in the meantime</p>
+<p>Here is a trick to pin all your queries to OpenStreetMap to a specific date, so results are always reproducible, even if the map changes in the meantime.</p>
 <p>Tip courtesy of <a class="reference external" href="https://martinfleischmann.net/">Martin Fleischmann</a>.</p>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -944,10 +944,18 @@ memory usage: 27.9+ KB
 </div>
 </div>
 </div>
-<div class="cell tag_margin docutils container">
+<p>We can get a quick peak into what is returned (grey), compared to the region we used for the query:</p>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">neis</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;neighbourhood == &#39;Sol&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-<span class="n">centro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">0.5</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">neis</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="s2">&quot;neighbourhood == &#39;Sol&#39;&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">centro</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span> 
+    <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> 
+    <span class="n">markersize</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -956,7 +964,7 @@ memory usage: 27.9+ KB
   and should_run_async(code)
 </pre></div>
 </div>
-<img alt="../../_images/06-OpenStreetMap_47_1.png" src="../../_images/06-OpenStreetMap_47_1.png" />
+<img alt="../../_images/06-OpenStreetMap_48_1.png" src="../../_images/06-OpenStreetMap_48_1.png" />
 </div>
 </div>
 <p>This however will return all sorts of things:</p>
@@ -990,15 +998,8 @@ Name: geometry, Length: 609, dtype: geometry
 </div>
 <div class="section" id="spatial-graphs">
 <h4>Spatial graphs<a class="headerlink" href="#spatial-graphs" title="Permalink to this headline">¶</a></h4>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For more on graph representations of street networks, see <a class="reference internal" href="07-Spatial_networks.html"><span class="doc std std-doc">block 07</span></a></p>
-</div>
-</div>
 <p>This returns clean, processed <em>graph</em> objects for the street network:</p>
-<div class="cell tag_hide-input tag_margin docutils container">
+<div class="cell tag_margin docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">ox</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;graph_from_&quot;</span> <span class="ow">in</span> <span class="n">i</span><span class="p">]</span>
 </pre></div>
@@ -1029,6 +1030,10 @@ Name: geometry, Length: 609, dtype: geometry
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more on graph representations of street networks, see <a class="reference internal" href="07-Spatial_networks.html"><span class="doc std std-doc">block 07</span></a></p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">centro_gr</span>
@@ -1042,7 +1047,7 @@ Name: geometry, Length: 609, dtype: geometry
 </div>
 </div>
 <p>And to visualise it:</p>
-<div class="cell tag_hide-input tag_margin docutils container">
+<div class="cell tag_margin docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">ox</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;plot_graph&quot;</span> <span class="ow">in</span> <span class="n">i</span><span class="p">]</span>
 </pre></div>
@@ -1061,7 +1066,7 @@ Name: geometry, Length: 609, dtype: geometry
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/06-OpenStreetMap_57_0.png" src="../../_images/06-OpenStreetMap_57_0.png" />
+<img alt="../../_images/06-OpenStreetMap_59_0.png" src="../../_images/06-OpenStreetMap_59_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
