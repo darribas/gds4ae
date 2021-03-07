@@ -23,7 +23,8 @@ The structure of content is divided in nine blocks:
 - [*Spatial Data*](../notebooks/02-Spatial_data): what do spatial data look like in Python?
 - [*Geovisualisation*](../notebooks/03-Geovisualisation): make (good) data maps
 - *Spatial Feature Engineering* ([Part I](../notebooks/04-Spatial_feature_eng_i) and [Part II](../notebooks/05-Spatial_feature_eng_ii)): augment and massage your data using Geography before you feed them into your model
-- *Spatial Networks* ([Part I](../notebooks/06-Spatial_networks_i) and [Part II](../notebooks/07-Spatial_networks_ii)): understand, acquire and work with spatial graphs
+- [*OpenStreetMap*](../notebooks/06-OpenStreetMap): acquire data from the largest geo-table in the world
+- [*Spatial Networks*](../notebooks/07-Spatial_networks): understand and work with spatial graphs
 - [*Transport Costs*](../notebooks/08-Transport_costs): "getting there" doesn't always cost the same
 - [*Visual challenges*](../notebooks/09-Visual_challenges): all the details nobody told you (but should have) about visualising geographic data
 
