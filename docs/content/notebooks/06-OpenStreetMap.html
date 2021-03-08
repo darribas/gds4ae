@@ -330,6 +330,11 @@
      </code>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#over-to-you">
+     Over to you…
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -387,16 +392,16 @@
 </div>
 <p>Since some of the query options we will discuss involve pre-defined extents, we will read the Madrid neighbourhoods dataset first:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="bdeda44d-dc77-4ecf-b0d6-515ff595132c" name="fafed8fa-a9f2-4f5c-8f03-b7fa4d7a6b48" type="radio">
-</input><label class="tabbed-label" for="bdeda44d-dc77-4ecf-b0d6-515ff595132c">
+<input checked="checked" id="06eee640-29f9-4758-96ce-988a03f46f18" name="a1b7b4bc-777b-4ffd-8520-c314cde49cbe" type="radio">
+</input><label class="tabbed-label" for="06eee640-29f9-4758-96ce-988a03f46f18">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">neis</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/neighbourhoods.geojson&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="e3f31d33-305e-4fe8-80ec-0680f003f0ba" name="fafed8fa-a9f2-4f5c-8f03-b7fa4d7a6b48" type="radio">
-</input><label class="tabbed-label" for="e3f31d33-305e-4fe8-80ec-0680f003f0ba">
+<input id="1f309eab-e404-49bf-b085-ef6e2d4ccadf" name="a1b7b4bc-777b-4ffd-8520-c314cde49cbe" type="radio">
+</input><label class="tabbed-label" for="1f309eab-e404-49bf-b085-ef6e2d4ccadf">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -1121,6 +1126,19 @@ Name: geometry, Length: 609, dtype: geometry
 </div>
 </div>
 <p>And we can then read parts of all of OpenStreetMap data available for Madrid through queries to <code class="docutils literal notranslate"><span class="pre">mad_osm</span></code>. It is important to note that <code class="docutils literal notranslate"><span class="pre">pyrosm</span></code> will return queries as <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> objects, but can also interoperate with graph data structures.</p>
+</div>
+<div class="section" id="over-to-you">
+<h3>Over to you…<a class="headerlink" href="#over-to-you" title="Permalink to this headline">¶</a></h3>
+<p>The best way to get a hang on OpenStreetMap tags is by playing with it yourself. To facilitate just that, here are some challenges to get you started.</p>
+<div class="admonition-challenges admonition">
+<p class="admonition-title">Challenges</p>
+<ul class="simple">
+<li><p>Extract the building footprints for the Sol neighbourhood in <code class="docutils literal notranslate"><span class="pre">neis</span></code></p></li>
+<li><p>How many music shops does OSM record within 750 metres of Puerta de Alcalá?</p></li>
+<li><p>Are there more restaurants or clothing shops within the polygon that represents the Pacífico neighbourhood in <code class="docutils literal notranslate"><span class="pre">neis</span></code> table?</p></li>
+<li><p>How many bookshops are within a 50m radious of the Paseo de la Castellana? (<strong>NOTE</strong> this one involves extracting the street segment, <a class="reference external" href="https://geopandas.org/docs/reference/api/geopandas.GeoSeries.buffer.html?highlight=buffer#geopandas.GeoSeries.buffer">drawing a buffer</a> and querying OSM for bookshops)</p></li>
+</ul>
+</div>
 </div>
 </div>
 <div class="section" id="next-steps">
