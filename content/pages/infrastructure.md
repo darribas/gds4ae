@@ -56,7 +56,7 @@ The course is developed, built and tested using the [`gds_env`](https://darribas
 
 [Binder](https://mybinder.org/) is service that allows you to run scientific projects in the cloud for free. Binder can spin up *"ephemeral"* instances that allow you to run code on the browser without any local setup. It is possible to run the course on Binder by clicking on the button below:
 
-[<img src="https://mybinder.org/badge_logo.svg" alt="Binder" style="margin-left: 0px" />](https://mybinder.org/v2/gh/darribas/data_science_studio/master)
+[<img src="https://mybinder.org/badge_logo.svg" alt="Binder" style="margin-left: 0px" />](https://mybinder.org/v2/gh/darribas/gds4ae/HEAD)
 
 ```{warning}
 It is important to note Binder instances are *ephemeral* in the sense that the data and content created in a session is **NOT** saved anywhere and is deleted as soon as the browser tab is closed.
