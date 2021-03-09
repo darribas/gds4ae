@@ -142,13 +142,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="06-Spatial_networks_i.html">
-   Spatial Networks (I)
+  <a class="reference internal" href="06-OpenStreetMap.html">
+   OpenStreetMap
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="07-Spatial_networks_ii.html">
-   Spatial Networks (II)
+  <a class="reference internal" href="07-Spatial_networks.html">
+   Spatial Networks
   </a>
  </li>
  <li class="toctree-l1">
@@ -353,7 +353,7 @@
 <h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
 <p>Feature Engineering is a common term in machine learning that refers to the processes and transformations involved in turning data from the state in which the modeller access them into what is then fed to a model. This can take several forms, from standardisation of the input data, to the derivation of numeric scores that better describe aspects (<em>features</em>) of the data we are using.</p>
 <p><em>Spatial</em> Feature Engineering refers to operations we can use to derive “views” or summaries of our data that we can use in models, <em>using space</em> as the key medium to create them.</p>
-<p>There is only one reading to complete for this block, <a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html">Chapter 12</a> of the GDS Book <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span>. The first block of Spatial Feature Engineering in this course loosely follows the first part of the chapter (<a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html#feature-engineering-using-map-matching">Map Matching</a>), so focus on this first sections for the block.</p>
+<p>There is only one reading to complete for this block, <a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html">Chapter 12</a> of the GDS Book <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id41"><span>RABWng</span></a>]</span>. The first block of Spatial Feature Engineering in this course loosely follows the first part of the chapter (<a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html#feature-engineering-using-map-matching">Map Matching</a>), so focus on this first sections for the block.</p>
 </div>
 <div class="section" id="hands-on-coding">
 <h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
@@ -374,8 +374,8 @@
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="49c4c16d-a9ca-435e-818f-c2df100e2b9b" name="080badf6-799a-49fe-83e7-bb9a7b1c4033" type="radio">
-</input><label class="tabbed-label" for="49c4c16d-a9ca-435e-818f-c2df100e2b9b">
+<input checked="checked" id="a0453d4e-7cff-40ef-9c33-5398b31a8739" name="d479df85-ebed-4145-813c-90331fd630aa" type="radio">
+</input><label class="tabbed-label" for="a0453d4e-7cff-40ef-9c33-5398b31a8739">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
@@ -389,8 +389,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="0094a8b5-f38f-47ea-a3e8-0b50fa456258" name="080badf6-799a-49fe-83e7-bb9a7b1c4033" type="radio">
-</input><label class="tabbed-label" for="0094a8b5-f38f-47ea-a3e8-0b50fa456258">
+<input id="79c65688-3611-4cb9-b3e5-9a317ec91d2d" name="d479df85-ebed-4145-813c-90331fd630aa" type="radio">
+</input><label class="tabbed-label" for="79c65688-3611-4cb9-b3e5-9a317ec91d2d">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -881,7 +881,7 @@ memory usage: 10.8+ KB
 <h3>Points to points<a class="headerlink" href="#points-to-points" title="Permalink to this headline">¶</a></h3>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>See <a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html#point-interpolation-using-sklearn">this section</a> of Chapter 12 of the GDS Book <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span> for more details on the technique</p>
+<p>See <a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html#point-interpolation-using-sklearn">this section</a> of Chapter 12 of the GDS Book <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id41"><span>RABWng</span></a>]</span> for more details on the technique</p>
 </div>
 <p>For this exampe, we will assume that, instead of a surface with pollution values, we only have available a sample of points and we would like to obtain estimates for other locations.</p>
 <p>For that we will first generate 100 random points within the extent of <code class="docutils literal notranslate"><span class="pre">pollution</span></code> which we will take as the location of our measurement stations:</p>

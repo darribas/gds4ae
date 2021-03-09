@@ -5,11 +5,9 @@
 - [Diego Puga](https://diegopuga.org/) [`[@ProfDiegoPuga]`](https://twitter.com/ProfDiegoPuga)
 
 
-````{margin}
 ```{note}
-A PDF version of this course is available for download {download}`here <../../gds4ae.pdf>`
+A PDF version of this course is available for download {download}`here <../gds4ae.pdf>`
 ```
-````
 
 ### Contact
 

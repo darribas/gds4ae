@@ -2,3 +2,4 @@ tests/
 tests/*
 .ipynb_checkpoints/
 */.ipynb_checkpoints/
+content/notebooks/cache

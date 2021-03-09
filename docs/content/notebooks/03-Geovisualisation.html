@@ -142,13 +142,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="06-Spatial_networks_i.html">
-   Spatial Networks (I)
+  <a class="reference internal" href="06-OpenStreetMap.html">
+   OpenStreetMap
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="07-Spatial_networks_ii.html">
-   Spatial Networks (II)
+  <a class="reference internal" href="07-Spatial_networks.html">
+   Spatial Networks
   </a>
  </li>
  <li class="toctree-l1">
@@ -345,8 +345,8 @@
 <h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
 <p>This block is all about visualising statistical data on top of a geography. Although this task looks simple, there are a few technical and conceptual building blocks that it helps to understand before we try to make our own maps. Aim to complete the following readings by the time we get our hands on the keyboard:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://darribas.org/gds_course/content/bD/concepts_D.html">Block D</a> of the GDS course <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id4"><span>AB19</span></a>]</span>, which provides an introduction to choropleths (statistical maps)</p></li>
-<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/05_choropleth.html">Chapter 5</a> of the GDS Book <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span>, discussing choropleths in more detail</p></li>
+<li><p><a class="reference external" href="https://darribas.org/gds_course/content/bD/concepts_D.html">Block D</a> of the GDS course <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id6"><span>AB19</span></a>]</span>, which provides an introduction to choropleths (statistical maps)</p></li>
+<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/05_choropleth.html">Chapter 5</a> of the GDS Book <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id41"><span>RABWng</span></a>]</span>, discussing choropleths in more detail</p></li>
 </ul>
 </div>
 <div class="section" id="hands-on-coding">
@@ -370,16 +370,16 @@
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="44c334f3-a155-434d-ba81-db48ca5b6994" name="a69996ca-5a90-48c5-a3bc-f1c4e8d65202" type="radio">
-</input><label class="tabbed-label" for="44c334f3-a155-434d-ba81-db48ca5b6994">
+<input checked="checked" id="51e6eab8-498e-4804-a9e4-da792e96e589" name="8f51d956-5edd-427f-980e-cdd5e99cb78f" type="radio">
+</input><label class="tabbed-label" for="51e6eab8-498e-4804-a9e4-da792e96e589">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="cd83542f-871b-49d3-aab5-b80976fe2b4d" name="a69996ca-5a90-48c5-a3bc-f1c4e8d65202" type="radio">
-</input><label class="tabbed-label" for="cd83542f-871b-49d3-aab5-b80976fe2b4d">
+<input id="7a5d84bf-4394-4a3e-a82c-501294940070" name="8f51d956-5edd-427f-980e-cdd5e99cb78f" type="radio">
+</input><label class="tabbed-label" for="7a5d84bf-4394-4a3e-a82c-501294940070">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -703,37 +703,6 @@ memory usage: 9.4+ KB
 <img alt="../../_images/03-Geovisualisation_28_0.png" src="../../_images/03-Geovisualisation_28_0.png" />
 </div>
 </div>
-<ul class="simple">
-<li><p>Fisher-Jenks</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classi</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">FisherJenks</span><span class="p">(</span><span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">classi</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FisherJenks           
-
-   Interval      Count
-----------------------
-[ 1.38,  2.06] |    20
-( 2.06,  2.69] |    58
-( 2.69,  3.30] |    62
-( 3.30,  4.19] |    42
-( 4.19,  5.64] |     7
-( 5.64,  9.19] |     4
-( 9.19, 12.32] |     5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_31_0.png" src="../../_images/03-Geovisualisation_31_0.png" />
-</div>
-</div>
 <hr class="docutils" />
 <p>Now let’s dig into the internals of <code class="docutils literal notranslate"><span class="pre">classi</span></code>:</p>
 <div class="cell docutils container">
@@ -843,7 +812,7 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_39_0.png" src="../../_images/03-Geovisualisation_39_0.png" />
+<img alt="../../_images/03-Geovisualisation_36_0.png" src="../../_images/03-Geovisualisation_36_0.png" />
 </div>
 </div>
 </div>
@@ -875,7 +844,7 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_44_0.png" src="../../_images/03-Geovisualisation_44_0.png" />
+<img alt="../../_images/03-Geovisualisation_41_0.png" src="../../_images/03-Geovisualisation_41_0.png" />
 </div>
 </div>
 <div class="margin sidebar">
@@ -895,7 +864,7 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_46_0.png" src="../../_images/03-Geovisualisation_46_0.png" />
+<img alt="../../_images/03-Geovisualisation_43_0.png" src="../../_images/03-Geovisualisation_43_0.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -918,14 +887,13 @@ memory usage: 9.4+ KB
     <span class="n">pal</span><span class="o">=</span><span class="n">palmpl</span><span class="o">.</span><span class="n">Viridis_7</span><span class="p">,</span><span class="c1"># color palette (as palettable object)</span>
     <span class="n">legend_size</span><span class="o">=</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="o">.</span><span class="mi">2</span><span class="p">),</span> <span class="c1"># legend size in fractions of the axis</span>
     <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;lower right&#39;</span><span class="p">,</span> <span class="c1"># matplotlib-style legend locations</span>
-    <span class="n">clip</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>        <span class="c1"># clip the displayed range of the histogram</span>
 <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_48_0.png" src="../../_images/03-Geovisualisation_48_0.png" />
+<img alt="../../_images/03-Geovisualisation_45_0.png" src="../../_images/03-Geovisualisation_45_0.png" />
 </div>
 </div>
 </div>
@@ -936,8 +904,8 @@ memory usage: 9.4+ KB
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="d399dd58-0b9c-4c31-97b1-7cded69396a1" name="b4f8d39a-1d2c-43e0-bbff-e94e8bc7a514" type="radio">
-</input><label class="tabbed-label" for="d399dd58-0b9c-4c31-97b1-7cded69396a1">
+<input checked="checked" id="9307273c-3b4f-42e3-a6ff-d6c3d227021e" name="24b8a7fa-8076-4330-8496-93d9753748fd" type="radio">
+</input><label class="tabbed-label" for="9307273c-3b4f-42e3-a6ff-d6c3d227021e">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -946,8 +914,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="0c345c57-6946-4d5a-b38c-6d6fa795fbb8" name="b4f8d39a-1d2c-43e0-bbff-e94e8bc7a514" type="radio">
-</input><label class="tabbed-label" for="0c345c57-6946-4d5a-b38c-6d6fa795fbb8">
+<input id="845270a6-44d6-49d0-8e33-5f440fb94ab6" name="24b8a7fa-8076-4330-8496-93d9753748fd" type="radio">
+</input><label class="tabbed-label" for="845270a6-44d6-49d0-8e33-5f440fb94ab6">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -969,7 +937,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_53_0.png" src="../../_images/03-Geovisualisation_53_0.png" />
+<img alt="../../_images/03-Geovisualisation_50_0.png" src="../../_images/03-Geovisualisation_50_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -981,7 +949,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_54_0.png" src="../../_images/03-Geovisualisation_54_0.png" />
+<img alt="../../_images/03-Geovisualisation_51_0.png" src="../../_images/03-Geovisualisation_51_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -996,14 +964,10 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/xarray/plot/plot.py:970: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
-  primitive = ax.pcolormesh(x, y, z, **kwargs)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f46b93a8c40&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f2eb886d450&gt;
-</pre></div>
-</div>
-<img alt="../../_images/03-Geovisualisation_56_2.png" src="../../_images/03-Geovisualisation_56_2.png" />
+<img alt="../../_images/03-Geovisualisation_53_1.png" src="../../_images/03-Geovisualisation_53_1.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1027,11 +991,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/xarray/plot/plot.py:970: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
-  primitive = ax.pcolormesh(x, y, z, **kwargs)
-</pre></div>
-</div>
-<img alt="../../_images/03-Geovisualisation_58_1.png" src="../../_images/03-Geovisualisation_58_1.png" />
+<img alt="../../_images/03-Geovisualisation_55_0.png" src="../../_images/03-Geovisualisation_55_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1052,11 +1012,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/xarray/plot/plot.py:970: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
-  primitive = ax.pcolormesh(x, y, z, **kwargs)
-</pre></div>
-</div>
-<img alt="../../_images/03-Geovisualisation_59_1.png" src="../../_images/03-Geovisualisation_59_1.png" />
+<img alt="../../_images/03-Geovisualisation_56_0.png" src="../../_images/03-Geovisualisation_56_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1077,11 +1033,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/xarray/plot/plot.py:970: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
-  primitive = ax.pcolormesh(x, y, z, **kwargs)
-</pre></div>
-</div>
-<img alt="../../_images/03-Geovisualisation_60_1.png" src="../../_images/03-Geovisualisation_60_1.png" />
+<img alt="../../_images/03-Geovisualisation_57_0.png" src="../../_images/03-Geovisualisation_57_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1102,11 +1054,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/xarray/plot/plot.py:970: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
-  primitive = ax.pcolormesh(x, y, z, **kwargs)
-</pre></div>
-</div>
-<img alt="../../_images/03-Geovisualisation_61_1.png" src="../../_images/03-Geovisualisation_61_1.png" />
+<img alt="../../_images/03-Geovisualisation_58_0.png" src="../../_images/03-Geovisualisation_58_0.png" />
 </div>
 </div>
 </div>
@@ -1116,7 +1064,7 @@ Online read</label><div class="tabbed-content docutils">
 <p>If you are interested in statistical maps based on classification, here are two recommendations to check out next:</p>
 <ul class="simple">
 <li><p>On the technical side, the <a class="reference external" href="https://pysal.org/mapclassify/">documentation for <code class="docutils literal notranslate"><span class="pre">mapclassify</span></code></a> (including its <a class="reference external" href="https://pysal.org/mapclassify/tutorial.html">tutorials</a>) provides more detail and illustrates more classification algorithms than those reviewed in this block</p></li>
-<li><p>On a more conceptual note, Cynthia Brewer’s “Designing better maps” <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id38"><span>Bre15</span></a>]</span> is an excellent blueprint for good map making.</p></li>
+<li><p>On a more conceptual note, Cynthia Brewer’s “Designing better maps” <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id40"><span>Bre15</span></a>]</span> is an excellent blueprint for good map making.</p></li>
 </ul>
 </div>
 </div>

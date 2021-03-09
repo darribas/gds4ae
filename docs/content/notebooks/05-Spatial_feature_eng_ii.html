@@ -57,7 +57,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Spatial Networks (I)" href="06-Spatial_networks_i.html" />
+    <link rel="next" title="OpenStreetMap" href="06-OpenStreetMap.html" />
     <link rel="prev" title="Spatial Feature Engineering (I)" href="04-Spatial_feature_eng_i.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -142,13 +142,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="06-Spatial_networks_i.html">
-   Spatial Networks (I)
+  <a class="reference internal" href="06-OpenStreetMap.html">
+   OpenStreetMap
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="07-Spatial_networks_ii.html">
-   Spatial Networks (II)
+  <a class="reference internal" href="07-Spatial_networks.html">
+   Spatial Networks
   </a>
  </li>
  <li class="toctree-l1">
@@ -331,7 +331,7 @@
 </div>
 <div class="section" id="ahead-of-time">
 <h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
-<p>In this second part of Spatial Feature Engineering, we turn to Map Synthesis. There is only one reading to complete for this block, <a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html">Chapter 12</a> of the GDS Book <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span>. This block of Spatial Feature Engineering in this course loosely follows the second part of the chapter (<a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html#feature-engineering-using-map-synthesis">Map Synthesis</a>).</p>
+<p>In this second part of Spatial Feature Engineering, we turn to Map Synthesis. There is only one reading to complete for this block, <a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html">Chapter 12</a> of the GDS Book <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id41"><span>RABWng</span></a>]</span>. This block of Spatial Feature Engineering in this course loosely follows the second part of the chapter (<a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html#feature-engineering-using-map-synthesis">Map Synthesis</a>).</p>
 </div>
 <div class="section" id="hands-on-coding">
 <h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
@@ -350,16 +350,16 @@
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="0b56fc9c-2ca2-4de7-a4c4-b06fc43d52e6" name="2924dbfb-06f0-4813-b87f-04533d07a424" type="radio">
-</input><label class="tabbed-label" for="0b56fc9c-2ca2-4de7-a4c4-b06fc43d52e6">
+<input checked="checked" id="a53f1990-fe28-473a-b71c-f33ae7bda346" name="953e32e5-aa28-488c-9e03-4cae3a300f3d" type="radio">
+</input><label class="tabbed-label" for="a53f1990-fe28-473a-b71c-f33ae7bda346">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="78977691-834c-44f4-bca4-6b32f184f8cc" name="2924dbfb-06f0-4813-b87f-04533d07a424" type="radio">
-</input><label class="tabbed-label" for="78977691-834c-44f4-bca4-6b32f184f8cc">
+<input id="07be642e-038a-4c62-96f4-cb98089a83a6" name="953e32e5-aa28-488c-9e03-4cae3a300f3d" type="radio">
+</input><label class="tabbed-label" for="07be642e-038a-4c62-96f4-cb98089a83a6">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -747,9 +747,9 @@ Wall time: 3.12 s
 <h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>If you want a bit more background into some of the techniques reviewed in this block, the following might be of interest:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="http://darribas.org/gds_course/content/bE/concepts_E.html">Block E</a> of the GDS Course <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id4"><span>AB19</span></a>]</span> will introduce you to more techniques like the LISAs seen above to explore the spatial dimension of the statistical properties of your data. If you want a more detailed read, <a class="reference external" href="https://geographicdata.science/book/notebooks/04_spatial_weights.html">Chapter 4</a> of the GDS Book <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span> will do just that.</p></li>
-<li><p><a class="reference external" href="http://darribas.org/gds_course/content/bF/concepts_F.html">Block F</a> of the GDS Course <span id="id4">[<a class="reference internal" href="../pages/z_bibliography.html#id4"><span>AB19</span></a>]</span> will introduce you to more techniques like the LISAs seen above to explore the spatial dimension of the statistical properties of your data. If you want a more detailed read, <a class="reference external" href="https://geographicdata.science/book/notebooks/07_local_autocorrelation.html">Chapter 7</a> of the GDS Book <span id="id5">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span> will do just that.</p></li>
-<li><p><a class="reference external" href="http://darribas.org/gds_course/content/bH/concepts_H.html">Block H</a> of the GDS Course <span id="id6">[<a class="reference internal" href="../pages/z_bibliography.html#id4"><span>AB19</span></a>]</span> will introduce you to more techniques for exploring point patterns. If you want a more comprehensive read, <a class="reference external" href="https://geographicdata.science/book/notebooks/08_point_pattern_analysis.html">Chapter 8</a> of the GDS Book <span id="id7">[<a class="reference internal" href="../pages/z_bibliography.html#id39"><span>RABWng</span></a>]</span> will do just that.</p></li>
+<li><p><a class="reference external" href="http://darribas.org/gds_course/content/bE/concepts_E.html">Block E</a> of the GDS Course <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id6"><span>AB19</span></a>]</span> will introduce you to more techniques like the LISAs seen above to explore the spatial dimension of the statistical properties of your data. If you want a more detailed read, <a class="reference external" href="https://geographicdata.science/book/notebooks/04_spatial_weights.html">Chapter 4</a> of the GDS Book <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id41"><span>RABWng</span></a>]</span> will do just that.</p></li>
+<li><p><a class="reference external" href="http://darribas.org/gds_course/content/bF/concepts_F.html">Block F</a> of the GDS Course <span id="id4">[<a class="reference internal" href="../pages/z_bibliography.html#id6"><span>AB19</span></a>]</span> will introduce you to more techniques like the LISAs seen above to explore the spatial dimension of the statistical properties of your data. If you want a more detailed read, <a class="reference external" href="https://geographicdata.science/book/notebooks/07_local_autocorrelation.html">Chapter 7</a> of the GDS Book <span id="id5">[<a class="reference internal" href="../pages/z_bibliography.html#id41"><span>RABWng</span></a>]</span> will do just that.</p></li>
+<li><p><a class="reference external" href="http://darribas.org/gds_course/content/bH/concepts_H.html">Block H</a> of the GDS Course <span id="id6">[<a class="reference internal" href="../pages/z_bibliography.html#id6"><span>AB19</span></a>]</span> will introduce you to more techniques for exploring point patterns. If you want a more comprehensive read, <a class="reference external" href="https://geographicdata.science/book/notebooks/08_point_pattern_analysis.html">Chapter 8</a> of the GDS Book <span id="id7">[<a class="reference internal" href="../pages/z_bibliography.html#id41"><span>RABWng</span></a>]</span> will do just that.</p></li>
 </ul>
 </div>
 </div>
@@ -780,7 +780,7 @@ Wall time: 3.12 s
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="04-Spatial_feature_eng_i.html" title="previous page">Spatial Feature Engineering (I)</a>
-    <a class='right-next' id="next-link" href="06-Spatial_networks_i.html" title="next page">Spatial Networks (I)</a>
+    <a class='right-next' id="next-link" href="06-OpenStreetMap.html" title="next page">OpenStreetMap</a>
 
         </div>
         
