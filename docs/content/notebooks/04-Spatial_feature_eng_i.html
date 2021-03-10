@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -266,7 +266,8 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -374,8 +375,8 @@
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="a0453d4e-7cff-40ef-9c33-5398b31a8739" name="d479df85-ebed-4145-813c-90331fd630aa" type="radio">
-</input><label class="tabbed-label" for="a0453d4e-7cff-40ef-9c33-5398b31a8739">
+<input checked="checked" id="aed3ad0b-8eb4-45ca-a2e9-75780799805b" name="6bca5b7c-8341-47c5-83cc-502858156542" type="radio">
+</input><label class="tabbed-label" for="aed3ad0b-8eb4-45ca-a2e9-75780799805b">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
@@ -389,8 +390,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="79c65688-3611-4cb9-b3e5-9a317ec91d2d" name="d479df85-ebed-4145-813c-90331fd630aa" type="radio">
-</input><label class="tabbed-label" for="79c65688-3611-4cb9-b3e5-9a317ec91d2d">
+<input id="ad47a1e8-41fe-4ded-be4b-28a06dc6930c" name="6bca5b7c-8341-47c5-83cc-502858156542" type="radio">
+</input><label class="tabbed-label" for="ad47a1e8-41fe-4ded-be4b-28a06dc6930c">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -691,16 +692,16 @@ memory usage: 10.8+ KB
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rasterstats</span> <span class="kn">import</span> <span class="n">zonal_stats</span>
 
-<span class="n">regional_pollution</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="n">regional_friction</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="n">zonal_stats</span><span class="p">(</span>
         <span class="n">regions</span><span class="p">,</span>
-        <span class="n">pollution</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
-        <span class="n">affine</span><span class="o">=</span><span class="n">pollution</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">transform</span><span class="p">(),</span>
-        <span class="n">nodata</span><span class="o">=</span><span class="n">pollution</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
+        <span class="n">friction</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+        <span class="n">affine</span><span class="o">=</span><span class="n">friction</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">transform</span><span class="p">(),</span>
+        <span class="n">nodata</span><span class="o">=</span><span class="n">friction</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
     <span class="p">),</span>
     <span class="n">index</span><span class="o">=</span><span class="n">regions</span><span class="o">.</span><span class="n">index</span>
 <span class="p">)</span>
-<span class="n">regional_pollution</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">regional_friction</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -732,38 +733,38 @@ memory usage: 10.8+ KB
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000016</td>
-      <td>0.000045</td>
-      <td>0.000029</td>
-      <td>50</td>
+      <td>0.001200</td>
+      <td>0.037000</td>
+      <td>0.006494</td>
+      <td>979</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000019</td>
-      <td>0.000052</td>
-      <td>0.000034</td>
-      <td>72</td>
+      <td>0.001200</td>
+      <td>0.060000</td>
+      <td>0.007094</td>
+      <td>1317</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000022</td>
-      <td>0.000049</td>
-      <td>0.000037</td>
-      <td>19</td>
+      <td>0.001200</td>
+      <td>0.024112</td>
+      <td>0.006878</td>
+      <td>324</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000017</td>
-      <td>0.000037</td>
-      <td>0.000026</td>
-      <td>41</td>
+      <td>0.001333</td>
+      <td>0.060000</td>
+      <td>0.009543</td>
+      <td>758</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000018</td>
-      <td>0.000033</td>
-      <td>0.000025</td>
-      <td>3</td>
+      <td>0.001200</td>
+      <td>0.060132</td>
+      <td>0.008619</td>
+      <td>55</td>
     </tr>
   </tbody>
 </table>
@@ -776,7 +777,7 @@ memory usage: 10.8+ KB
 <span class="n">regions</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
     <span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span>
 <span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-    <span class="n">regional_pollution</span>
+    <span class="n">regional_friction</span>
 <span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
     <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;quantiles&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span>
 <span class="p">)</span>
@@ -1158,7 +1159,7 @@ memory usage: 10.8+ KB
 
 <span class="n">predictions_surface</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span><span class="p">()</span><span class="o">.</span><span class="n">from_series</span><span class="p">(</span>
     <span class="n">predictions_series</span><span class="p">[</span><span class="s2">&quot;predictions_grid&quot;</span><span class="p">]</span>
-<span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">write_crs</span><span class="p">(</span><span class="n">canvas_mt</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1167,11 +1168,15 @@ memory usage: 10.8+ KB
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
-<span class="n">cvs_pollution</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cvs_pollution</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">cvs_pollution</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">cvs_pollution</span><span class="o">&gt;</span><span class="mi">0</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Observed&quot;</span><span class="p">)</span>
 
 <span class="n">predictions_surface</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
     <span class="n">predictions_surface</span><span class="o">&gt;</span><span class="mi">0</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">reproject_match</span><span class="p">(</span>
+    <span class="n">cvs_pollution</span>
 <span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Predicted&quot;</span><span class="p">)</span>
 
@@ -1191,7 +1196,9 @@ memory usage: 10.8+ KB
 <span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
     <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Observed&quot;</span>
 <span class="p">)</span>
-<span class="n">predictions_surface</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+<span class="n">predictions_surface</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">reproject_match</span><span class="p">(</span>
+    <span class="n">cvs_pollution</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
     <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;predicted&quot;</span>
 <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -1247,8 +1254,8 @@ memory usage: 10.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.76 s, sys: 31.5 ms, total: 1.79 s
-Wall time: 1.79 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 469 ms, sys: 6.89 ms, total: 476 ms
+Wall time: 474 ms
 </pre></div>
 </div>
 </div>
