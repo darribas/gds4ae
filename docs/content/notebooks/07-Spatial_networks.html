@@ -379,16 +379,16 @@
 </div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="090fc3c0-b7d5-494a-aa2f-9a6f1f092e20" name="e8dcca0d-749f-406d-809b-34421db6deec" type="radio">
-</input><label class="tabbed-label" for="090fc3c0-b7d5-494a-aa2f-9a6f1f092e20">
+<input checked="checked" id="73ba31f1-73e2-4326-b074-f394428244c7" name="929621d8-7fe7-41d4-8681-23a14430cb3d" type="radio">
+</input><label class="tabbed-label" for="73ba31f1-73e2-4326-b074-f394428244c7">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/neighbourhoods.geojson&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="a8f03e7c-e26f-48db-8700-ec37a8cc58ae" name="e8dcca0d-749f-406d-809b-34421db6deec" type="radio">
-</input><label class="tabbed-label" for="a8f03e7c-e26f-48db-8700-ec37a8cc58ae">
+<input id="44d2772b-b36d-445f-b315-35d714e7bd1f" name="929621d8-7fe7-41d4-8681-23a14430cb3d" type="radio">
+</input><label class="tabbed-label" for="44d2772b-b36d-445f-b315-35d714e7bd1f">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -655,7 +655,7 @@ dtype: float64
 </div>
 </div>
 </div>
-<p>The coordinates of each street segment become the ID for each segment in the graph:</p>
+<p>The (first and last) coordinates of each street segment become the ID for each segment in the graph:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">db_tab</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">])</span>
