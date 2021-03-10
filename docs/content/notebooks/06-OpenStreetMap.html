@@ -377,7 +377,7 @@
 </div>
 <ul class="simple">
 <li><p><a class="reference external" href="https://joemorrison.medium.com/openstreetmap-is-having-a-moment-dcc7eef1bb01">This recent piece</a> contains several interesting points about how OpenStreetMap is currently being created and some of the implications this model may have.</p></li>
-<li><p>Anderson et al. (2019) <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id3"><span>ASP19</span></a>]</span> provides some of the academic underpinnings to the views expressed in Morrison’s piece</p></li>
+<li><p>Anderson et al. (2019) <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id6"><span>ASP19</span></a>]</span> provides some of the academic underpinnings to the views expressed in Morrison’s piece</p></li>
 </ul>
 </div>
 <div class="section" id="hands-on-coding">
@@ -393,19 +393,19 @@
 </div>
 <p>Since some of the query options we will discuss involve pre-defined extents, we will read the Madrid neighbourhoods dataset first:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="67ee7494-60d5-47ea-834e-bfcf3f6ea923" name="15a74587-1bdb-4224-ac5d-99b530e8d0b6" type="radio">
-</input><label class="tabbed-label" for="67ee7494-60d5-47ea-834e-bfcf3f6ea923">
+<input checked="checked" id="cd20e58b-1e6a-4ee8-8a46-e176c7f81638" name="e7732654-3365-44c3-980e-791680d02cd7" type="radio">
+</input><label class="tabbed-label" for="cd20e58b-1e6a-4ee8-8a46-e176c7f81638">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">neis</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/neighbourhoods.geojson&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="28c0dabc-56f9-490a-bdf6-36798ee9cc0d" name="15a74587-1bdb-4224-ac5d-99b530e8d0b6" type="radio">
-</input><label class="tabbed-label" for="28c0dabc-56f9-490a-bdf6-36798ee9cc0d">
+<input id="9985fb4b-1ecc-40a3-8b9f-525fd3dd68bc" name="e7732654-3365-44c3-980e-791680d02cd7" type="radio">
+</input><label class="tabbed-label" for="9985fb4b-1ecc-40a3-8b9f-525fd3dd68bc">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">neis</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
     <span class="s2">&quot;http://darribas.org/gds4ae/_downloads/44b4bc22c042386c2c0f8dc6685ef17c/neighbourhoods.geojson&quot;</span>
 <span class="p">)</span>
 </pre></div>
@@ -1148,7 +1148,7 @@ Name: geometry, Length: 609, dtype: geometry
 <ul class="simple">
 <li><p>Parts of the block are inspired and informed by Geoff Boeing’s excellent <a class="reference external" href="https://github.com/gboeing/ppd599">course on Urban Data Science</a></p></li>
 <li><p>More in depth content about <code class="docutils literal notranslate"><span class="pre">osmnx</span></code> is available in the <a class="reference external" href="https://github.com/gboeing/osmnx-examples">official examples collection</a></p></li>
-<li><p>If you want to know more about the <code class="docutils literal notranslate"><span class="pre">osmnx</span></code> project, Boeing (2017) <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id2"><span>Boe17</span></a>]</span> provides a general overview</p></li>
+<li><p>Boeing (2020) <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id2"><span>Boe20a</span></a>]</span> illustrates how OpenStreetMap can be used to analyse urban form (<a class="reference external" href="https://osf.io/preprints/socarxiv/rnwgv/">Open Access</a>)</p></li>
 </ul>
 </div>
 </div>

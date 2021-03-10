@@ -282,14 +282,48 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysing-street-geo-tables">
+     Analysing street geo-tables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#length">
+       Length
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#linearity">
+       Linearity
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#streets-as-spatial-graphs">
      Streets as spatial graphs
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summarising-graphs">
-     Summarising graphs
+    <a class="reference internal nav-link" href="#analysing-graphs">
+     Analysing graphs
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#degree">
+       Degree
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#node-centrality">
+       Node centrality
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#meshedness">
+       Meshedness
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#attaching-information-to-street-segments">
@@ -319,29 +353,959 @@
 <h1>Spatial Networks<a class="headerlink" href="#spatial-networks" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="ahead-of-time">
 <h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Thank you very much to <a class="reference external" href="https://martinfleischmann.net/">Martin Fleischmann</a> for providing support and ideas in the development of this block</p>
+</div>
+<p>In this block we cover some of the analytics you can obtain when you consider street networks as spatial graphs rather than as geo-tables.</p>
+<ul class="simple">
+<li><p>A good example of applying concepts and ideas presented in this block is Boeing (2020) <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id3"><span>Boe20b</span></a>]</span></p></li>
+<li><p>Boeing (2017) <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id5"><span>Boe17</span></a>]</span> provides a general overview on the <code class="docutils literal notranslate"><span class="pre">osmnx</span></code> project</p></li>
+<li><p>A brief overview of <code class="docutils literal notranslate"><span class="pre">momepy</span></code>, the package for urban morphometrics, available in Fleischmann (2019) <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id4"><span>Fle19</span></a>]</span></p></li>
+</ul>
 </div>
 <div class="section" id="hands-on-coding">
 <h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">geopandas</span>
+<span class="kn">import</span> <span class="nn">momepy</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">contextily</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="090fc3c0-b7d5-494a-aa2f-9a6f1f092e20" name="e8dcca0d-749f-406d-809b-34421db6deec" type="radio">
+</input><label class="tabbed-label" for="090fc3c0-b7d5-494a-aa2f-9a6f1f092e20">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/neighbourhoods.geojson&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="a8f03e7c-e26f-48db-8700-ec37a8cc58ae" name="e8dcca0d-749f-406d-809b-34421db6deec" type="radio">
+</input><label class="tabbed-label" for="a8f03e7c-e26f-48db-8700-ec37a8cc58ae">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+    <span class="s2">&quot;http://darribas.org/gds4ae/_downloads/67d5480f98453027d59bf49606a7ad92/arturo_streets.gpkg&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To make things easier later, we “explode” the table so it is made up of <code class="docutils literal notranslate"><span class="pre">LINESTRINGS</span></code> instead of <code class="docutils literal notranslate"><span class="pre">MULTILINESTRINGS</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_tab</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">explode</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/07-Spatial_networks_9_0.png" src="../../_images/07-Spatial_networks_9_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_tab</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>level_0</th>
+      <th>level_1</th>
+      <th>OGC_FID</th>
+      <th>dm_id</th>
+      <th>dist_barri</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>value</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1606</td>
+      <td>444133.736820</td>
+      <td>4.482809e+06</td>
+      <td>NaN</td>
+      <td>LINESTRING (444096.316 4482762.870, 444171.158...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1606</td>
+      <td>444192.038205</td>
+      <td>4.482878e+06</td>
+      <td>NaN</td>
+      <td>LINESTRING (444212.943 4482901.091, 444199.698...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>1606</td>
+      <td>444134.537507</td>
+      <td>4.482885e+06</td>
+      <td>NaN</td>
+      <td>LINESTRING (444097.968 4482915.826, 444171.158...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>1603</td>
+      <td>445612.690578</td>
+      <td>4.479336e+06</td>
+      <td>NaN</td>
+      <td>LINESTRING (445608.884 4479346.815, 445616.438...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>1603</td>
+      <td>445606.319326</td>
+      <td>4.479354e+06</td>
+      <td>NaN</td>
+      <td>LINESTRING (445603.738 4479362.060, 445608.884...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="analysing-street-geo-tables">
+<h3>Analysing street geo-tables<a class="headerlink" href="#analysing-street-geo-tables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="length">
+<h4>Length<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="n">db_tab</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+    <span class="n">epsg</span><span class="o">=</span><span class="mi">32630</span> <span class="c1"># Expressed in metres</span>
+<span class="p">)</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">length</span>
+<span class="n">length</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    118.699481
+1     62.210799
+2     95.164472
+3     23.503065
+4     16.090295
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">db_tab</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">length</span><span class="o">=</span><span class="n">length</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;length&quot;</span><span class="p">,</span> 
+    <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;fisherjenkssampled&quot;</span><span class="p">,</span> 
+    <span class="n">k</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> 
+    <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+    <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;magma&quot;</span>
+<span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span> 
+    <span class="n">crs</span><span class="o">=</span><span class="n">db_tab</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span> 
+    <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">PositronNoLabels</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Street segment length&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/07-Spatial_networks_14_0.png" src="../../_images/07-Spatial_networks_14_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="linearity">
+<h4>Linearity<a class="headerlink" href="#linearity" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linearity</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">Linearity</span><span class="p">(</span><span class="n">db_tab</span><span class="p">)</span><span class="o">.</span><span class="n">series</span>
+<span class="n">linearity</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1.000000
+1    0.999999
+2    1.000000
+3    1.000000
+4    1.000000
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">db_tab</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">linearity</span><span class="o">=</span><span class="n">linearity</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;linearity&quot;</span><span class="p">,</span> 
+    <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;fisherjenkssampled&quot;</span><span class="p">,</span> 
+    <span class="n">k</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> 
+    <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+    <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;magma&quot;</span>
+<span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span> 
+    <span class="n">crs</span><span class="o">=</span><span class="n">db_tab</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span> 
+    <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">PositronNoLabels</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Street segment linearity&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/07-Spatial_networks_17_0.png" src="../../_images/07-Spatial_networks_17_0.png" />
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="streets-as-spatial-graphs">
 <h3>Streets as spatial graphs<a class="headerlink" href="#streets-as-spatial-graphs" title="Permalink to this headline">¶</a></h3>
+<p>From geo-table to spatial graph:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_graph</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">gdf_to_nx</span><span class="p">(</span><span class="n">db_tab</span><span class="p">)</span>
+
+<span class="n">db_graph</span>
+</pre></div>
 </div>
-<div class="section" id="summarising-graphs">
-<h3>Summarising graphs<a class="headerlink" href="#summarising-graphs" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.multigraph.MultiGraph at 0x7f88c5a76bb0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">db_graph</span></code> is a different animal than <code class="docutils literal notranslate"><span class="pre">db</span></code> that emphasizes <em>connections</em> rather than observation attributes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_graph</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_graph</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>The coordinates of each street segment become the ID for each segment in the graph:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">db_tab</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LINESTRING (444096.3161762458 4482762.870216271, 444171.158127317 4482855.001910598)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="n">db_tab</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">]</span>
+<span class="n">l</span><span class="o">.</span><span class="n">coords</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;shapely.coords.CoordinateSequence at 0x7f88a4619670&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">node0a</span><span class="p">,</span> <span class="n">node0b</span> <span class="o">=</span> <span class="n">edge0</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+    <span class="n">db_tab</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span>
+<span class="p">)</span>
+<span class="n">edge0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(444096.3161762458, 4482762.870216271),
+ (444171.15812731703, 4482855.001910598)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use those to extract adjacencies to each node:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_graph</span><span class="p">[</span><span class="n">node0a</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AdjacencyView({(444171.15812731703, 4482855.001910598): {0: {&#39;level_0&#39;: 0, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;1&#39;, &#39;dm_id&#39;: &#39;1&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;X&#39;: 444133.736820226, &#39;Y&#39;: 4482808.89166328, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7f88b3e34a00&gt;, &#39;mm_len&#39;: 118.69948078964639}}, (444083.8275243509, 4482747.422611062): {538: {&#39;level_0&#39;: 538, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;539&#39;, &#39;dm_id&#39;: &#39;539&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;X&#39;: 444090.105664431, &#39;Y&#39;: 4482755.13506047, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7f88b43281c0&gt;, &#39;mm_len&#39;: 19.864413729824115}}})
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can access edge information for each pair of nodes with a concatenated dict query:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_graph</span><span class="p">[</span><span class="n">node0a</span><span class="p">][</span><span class="n">node0b</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AtlasView({0: {&#39;level_0&#39;: 0, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;1&#39;, &#39;dm_id&#39;: &#39;1&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;X&#39;: 444133.736820226, &#39;Y&#39;: 4482808.89166328, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7f88b3e34a00&gt;, &#39;mm_len&#39;: 118.69948078964639}})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_graph</span><span class="p">[</span><span class="n">node0a</span><span class="p">][</span><span class="n">node0b</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;level_0&#39;: 0,
+ &#39;level_1&#39;: 0,
+ &#39;OGC_FID&#39;: &#39;1&#39;,
+ &#39;dm_id&#39;: &#39;1&#39;,
+ &#39;dist_barri&#39;: &#39;1606&#39;,
+ &#39;X&#39;: 444133.736820226,
+ &#39;Y&#39;: 4482808.89166328,
+ &#39;value&#39;: nan,
+ &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString at 0x7f88b3e34a00&gt;,
+ &#39;mm_len&#39;: 118.69948078964639}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_graph</span><span class="p">[</span><span class="n">node0a</span><span class="p">][</span><span class="n">node0b</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/07-Spatial_networks_33_0.svg" src="../../_images/07-Spatial_networks_33_0.svg" /></div>
+</div>
+<p>If we need all the node IDs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span>
+    <span class="n">db_graph</span><span class="o">.</span><span class="n">nodes</span>
+<span class="p">)[:</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># Limit to the first five elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(444096.3161762458, 4482762.870216271),
+ (444171.15812731703, 4482855.001910598),
+ (444212.942998509, 4482901.090971609),
+ (444097.96831143444, 4482915.825653204),
+ (445608.8837672261, 4479346.814511424)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>And same for edges:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">edges</span></code> returns a triplet with the origin and destination node IDs, <em>and</em> the ID of the edge, which is linked to the ID of the segment in the geo-table</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span>
+    <span class="n">db_graph</span><span class="o">.</span><span class="n">edges</span>
+<span class="p">)[:</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># Limit to the first five elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[((444096.3161762458, 4482762.870216271),
+  (444171.15812731703, 4482855.001910598),
+  0),
+ ((444096.3161762458, 4482762.870216271),
+  (444083.8275243509, 4482747.422611062),
+  538),
+ ((444171.15812731703, 4482855.001910598),
+  (444212.942998509, 4482901.090971609),
+  1),
+ ((444171.15812731703, 4482855.001910598),
+  (444097.96831143444, 4482915.825653204),
+  2),
+ ((444212.942998509, 4482901.090971609),
+  (444254.9705938099, 4482866.143285849),
+  10886)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_graph</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">node0a</span><span class="p">,</span> <span class="n">node0b</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;level_0&#39;: 0,
+ &#39;level_1&#39;: 0,
+ &#39;OGC_FID&#39;: &#39;1&#39;,
+ &#39;dm_id&#39;: &#39;1&#39;,
+ &#39;dist_barri&#39;: &#39;1606&#39;,
+ &#39;X&#39;: 444133.736820226,
+ &#39;Y&#39;: 4482808.89166328,
+ &#39;value&#39;: nan,
+ &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString at 0x7f88b3e34a00&gt;,
+ &#39;mm_len&#39;: 118.69948078964639}
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want fast access to adjacencies:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_graph</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">node0a</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AdjacencyView({(444171.15812731703, 4482855.001910598): {0: {&#39;level_0&#39;: 0, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;1&#39;, &#39;dm_id&#39;: &#39;1&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;X&#39;: 444133.736820226, &#39;Y&#39;: 4482808.89166328, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7f88b3e34a00&gt;, &#39;mm_len&#39;: 118.69948078964639}}, (444083.8275243509, 4482747.422611062): {538: {&#39;level_0&#39;: 538, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;539&#39;, &#39;dm_id&#39;: &#39;539&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;X&#39;: 444090.105664431, &#39;Y&#39;: 4482755.13506047, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7f88b43281c0&gt;, &#39;mm_len&#39;: 19.864413729824115}}})
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="analysing-graphs">
+<h3>Analysing graphs<a class="headerlink" href="#analysing-graphs" title="Permalink to this headline">¶</a></h3>
+<p>There are <em>many</em> ways to extract information and descriptives from a graph. In this section we will explore a few that can tell us important information about the position of a node or edge in the network and about the broader characteristics of sections of the graph.</p>
+<div class="section" id="degree">
+<h4>Degree<a class="headerlink" href="#degree" title="Permalink to this headline">¶</a></h4>
+<p>Degree tells us the number of neighbors of every edge, that is how many other nodes it is directly connected to.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degree</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">db_graph</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
+<span class="n">degree</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[((444096.3161762458, 4482762.870216271), 2),
+ ((444171.15812731703, 4482855.001910598), 3),
+ ((444212.942998509, 4482901.090971609), 3),
+ ((444097.96831143444, 4482915.825653204), 3),
+ ((445608.8837672261, 4479346.814511424), 2)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="node-centrality">
+<h4>Node centrality<a class="headerlink" href="#node-centrality" title="Permalink to this headline">¶</a></h4>
+<p>Fraction of nodes a node is connected to:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nc</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">db_graph</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">nc</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>444096.316176  4.482763e+06    0.00004
+444171.158127  4.482855e+06    0.00006
+444212.942999  4.482901e+06    0.00006
+444097.968311  4.482916e+06    0.00006
+445608.883767  4.479347e+06    0.00004
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nc</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/07-Spatial_networks_50_0.png" src="../../_images/07-Spatial_networks_50_0.png" />
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Other variations of centrality measures are available in <code class="docutils literal notranslate"><span class="pre">networkx</span></code>. The are computationally demanding but relatively straightforward to calculate using the library. For a few of those, you can check:</p>
 <ul class="simple">
-<li><p>Node centrality</p></li>
+<li><p><a class="reference external" href="https://networkx.org/documentation/stable/auto_examples/algorithms/plot_krackhardt_centrality.html#sphx-glr-auto-examples-algorithms-plot-krackhardt-centrality-py">This <code class="docutils literal notranslate"><span class="pre">networkx</span></code> example</a></p></li>
+<li><p><a class="reference external" href="http://docs.momepy.org/en/stable/user_guide/graph/centrality.html#Closeness-centrality">The <code class="docutils literal notranslate"><span class="pre">momepy</span></code> documentation on centrality</a></p></li>
 </ul>
+</div>
+</div>
+<div class="section" id="meshedness">
+<h4>Meshedness<a class="headerlink" href="#meshedness" title="Permalink to this headline">¶</a></h4>
+<p>The <a class="reference external" href="http://docs.momepy.org/en/stable/generated/momepy.meshedness.html#momepy.meshedness">messedness</a> of a graph captures the degree of node edge density as compared to that of nodes. Higher meshedness is related to denser, more inter-connected grids.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> meshd = momepy.meshedness(db_graph, distance=500)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 49985/49985 [00:57&lt;00:00, 876.55it/s] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 57.8 s, sys: 132 ms, total: 57.9 s
+Wall time: 57.8 s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meshd</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node0a</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;meshedness&#39;: 0.058823529411764705}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+    <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">meshd</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;meshedness&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">meshd</span><span class="o">.</span><span class="n">nodes</span><span class="p">}</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/07-Spatial_networks_56_0.png" src="../../_images/07-Spatial_networks_56_0.png" />
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="attaching-information-to-street-segments">
 <h3>Attaching information to street segments<a class="headerlink" href="#attaching-information-to-street-segments" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Snap Airbnb’s to street and include the network measures in their table as added columns</p></li>
-</ul>
+<p>The trick here is to be able to transfer back the information stored as graphs into geo-tables so we can apply everything we already now about manipulating and mapping data in that structure. With <code class="docutils literal notranslate"><span class="pre">momepy</span></code>, we can bring a graph back into a geo-table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">nx_to_gdf</span><span class="p">(</span>
+    <span class="n">meshd</span><span class="p">,</span> <span class="n">points</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>meshedness</th>
+      <th>nodeID</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.058824</td>
+      <td>1</td>
+      <td>POINT (444096.316 4482762.870)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.092308</td>
+      <td>2</td>
+      <td>POINT (444171.158 4482855.002)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.101449</td>
+      <td>3</td>
+      <td>POINT (444212.943 4482901.091)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.065574</td>
+      <td>4</td>
+      <td>POINT (444097.968 4482915.826)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.000000</td>
+      <td>5</td>
+      <td>POINT (445608.884 4479346.815)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;meshedness&quot;</span><span class="p">,</span> 
+    <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;fisherjenkssampled&quot;</span><span class="p">,</span>
+    <span class="n">markersize</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span> 
+    <span class="n">crs</span><span class="o">=</span><span class="n">nodes</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">DarkMatterNoLabels</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Meshedness&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/07-Spatial_networks_61_0.png" src="../../_images/07-Spatial_networks_61_0.png" />
+</div>
+</div>
+<p>With other measures index on node IDs, we can use joining machinery in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nc</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>444096.316176  4.482763e+06    0.00004
+444171.158127  4.482855e+06    0.00006
+444212.942999  4.482901e+06    0.00006
+444097.968311  4.482916e+06    0.00006
+445608.883767  4.479347e+06    0.00004
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degree_tab</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">degree</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;degree&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">degree_tab</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span>
+    <span class="n">degree_tab</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">degree_tab</span> <span class="o">=</span> <span class="n">degree_tab</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">]</span>
+<span class="n">degree_tab</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>444096.316176  4.482763e+06    2
+444171.158127  4.482855e+06    3
+444212.942999  4.482901e+06    3
+444097.968311  4.482916e+06    3
+445608.883767  4.479347e+06    2
+Name: degree, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_stats</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;degree&quot;</span><span class="p">:</span> <span class="n">degree_tab</span><span class="p">,</span> <span class="s2">&quot;centrality&quot;</span><span class="p">:</span> <span class="n">nc</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">net_stats</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">]</span>
+<span class="n">net_stats</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>degree</th>
+      <th>centrality</th>
+    </tr>
+    <tr>
+      <th>x</th>
+      <th>y</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>444096.316176</th>
+      <th>4.482763e+06</th>
+      <td>2</td>
+      <td>0.00004</td>
+    </tr>
+    <tr>
+      <th>444171.158127</th>
+      <th>4.482855e+06</th>
+      <td>3</td>
+      <td>0.00006</td>
+    </tr>
+    <tr>
+      <th>444212.942999</th>
+      <th>4.482901e+06</th>
+      <td>3</td>
+      <td>0.00006</td>
+    </tr>
+    <tr>
+      <th>444097.968311</th>
+      <th>4.482916e+06</th>
+      <td>3</td>
+      <td>0.00006</td>
+    </tr>
+    <tr>
+      <th>445608.883767</th>
+      <th>4.479347e+06</th>
+      <td>2</td>
+      <td>0.00004</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_stats_geo</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">nodes</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span>
+<span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">nodes</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">net_stats</span><span class="p">)</span>
+
+<span class="n">net_stats_geo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>meshedness</th>
+      <th>nodeID</th>
+      <th>geometry</th>
+      <th>degree</th>
+      <th>centrality</th>
+    </tr>
+    <tr>
+      <th>x</th>
+      <th>y</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>444096.316176</th>
+      <th>4.482763e+06</th>
+      <td>0.058824</td>
+      <td>1</td>
+      <td>POINT (444096.316 4482762.870)</td>
+      <td>2</td>
+      <td>0.00004</td>
+    </tr>
+    <tr>
+      <th>444171.158127</th>
+      <th>4.482855e+06</th>
+      <td>0.092308</td>
+      <td>2</td>
+      <td>POINT (444171.158 4482855.002)</td>
+      <td>3</td>
+      <td>0.00006</td>
+    </tr>
+    <tr>
+      <th>444212.942999</th>
+      <th>4.482901e+06</th>
+      <td>0.101449</td>
+      <td>3</td>
+      <td>POINT (444212.943 4482901.091)</td>
+      <td>3</td>
+      <td>0.00006</td>
+    </tr>
+    <tr>
+      <th>444097.968311</th>
+      <th>4.482916e+06</th>
+      <td>0.065574</td>
+      <td>4</td>
+      <td>POINT (444097.968 4482915.826)</td>
+      <td>3</td>
+      <td>0.00006</td>
+    </tr>
+    <tr>
+      <th>445608.883767</th>
+      <th>4.479347e+06</th>
+      <td>0.000000</td>
+      <td>5</td>
+      <td>POINT (445608.884 4479346.815)</td>
+      <td>2</td>
+      <td>0.00004</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="n">vars_to_plot</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span> <span class="s2">&quot;centrality&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">net_stats_geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">vars_to_plot</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+        <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;fisherjenkssampled&quot;</span><span class="p">,</span>
+        <span class="n">markersize</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+        <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+        <span class="n">crs</span><span class="o">=</span><span class="n">nodes</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">DarkMatterNoLabels</span>
+    <span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">vars_to_plot</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/07-Spatial_networks_67_0.png" src="../../_images/07-Spatial_networks_67_0.png" />
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="next-steps">
 <h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>If you found the content in this block useful, the following resources represent some suggestions on where to go next:</p>
 <ul class="simple">
+<li><p>The <a class="reference external" href="https://networkx.org/documentation/stable/tutorial.html">NetworkX tutorial</a> is a great place to get a better grasp of the data structures we use to represent (spatial) graphs</p></li>
 <li><p>Parts of the block benefit from the section on <a class="reference external" href="https://github.com/gboeing/ppd599/blob/master/modules/07-urban-networks-i/lecture.ipynb">urban networks</a> in Geoff Boeing’s excellent <a class="reference external" href="https://github.com/gboeing/ppd599">course on Urban Data Science</a></p></li>
 <li><p>If you are interested in urban morphometric analysis (the study of the shape of different elements making up cities), the <a class="reference external" href="http://docs.momepy.org/en/stable/"><code class="docutils literal notranslate"><span class="pre">momepy</span></code></a> library is an excellent reference to absorb, including its <a class="reference external" href="http://docs.momepy.org/en/stable/user_guide/intro.html">user guide</a></p></li>
 </ul>
