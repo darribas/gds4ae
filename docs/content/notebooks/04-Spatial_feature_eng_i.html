@@ -354,7 +354,7 @@
 <h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
 <p>Feature Engineering is a common term in machine learning that refers to the processes and transformations involved in turning data from the state in which the modeller access them into what is then fed to a model. This can take several forms, from standardisation of the input data, to the derivation of numeric scores that better describe aspects (<em>features</em>) of the data we are using.</p>
 <p><em>Spatial</em> Feature Engineering refers to operations we can use to derive “views” or summaries of our data that we can use in models, <em>using space</em> as the key medium to create them.</p>
-<p>There is only one reading to complete for this block, <a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html">Chapter 12</a> of the GDS Book <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id41"><span>RABWng</span></a>]</span>. The first block of Spatial Feature Engineering in this course loosely follows the first part of the chapter (<a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html#feature-engineering-using-map-matching">Map Matching</a>), so focus on this first sections for the block.</p>
+<p>There is only one reading to complete for this block, <a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html">Chapter 12</a> of the GDS Book <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id44"><span>RABWng</span></a>]</span>. The first block of Spatial Feature Engineering in this course loosely follows the first part of the chapter (<a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html#feature-engineering-using-map-matching">Map Matching</a>), so focus on this first sections for the block.</p>
 </div>
 <div class="section" id="hands-on-coding">
 <h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
@@ -375,8 +375,8 @@
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="aed3ad0b-8eb4-45ca-a2e9-75780799805b" name="6bca5b7c-8341-47c5-83cc-502858156542" type="radio">
-</input><label class="tabbed-label" for="aed3ad0b-8eb4-45ca-a2e9-75780799805b">
+<input checked="checked" id="8a786ff3-87c3-40ca-bcd2-3f73208d4a45" name="bee4dadf-647a-42d6-9585-c502b46ee3a1" type="radio">
+</input><label class="tabbed-label" for="8a786ff3-87c3-40ca-bcd2-3f73208d4a45">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
@@ -390,8 +390,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="ad47a1e8-41fe-4ded-be4b-28a06dc6930c" name="6bca5b7c-8341-47c5-83cc-502858156542" type="radio">
-</input><label class="tabbed-label" for="ad47a1e8-41fe-4ded-be4b-28a06dc6930c">
+<input id="c732cf1b-8b5e-42dc-93c4-58890f8e7ae2" name="bee4dadf-647a-42d6-9585-c502b46ee3a1" type="radio">
+</input><label class="tabbed-label" for="c732cf1b-8b5e-42dc-93c4-58890f8e7ae2">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -882,7 +882,7 @@ memory usage: 10.8+ KB
 <h3>Points to points<a class="headerlink" href="#points-to-points" title="Permalink to this headline">¶</a></h3>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>See <a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html#point-interpolation-using-sklearn">this section</a> of Chapter 12 of the GDS Book <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id41"><span>RABWng</span></a>]</span> for more details on the technique</p>
+<p>See <a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html#point-interpolation-using-sklearn">this section</a> of Chapter 12 of the GDS Book <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id44"><span>RABWng</span></a>]</span> for more details on the technique</p>
 </div>
 <p>For this exampe, we will assume that, instead of a surface with pollution values, we only have available a sample of points and we would like to obtain estimates for other locations.</p>
 <p>For that we will first generate 100 random points within the extent of <code class="docutils literal notranslate"><span class="pre">pollution</span></code> which we will take as the location of our measurement stations:</p>
