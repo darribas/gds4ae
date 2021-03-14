@@ -26,7 +26,6 @@ The structure of content is divided in nine blocks:
 - [*OpenStreetMap*](../notebooks/06-OpenStreetMap): acquire data from the largest geo-table in the world
 - [*Spatial Networks*](../notebooks/07-Spatial_networks): understand and work with spatial graphs
 - [*Transport Costs*](../notebooks/08-Transport_costs): "getting there" doesn't always cost the same
-- [*Visual challenges*](../notebooks/09-Visual_challenges): all the details nobody told you (but should have) about visualising geographic data
 
 Each block has its own section and is designed to be delivered in 1.5 hours approximately. The content of some of these blocks relies on external resources, all of them freely available. When that is the case, enough detail is provided in the  to understand how additional material fits in.
 
