@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -152,11 +152,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/08-Transport_costs.html">
    Transport costs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/09-Visual_challenges.html">
-   Visual challenges and opportunities
   </a>
  </li>
 </ul>
@@ -315,6 +310,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span><span class="o">,</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">momepy</span>
 <span class="kn">from</span> <span class="nn">shapely</span> <span class="kn">import</span> <span class="n">wkt</span>
 </pre></div>
 </div>
@@ -388,7 +384,14 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vars_to_keep</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;OGC_FID&quot;</span><span class="p">,</span> <span class="s2">&quot;dm_id&quot;</span><span class="p">,</span> <span class="s2">&quot;dist_barri&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span>
+    <span class="s2">&quot;OGC_FID&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;dm_id&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;dist_barri&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;average_quality&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;population_density&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;X&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Y&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;geometry&quot;</span>
 <span class="p">]</span>
 </pre></div>
 </div>
