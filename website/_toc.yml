@@ -15,7 +15,6 @@
   - file: content/notebooks/06-OpenStreetMap
   - file: content/notebooks/07-Spatial_networks
   - file: content/notebooks/08-Transport_costs
-  - file: content/notebooks/09-Visual_challenges
 
 - part: Epilogue
   chapters:
