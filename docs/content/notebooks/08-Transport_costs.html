@@ -373,8 +373,8 @@
 <div class="section" id="moving-along-street-networks">
 <h3><em>Moving</em> along (street) networks<a class="headerlink" href="#moving-along-street-networks" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="d8611675-036e-433b-8419-699289c9ce7b" name="1f15335c-21e7-4241-bdbd-43dcf78cec5d" type="radio">
-</input><label class="tabbed-label" for="d8611675-036e-433b-8419-699289c9ce7b">
+<input checked="checked" id="052b4f89-1216-45e6-a5dd-f30407c18916" name="da8fb59f-1536-427c-aa9a-852a1bc0956b" type="radio">
+</input><label class="tabbed-label" for="052b4f89-1216-45e6-a5dd-f30407c18916">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">streets</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
@@ -383,8 +383,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="359d2ec6-5564-4d18-88c2-f0eb49b2c11a" name="1f15335c-21e7-4241-bdbd-43dcf78cec5d" type="radio">
-</input><label class="tabbed-label" for="359d2ec6-5564-4d18-88c2-f0eb49b2c11a">
+<input id="1d0f92e6-ce92-42c8-b154-f08a7cff7f92" name="da8fb59f-1536-427c-aa9a-852a1bc0956b" type="radio">
+</input><label class="tabbed-label" for="1d0f92e6-ce92-42c8-b154-f08a7cff7f92">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">streets</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -396,21 +396,6 @@ Online read</label><div class="tabbed-content docutils">
 <span class="n">neis</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
     <span class="s2">&quot;http://darribas.org/gds4ae/_downloads/44b4bc22c042386c2c0f8dc6685ef17c/neighbourhoods.geojson&quot;</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">streets</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
-<span class="n">abbs</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
-<span class="n">neis</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/neighbourhoods.geojson&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/geopandas/geodataframe.py:577: RuntimeWarning: Sequential read of iterator was interrupted. Resetting iterator. This can negatively impact the performance.
-  for feature in features_lst:
 </pre></div>
 </div>
 </div>
@@ -438,8 +423,8 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.31 s, sys: 20.5 ms, total: 4.33 s
-Wall time: 4.33 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 5.3 s, sys: 28.1 ms, total: 5.33 s
+Wall time: 5.33 s
 </pre></div>
 </div>
 </div>
@@ -460,7 +445,7 @@ Wall time: 4.33 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandana.network.Network at 0x7f1cb31cc220&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandana.network.Network at 0x7f7c3b9954f0&gt;
 </pre></div>
 </div>
 </div>
@@ -1064,8 +1049,8 @@ Name: node_id, dtype: int64
   and should_run_async(code)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 450 ms, sys: 133 µs, total: 450 ms
-Wall time: 447 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 429 ms, sys: 12 ms, total: 441 ms
+Wall time: 437 ms
 </pre></div>
 </div>
 </div>
@@ -1317,8 +1302,8 @@ dtype: float64
 <div class="section" id="moving-along-surfaces">
 <h3><em>Moving</em> along surfaces<a class="headerlink" href="#moving-along-surfaces" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="c2e8661c-f3c2-4c51-ad65-12d83061af21" name="f4642271-f695-43c0-a57d-c9ffee1e95d2" type="radio">
-</input><label class="tabbed-label" for="c2e8661c-f3c2-4c51-ad65-12d83061af21">
+<input checked="checked" id="0c729bf9-dbc1-4423-bf98-7dd936324376" name="05497078-30f1-4cbb-ad95-91e45a9378eb" type="radio">
+</input><label class="tabbed-label" for="0c729bf9-dbc1-4423-bf98-7dd936324376">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">friction_walk</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -1331,8 +1316,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="81960c46-6dcb-4b4b-9e91-26450da3b039" name="f4642271-f695-43c0-a57d-c9ffee1e95d2" type="radio">
-</input><label class="tabbed-label" for="81960c46-6dcb-4b4b-9e91-26450da3b039">
+<input id="3a87187e-e02d-4a4f-9453-d0fe78c43cf3" name="05497078-30f1-4cbb-ad95-91e45a9378eb" type="radio">
+</input><label class="tabbed-label" for="3a87187e-e02d-4a4f-9453-d0fe78c43cf3">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">friction_walk</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -1344,25 +1329,6 @@ Online read</label><div class="tabbed-content docutils">
 <span class="n">cities</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
     <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/b2bc4ad46ffb5fcec467286c022adf14/cambodian_cities.geojson&quot;</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">friction_walk</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
-    <span class="s2">&quot;../data/cambodia_2020_walking_friction_surface.tif&quot;</span>
-<span class="p">)</span>
-<span class="n">friction_motor</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
-    <span class="s2">&quot;../data/cambodia_2020_motorized_friction_surface.tif&quot;</span>
-<span class="p">)</span>
-<span class="n">cities</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodian_cities.geojson&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
 </pre></div>
 </div>
 </div>
@@ -1827,15 +1793,27 @@ array([[0, 0, 0, ..., 0, 0, 0],
 Coordinates:
   * y            (y) float64 1.167e+06 1.168e+06 ... 1.539e+06 1.539e+06
   * x            (x) float64 2.348e+05 2.352e+05 ... 6.572e+05 6.578e+05
-    spatial_ref  int64 0</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'one'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 745</li><li><span class='xr-has-index'>x</span>: 847</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-e679f119-612c-41d1-a654-9b9b9e99d0f3' class='xr-array-in' type='checkbox' checked><label for='section-e679f119-612c-41d1-a654-9b9b9e99d0f3' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ... 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span></div><div class='xr-array-data'><pre>array([[0, 0, 0, ..., 0, 0, 0],
+    spatial_ref  int64 0</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'one'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 745</li><li><span class='xr-has-index'>x</span>: 847</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-36f13a30-ee5e-4d09-867f-a8dd20c6bf0e' class='xr-array-in' type='checkbox' checked><label for='section-36f13a30-ee5e-4d09-867f-a8dd20c6bf0e' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ... 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span></div><div class='xr-array-data'><pre>array([[0, 0, 0, ..., 0, 0, 0],
        [0, 0, 0, ..., 0, 0, 0],
        [0, 0, 0, ..., 0, 0, 0],
        ...,
        [0, 0, 0, ..., 0, 0, 0],
        [0, 0, 0, ..., 0, 0, 0],
-       [0, 0, 0, ..., 0, 0, 0]])</pre></div></div></li><li class='xr-section-item'><input id='section-1d1eced2-565c-41b3-8235-9b8982cfd171' class='xr-section-summary-in' type='checkbox'  checked><label for='section-1d1eced2-565c-41b3-8235-9b8982cfd171' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.167e+06 1.168e+06 ... 1.539e+06</div><input id='attrs-ec5ada31-3089-483a-8044-7cf5f7e722b7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ec5ada31-3089-483a-8044-7cf5f7e722b7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b99d25b2-adde-47e4-bd1e-ee050d11a205' class='xr-var-data-in' type='checkbox'><label for='data-b99d25b2-adde-47e4-bd1e-ee050d11a205' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([1167250., 1167750., 1168250., ..., 1538250., 1538750., 1539250.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.348e+05 2.352e+05 ... 6.578e+05</div><input id='attrs-1e146e97-cb25-4e2c-9c41-0265499fb030' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1e146e97-cb25-4e2c-9c41-0265499fb030' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6ac93913-097f-4718-ac59-e86f6de55d03' class='xr-var-data-in' type='checkbox'><label for='data-6ac93913-097f-4718-ac59-e86f6de55d03' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([234750., 235250., 235750., ..., 656750., 657250., 657750.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0</div><input id='attrs-f4adb386-2b5f-44c9-b256-59a5bbcb5280' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f4adb386-2b5f-44c9-b256-59a5bbcb5280' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9d8e3942-2068-44d5-82eb-588305a5a805' class='xr-var-data-in' type='checkbox'><label for='data-9d8e3942-2068-44d5-82eb-588305a5a805' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>semi_major_axis :</span></dt><dd>6377276.345</dd><dt><span>semi_minor_axis :</span></dt><dd>6356075.41314024</dd><dt><span>inverse_flattening :</span></dt><dd>300.8017</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>Everest 1830 (1937 Adjustment)</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>Indian 1960</dd><dt><span>horizontal_datum_name :</span></dt><dd>Indian 1960</dd><dt><span>projected_crs_name :</span></dt><dd>Indian 1960 / UTM zone 48N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd></dl></div><div class='xr-var-data'><pre>array(0)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b36b2249-561c-4cfa-91b8-a46e7d724f84' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-b36b2249-561c-4cfa-91b8-a46e7d724f84' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       [0, 0, 0, ..., 0, 0, 0]])</pre></div></div></li><li class='xr-section-item'><input id='section-1376a5fb-cb4a-48b4-9554-2c03992b400b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-1376a5fb-cb4a-48b4-9554-2c03992b400b' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.167e+06 1.168e+06 ... 1.539e+06</div><input id='attrs-2b67c44b-6e2e-41f2-8850-1ac7fc041a67' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2b67c44b-6e2e-41f2-8850-1ac7fc041a67' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a05227b2-ab52-4b0b-a46c-4536ad201ce4' class='xr-var-data-in' type='checkbox'><label for='data-a05227b2-ab52-4b0b-a46c-4536ad201ce4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([1167250., 1167750., 1168250., ..., 1538250., 1538750., 1539250.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.348e+05 2.352e+05 ... 6.578e+05</div><input id='attrs-fcdc6793-5bed-43dd-8f06-85c8ef08e514' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fcdc6793-5bed-43dd-8f06-85c8ef08e514' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f13d41c9-d888-4a4f-862b-8480dc18c8c6' class='xr-var-data-in' type='checkbox'><label for='data-f13d41c9-d888-4a4f-862b-8480dc18c8c6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([234750., 235250., 235750., ..., 656750., 657250., 657750.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0</div><input id='attrs-2af27a64-25bc-4eb6-9a2f-d7927ed67bdc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2af27a64-25bc-4eb6-9a2f-d7927ed67bdc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-09426eaa-93e4-4e25-aca1-d742f261efd3' class='xr-var-data-in' type='checkbox'><label for='data-09426eaa-93e4-4e25-aca1-d742f261efd3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>semi_major_axis :</span></dt><dd>6377276.345</dd><dt><span>semi_minor_axis :</span></dt><dd>6356075.41314024</dd><dt><span>inverse_flattening :</span></dt><dd>300.8017</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>Everest 1830 (1937 Adjustment)</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>Indian 1960</dd><dt><span>horizontal_datum_name :</span></dt><dd>Indian 1960</dd><dt><span>projected_crs_name :</span></dt><dd>Indian 1960 / UTM zone 48N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd></dl></div><div class='xr-var-data'><pre>array(0)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b541bdf6-e07b-4548-8351-ebcf8a4e1004' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-b541bdf6-e07b-4548-8351-ebcf8a4e1004' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Then we can generate the routing from, say Phnom Penh to Poipet, using <code class="docutils literal notranslate"><span class="pre">xarray-spatial</span></code>’s A* algorithm:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>a_star_search<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Object `a_star_search` not found.
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xrspatial</span> <span class="kn">import</span> <span class="n">a_star_search</span>
@@ -1885,10 +1863,6 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 /opt/conda/lib/python3.8/site-packages/numba/cuda/simulator/cudadrv/devicearray.py:317: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   def managed_array(shape, dtype=np.float, strides=None, order=&#39;C&#39;):
-/opt/conda/lib/python3.8/site-packages/param/parameterized.py:998: DeprecationWarning: invalid escape sequence \.
-  &quot;&quot;&quot;
-/opt/conda/lib/python3.8/site-packages/datashape/discovery.py:161: DeprecationWarning: invalid escape sequence \s
-  value, unit = re.split(&#39;\s+&#39;, x.strip())
 </pre></div>
 </div>
 </div>
@@ -1899,10 +1873,10 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
   and should_run_async(code)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f1cb07e8790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f7c3b7fc370&gt;
 </pre></div>
 </div>
-<img alt="../../_images/08-Transport_costs_106_2.png" src="../../_images/08-Transport_costs_106_2.png" />
+<img alt="../../_images/08-Transport_costs_107_2.png" src="../../_images/08-Transport_costs_107_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2274,13 +2248,13 @@ array([[nan, nan, nan, ..., nan, nan, nan],
 Coordinates:
   * y            (y) float64 1.167e+06 1.168e+06 ... 1.539e+06 1.539e+06
   * x            (x) float64 2.348e+05 2.352e+05 ... 6.572e+05 6.578e+05
-    spatial_ref  int64 0</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 745</li><li><span class='xr-has-index'>x</span>: 847</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-9a2b345a-6cb3-417f-949e-b24ac857d157' class='xr-array-in' type='checkbox' checked><label for='section-9a2b345a-6cb3-417f-949e-b24ac857d157' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>nan nan nan nan nan nan nan nan ... nan nan nan nan nan nan nan nan</span></div><div class='xr-array-data'><pre>array([[nan, nan, nan, ..., nan, nan, nan],
+    spatial_ref  int64 0</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 745</li><li><span class='xr-has-index'>x</span>: 847</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-125871a0-ffee-4c4f-8d09-0da8c37cdf13' class='xr-array-in' type='checkbox' checked><label for='section-125871a0-ffee-4c4f-8d09-0da8c37cdf13' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>nan nan nan nan nan nan nan nan ... nan nan nan nan nan nan nan nan</span></div><div class='xr-array-data'><pre>array([[nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
        ...,
        [nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
-       [nan, nan, nan, ..., nan, nan, nan]])</pre></div></div></li><li class='xr-section-item'><input id='section-82c7a114-9211-4f21-860b-c28e7ed0c135' class='xr-section-summary-in' type='checkbox'  checked><label for='section-82c7a114-9211-4f21-860b-c28e7ed0c135' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.167e+06 1.168e+06 ... 1.539e+06</div><input id='attrs-f3e3700b-d8d8-4d53-a366-ecc7b7b87604' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f3e3700b-d8d8-4d53-a366-ecc7b7b87604' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-94f012ff-c2d4-4373-8b86-e296e9f8c067' class='xr-var-data-in' type='checkbox'><label for='data-94f012ff-c2d4-4373-8b86-e296e9f8c067' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([1167250., 1167750., 1168250., ..., 1538250., 1538750., 1539250.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.348e+05 2.352e+05 ... 6.578e+05</div><input id='attrs-84f7fcc6-1b1d-4b78-997c-2f4ece4621b0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-84f7fcc6-1b1d-4b78-997c-2f4ece4621b0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-240ece4d-8350-4000-96f6-5099d319936c' class='xr-var-data-in' type='checkbox'><label for='data-240ece4d-8350-4000-96f6-5099d319936c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([234750., 235250., 235750., ..., 656750., 657250., 657750.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0</div><input id='attrs-9c86cd4f-1cce-4ece-9ff7-d2d5c125eb31' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9c86cd4f-1cce-4ece-9ff7-d2d5c125eb31' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-052edef7-dcd2-4834-a25c-147e95b669a9' class='xr-var-data-in' type='checkbox'><label for='data-052edef7-dcd2-4834-a25c-147e95b669a9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>semi_major_axis :</span></dt><dd>6377276.345</dd><dt><span>semi_minor_axis :</span></dt><dd>6356075.41314024</dd><dt><span>inverse_flattening :</span></dt><dd>300.8017</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>Everest 1830 (1937 Adjustment)</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>Indian 1960</dd><dt><span>horizontal_datum_name :</span></dt><dd>Indian 1960</dd><dt><span>projected_crs_name :</span></dt><dd>Indian 1960 / UTM zone 48N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd></dl></div><div class='xr-var-data'><pre>array(0)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-bc0caab8-6e65-4ed9-b83a-cc26135172df' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-bc0caab8-6e65-4ed9-b83a-cc26135172df' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       [nan, nan, nan, ..., nan, nan, nan]])</pre></div></div></li><li class='xr-section-item'><input id='section-8b2b6d7d-71f3-431d-9558-418bb852440e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-8b2b6d7d-71f3-431d-9558-418bb852440e' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.167e+06 1.168e+06 ... 1.539e+06</div><input id='attrs-36f0cd1f-dee6-4e5f-93d9-14ab86447fff' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-36f0cd1f-dee6-4e5f-93d9-14ab86447fff' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6da93ca6-750f-4c3b-81ac-3edd19e14822' class='xr-var-data-in' type='checkbox'><label for='data-6da93ca6-750f-4c3b-81ac-3edd19e14822' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([1167250., 1167750., 1168250., ..., 1538250., 1538750., 1539250.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.348e+05 2.352e+05 ... 6.578e+05</div><input id='attrs-770b8c48-cd6a-47a3-b2bb-eed816a6e7f2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-770b8c48-cd6a-47a3-b2bb-eed816a6e7f2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0fc57a70-f730-4ddc-9b72-d36a9c7cfe0d' class='xr-var-data-in' type='checkbox'><label for='data-0fc57a70-f730-4ddc-9b72-d36a9c7cfe0d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([234750., 235250., 235750., ..., 656750., 657250., 657750.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0</div><input id='attrs-588847ab-761f-427c-893c-21982707000f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-588847ab-761f-427c-893c-21982707000f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-facd39a4-1810-47ea-a837-80d9a17b1146' class='xr-var-data-in' type='checkbox'><label for='data-facd39a4-1810-47ea-a837-80d9a17b1146' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>semi_major_axis :</span></dt><dd>6377276.345</dd><dt><span>semi_minor_axis :</span></dt><dd>6356075.41314024</dd><dt><span>inverse_flattening :</span></dt><dd>300.8017</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>Everest 1830 (1937 Adjustment)</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>Indian 1960</dd><dt><span>horizontal_datum_name :</span></dt><dd>Indian 1960</dd><dt><span>projected_crs_name :</span></dt><dd>Indian 1960 / UTM zone 48N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd></dl></div><div class='xr-var-data'><pre>array(0)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-1ed1aa78-d0d0-4398-8357-7e9bc54bb26b' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-1ed1aa78-d0d0-4398-8357-7e9bc54bb26b' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>And we can turn the route surface into a line that connects the pixels in the route:</p>
 <div class="cell docutils container">
@@ -2301,7 +2275,7 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_109_0.svg" src="../../_images/08-Transport_costs_109_0.svg" /></div>
+<img alt="../../_images/08-Transport_costs_110_0.svg" src="../../_images/08-Transport_costs_110_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="continuous-surfaces">
@@ -2318,10 +2292,10 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_112_0.png" src="../../_images/08-Transport_costs_112_0.png" />
+<img alt="../../_images/08-Transport_costs_113_0.png" src="../../_images/08-Transport_costs_113_0.png" />
 </div>
 </div>
-<p>We can determine that, above 0.01, a cell is not available for routing. Using this, we can build a mask similar as above that can be used for generating routes.</p>
+<p>We can determine that, above 0.01, a cell is not available for routing. Using this, we can build a mask similar as above that can be used for generating routes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set surface up</span>
@@ -2339,8 +2313,19 @@ Coordinates:
 <span class="n">surface</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
     <span class="n">surface</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
 <span class="p">)</span>
-
-<span class="c1"># Swap order of Y coordinate</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+  and should_run_async(code)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Swap order of Y coordinate</span>
 <span class="n">surface</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="c1"># Pull out starting point</span>
@@ -2383,6 +2368,68 @@ Coordinates:
 <span class="n">route_line</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">route_line</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+  and should_run_async(code)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">friction_motor</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">reproject</span><span class="p">(</span>
+    <span class="mi">3148</span>
+<span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
+    <span class="n">band</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">friction_motor</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">reproject</span><span class="p">(</span><span class="mi">3148</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span>
+<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">route_line</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span>
+<span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Motor Friction&quot;</span><span class="p">)</span>
+
+<span class="n">surface</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">route_line</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span>
+<span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Mask&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+  and should_run_async(code)
+</pre></div>
+</div>
+<img alt="../../_images/08-Transport_costs_117_1.png" src="../../_images/08-Transport_costs_117_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="n">surface</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">add_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">route_line</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span>
+<span class="p">)</span>
+<span class="n">cities</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">3148</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Main cities&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+  and should_run_async(code)
+</pre></div>
+</div>
+<img alt="../../_images/08-Transport_costs_118_1.png" src="../../_images/08-Transport_costs_118_1.png" />
 </div>
 </div>
 </div>
