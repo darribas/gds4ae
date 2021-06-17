@@ -22,6 +22,16 @@ html:
 	rm -rf website/content
 	# No Jekyll on remote server
 	touch docs/.nojekyll
+linkcheck:
+	rm -rf website/_build
+	cd website && rm -rf content
+	# list folders with notebooks here. Notebooks must be present in _toc.yml.
+	cp -r content website/
+	# Check links
+	jupyter-book build website/ --builder linkcheck
+	# Clean
+	rm -rf website/content
+	rm -r website/_build   
 pdf:
 	rm -rf website/_build
 	cd website && rm -rf content
