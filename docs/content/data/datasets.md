@@ -14,7 +14,7 @@ This dataset has been sourced from the course ["Spatial Modelling for Data Scien
 This dataset contains a pre-processed set of properties advertised on the AirBnb website within the region of Madrid (Spain), together with house characteristics. 
 
 - 🗃️ Data file [`madrid_abb.gpkg`](https://github.com/GDSL-UL/san/raw/v0.1.0/data/assignment_1_madrid/madrid_abb.gpkg)
-- 🤖 Code used to generate the file [`[URL]`](https://github.com/GDSL-UL/san/raw/v0.1.0/data/assignment_1_madrid/clean_data)
+- 🤖 Code used to generate the file [`[URL]`](https://github.com/GDSL-UL/san/blob/v0.1.0/data/assignment_1_madrid/clean_data.ipynb)
 - ℹ️ Furhter information [`[URL]`](https://github.com/GDSL-UL/san/blob/v0.1.0/docs/11-datasets.md#madrid-airbnb)
 
 <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img alt="License" style="border-width:0" src="https://licensebuttons.net/l/zero/1.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal Public Domain Dedication</a>.

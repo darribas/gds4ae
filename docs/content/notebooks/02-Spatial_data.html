@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spatial Data &#8212; Geographic Data Science for Applied Economists</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -35,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -45,7 +42,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -59,14 +56,14 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Geovisualisation" href="03-Geovisualisation.html" />
     <link rel="prev" title="Introduction" href="01-Introduction.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,30 +72,30 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../index.html">
-  
-  
-  <h1 class="site-logo" id="site-title">Geographic Data Science for Applied Economists</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Geographic Data Science for Applied Economists</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../pages/home.html">
    Home
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Overview
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../pages/overview.html">
    Overview
@@ -110,12 +107,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Content
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-Introduction.html">
    Introduction
@@ -157,12 +154,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Epilogue
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../data/datasets.html">
    Datasets
@@ -180,6 +177,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -229,12 +227,12 @@
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -260,12 +258,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ahead-of-time">
    📖 Ahead of time…
@@ -349,8 +346,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -365,7 +361,7 @@
 <h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
 <p>This block is all about understanding spatial data, both conceptually and practically. Before your fingers get on the keyboard, the following readings will help you get going and familiar with core ideas:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/02_geo_thinking.html">Chapter 2</a> of the GDS Book <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id44"><span>RABWng</span></a>]</span>, which provides a conceptual overview of representing Geography in data</p></li>
+<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/01_geo_thinking.html">Chapter 1</a> of the GDS Book <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id44"><span>RABWng</span></a>]</span>, which provides a conceptual overview of representing Geography in data</p></li>
 <li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/03_spatial_data.html">Chapter 3</a> of the GDS Book <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id44"><span>RABWng</span></a>]</span>, a sister chapter with a more applied perspective on how concepts are implemented in computer data structures</p></li>
 </ul>
 <p>Additionally, parts of this block are based and source from <a class="reference external" href="https://darribas.org/gds_course/content/bC/lab_C.html">Block C</a> in the GDS Course <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id9"><span>AB19</span></a>]</span>.</p>
@@ -392,16 +388,16 @@
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="35ea0e54-e75b-473f-abc5-01b9865e4966" name="8b6c1ad0-006b-4ab5-923d-8a4ce8f99a65" type="radio">
-</input><label class="tabbed-label" for="35ea0e54-e75b-473f-abc5-01b9865e4966">
+<input checked="checked" id="ab969d0b-17b2-4d2c-927f-93124818ac13" name="93bc032c-da4a-4bff-baeb-d2656cb77c30" type="radio">
+</input><label class="tabbed-label" for="ab969d0b-17b2-4d2c-927f-93124818ac13">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="a34c57b9-516a-4fcf-933d-caf6d9df90c0" name="8b6c1ad0-006b-4ab5-923d-8a4ce8f99a65" type="radio">
-</input><label class="tabbed-label" for="a34c57b9-516a-4fcf-933d-caf6d9df90c0">
+<input id="58941318-b125-4e67-9908-9e0be4e8f347" name="93bc032c-da4a-4bff-baeb-d2656cb77c30" type="radio">
+</input><label class="tabbed-label" for="58941318-b125-4e67-9908-9e0be4e8f347">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -613,16 +609,16 @@ memory usage: 2.2+ MB
 <div class="section" id="lines">
 <h4>Lines<a class="headerlink" href="#lines" title="Permalink to this headline">¶</a></h4>
 <div class="tabbed-set docutils">
-<input checked="checked" id="d1e438df-87a0-4dc3-87e8-502b9193eea6" name="a34893b0-4a5a-40d0-8885-c848782df846" type="radio">
-</input><label class="tabbed-label" for="d1e438df-87a0-4dc3-87e8-502b9193eea6">
+<input checked="checked" id="bebbe327-b246-4a78-b52a-056a4df26b2f" name="9d51051b-f12d-4c5d-aa46-4a9981ae730f" type="radio">
+</input><label class="tabbed-label" for="bebbe327-b246-4a78-b52a-056a4df26b2f">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="560803eb-a538-4e03-9fc5-33874d87d37c" name="a34893b0-4a5a-40d0-8885-c848782df846" type="radio">
-</input><label class="tabbed-label" for="560803eb-a538-4e03-9fc5-33874d87d37c">
+<input id="8b46dc0b-0efb-4a0c-9bc9-a543b5596093" name="9d51051b-f12d-4c5d-aa46-4a9981ae730f" type="radio">
+</input><label class="tabbed-label" for="8b46dc0b-0efb-4a0c-9bc9-a543b5596093">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -677,16 +673,16 @@ memory usage: 3.6+ MB
 </div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="f07e80f3-0844-4e52-8dc0-ff96b3b86b06" name="af670c25-51f8-412e-ad21-6758eec8c13a" type="radio">
-</input><label class="tabbed-label" for="f07e80f3-0844-4e52-8dc0-ff96b3b86b06">
+<input checked="checked" id="38dd5f0a-16ed-4ed3-aa05-38d1b4feb820" name="c6a010af-bad8-4f3d-9a58-ce166e46ebae" type="radio">
+</input><label class="tabbed-label" for="38dd5f0a-16ed-4ed3-aa05-38d1b4feb820">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/neighbourhoods.geojson&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="c86d1cdd-dfe9-4a1a-bc30-6c46a06aae7f" name="af670c25-51f8-412e-ad21-6758eec8c13a" type="radio">
-</input><label class="tabbed-label" for="c86d1cdd-dfe9-4a1a-bc30-6c46a06aae7f">
+<input id="c7654277-5ecb-4a08-8441-e06105a3892a" name="c6a010af-bad8-4f3d-9a58-ce166e46ebae" type="radio">
+</input><label class="tabbed-label" for="c7654277-5ecb-4a08-8441-e06105a3892a">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -854,16 +850,16 @@ Online read</label><div class="tabbed-content docutils">
 <div class="section" id="surfaces">
 <h3>Surfaces<a class="headerlink" href="#surfaces" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="d30bc98e-ea57-41b3-8a89-50956fb12214" name="a96a6058-97ca-4139-a763-8e9d1b22b122" type="radio">
-</input><label class="tabbed-label" for="d30bc98e-ea57-41b3-8a89-50956fb12214">
+<input checked="checked" id="51e2aae5-3441-4d9c-a3f0-48eeed586ce0" name="1874970c-0433-4381-b3c4-3a785381edd7" type="radio">
+</input><label class="tabbed-label" for="51e2aae5-3441-4d9c-a3f0-48eeed586ce0">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="s2">&quot;../data/madrid_scene_s2_10_tc.tif&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="61f3d7b2-8791-4110-be62-b2b43847ad0a" name="a96a6058-97ca-4139-a763-8e9d1b22b122" type="radio">
-</input><label class="tabbed-label" for="61f3d7b2-8791-4110-be62-b2b43847ad0a">
+<input id="be0ccc06-a35a-48ad-aa83-d83a505607ed" name="1874970c-0433-4381-b3c4-3a785381edd7" type="radio">
+</input><label class="tabbed-label" for="be0ccc06-a35a-48ad-aa83-d83a505607ed">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -2539,21 +2535,19 @@ dtype: float64
 
       </div>
     </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-6032674-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-6032674-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    
   </body>
 </html>
