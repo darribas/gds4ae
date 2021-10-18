@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -43,9 +43,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -75,13 +73,14 @@
     <a class="navbar-brand text-wrap" href="../../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Geographic Data Science for Applied Economists</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -261,7 +260,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ahead-of-time">
@@ -362,16 +361,16 @@
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2340da79-52ba-4a33-ad7d-2f87aa802774" name="79a56f06-7ccb-4fb6-a8c7-2cce36f4b800" type="radio">
-</input><label class="tabbed-label" for="2340da79-52ba-4a33-ad7d-2f87aa802774">
+<input checked="checked" id="60bef40b-69b6-4fb7-877d-2d0a43fc836e" name="f06aa86a-7def-4ac2-bf6e-7ac90b076b9e" type="radio">
+</input><label class="tabbed-label" for="60bef40b-69b6-4fb7-877d-2d0a43fc836e">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="a910675d-9e06-4d96-af05-a5c789d94b61" name="79a56f06-7ccb-4fb6-a8c7-2cce36f4b800" type="radio">
-</input><label class="tabbed-label" for="a910675d-9e06-4d96-af05-a5c789d94b61">
+<input id="7cec0f1a-8e8e-442c-ace9-6162c5a26be3" name="f06aa86a-7def-4ac2-bf6e-7ac90b076b9e" type="radio">
+</input><label class="tabbed-label" for="7cec0f1a-8e8e-442c-ace9-6162c5a26be3">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -896,8 +895,8 @@ memory usage: 9.4+ KB
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="d2ded52c-f7dc-44f9-b8f3-3e53f6c3b79e" name="c7c2fc54-0546-4a8c-adcf-aec199fcf025" type="radio">
-</input><label class="tabbed-label" for="d2ded52c-f7dc-44f9-b8f3-3e53f6c3b79e">
+<input checked="checked" id="b667cf5a-a037-4718-ada1-adcba29e4cb9" name="72ef2a86-00c6-4c38-8ee8-c22e0d0d0ca3" type="radio">
+</input><label class="tabbed-label" for="b667cf5a-a037-4718-ada1-adcba29e4cb9">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -906,8 +905,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="9015fb78-7746-4ed4-842f-947a9e7d7036" name="c7c2fc54-0546-4a8c-adcf-aec199fcf025" type="radio">
-</input><label class="tabbed-label" for="9015fb78-7746-4ed4-842f-947a9e7d7036">
+<input id="0b0fe0f5-2b29-4a5b-8def-0f735421d7b1" name="72ef2a86-00c6-4c38-8ee8-c22e0d0d0ca3" type="radio">
+</input><label class="tabbed-label" for="0b0fe0f5-2b29-4a5b-8def-0f735421d7b1">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -1084,16 +1083,36 @@ Online read</label><div class="tabbed-content docutils">
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="02-Spatial_data.html" title="previous page">Spatial Data</a>
-    <a class='right-next' id="next-link" href="04-Spatial_feature_eng_i.html" title="next page">Spatial Feature Engineering (I)</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="02-Spatial_data.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Spatial Data</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="04-Spatial_feature_eng_i.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Spatial Feature Engineering (I)</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -43,9 +43,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -75,13 +73,14 @@
     <a class="navbar-brand text-wrap" href="../../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Geographic Data Science for Applied Economists</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -261,7 +260,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ahead-of-time">
@@ -388,16 +387,16 @@
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ab969d0b-17b2-4d2c-927f-93124818ac13" name="93bc032c-da4a-4bff-baeb-d2656cb77c30" type="radio">
-</input><label class="tabbed-label" for="ab969d0b-17b2-4d2c-927f-93124818ac13">
+<input checked="checked" id="4f8fcf52-802e-4144-9b4c-e5a8167ced3c" name="5724c1c8-9a3e-4083-af1e-c9cd07956e01" type="radio">
+</input><label class="tabbed-label" for="4f8fcf52-802e-4144-9b4c-e5a8167ced3c">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="58941318-b125-4e67-9908-9e0be4e8f347" name="93bc032c-da4a-4bff-baeb-d2656cb77c30" type="radio">
-</input><label class="tabbed-label" for="58941318-b125-4e67-9908-9e0be4e8f347">
+<input id="5d2fe134-7fae-4e18-ae13-f1c871d7699e" name="5724c1c8-9a3e-4083-af1e-c9cd07956e01" type="radio">
+</input><label class="tabbed-label" for="5d2fe134-7fae-4e18-ae13-f1c871d7699e">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -609,16 +608,16 @@ memory usage: 2.2+ MB
 <div class="section" id="lines">
 <h4>Lines<a class="headerlink" href="#lines" title="Permalink to this headline">¶</a></h4>
 <div class="tabbed-set docutils">
-<input checked="checked" id="bebbe327-b246-4a78-b52a-056a4df26b2f" name="9d51051b-f12d-4c5d-aa46-4a9981ae730f" type="radio">
-</input><label class="tabbed-label" for="bebbe327-b246-4a78-b52a-056a4df26b2f">
+<input checked="checked" id="aaf384c0-4155-4794-9e18-93b6549646d0" name="0744d0f7-455c-48e9-b1a8-2e977e29da44" type="radio">
+</input><label class="tabbed-label" for="aaf384c0-4155-4794-9e18-93b6549646d0">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="8b46dc0b-0efb-4a0c-9bc9-a543b5596093" name="9d51051b-f12d-4c5d-aa46-4a9981ae730f" type="radio">
-</input><label class="tabbed-label" for="8b46dc0b-0efb-4a0c-9bc9-a543b5596093">
+<input id="23139e3d-5af3-4fed-be3f-9b9f5a5745c9" name="0744d0f7-455c-48e9-b1a8-2e977e29da44" type="radio">
+</input><label class="tabbed-label" for="23139e3d-5af3-4fed-be3f-9b9f5a5745c9">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -673,16 +672,16 @@ memory usage: 3.6+ MB
 </div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="38dd5f0a-16ed-4ed3-aa05-38d1b4feb820" name="c6a010af-bad8-4f3d-9a58-ce166e46ebae" type="radio">
-</input><label class="tabbed-label" for="38dd5f0a-16ed-4ed3-aa05-38d1b4feb820">
+<input checked="checked" id="62546ee0-5abd-4969-9385-a0d54593ccfc" name="fb152d9a-8bde-4955-8c91-36500e751339" type="radio">
+</input><label class="tabbed-label" for="62546ee0-5abd-4969-9385-a0d54593ccfc">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/neighbourhoods.geojson&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="c7654277-5ecb-4a08-8441-e06105a3892a" name="c6a010af-bad8-4f3d-9a58-ce166e46ebae" type="radio">
-</input><label class="tabbed-label" for="c7654277-5ecb-4a08-8441-e06105a3892a">
+<input id="aa07f7d5-beae-4431-bc09-f61c125d3d4c" name="fb152d9a-8bde-4955-8c91-36500e751339" type="radio">
+</input><label class="tabbed-label" for="aa07f7d5-beae-4431-bc09-f61c125d3d4c">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -850,16 +849,16 @@ Online read</label><div class="tabbed-content docutils">
 <div class="section" id="surfaces">
 <h3>Surfaces<a class="headerlink" href="#surfaces" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="51e2aae5-3441-4d9c-a3f0-48eeed586ce0" name="1874970c-0433-4381-b3c4-3a785381edd7" type="radio">
-</input><label class="tabbed-label" for="51e2aae5-3441-4d9c-a3f0-48eeed586ce0">
+<input checked="checked" id="b0ab7247-b6bc-4f7a-95a5-b17f333b857c" name="bf655565-aca0-4db2-8a9a-54cab01dcd57" type="radio">
+</input><label class="tabbed-label" for="b0ab7247-b6bc-4f7a-95a5-b17f333b857c">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="s2">&quot;../data/madrid_scene_s2_10_tc.tif&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="be0ccc06-a35a-48ad-aa83-d83a505607ed" name="1874970c-0433-4381-b3c4-3a785381edd7" type="radio">
-</input><label class="tabbed-label" for="be0ccc06-a35a-48ad-aa83-d83a505607ed">
+<input id="6be74deb-c19f-4480-956c-ff4fa1384269" name="bf655565-aca0-4db2-8a9a-54cab01dcd57" type="radio">
+</input><label class="tabbed-label" for="6be74deb-c19f-4480-956c-ff4fa1384269">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -2508,16 +2507,36 @@ dtype: float64
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="01-Introduction.html" title="previous page">Introduction</a>
-    <a class='right-next' id="next-link" href="03-Geovisualisation.html" title="next page">Geovisualisation</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="01-Introduction.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Introduction</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="03-Geovisualisation.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Geovisualisation</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
