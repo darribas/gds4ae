@@ -370,8 +370,8 @@
 <div class="section" id="moving-along-street-networks">
 <h3><em>Moving</em> along (street) networks<a class="headerlink" href="#moving-along-street-networks" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="9faa1824-8c7f-4be7-bd9e-2c2c121786ee" name="57cce152-7908-4f97-b946-6eb59c1c97ba" type="radio">
-</input><label class="tabbed-label" for="9faa1824-8c7f-4be7-bd9e-2c2c121786ee">
+<input checked="checked" id="75c6c2e2-5eeb-46f7-b428-94678adcae4f" name="93987bf8-1e5e-428f-bbf4-f37d32083096" type="radio">
+</input><label class="tabbed-label" for="75c6c2e2-5eeb-46f7-b428-94678adcae4f">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">streets</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
@@ -380,8 +380,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="0ad8d1b6-0ae1-43f9-a786-342647df5f96" name="57cce152-7908-4f97-b946-6eb59c1c97ba" type="radio">
-</input><label class="tabbed-label" for="0ad8d1b6-0ae1-43f9-a786-342647df5f96">
+<input id="5c80415d-73ea-42e6-8b20-b82f35accda5" name="93987bf8-1e5e-428f-bbf4-f37d32083096" type="radio">
+</input><label class="tabbed-label" for="5c80415d-73ea-42e6-8b20-b82f35accda5">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">streets</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -936,7 +936,7 @@ Name: node_id, dtype: int64
 <span class="p">]</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">nnode</span><span class="o">=</span><span class="n">abbs_nnode</span>
 <span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-    <span class="n">cafe2nnode</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;geometry&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> 
+    <span class="n">cafe2nnode</span><span class="p">,</span> 
     <span class="n">on</span><span class="o">=</span><span class="s2">&quot;nnode&quot;</span>
 <span class="p">)</span>
 <span class="n">abb_icafe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1300,8 +1300,8 @@ dtype: float64
 <div class="section" id="moving-along-surfaces">
 <h3><em>Moving</em> along surfaces<a class="headerlink" href="#moving-along-surfaces" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ff2b3f4a-bb29-43d4-b0b2-314fab8ca60f" name="0793ee90-2743-4a06-9688-ba5519755bef" type="radio">
-</input><label class="tabbed-label" for="ff2b3f4a-bb29-43d4-b0b2-314fab8ca60f">
+<input checked="checked" id="0bc8b2c5-3ffb-45f8-b9c8-0cb0d55074cb" name="5bed77df-222a-48dc-9fbc-58bafb01ed19" type="radio">
+</input><label class="tabbed-label" for="0bc8b2c5-3ffb-45f8-b9c8-0cb0d55074cb">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">friction_walk</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -1314,8 +1314,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="5988122a-993a-425c-b6fd-a2bbab733fb4" name="0793ee90-2743-4a06-9688-ba5519755bef" type="radio">
-</input><label class="tabbed-label" for="5988122a-993a-425c-b6fd-a2bbab733fb4">
+<input id="4f82c53c-0ce4-4ec7-800d-d9b7b3bcd01f" name="5bed77df-222a-48dc-9fbc-58bafb01ed19" type="radio">
+</input><label class="tabbed-label" for="4f82c53c-0ce4-4ec7-800d-d9b7b3bcd01f">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">friction_walk</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
