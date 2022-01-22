@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geovisualisation &#8212; Geographic Data Science for Applied Economists</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -42,7 +42,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,8 +55,21 @@
     <link rel="next" title="Spatial Feature Engineering (I)" href="04-Spatial_feature_eng_i.html" />
     <link rel="prev" title="Spatial Data" href="02-Spatial_data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-6032674-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -67,7 +80,12 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
@@ -190,22 +208,22 @@
 
 
           
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
             
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
@@ -220,7 +238,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -249,13 +267,14 @@
         
         
         
+        
     </div>
 </div>
 
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -273,6 +292,11 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#choropleths">
      Choropleths
     </a>
@@ -280,6 +304,11 @@
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#a-classiffication-problem">
        A classiffication problem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-assign-colors">
+       How to assign colors?
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -306,10 +335,34 @@
     <a class="reference internal nav-link" href="#choropleths-on-geo-tables">
      Choropleths on Geo-Tables
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#streamlined">
+       Streamlined
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#manual-approach">
+       Manual approach
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#value-by-alpha-mapping">
+       Value by alpha mapping
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#legendgrams">
+       <em>
+        Legendgrams
+       </em>
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#surface-visualisation">
-     Surface visualisation
+    <a class="reference internal nav-link" href="#choropleths-on-surfaces">
+     Choropleths on surfaces
     </a>
    </li>
   </ul>
@@ -327,7 +380,116 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Geovisualisation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ahead-of-time">
+   📖 Ahead of time…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hands-on-coding">
+   💻 Hands-on coding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choropleths">
+     Choropleths
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-classiffication-problem">
+       A classiffication problem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-assign-colors">
+       How to assign colors?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-many-colors">
+       How
+       <em>
+        many
+       </em>
+       colors?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-the-right-color">
+       Using the
+       <em>
+        right
+       </em>
+       color
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choropleths-on-geo-tables">
+     Choropleths on Geo-Tables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#streamlined">
+       Streamlined
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#manual-approach">
+       Manual approach
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#value-by-alpha-mapping">
+       Value by alpha mapping
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#legendgrams">
+       <em>
+        Legendgrams
+       </em>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choropleths-on-surfaces">
+     Choropleths on surfaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   🐾 Next steps
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="geovisualisation">
@@ -352,25 +514,28 @@
 <span class="kn">from</span> <span class="nn">legendgram</span> <span class="kn">import</span> <span class="n">legendgram</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">palettable.matplotlib</span> <span class="k">as</span> <span class="nn">palmpl</span>
+<span class="kn">from</span> <span class="nn">splot.mapping</span> <span class="kn">import</span> <span class="n">vba_choropleth</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="section" id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
 <div class="margin sidebar">
 <p class="sidebar-title">Data</p>
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ce4e97eb-7313-4014-9f16-1e9638a75839" name="4820ab76-6a3f-42b4-9f25-87550d44aa4c" type="radio">
-</input><label class="tabbed-label" for="ce4e97eb-7313-4014-9f16-1e9638a75839">
+<input checked="checked" id="13fe06a5-8eb1-417b-98fa-77fed719c8e4" name="42601933-86d9-414d-9cbb-3adb20e9fbc0" type="radio">
+</input><label class="tabbed-label" for="13fe06a5-8eb1-417b-98fa-77fed719c8e4">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="48cafaf4-3294-418b-b09b-66665b8d2516" name="4820ab76-6a3f-42b4-9f25-87550d44aa4c" type="radio">
-</input><label class="tabbed-label" for="48cafaf4-3294-418b-b09b-66665b8d2516">
+<input id="dfa9cbfc-005a-4b96-9701-6379d58ca308" name="42601933-86d9-414d-9cbb-3adb20e9fbc0" type="radio">
+</input><label class="tabbed-label" for="dfa9cbfc-005a-4b96-9701-6379d58ca308">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -400,7 +565,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_7_0.png" src="../../_images/03-Geovisualisation_7_0.png" />
+<img alt="../../_images/03-Geovisualisation_8_0.png" src="../../_images/03-Geovisualisation_8_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -511,6 +676,7 @@ memory usage: 9.4+ KB
 </table>
 </div></div></div>
 </div>
+</div>
 <div class="section" id="choropleths">
 <h3>Choropleths<a class="headerlink" href="#choropleths" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
@@ -531,7 +697,7 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_14_0.png" src="../../_images/03-Geovisualisation_14_0.png" />
+<img alt="../../_images/03-Geovisualisation_15_0.png" src="../../_images/03-Geovisualisation_15_0.png" />
 </div>
 </div>
 <div class="section" id="a-classiffication-problem">
@@ -557,9 +723,12 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_17_0.png" src="../../_images/03-Geovisualisation_17_0.png" />
+<img alt="../../_images/03-Geovisualisation_18_0.png" src="../../_images/03-Geovisualisation_18_0.png" />
 </div>
 </div>
+</div>
+<div class="section" id="how-to-assign-colors">
+<h4>How to assign colors?<a class="headerlink" href="#how-to-assign-colors" title="Permalink to this headline">¶</a></h4>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>To build an intuition behind each classification algorithm more easily, we create a helper method (<code class="docutils literal notranslate"><span class="pre">plot_classi</span></code>) that generates a visualisation of a given classification.</p>
@@ -629,7 +798,7 @@ memory usage: 9.4+ KB
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_22_0.png" src="../../_images/03-Geovisualisation_22_0.png" />
+<img alt="../../_images/03-Geovisualisation_24_0.png" src="../../_images/03-Geovisualisation_24_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -660,7 +829,7 @@ memory usage: 9.4+ KB
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_25_0.png" src="../../_images/03-Geovisualisation_25_0.png" />
+<img alt="../../_images/03-Geovisualisation_27_0.png" src="../../_images/03-Geovisualisation_27_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -691,7 +860,7 @@ memory usage: 9.4+ KB
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_28_0.png" src="../../_images/03-Geovisualisation_28_0.png" />
+<img alt="../../_images/03-Geovisualisation_30_0.png" src="../../_images/03-Geovisualisation_30_0.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -803,7 +972,7 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_36_0.png" src="../../_images/03-Geovisualisation_36_0.png" />
+<img alt="../../_images/03-Geovisualisation_38_0.png" src="../../_images/03-Geovisualisation_38_0.png" />
 </div>
 </div>
 </div>
@@ -822,6 +991,8 @@ memory usage: 9.4+ KB
 </div>
 <div class="section" id="choropleths-on-geo-tables">
 <h3>Choropleths on Geo-Tables<a class="headerlink" href="#choropleths-on-geo-tables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="streamlined">
+<h4>Streamlined<a class="headerlink" href="#streamlined" title="Permalink to this headline">¶</a></h4>
 <p>How can we create classifications from data on geo-tables? Two ways:</p>
 <ul class="simple">
 <li><p>Directly within <code class="docutils literal notranslate"><span class="pre">plot</span></code> (only for some algorithms)</p></li>
@@ -835,16 +1006,21 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_41_0.png" src="../../_images/03-Geovisualisation_41_0.png" />
+<img alt="../../_images/03-Geovisualisation_44_0.png" src="../../_images/03-Geovisualisation_44_0.png" />
 </div>
 </div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>See <a class="reference external" href="https://pysal.org/mapclassify/notebooks/03_choropleth.html">this tutorial</a> for more details on fine tuning choropleths manually</p>
 </div>
-<ul class="simple">
-<li><p>Manually attaching the data (for any algorithm)</p></li>
-</ul>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Create an equal interval map with five bins for <code class="docutils literal notranslate"><span class="pre">no2_viz</span></code></p>
+</div>
+</div>
+<div class="section" id="manual-approach">
+<h4>Manual approach<a class="headerlink" href="#manual-approach" title="Permalink to this headline">¶</a></h4>
+<p>This is valid for any algorithm and provides much more flexibility at the cost of effort.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classi</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">Quantiles</span><span class="p">(</span><span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
@@ -855,12 +1031,65 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_43_0.png" src="../../_images/03-Geovisualisation_43_0.png" />
+<img alt="../../_images/03-Geovisualisation_46_0.png" src="../../_images/03-Geovisualisation_46_0.png" />
 </div>
 </div>
-<hr class="docutils" />
-<p><em>Legendgrams</em>:</p>
+</div>
+<div class="section" id="value-by-alpha-mapping">
+<h4>Value by alpha mapping<a class="headerlink" href="#value-by-alpha-mapping" title="Permalink to this headline">¶</a></h4>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>See <a class="reference external" href="https://github.com/pysal/splot/blob/main/notebooks/mapping_vba.ipynb">here</a> for more examples of VBA mapping.</p>
+</div>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="s1">&#39;area_inv&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">db</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">5726</span><span class="p">)</span><span class="o">.</span><span class="n">area</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_margin tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_49_0.png" src="../../_images/03-Geovisualisation_49_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up figure and axis</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="c1"># VBA choropleth</span>
+<span class="n">vba_choropleth</span><span class="p">(</span>
+    <span class="s1">&#39;no2_viz&#39;</span><span class="p">,</span>          <span class="c1"># Column for color </span>
+    <span class="s1">&#39;area_inv&#39;</span><span class="p">,</span>         <span class="c1"># Column for transparency (alpha)</span>
+    <span class="n">db</span><span class="p">,</span>                 <span class="c1"># Geo-table</span>
+    <span class="n">rgb_mapclassify</span><span class="o">=</span><span class="p">{</span>   <span class="c1"># Options for color classification</span>
+        <span class="s1">&#39;classifier&#39;</span><span class="p">:</span> <span class="s1">&#39;quantiles&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">:</span><span class="mi">5</span>
+    <span class="p">},</span>
+    <span class="n">alpha_mapclassify</span><span class="o">=</span><span class="p">{</span> <span class="c1"># Options for alpha classification</span>
+        <span class="s1">&#39;classifier&#39;</span><span class="p">:</span> <span class="s1">&#39;quantiles&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">:</span><span class="mi">5</span>
+    <span class="p">},</span>
+    <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>        <span class="c1"># Add legend</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span>               <span class="c1"># Axis</span>
+<span class="p">)</span>
+<span class="c1"># Add boundary lines</span>
+<span class="n">db</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Geovisualisation_50_0.png" src="../../_images/03-Geovisualisation_50_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="legendgrams">
+<h4><em>Legendgrams</em><a class="headerlink" href="#legendgrams" title="Permalink to this headline">¶</a></h4>
+<p>Legendgrams are a way to more closely connect the statistical characteristics of your data to the map display.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Legendgrams are <em>experimental</em> at the moment so the code is a bit more involved and less stable. Use at your own risk!</p>
+</div>
+<p>Unfold the cell for an example.</p>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
 
@@ -884,19 +1113,24 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_45_0.png" src="../../_images/03-Geovisualisation_45_0.png" />
+<img alt="../../_images/03-Geovisualisation_52_0.png" src="../../_images/03-Geovisualisation_52_0.png" />
+</div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Give <a class="reference external" href="https://darribas.org/gds_course/content/bD/diy_D.html#task-i-ahah-choropleths">Task I</a> in <a class="reference external" href="https://darribas.org/gds_course/content/bD/diy_D.html">this block</a> of the GDS course a go.</p>
 </div>
 </div>
 </div>
-<div class="section" id="surface-visualisation">
-<h3>Surface visualisation<a class="headerlink" href="#surface-visualisation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="choropleths-on-surfaces">
+<h3>Choropleths on surfaces<a class="headerlink" href="#choropleths-on-surfaces" title="Permalink to this headline">¶</a></h3>
 <div class="margin sidebar">
 <p class="sidebar-title">Data</p>
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="c70fd2eb-b6c8-416e-9760-4c7baea94875" name="8ad3d5ae-6fe8-4308-92c6-fa778f99bf4f" type="radio">
-</input><label class="tabbed-label" for="c70fd2eb-b6c8-416e-9760-4c7baea94875">
+<input checked="checked" id="39ed0f26-a0d6-4247-803f-9966f3bb8ce8" name="109130b8-c104-4b64-be1d-853591802523" type="radio">
+</input><label class="tabbed-label" for="39ed0f26-a0d6-4247-803f-9966f3bb8ce8">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -905,8 +1139,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="4bdc6088-f868-4cbe-ad78-88c8197d1c97" name="8ad3d5ae-6fe8-4308-92c6-fa778f99bf4f" type="radio">
-</input><label class="tabbed-label" for="4bdc6088-f868-4cbe-ad78-88c8197d1c97">
+<input id="9a8de209-3bb7-49e8-a951-37e3e1c65d0c" name="109130b8-c104-4b64-be1d-853591802523" type="radio">
+</input><label class="tabbed-label" for="9a8de209-3bb7-49e8-a951-37e3e1c65d0c">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -928,7 +1162,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_50_0.png" src="../../_images/03-Geovisualisation_50_0.png" />
+<img alt="../../_images/03-Geovisualisation_58_0.png" src="../../_images/03-Geovisualisation_58_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -940,7 +1174,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_51_0.png" src="../../_images/03-Geovisualisation_51_0.png" />
+<img alt="../../_images/03-Geovisualisation_59_0.png" src="../../_images/03-Geovisualisation_59_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -955,10 +1189,10 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f46b93a8c40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f0087843c70&gt;
 </pre></div>
 </div>
-<img alt="../../_images/03-Geovisualisation_53_1.png" src="../../_images/03-Geovisualisation_53_1.png" />
+<img alt="../../_images/03-Geovisualisation_61_1.png" src="../../_images/03-Geovisualisation_61_1.png" />
 </div>
 </div>
 <ul class="simple">
@@ -982,7 +1216,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_55_0.png" src="../../_images/03-Geovisualisation_55_0.png" />
+<img alt="../../_images/03-Geovisualisation_63_0.png" src="../../_images/03-Geovisualisation_63_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1003,7 +1237,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_56_0.png" src="../../_images/03-Geovisualisation_56_0.png" />
+<img alt="../../_images/03-Geovisualisation_64_0.png" src="../../_images/03-Geovisualisation_64_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1024,7 +1258,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_57_0.png" src="../../_images/03-Geovisualisation_57_0.png" />
+<img alt="../../_images/03-Geovisualisation_65_0.png" src="../../_images/03-Geovisualisation_65_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1045,8 +1279,17 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03-Geovisualisation_58_0.png" src="../../_images/03-Geovisualisation_58_0.png" />
+<img alt="../../_images/03-Geovisualisation_66_0.png" src="../../_images/03-Geovisualisation_66_0.png" />
 </div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Read the satellite image for Madrid used in the <a class="reference internal" href="02-Spatial_data.html"><span class="doc std std-doc">previous section</span></a> and create three choropleths, one for each band, using the colormaps <code class="docutils literal notranslate"><span class="pre">Reds</span></code>, <code class="docutils literal notranslate"><span class="pre">Greens</span></code>, <code class="docutils literal notranslate"><span class="pre">Blues</span></code>.</p>
+<p>Play with different classification algorithms.</p>
+<ul class="simple">
+<li><p><em>Do the results change notably?</em></p></li>
+<li><p><em>If so, why do you think that is?</em></p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -1082,67 +1325,45 @@ Online read</label><div class="tabbed-content docutils">
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="02-Spatial_data.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Spatial Data</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02-Spatial_data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Spatial Data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04-Spatial_feature_eng_i.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Spatial Feature Engineering (I)</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="04-Spatial_feature_eng_i.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Spatial Feature Engineering (I)</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Dani Arribas-Bel & Diego Puga<br/>
-        
-          <div class="extra_footer">
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+  <p>
+    
+      By Dani Arribas-Bel & Diego Puga<br/>
+    
+      <div class="extra_footer">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-6032674-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
