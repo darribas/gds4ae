@@ -33,7 +33,7 @@ If you use materials from this resource in your own work, we recommend the follo
 @article{darribas_gds_course,
   author = {Dani Arribas-Bel and Diego Puga},
   title = {Geographic Data Science for Applied Economists},
-  year = 2021,
+  year = 2022,
   annote = {\href{https://darribas.org/gds4ae}}
 }
 ```
