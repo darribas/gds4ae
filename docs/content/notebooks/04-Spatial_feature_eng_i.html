@@ -466,8 +466,8 @@
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="8f2b3c82-2d9d-4be6-9471-ec8ef5857cf0" name="c7dd23ca-3888-4571-9019-3c2c12972ca4" type="radio">
-</input><label class="tabbed-label" for="8f2b3c82-2d9d-4be6-9471-ec8ef5857cf0">
+<input checked="checked" id="093ce7ef-ce0e-4b63-95ca-773ceb3711f5" name="c8bc931a-a16f-492d-bf4e-b8c275588200" type="radio">
+</input><label class="tabbed-label" for="093ce7ef-ce0e-4b63-95ca-773ceb3711f5">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
@@ -481,8 +481,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e5bca6a4-1425-495a-b0d1-a0163fa9559e" name="c7dd23ca-3888-4571-9019-3c2c12972ca4" type="radio">
-</input><label class="tabbed-label" for="e5bca6a4-1425-495a-b0d1-a0163fa9559e">
+<input id="ea2e1fd2-3083-4d3c-946d-5c304b4a24b7" name="c8bc931a-a16f-492d-bf4e-b8c275588200" type="radio">
+</input><label class="tabbed-label" for="ea2e1fd2-3083-4d3c-946d-5c304b4a24b7">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -504,9 +504,11 @@ Online read</label><div class="tabbed-content docutils">
 <p>Check both geo-tables and the surface are in the same CRS:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regions</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">to_epsg</span><span class="p">()</span> <span class="o">==</span> \
-<span class="n">cities</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">to_epsg</span><span class="p">()</span> <span class="o">==</span> \
-<span class="n">pollution</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">to_epsg</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">regions</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">to_epsg</span><span class="p">()</span> <span class="o">==</span>
+    <span class="n">cities</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">to_epsg</span><span class="p">()</span> <span class="o">==</span>
+    <span class="n">pollution</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">to_epsg</span><span class="p">()</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -521,10 +523,7 @@ Online read</label><div class="tabbed-content docutils">
 <p><em>In which region is a city?</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sj</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span>
-    <span class="n">cities</span><span class="p">,</span>
-    <span class="n">regions</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sj</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">cities</span><span class="p">,</span> <span class="n">regions</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -619,6 +618,10 @@ Online read</label><div class="tabbed-content docutils">
 </table>
 </div></div></div>
 </div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Using the Madrid AirBnb <a class="reference internal" href="../data/datasets.html#data-abb"><span class="std std-ref">properties</span></a> and <a class="reference internal" href="../data/datasets.html#data-abb-neis"><span class="std std-ref">neighbourhoods</span></a> dataset, can you determine the neighbourhood group of the first ten properties?</p>
+</div>
 </div>
 <div class="section" id="points-to-polygons">
 <h3>Points to polygons<a class="headerlink" href="#points-to-polygons" title="Permalink to this headline">¶</a></h3>
@@ -662,6 +665,10 @@ memory usage: 10.8+ KB
 </div>
 </div>
 </div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Using the Madrid AirBnb <a class="reference internal" href="../data/datasets.html#data-abb"><span class="std std-ref">properties</span></a>, can you compute how many properties each neighbourhood group has?</p>
+</div>
 </div>
 <div class="section" id="surface-to-points">
 <h3>Surface to points<a class="headerlink" href="#surface-to-points" title="Permalink to this headline">¶</a></h3>
@@ -693,7 +700,7 @@ memory usage: 10.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04-Spatial_feature_eng_i_19_0.png" src="../../_images/04-Spatial_feature_eng_i_19_0.png" />
+<img alt="../../_images/04-Spatial_feature_eng_i_21_0.png" src="../../_images/04-Spatial_feature_eng_i_21_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -744,8 +751,12 @@ memory usage: 10.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04-Spatial_feature_eng_i_22_0.png" src="../../_images/04-Spatial_feature_eng_i_22_0.png" />
+<img alt="../../_images/04-Spatial_feature_eng_i_24_0.png" src="../../_images/04-Spatial_feature_eng_i_24_0.png" />
 </div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Can you calculate the pollution level at the centroid of each Cambodian region in the <a class="reference internal" href="../data/datasets.html#data-cam-friction-reg"><span class="std std-ref">regional aggregates</span></a> dataset? how does it compare to their average value?</p>
 </div>
 </div>
 <div class="section" id="surface-to-polygons">
@@ -771,7 +782,7 @@ memory usage: 10.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04-Spatial_feature_eng_i_25_0.png" src="../../_images/04-Spatial_feature_eng_i_25_0.png" />
+<img alt="../../_images/04-Spatial_feature_eng_i_28_0.png" src="../../_images/04-Spatial_feature_eng_i_28_0.png" />
 </div>
 </div>
 <p>Again, we can rely on <code class="docutils literal notranslate"><span class="pre">rasterstats</span></code>:</p>
@@ -881,8 +892,12 @@ memory usage: 10.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04-Spatial_feature_eng_i_29_0.png" src="../../_images/04-Spatial_feature_eng_i_29_0.png" />
+<img alt="../../_images/04-Spatial_feature_eng_i_32_0.png" src="../../_images/04-Spatial_feature_eng_i_32_0.png" />
 </div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Replicate the analysis above to obtain the average friction for each region using the walking surface (<code class="docutils literal notranslate"><span class="pre">cambodia_2020_walking_friction_surface.tif</span></code>).</p>
 </div>
 </div>
 <div class="section" id="surface-to-surface">
@@ -963,6 +978,10 @@ memory usage: 10.8+ KB
 </div>
 </div>
 </div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Trasfer the <code class="docutils literal notranslate"><span class="pre">pollution</span></code> surface to the frame of <code class="docutils literal notranslate"><span class="pre">friction</span></code>, and viceversa.</p>
+</div>
 <hr class="docutils" />
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
@@ -1020,7 +1039,7 @@ memory usage: 10.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04-Spatial_feature_eng_i_45_0.png" src="../../_images/04-Spatial_feature_eng_i_45_0.png" />
+<img alt="../../_images/04-Spatial_feature_eng_i_50_0.png" src="../../_images/04-Spatial_feature_eng_i_50_0.png" />
 </div>
 </div>
 <p>We will need the location and the pollution measurements for every station as separate arrays. Before we do that, since we will be calculating distances, we convert our coordinates to <a class="reference external" href="http://epsg.io/5726">a system</a> expressed in metres.</p>
@@ -1049,7 +1068,7 @@ memory usage: 10.8+ KB
 </div>
 </div>
 </div>
-<p>And finally, we will also need the locations of each city expressed in the same coordination system:</p>
+<p>And finally, we will also need the locations of each city expressed in the same coordinate system:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities_mt</span> <span class="o">=</span> <span class="n">cities</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">5726</span><span class="p">)</span>
@@ -1109,7 +1128,7 @@ memory usage: 10.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04-Spatial_feature_eng_i_58_0.png" src="../../_images/04-Spatial_feature_eng_i_58_0.png" />
+<img alt="../../_images/04-Spatial_feature_eng_i_63_0.png" src="../../_images/04-Spatial_feature_eng_i_63_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1206,6 +1225,10 @@ memory usage: 10.8+ KB
 </table>
 </div></div></div>
 </div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Replicate the analysis above with <span class="math notranslate nohighlight">\(k=15\)</span> and <span class="math notranslate nohighlight">\(k=5\)</span>. <em>Do results change? Why do you think that is?</em></p>
+</div>
 </div>
 <div class="section" id="points-to-surface">
 <h3>Points to surface<a class="headerlink" href="#points-to-surface" title="Permalink to this headline">¶</a></h3>
@@ -1276,7 +1299,7 @@ memory usage: 10.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04-Spatial_feature_eng_i_68_0.png" src="../../_images/04-Spatial_feature_eng_i_68_0.png" />
+<img alt="../../_images/04-Spatial_feature_eng_i_74_0.png" src="../../_images/04-Spatial_feature_eng_i_74_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1298,10 +1321,14 @@ memory usage: 10.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04-Spatial_feature_eng_i_69_0.png" src="../../_images/04-Spatial_feature_eng_i_69_0.png" />
+<img alt="../../_images/04-Spatial_feature_eng_i_75_0.png" src="../../_images/04-Spatial_feature_eng_i_75_0.png" />
 </div>
 </div>
 <p>Room for improvement but, remember this was a rough first pass!</p>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Train a model with pollution measurements from each city location and generate a surface from it. <em>How does the output compare to the one above? Why do you think that is?</em></p>
+</div>
 </div>
 <div class="section" id="polygons-to-polygons">
 <span id="sfe-p2p"></span><h3>Polygons to polygons<a class="headerlink" href="#polygons-to-polygons" title="Permalink to this headline">¶</a></h3>
@@ -1321,6 +1348,12 @@ memory usage: 10.8+ KB
 <span class="n">hex_grid</span> <span class="o">=</span> <span class="n">tobler</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">h3fy</span><span class="p">(</span>
     <span class="n">regions</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">5</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.9/site-packages/tobler/util/util.py:151: FutureWarning: Currently, index_parts defaults to True, but in the future, it will default to False to be consistent with Pandas. Use `index_parts=True` to keep the current behavior and True/False to silence the warning.
+  source = source.explode()
 </pre></div>
 </div>
 </div>
@@ -1345,8 +1378,8 @@ memory usage: 10.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 469 ms, sys: 6.89 ms, total: 476 ms
-Wall time: 474 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 439 ms, sys: 12 ms, total: 451 ms
+Wall time: 448 ms
 </pre></div>
 </div>
 </div>
@@ -1376,8 +1409,12 @@ Wall time: 474 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04-Spatial_feature_eng_i_78_0.png" src="../../_images/04-Spatial_feature_eng_i_78_0.png" />
+<img alt="../../_images/04-Spatial_feature_eng_i_85_0.png" src="../../_images/04-Spatial_feature_eng_i_85_0.png" />
 </div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Replicate the analytis using <code class="docutils literal notranslate"><span class="pre">resolution</span> <span class="pre">=</span> <span class="pre">4</span></code>. <em>How is the result different? Why?</em></p>
 </div>
 </div>
 </div>
