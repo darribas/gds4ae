@@ -43,12 +43,11 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -472,16 +471,16 @@
 </div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="3d2af11b-9329-46a9-93c5-2e7c6b8f5311" name="1af774cb-48b4-4251-b0e9-a5e4f7870310" type="radio">
-</input><label class="tabbed-label" for="3d2af11b-9329-46a9-93c5-2e7c6b8f5311">
+<input checked="checked" id="236d8a73-7135-4604-b179-18017a52d759" name="6a966aef-9ee7-40ee-a8d0-30fe00eca290" type="radio">
+</input><label class="tabbed-label" for="236d8a73-7135-4604-b179-18017a52d759">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="80bba7ab-8a68-4e2d-8e38-4a60a960e189" name="1af774cb-48b4-4251-b0e9-a5e4f7870310" type="radio">
-</input><label class="tabbed-label" for="80bba7ab-8a68-4e2d-8e38-4a60a960e189">
+<input id="b6e3ad82-ab9f-45f0-814f-efab69dd319a" name="6a966aef-9ee7-40ee-a8d0-30fe00eca290" type="radio">
+</input><label class="tabbed-label" for="b6e3ad82-ab9f-45f0-814f-efab69dd319a">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>

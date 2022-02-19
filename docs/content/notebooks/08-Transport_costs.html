@@ -43,15 +43,14 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Datasets" href="../data/datasets.html" />
@@ -479,8 +478,8 @@
 <div class="section" id="moving-along-street-networks">
 <h3><em>Moving</em> along (street) networks<a class="headerlink" href="#moving-along-street-networks" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="d7729925-d514-4aa4-853b-ef88d242edf4" name="c505b26e-87af-4f57-9018-c3612908f622" type="radio">
-</input><label class="tabbed-label" for="d7729925-d514-4aa4-853b-ef88d242edf4">
+<input checked="checked" id="39f86024-c7f0-40c2-a338-dc47b2ff3bec" name="a7627c07-8cf9-49d1-b3bc-80ef8028e276" type="radio">
+</input><label class="tabbed-label" for="39f86024-c7f0-40c2-a338-dc47b2ff3bec">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">streets</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
@@ -489,8 +488,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="ac081a55-b2fd-44a9-99f2-f3218447e998" name="c505b26e-87af-4f57-9018-c3612908f622" type="radio">
-</input><label class="tabbed-label" for="ac081a55-b2fd-44a9-99f2-f3218447e998">
+<input id="74162dac-b4f6-4a5f-8b91-1e97cfb350f8" name="a7627c07-8cf9-49d1-b3bc-80ef8028e276" type="radio">
+</input><label class="tabbed-label" for="74162dac-b4f6-4a5f-8b91-1e97cfb350f8">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">streets</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -1409,8 +1408,8 @@ dtype: float64
 <div class="section" id="moving-along-surfaces">
 <h3><em>Moving</em> along surfaces<a class="headerlink" href="#moving-along-surfaces" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2aead7b6-1892-4e8c-b6d5-a33f6cda732f" name="ce5c3217-d78f-4128-8863-756bf42efce6" type="radio">
-</input><label class="tabbed-label" for="2aead7b6-1892-4e8c-b6d5-a33f6cda732f">
+<input checked="checked" id="47e52eaf-ffd3-4abd-b7e8-d290a962bac3" name="42f598bc-ff14-4dc1-b273-1bf1e0082365" type="radio">
+</input><label class="tabbed-label" for="47e52eaf-ffd3-4abd-b7e8-d290a962bac3">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">friction_walk</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -1423,8 +1422,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="d1fcb04e-d9d0-42c4-95c9-1b2126bd9e3c" name="ce5c3217-d78f-4128-8863-756bf42efce6" type="radio">
-</input><label class="tabbed-label" for="d1fcb04e-d9d0-42c4-95c9-1b2126bd9e3c">
+<input id="554f435e-521f-4936-8e9d-175e8415d436" name="42f598bc-ff14-4dc1-b273-1bf1e0082365" type="radio">
+</input><label class="tabbed-label" for="554f435e-521f-4936-8e9d-175e8415d436">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">friction_walk</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>

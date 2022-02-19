@@ -43,12 +43,11 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -420,16 +419,16 @@
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2a80b3aa-e001-48f8-b375-9d200f260195" name="31c9e3cd-46dd-4186-92a3-2f0b2dfd7836" type="radio">
-</input><label class="tabbed-label" for="2a80b3aa-e001-48f8-b375-9d200f260195">
+<input checked="checked" id="6dfbd6b5-b8bd-486e-a7af-5bd79ac549ba" name="c6b8a769-ea2e-49f7-88b7-818da02820c8" type="radio">
+</input><label class="tabbed-label" for="6dfbd6b5-b8bd-486e-a7af-5bd79ac549ba">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="16880ead-a705-4106-a72b-f94f7e7fc259" name="31c9e3cd-46dd-4186-92a3-2f0b2dfd7836" type="radio">
-</input><label class="tabbed-label" for="16880ead-a705-4106-a72b-f94f7e7fc259">
+<input id="e3071ee3-268f-46a3-b936-21d2408fa505" name="c6b8a769-ea2e-49f7-88b7-818da02820c8" type="radio">
+</input><label class="tabbed-label" for="e3071ee3-268f-46a3-b936-21d2408fa505">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
