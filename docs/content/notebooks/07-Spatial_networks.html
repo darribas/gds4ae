@@ -332,6 +332,11 @@ const thebe_selector_output = ".output, .cell_output"
        Meshedness
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#betweenness-centrality">
+       Betweenness centrality
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -418,6 +423,11 @@ const thebe_selector_output = ".output, .cell_output"
        Meshedness
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#betweenness-centrality">
+       Betweenness centrality
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -471,16 +481,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="236d8a73-7135-4604-b179-18017a52d759" name="6a966aef-9ee7-40ee-a8d0-30fe00eca290" type="radio">
-</input><label class="tabbed-label" for="236d8a73-7135-4604-b179-18017a52d759">
+<input checked="checked" id="126f90c5-fc43-48f0-902f-5a14d16822cf" name="48a3b856-cba4-4a18-89ba-7b2b9df9b7b2" type="radio">
+</input><label class="tabbed-label" for="126f90c5-fc43-48f0-902f-5a14d16822cf">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="b6e3ad82-ab9f-45f0-814f-efab69dd319a" name="6a966aef-9ee7-40ee-a8d0-30fe00eca290" type="radio">
-</input><label class="tabbed-label" for="b6e3ad82-ab9f-45f0-814f-efab69dd319a">
+<input id="2b5baa15-ad87-4362-b95f-583cae0154b2" name="48a3b856-cba4-4a18-89ba-7b2b9df9b7b2" type="radio">
+</input><label class="tabbed-label" for="2b5baa15-ad87-4362-b95f-583cae0154b2">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -494,6 +504,12 @@ Online read</label><div class="tabbed-content docutils">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_tab</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">explode</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_312/1525410135.py:1: FutureWarning: Currently, index_parts defaults to True, but in the future, it will default to False to be consistent with Pandas. Use `index_parts=True` to keep the current behavior and True/False to silence the warning.
+  db_tab = db.explode().reset_index()
 </pre></div>
 </div>
 </div>
@@ -533,6 +549,8 @@ Online read</label><div class="tabbed-content docutils">
       <th>OGC_FID</th>
       <th>dm_id</th>
       <th>dist_barri</th>
+      <th>average_quality</th>
+      <th>population_density</th>
       <th>X</th>
       <th>Y</th>
       <th>value</th>
@@ -547,6 +565,8 @@ Online read</label><div class="tabbed-content docutils">
       <td>1</td>
       <td>1</td>
       <td>1606</td>
+      <td>3.277406</td>
+      <td>1149.981915</td>
       <td>444133.736820</td>
       <td>4.482809e+06</td>
       <td>NaN</td>
@@ -559,6 +579,8 @@ Online read</label><div class="tabbed-content docutils">
       <td>2</td>
       <td>2</td>
       <td>1606</td>
+      <td>3.113298</td>
+      <td>795.151054</td>
       <td>444192.038205</td>
       <td>4.482878e+06</td>
       <td>NaN</td>
@@ -571,6 +593,8 @@ Online read</label><div class="tabbed-content docutils">
       <td>3</td>
       <td>3</td>
       <td>1606</td>
+      <td>3.143822</td>
+      <td>478.869601</td>
       <td>444134.537507</td>
       <td>4.482885e+06</td>
       <td>NaN</td>
@@ -583,6 +607,8 @@ Online read</label><div class="tabbed-content docutils">
       <td>4</td>
       <td>4</td>
       <td>1603</td>
+      <td>5.740980</td>
+      <td>2749.417163</td>
       <td>445612.690578</td>
       <td>4.479336e+06</td>
       <td>NaN</td>
@@ -595,6 +621,8 @@ Online read</label><div class="tabbed-content docutils">
       <td>5</td>
       <td>5</td>
       <td>1603</td>
+      <td>5.468163</td>
+      <td>2653.489421</td>
       <td>445606.319326</td>
       <td>4.479354e+06</td>
       <td>NaN</td>
@@ -655,6 +683,15 @@ dtype: float64
 <img alt="../../_images/07-Spatial_networks_14_0.png" src="../../_images/07-Spatial_networks_14_0.png" />
 </div>
 </div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Create a quantile choropleth of length for the section of the network with <code class="docutils literal notranslate"><span class="pre">dist_barri</span></code> values starting by <code class="docutils literal notranslate"><span class="pre">01</span></code>.</p>
+<p>Bonus tip: you can create the subset of the network using the <code class="docutils literal notranslate"><span class="pre">isin</span></code> method:</p>
+<div class="highlight-%python notranslate"><div class="highlight"><pre><span></span>ids = [&#39;0101&#39;, &#39;0102&#39;, &#39;0103&#39;, &#39;0104&#39;, &#39;0105&#39;, &#39;0106&#39;]
+subnet = db_tab[db_tab[&#39;dist_barri&#39;].isin(ids)]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="linearity">
 <h4>Linearity<a class="headerlink" href="#linearity" title="Permalink to this headline">¶</a></h4>
@@ -700,8 +737,12 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/07-Spatial_networks_17_0.png" src="../../_images/07-Spatial_networks_17_0.png" />
+<img alt="../../_images/07-Spatial_networks_18_0.png" src="../../_images/07-Spatial_networks_18_0.png" />
 </div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Create a choropleth of linearity for the <code class="docutils literal notranslate"><span class="pre">subnet</span></code> table you have created above</p>
 </div>
 </div>
 </div>
@@ -717,12 +758,12 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.multigraph.MultiGraph at 0x7f88c5a76bb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.multigraph.MultiGraph at 0x7fd9843d4b80&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now <code class="docutils literal notranslate"><span class="pre">db_graph</span></code> is a different animal than <code class="docutils literal notranslate"><span class="pre">db</span></code> that emphasizes <em>connections</em> rather than observation attributes.</p>
+<p>Now <code class="docutils literal notranslate"><span class="pre">db_graph</span></code> is a different animal than <code class="docutils literal notranslate"><span class="pre">db</span></code> that emphasizes <em>connections</em> rather than attributes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_graph</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span>
@@ -768,7 +809,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;shapely.coords.CoordinateSequence at 0x7f88a4619670&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;shapely.coords.CoordinateSequence at 0x7fd974ab4940&gt;
 </pre></div>
 </div>
 </div>
@@ -797,7 +838,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AdjacencyView({(444171.15812731703, 4482855.001910598): {0: {&#39;level_0&#39;: 0, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;1&#39;, &#39;dm_id&#39;: &#39;1&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;X&#39;: 444133.736820226, &#39;Y&#39;: 4482808.89166328, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7f88b3e34a00&gt;, &#39;mm_len&#39;: 118.69948078964639}}, (444083.8275243509, 4482747.422611062): {538: {&#39;level_0&#39;: 538, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;539&#39;, &#39;dm_id&#39;: &#39;539&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;X&#39;: 444090.105664431, &#39;Y&#39;: 4482755.13506047, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7f88b43281c0&gt;, &#39;mm_len&#39;: 19.864413729824115}}})
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AdjacencyView({(444171.15812731703, 4482855.001910598): {0: {&#39;level_0&#39;: 0, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;1&#39;, &#39;dm_id&#39;: &#39;1&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;average_quality&#39;: 3.277406, &#39;population_density&#39;: 1149.981915, &#39;X&#39;: 444133.736820226, &#39;Y&#39;: 4482808.89166328, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7fd97668bbe0&gt;, &#39;mm_len&#39;: 118.69948078964639}}, (444083.8275243509, 4482747.422611062): {538: {&#39;level_0&#39;: 538, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;539&#39;, &#39;dm_id&#39;: &#39;539&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;average_quality&#39;: 3.225291, &#39;population_density&#39;: 2833.605516, &#39;X&#39;: 444090.105664431, &#39;Y&#39;: 4482755.13506047, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7fd985c4ad30&gt;, &#39;mm_len&#39;: 19.864413729824115}}})
 </pre></div>
 </div>
 </div>
@@ -810,7 +851,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AtlasView({0: {&#39;level_0&#39;: 0, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;1&#39;, &#39;dm_id&#39;: &#39;1&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;X&#39;: 444133.736820226, &#39;Y&#39;: 4482808.89166328, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7f88b3e34a00&gt;, &#39;mm_len&#39;: 118.69948078964639}})
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AtlasView({0: {&#39;level_0&#39;: 0, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;1&#39;, &#39;dm_id&#39;: &#39;1&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;average_quality&#39;: 3.277406, &#39;population_density&#39;: 1149.981915, &#39;X&#39;: 444133.736820226, &#39;Y&#39;: 4482808.89166328, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7fd97668bbe0&gt;, &#39;mm_len&#39;: 118.69948078964639}})
 </pre></div>
 </div>
 </div>
@@ -827,10 +868,12 @@ dtype: float64
  &#39;OGC_FID&#39;: &#39;1&#39;,
  &#39;dm_id&#39;: &#39;1&#39;,
  &#39;dist_barri&#39;: &#39;1606&#39;,
+ &#39;average_quality&#39;: 3.277406,
+ &#39;population_density&#39;: 1149.981915,
  &#39;X&#39;: 444133.736820226,
  &#39;Y&#39;: 4482808.89166328,
  &#39;value&#39;: nan,
- &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString at 0x7f88b3e34a00&gt;,
+ &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString at 0x7fd97668bbe0&gt;,
  &#39;mm_len&#39;: 118.69948078964639}
 </pre></div>
 </div>
@@ -843,7 +886,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/07-Spatial_networks_33_0.svg" src="../../_images/07-Spatial_networks_33_0.svg" /></div>
+<img alt="../../_images/07-Spatial_networks_35_0.svg" src="../../_images/07-Spatial_networks_35_0.svg" /></div>
 </div>
 <p>If we need all the node IDs:</p>
 <div class="cell docutils container">
@@ -913,10 +956,12 @@ dtype: float64
  &#39;OGC_FID&#39;: &#39;1&#39;,
  &#39;dm_id&#39;: &#39;1&#39;,
  &#39;dist_barri&#39;: &#39;1606&#39;,
+ &#39;average_quality&#39;: 3.277406,
+ &#39;population_density&#39;: 1149.981915,
  &#39;X&#39;: 444133.736820226,
  &#39;Y&#39;: 4482808.89166328,
  &#39;value&#39;: nan,
- &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString at 0x7f88b3e34a00&gt;,
+ &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString at 0x7fd97668bbe0&gt;,
  &#39;mm_len&#39;: 118.69948078964639}
 </pre></div>
 </div>
@@ -930,10 +975,14 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AdjacencyView({(444171.15812731703, 4482855.001910598): {0: {&#39;level_0&#39;: 0, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;1&#39;, &#39;dm_id&#39;: &#39;1&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;X&#39;: 444133.736820226, &#39;Y&#39;: 4482808.89166328, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7f88b3e34a00&gt;, &#39;mm_len&#39;: 118.69948078964639}}, (444083.8275243509, 4482747.422611062): {538: {&#39;level_0&#39;: 538, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;539&#39;, &#39;dm_id&#39;: &#39;539&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;X&#39;: 444090.105664431, &#39;Y&#39;: 4482755.13506047, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7f88b43281c0&gt;, &#39;mm_len&#39;: 19.864413729824115}}})
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AdjacencyView({(444171.15812731703, 4482855.001910598): {0: {&#39;level_0&#39;: 0, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;1&#39;, &#39;dm_id&#39;: &#39;1&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;average_quality&#39;: 3.277406, &#39;population_density&#39;: 1149.981915, &#39;X&#39;: 444133.736820226, &#39;Y&#39;: 4482808.89166328, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7fd97668bbe0&gt;, &#39;mm_len&#39;: 118.69948078964639}}, (444083.8275243509, 4482747.422611062): {538: {&#39;level_0&#39;: 538, &#39;level_1&#39;: 0, &#39;OGC_FID&#39;: &#39;539&#39;, &#39;dm_id&#39;: &#39;539&#39;, &#39;dist_barri&#39;: &#39;1606&#39;, &#39;average_quality&#39;: 3.225291, &#39;population_density&#39;: 2833.605516, &#39;X&#39;: 444090.105664431, &#39;Y&#39;: 4482755.13506047, &#39;value&#39;: nan, &#39;geometry&#39;: &lt;shapely.geometry.linestring.LineString object at 0x7fd985c4ad30&gt;, &#39;mm_len&#39;: 19.864413729824115}}})
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Create the graph version of <code class="docutils literal notranslate"><span class="pre">subnet</span></code> and consider the street segment indexed in the table as <code class="docutils literal notranslate"><span class="pre">53271</span></code>. Check the adjacencies on both ends of the segment using <code class="docutils literal notranslate"><span class="pre">db_graph</span></code> and <code class="docutils literal notranslate"><span class="pre">subnet</span></code>. <em>Are they the same in both graphs? Why?</em></p>
 </div>
 </div>
 <div class="section" id="analysing-graphs">
@@ -990,7 +1039,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/07-Spatial_networks_50_0.png" src="../../_images/07-Spatial_networks_50_0.png" />
+<img alt="../../_images/07-Spatial_networks_53_0.png" src="../../_images/07-Spatial_networks_53_0.png" />
 </div>
 </div>
 <div class="admonition tip">
@@ -1000,6 +1049,10 @@ dtype: float64
 <li><p><a class="reference external" href="https://networkx.org/documentation/stable/auto_examples/algorithms/plot_krackhardt_centrality.html#sphx-glr-auto-examples-algorithms-plot-krackhardt-centrality-py">This <code class="docutils literal notranslate"><span class="pre">networkx</span></code> example</a></p></li>
 <li><p><a class="reference external" href="http://docs.momepy.org/en/stable/user_guide/graph/centrality.html#Closeness-centrality">The <code class="docutils literal notranslate"><span class="pre">momepy</span></code> documentation on centrality</a></p></li>
 </ul>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Create a histogram of degree for <code class="docutils literal notranslate"><span class="pre">db_graph</span></code>. Now replicate the figure for the case of <code class="docutils literal notranslate"><span class="pre">subnet</span></code>. <em>What can you learn about the two graphs by doing this exercise?</em></p>
 </div>
 </div>
 <div class="section" id="meshedness">
@@ -1012,14 +1065,10 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 49985/49985 [00:57&lt;00:00, 876.55it/s] 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 57.8 s, sys: 132 ms, total: 57.9 s
-Wall time: 57.8 s
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "6387fa1f364743cda2b82a69fadb079f", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1min 9s, sys: 353 ms, total: 1min 10s
+Wall time: 1min 9s
 </pre></div>
 </div>
 </div>
@@ -1045,7 +1094,54 @@ Wall time: 57.8 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/07-Spatial_networks_56_0.png" src="../../_images/07-Spatial_networks_56_0.png" />
+<img alt="../../_images/07-Spatial_networks_60_0.png" src="../../_images/07-Spatial_networks_60_0.png" />
+</div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Replicate the computation of meshedness for <code class="docutils literal notranslate"><span class="pre">sub_graph</span></code> using a threshold of 250m and 500m. How do the distributions of both compare with each other?</p>
+</div>
+</div>
+<div class="section" id="betweenness-centrality">
+<h4>Betweenness centrality<a class="headerlink" href="#betweenness-centrality" title="Permalink to this headline">¶</a></h4>
+<p><em>How often do shortest-path routes pass through a given node?</em></p>
+<p>This is computationally very demanding, so we will work on a subset of the full graph:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0101&#39;</span><span class="p">,</span> <span class="s1">&#39;0102&#39;</span><span class="p">,</span> <span class="s1">&#39;0103&#39;</span><span class="p">,</span> <span class="s1">&#39;0104&#39;</span><span class="p">,</span> <span class="s1">&#39;0105&#39;</span><span class="p">,</span> <span class="s1">&#39;0106&#39;</span><span class="p">]</span>
+<span class="n">subnet</span> <span class="o">=</span> <span class="n">db_tab</span><span class="p">[</span><span class="n">db_tab</span><span class="p">[</span><span class="s1">&#39;dist_barri&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">ids</span><span class="p">)]</span>
+<span class="n">sub_graph</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">gdf_to_nx</span><span class="p">(</span><span class="n">subnet</span><span class="p">)</span>
+<span class="n">node_sub</span> <span class="o">=</span> <span class="n">subnet</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">53271</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculating it is trivial with <code class="docutils literal notranslate"><span class="pre">momepy</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">betweenness</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">sub_graph</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 18.6 s, sys: 0 ns, total: 18.6 s
+Wall time: 18.6 s
+</pre></div>
+</div>
+</div>
+</div>
+<p>As with meshedness, we obtain another graph in return with the information attached to it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">betweenness</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node_sub</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;betweenness&#39;: 0.0011679130514459708}
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1096,31 +1192,31 @@ Wall time: 57.8 s
     <tr>
       <th>0</th>
       <td>0.058824</td>
-      <td>1</td>
+      <td>0</td>
       <td>POINT (444096.316 4482762.870)</td>
     </tr>
     <tr>
       <th>1</th>
       <td>0.092308</td>
-      <td>2</td>
+      <td>1</td>
       <td>POINT (444171.158 4482855.002)</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0.101449</td>
-      <td>3</td>
+      <td>2</td>
       <td>POINT (444212.943 4482901.091)</td>
     </tr>
     <tr>
       <th>3</th>
       <td>0.065574</td>
-      <td>4</td>
+      <td>3</td>
       <td>POINT (444097.968 4482915.826)</td>
     </tr>
     <tr>
       <th>4</th>
       <td>0.000000</td>
-      <td>5</td>
+      <td>4</td>
       <td>POINT (445608.884 4479346.815)</td>
     </tr>
   </tbody>
@@ -1146,7 +1242,7 @@ Wall time: 57.8 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/07-Spatial_networks_61_0.png" src="../../_images/07-Spatial_networks_61_0.png" />
+<img alt="../../_images/07-Spatial_networks_72_0.png" src="../../_images/07-Spatial_networks_72_0.png" />
 </div>
 </div>
 <p>With other measures index on node IDs, we can use joining machinery in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>:</p>
@@ -1321,7 +1417,7 @@ Name: degree, dtype: int64
       <th>444096.316176</th>
       <th>4.482763e+06</th>
       <td>0.058824</td>
-      <td>1</td>
+      <td>0</td>
       <td>POINT (444096.316 4482762.870)</td>
       <td>2</td>
       <td>0.00004</td>
@@ -1330,7 +1426,7 @@ Name: degree, dtype: int64
       <th>444171.158127</th>
       <th>4.482855e+06</th>
       <td>0.092308</td>
-      <td>2</td>
+      <td>1</td>
       <td>POINT (444171.158 4482855.002)</td>
       <td>3</td>
       <td>0.00006</td>
@@ -1339,7 +1435,7 @@ Name: degree, dtype: int64
       <th>444212.942999</th>
       <th>4.482901e+06</th>
       <td>0.101449</td>
-      <td>3</td>
+      <td>2</td>
       <td>POINT (444212.943 4482901.091)</td>
       <td>3</td>
       <td>0.00006</td>
@@ -1348,7 +1444,7 @@ Name: degree, dtype: int64
       <th>444097.968311</th>
       <th>4.482916e+06</th>
       <td>0.065574</td>
-      <td>4</td>
+      <td>3</td>
       <td>POINT (444097.968 4482915.826)</td>
       <td>3</td>
       <td>0.00006</td>
@@ -1357,7 +1453,7 @@ Name: degree, dtype: int64
       <th>445608.883767</th>
       <th>4.479347e+06</th>
       <td>0.000000</td>
-      <td>5</td>
+      <td>4</td>
       <td>POINT (445608.884 4479346.815)</td>
       <td>2</td>
       <td>0.00004</td>
@@ -1388,8 +1484,12 @@ Name: degree, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/07-Spatial_networks_67_0.png" src="../../_images/07-Spatial_networks_67_0.png" />
+<img alt="../../_images/07-Spatial_networks_78_0.png" src="../../_images/07-Spatial_networks_78_0.png" />
 </div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Create choropleths for node and betweenness centrality for <code class="docutils literal notranslate"><span class="pre">sub_graph</span></code>. <em>How do they compare?</em></p>
 </div>
 </div>
 </div>

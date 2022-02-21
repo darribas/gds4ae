@@ -301,13 +301,23 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pandana-graphs">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pandana
+        </span>
+       </code>
+       graphs
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#shortest-path-routing">
        Shortest-path routing
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#third-party-driven-routing">
-       “Third party-driven” routing
+      <a class="reference internal nav-link" href="#weighted-routing">
+       Weighted routing
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -323,28 +333,8 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#moving-along-surfaces">
-     <em>
-      Moving
-     </em>
-     along surfaces
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Shortest-path routing
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#continuous-surfaces">
-       Continuous surfaces
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#over-to-you">
-     Over to you…
+    <a class="reference internal nav-link" href="#shortest-path-along-surfaces">
+     Shortest-path along surfaces
     </a>
    </li>
   </ul>
@@ -393,13 +383,23 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pandana-graphs">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pandana
+        </span>
+       </code>
+       graphs
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#shortest-path-routing">
        Shortest-path routing
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#third-party-driven-routing">
-       “Third party-driven” routing
+      <a class="reference internal nav-link" href="#weighted-routing">
+       Weighted routing
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -415,28 +415,8 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#moving-along-surfaces">
-     <em>
-      Moving
-     </em>
-     along surfaces
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Shortest-path routing
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#continuous-surfaces">
-       Continuous surfaces
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#over-to-you">
-     Over to you…
+    <a class="reference internal nav-link" href="#shortest-path-along-surfaces">
+     Shortest-path along surfaces
     </a>
    </li>
   </ul>
@@ -478,8 +458,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="moving-along-street-networks">
 <h3><em>Moving</em> along (street) networks<a class="headerlink" href="#moving-along-street-networks" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="39f86024-c7f0-40c2-a338-dc47b2ff3bec" name="a7627c07-8cf9-49d1-b3bc-80ef8028e276" type="radio">
-</input><label class="tabbed-label" for="39f86024-c7f0-40c2-a338-dc47b2ff3bec">
+<input checked="checked" id="c0989ca7-0c40-4c5a-870e-a9f218d44d5c" name="e1ecbc40-b041-4392-b26f-8e5d026a125b" type="radio">
+</input><label class="tabbed-label" for="c0989ca7-0c40-4c5a-870e-a9f218d44d5c">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">streets</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
@@ -488,8 +468,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="74162dac-b4f6-4a5f-8b91-1e97cfb350f8" name="a7627c07-8cf9-49d1-b3bc-80ef8028e276" type="radio">
-</input><label class="tabbed-label" for="74162dac-b4f6-4a5f-8b91-1e97cfb350f8">
+<input id="f0695792-eb02-44d6-a713-9e2872a7b4be" name="e1ecbc40-b041-4392-b26f-8e5d026a125b" type="radio">
+</input><label class="tabbed-label" for="f0695792-eb02-44d6-a713-9e2872a7b4be">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">streets</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -505,8 +485,8 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<div class="section" id="shortest-path-routing">
-<h4>Shortest-path routing<a class="headerlink" href="#shortest-path-routing" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="pandana-graphs">
+<h4><code class="docutils literal notranslate"><span class="pre">pandana</span></code> graphs<a class="headerlink" href="#pandana-graphs" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandana</span>
@@ -518,18 +498,21 @@ Online read</label><div class="tabbed-content docutils">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
-<span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">nx_to_gdf</span><span class="p">(</span>
-    <span class="n">momepy</span><span class="o">.</span><span class="n">gdf_to_nx</span><span class="p">(</span>
-        <span class="n">streets</span><span class="o">.</span><span class="n">explode</span><span class="p">()</span> <span class="c1"># We &quot;explode&quot; to avoid multi-part rows</span>
+<span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">nx_to_gdf</span><span class="p">(</span> <span class="c1"># Convert back to geo-table</span>
+    <span class="n">momepy</span><span class="o">.</span><span class="n">gdf_to_nx</span><span class="p">(</span>            <span class="c1"># Convert to a clean NX graph</span>
+        <span class="n">streets</span><span class="o">.</span><span class="n">explode</span><span class="p">()</span>        <span class="c1"># We &quot;explode&quot; to avoid multi-part rows</span>
     <span class="p">)</span>
 <span class="p">)</span>
-<span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;nodeID&quot;</span><span class="p">)</span> <span class="c1"># Reindex nodes on ID</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;nodeID&quot;</span><span class="p">)</span><span class="c1"># Reindex nodes on ID</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 5.3 s, sys: 28.1 ms, total: 5.33 s
-Wall time: 5.33 s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;timed exec&gt;:3: FutureWarning: Currently, index_parts defaults to True, but in the future, it will default to False to be consistent with Pandas. Use `index_parts=True` to keep the current behavior and True/False to silence the warning.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.96 s, sys: 48.2 ms, total: 4.01 s
+Wall time: 4.01 s
 </pre></div>
 </div>
 </div>
@@ -550,11 +533,21 @@ Wall time: 5.33 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandana.network.Network at 0x7f7c3b9954f0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating contraction hierarchies with 8 threads.
+Setting CH node vector of size 49985
+Setting CH edge vector of size 66499
+Range graph removed 444 edges of 132998
+. 10% . 20% . 30% . 40% . 50% . 60% . 70% . 80% . 90% . 100%
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandana.network.Network at 0x7f00bd5cfbe0&gt;
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="shortest-path-routing">
+<h4>Shortest-path routing<a class="headerlink" href="#shortest-path-routing" title="Permalink to this headline">¶</a></h4>
 <p><em>How do I go from A to B?</em></p>
 <p>For example, from the first Airbnb in the geo-table…</p>
 <div class="cell docutils container">
@@ -602,14 +595,14 @@ Wall time: 5.33 s
   <tbody>
     <tr>
       <th>0</th>
-      <td>POINT (440247.912 4474264.981)</td>
-      <td>Puerta del Sol, Sol, Centro, Madrid, Área metr...</td>
+      <td>POINT (440247.814 4474264.648)</td>
+      <td>Puerta del Sol, Barrio de los Austrias, Sol, C...</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>First we snap locations to the network:</p>
+<p>First we <em>snap</em> locations to the network:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pt_nodes</span> <span class="o">=</span> <span class="n">streets_pdn</span><span class="o">.</span><span class="n">get_node_ids</span><span class="p">(</span>
@@ -621,8 +614,8 @@ Wall time: 5.33 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     3072
-1    35732
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     3071
+1    35731
 Name: node_id, dtype: int64
 </pre></div>
 </div>
@@ -639,18 +632,18 @@ Name: node_id, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3072,  3477,  8269,  8267,  8268, 18696, 18694,  1433,  1431,
-         354,  8176,  8177, 18122, 17477, 16859, 14323, 16858, 17811,
-       44796, 41221, 41218, 41222, 41653, 18925, 18929, 48944, 18932,
-       21095, 21096, 23220, 15399, 15400, 15401, 47447, 47448, 23277,
-       47449, 23260, 23261, 23262, 27952, 27953, 27954, 48328, 11951,
-       11950, 11945, 19476, 19477, 27334, 30089, 43295, 11941, 11942,
-       11943, 48326, 37485, 48317, 15894, 15891, 15892, 29955, 25454,
-        7342, 34992, 23609, 28218, 21649, 21650, 21652, 39076, 25109,
-       25103, 25102, 25101, 48519, 47288, 34624, 31188, 29616, 48557,
-       22845, 48554, 48556, 40923, 40922, 40924, 48586, 46373, 46372,
-       46371, 45676, 45677, 38779, 38778, 19145, 20499, 20498, 20500,
-       47738, 42304, 42303, 35731, 35728, 35730, 35732])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3071,  3476,  8268,  8266,  8267, 18695, 18693,  1432,  1430,
+         353,  8175,  8176, 18121, 17476, 16858, 14322, 16857, 17810,
+       44795, 41220, 41217, 41221, 41652, 18924, 18928, 48943, 18931,
+       21094, 21095, 23219, 15398, 15399, 15400, 47446, 47447, 23276,
+       47448, 23259, 23260, 23261, 27951, 27952, 27953, 48327, 11950,
+       11949, 11944, 19475, 19476, 27333, 30088, 43294, 11940, 11941,
+       11942, 48325, 37484, 48316, 15893, 15890, 15891, 29954, 25453,
+        7341, 34991, 23608, 28217, 21648, 21649, 21651, 39075, 25108,
+       25102, 25101, 25100, 48518, 47287, 34623, 31187, 29615, 48556,
+       22844, 48553, 48555, 40922, 40921, 40923, 48585, 46372, 46371,
+       46370, 45675, 45676, 38778, 38777, 19144, 20498, 20497, 20499,
+       47737, 42303, 42302, 35730, 35727, 35729, 35731])
 </pre></div>
 </div>
 </div>
@@ -690,7 +683,7 @@ Name: node_id, dtype: int64
 </div>
 <div class="cell tag_margin tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_26_0.png" src="../../_images/08-Transport_costs_26_0.png" />
+<img alt="../../_images/08-Transport_costs_27_0.png" src="../../_images/08-Transport_costs_27_0.png" />
 </div>
 </div>
 <p>And we get it back as a geo-table (with one row):</p>
@@ -727,8 +720,8 @@ Name: node_id, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>3072</td>
-      <td>3477</td>
+      <td>3071</td>
+      <td>3476</td>
       <td>LINESTRING (442606.507 4478714.516, 442597.100...</td>
     </tr>
   </tbody>
@@ -751,13 +744,22 @@ Name: node_id, dtype: int64
 </div>
 </div>
 </div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<ul class="simple">
+<li><p>What is the network distance between CEMFI and Puerta del Sol?</p></li>
+<li><p>BONUS I: how much longer is it than if you could fly in a straight line?</p></li>
+<li><p>BONUS II: if one walks at a speed of 5 Km/h, how long does the walk take you?</p></li>
+</ul>
 </div>
-<div class="section" id="third-party-driven-routing">
-<h4>“Third party-driven” routing<a class="headerlink" href="#third-party-driven-routing" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="weighted-routing">
+<h4>Weighted routing<a class="headerlink" href="#weighted-routing" title="Permalink to this headline">¶</a></h4>
 <p><em>How do I go from A to B passing by the “best” buildings?</em></p>
+<p>This is really an extension of standard routing that takes advantage of the flexibility of <code class="docutils literal notranslate"><span class="pre">pandana.Network</span></code> objects.</p>
 <div class="cell tag_remove-input tag_margin docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_33_0.png" src="../../_images/08-Transport_costs_33_0.png" />
+<img alt="../../_images/08-Transport_costs_35_0.png" src="../../_images/08-Transport_costs_35_0.png" />
 </div>
 </div>
 <p>The overall process is the same; the main difference is, when we build the <code class="docutils literal notranslate"><span class="pre">Network</span></code> object, to replace distance (<code class="docutils literal notranslate"><span class="pre">mm_len</span></code>) with a measure that <em>combines</em> distance and building quality. Note that we want to <em>maximise</em> building quality, but the routing algorithms use a <em>minimisation</em> function. Hence, our composite index will need to reflect that.</p>
@@ -787,7 +789,7 @@ Name: node_id, dtype: int64
 </div>
 <div class="cell tag_margin tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_39_0.png" src="../../_images/08-Transport_costs_39_0.png" />
+<img alt="../../_images/08-Transport_costs_41_0.png" src="../../_images/08-Transport_costs_41_0.png" />
 </div>
 </div>
 <p>We move on to 2., with a similar approach. We will use the negative of the building quality average (<code class="docutils literal notranslate"><span class="pre">average_quality</span></code>):</p>
@@ -802,7 +804,7 @@ Name: node_id, dtype: int64
 </div>
 <div class="cell tag_margin tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_42_0.png" src="../../_images/08-Transport_costs_42_0.png" />
+<img alt="../../_images/08-Transport_costs_44_0.png" src="../../_images/08-Transport_costs_44_0.png" />
 </div>
 </div>
 <p>Taking 1. and 2. into 3. we can build <code class="docutils literal notranslate"><span class="pre">wdist</span></code>. For this example, we will give each dimension the same weight (0.5), but this is at discretion of the researcher.</p>
@@ -844,7 +846,17 @@ Name: node_id, dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating contraction hierarchies with 8 threads.
+Setting CH node vector of size 49985
+Setting CH edge vector of size 66499
+Range graph removed 444 edges of 132998
+. 10% . 20% . 30% . 40% . 50% . 60% . 70% . 80% . 90% . 100%
+</pre></div>
 </div>
+</div>
+</div>
+<p>Now we are ready to display it on a map:</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Building quality</span>
@@ -870,8 +882,15 @@ Name: node_id, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_47_0.png" src="../../_images/08-Transport_costs_47_0.png" />
+<img alt="../../_images/08-Transport_costs_50_0.png" src="../../_images/08-Transport_costs_50_0.png" />
 </div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<ol class="simple">
+<li><p>Explore the differences in the output of weighted routing if you change the weight between distance and the additional constrain.</p></li>
+<li><p>Recreate weighted routing using the linearity of street segments. How can you go from A to B avoiding long streets?</p></li>
+</ol>
 </div>
 </div>
 <div class="section" id="proximity">
@@ -921,11 +940,7 @@ Name: node_id, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
-<img alt="../../_images/08-Transport_costs_54_1.png" src="../../_images/08-Transport_costs_54_1.png" />
+<img alt="../../_images/08-Transport_costs_58_0.png" src="../../_images/08-Transport_costs_58_0.png" />
 </div>
 </div>
 <p>The logic for this operation is the following:</p>
@@ -938,28 +953,24 @@ Name: node_id, dtype: int64
 <p>We can add the internet cafes to the network object (1.) with the <code class="docutils literal notranslate"><span class="pre">set_pois</span></code> method:</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>Note we set <code class="docutils literal notranslate"><span class="pre">max_items=1</span></code> because we are only going to query for the nearest cafe. This will make computations much faster</p>
+<p>Note we set <code class="docutils literal notranslate"><span class="pre">maxitems=1</span></code> because we are only going to query for the nearest cafe. This will make computations much faster</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">streets_pdn</span><span class="o">.</span><span class="n">set_pois</span><span class="p">(</span>
-    <span class="n">category</span><span class="o">=</span><span class="s2">&quot;Internet cafes&quot;</span><span class="p">,</span>
-    <span class="n">maxitems</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">maxdist</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="c1"># 100km so everything is included</span>
-    <span class="n">x_col</span><span class="o">=</span><span class="n">icafes</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
-    <span class="n">y_col</span><span class="o">=</span><span class="n">icafes</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">streets_pdn</span><span class="o">.</span><span class="n">set_pois</span><span class="p">(</span>
+    <span class="n">category</span><span class="o">=</span><span class="s2">&quot;Internet cafes&quot;</span><span class="p">,</span> <span class="c1"># Our name for the layer in the `Network` object</span>
+    <span class="n">maxitems</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>                <span class="c1"># Use to count only nearest cafe</span>
+    <span class="n">maxdist</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span>            <span class="c1"># 100km so everything is included</span>
+    <span class="n">x_col</span><span class="o">=</span><span class="n">icafes</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>   <span class="c1"># X coords of cafes</span>
+    <span class="n">y_col</span><span class="o">=</span><span class="n">icafes</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>   <span class="c1"># Y coords of cafes</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-/opt/conda/lib/python3.8/site-packages/pandana/network.py:660: DeprecationWarning: The default dtype for empty Series will be &#39;object&#39; instead of &#39;float64&#39; in a future version. Specify a dtype explicitly to silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.9/site-packages/pandana/network.py:660: DeprecationWarning: The default dtype for empty Series will be &#39;object&#39; instead of &#39;float64&#39; in a future version. Specify a dtype explicitly to silence this warning.
   elif isinstance(maxitems, type(pd.Series())):
-/opt/conda/lib/python3.8/site-packages/pandana/network.py:668: DeprecationWarning: The default dtype for empty Series will be &#39;object&#39; instead of &#39;float64&#39; in a future version. Specify a dtype explicitly to silence this warning.
+/opt/conda/lib/python3.9/site-packages/pandana/network.py:668: DeprecationWarning: The default dtype for empty Series will be &#39;object&#39; instead of &#39;float64&#39; in a future version. Specify a dtype explicitly to silence this warning.
   elif isinstance(maxdist, type(pd.Series())):
 </pre></div>
 </div>
@@ -977,38 +988,87 @@ Name: node_id, dtype: int64
     <span class="s2">&quot;Internet cafes&quot;</span><span class="p">,</span>    <span class="c1"># POIs to look for</span>
     <span class="n">num_pois</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>          <span class="c1"># No. of POIs to include</span>
     <span class="n">include_poi_ids</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># Store POI ID</span>
-<span class="c1"># Then add the internet cafee IDs and name</span>
-<span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="c1"># Then add the internet cafee IDs and name</span>
     <span class="n">icafes</span><span class="p">[[</span><span class="s1">&#39;osmid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]],</span>
     <span class="n">on</span><span class="o">=</span><span class="s2">&quot;poi1&quot;</span>
-<span class="c1"># Rename the distance from node to cafe</span>
-<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="c1"># Rename the distance from node to cafe</span>
     <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;dist2icafe&quot;</span><span class="p">}</span>
 <span class="p">)</span>
-<span class="n">cafe2nnode</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="n">cafe2nnode</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Int64Index: 49985 entries, 1 to 49985
-Data columns (total 5 columns):
- #   Column      Non-Null Count  Dtype  
----  ------      --------------  -----  
- 0   dist2icafe  49985 non-null  float64
- 1   poi1        49113 non-null  float64
- 2   unique_id   49113 non-null  object 
- 3   osmid       49113 non-null  float64
- 4   name        25684 non-null  object 
-dtypes: float64(3), object(2)
-memory usage: 3.3+ MB
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>dist2icafe</th>
+      <th>poi1</th>
+      <th>osmid</th>
+      <th>name</th>
+    </tr>
+    <tr>
+      <th>nodeID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5101.421875</td>
+      <td>9.0</td>
+      <td>3.770327e+09</td>
+      <td>Silver Envíos 2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5190.265137</td>
+      <td>9.0</td>
+      <td>3.770327e+09</td>
+      <td>Silver Envíos 2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5252.475098</td>
+      <td>9.0</td>
+      <td>3.770327e+09</td>
+      <td>Silver Envíos 2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5095.101074</td>
+      <td>9.0</td>
+      <td>3.770327e+09</td>
+      <td>Silver Envíos 2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5676.117188</td>
+      <td>9.0</td>
+      <td>3.770327e+09</td>
+      <td>Silver Envíos 2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Note that, to make things easier down the line, we can link <code class="docutils literal notranslate"><span class="pre">cafe2nnode</span></code> to the cafe IDs.</p>
 <p>And we can also link Airbnb’s to nodes (3.) following a similar approach as we have seen above:</p>
@@ -1022,15 +1082,11 @@ memory usage: 3.3+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26      8873
-50     10906
-62     41159
-63     34258
-221    32216
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26      8872
+50     10905
+62     41158
+63     34257
+221    32215
 Name: node_id, dtype: int64
 </pre></div>
 </div>
@@ -1040,10 +1096,10 @@ Name: node_id, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abb_icafe</span> <span class="o">=</span> <span class="n">no_wifi</span><span class="p">[</span>
-    <span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span>     <span class="c1"># Keep only geometries of ABBs w/o WiFi</span>
 <span class="p">]</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
-    <span class="n">nnode</span><span class="o">=</span><span class="n">abbs_nnode</span>
-<span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">nnode</span><span class="o">=</span><span class="n">abbs_nnode</span> <span class="c1"># Attach to thse ABBs the nearest node in the network</span>
+<span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>              <span class="c1"># Join to each ABB the nearest cafe using node IDs</span>
     <span class="n">cafe2nnode</span><span class="p">,</span> 
     <span class="n">on</span><span class="o">=</span><span class="s2">&quot;nnode&quot;</span>
 <span class="p">)</span>
@@ -1052,10 +1108,6 @@ Name: node_id, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1078,7 +1130,6 @@ Name: node_id, dtype: int64
       <th>nnode</th>
       <th>dist2icafe</th>
       <th>poi1</th>
-      <th>unique_id</th>
       <th>osmid</th>
       <th>name</th>
     </tr>
@@ -1087,50 +1138,45 @@ Name: node_id, dtype: int64
     <tr>
       <th>26</th>
       <td>POINT (443128.256 4483599.841)</td>
-      <td>8873</td>
+      <td>8872</td>
       <td>4926.223145</td>
       <td>9.0</td>
-      <td>node/3770327498</td>
       <td>3.770327e+09</td>
       <td>Silver Envíos 2</td>
     </tr>
     <tr>
       <th>50</th>
       <td>POINT (441885.677 4475916.602)</td>
-      <td>10906</td>
+      <td>10905</td>
       <td>1876.392944</td>
       <td>19.0</td>
-      <td>node/6922981312</td>
       <td>6.922981e+09</td>
       <td>Locutorio</td>
     </tr>
     <tr>
       <th>62</th>
       <td>POINT (440439.640 4476480.771)</td>
-      <td>41159</td>
+      <td>41158</td>
       <td>1164.812988</td>
       <td>17.0</td>
-      <td>node/5573414444</td>
       <td>5.573414e+09</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>63</th>
       <td>POINT (438485.311 4471714.377)</td>
-      <td>34258</td>
+      <td>34257</td>
       <td>1466.537964</td>
       <td>5.0</td>
-      <td>node/2304484515</td>
       <td>2.304485e+09</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>221</th>
       <td>POINT (439941.104 4473117.914)</td>
-      <td>32216</td>
+      <td>32215</td>
       <td>354.268005</td>
       <td>15.0</td>
-      <td>node/5412144560</td>
       <td>5.412145e+09</td>
       <td>NaN</td>
     </tr>
@@ -1138,9 +1184,14 @@ Name: node_id, dtype: int64
 </table>
 </div></div></div>
 </div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Calculate distances to nearest internet cafe for ABBs <em>with</em> WiFi. On average, which of the two groups (with and without WiFi) are closer to internet cafes?</p>
+</div>
 </div>
 <div class="section" id="accessibility">
 <h4>Accessibility<a class="headerlink" href="#accessibility" title="Permalink to this headline">¶</a></h4>
+<p>This flips the previous question on its head and, instead of asking what is the nearest POI to a given point, along the network (irrespective of distance), it asks <em>how many POIs can I access within a network-based distance radious?</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
@@ -1151,12 +1202,8 @@ Name: node_id, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 429 ms, sys: 12 ms, total: 441 ms
-Wall time: 437 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.07 s, sys: 19.7 ms, total: 1.09 s
+Wall time: 1.09 s
 </pre></div>
 </div>
 </div>
@@ -1172,12 +1219,6 @@ Wall time: 437 ms
         <span class="mi">500</span>
     <span class="p">)</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
 </pre></div>
 </div>
 </div>
@@ -1211,12 +1252,6 @@ Wall time: 437 ms
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
-</div>
 </div>
 <p>b. Insert the parks’ nearest node through <code class="docutils literal notranslate"><span class="pre">set</span></code> so it can be “aggregated”</p>
 <div class="cell docutils container">
@@ -1224,12 +1259,6 @@ Wall time: 437 ms
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">streets_pdn</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
     <span class="n">parks_nnode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Parks&quot;</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
 </pre></div>
 </div>
 </div>
@@ -1245,22 +1274,18 @@ Wall time: 437 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nodeID
+0    5.0
 1    5.0
-2    5.0
-3    6.0
-4    8.0
-5    1.0
+2    6.0
+3    8.0
+4    1.0
 dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
-<p>At this point, we have the number of parks within 500m of <em>every</em> node in the network. To identify those that correspond to each Airbnb (3.), we query those nodes:</p>
+<p>At this point, we have the number of parks within 500m of <em>every</em> node in the network. To identify those that correspond to each Airbnb (3.), we first pull out the nearest nodes to each ABB:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abbs_xys</span> <span class="o">=</span> <span class="n">abbs</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span><span class="o">.</span><span class="n">geometry</span>
@@ -1277,12 +1302,17 @@ dtype: float64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">park_count_network</span> <span class="o">=</span> <span class="n">abbs_nnode</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
     <span class="n">parks_by_node</span>
 <span class="p">)</span>
+<span class="n">park_count_network</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     4.0
+1     9.0
+2     5.0
+3     0.0
+4    12.0
+Name: node_id, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1305,12 +1335,13 @@ dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">park_comp</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;Euclidean&quot;</span><span class="p">,</span> <span class="s2">&quot;Network&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">park_comp</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;Euclidean&quot;</span><span class="p">,</span> <span class="s2">&quot;Network&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">);</span><span class="c1"># 45deg line</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_87_0.png" src="../../_images/08-Transport_costs_87_0.png" />
+<img alt="../../_images/08-Transport_costs_92_0.png" src="../../_images/08-Transport_costs_92_0.png" />
 </div>
 </div>
 <p>And, geographically:</p>
@@ -1400,16 +1431,21 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_89_0.png" src="../../_images/08-Transport_costs_89_0.png" />
+<img alt="../../_images/08-Transport_costs_94_0.png" src="../../_images/08-Transport_costs_94_0.png" />
+</div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Calculate accessibility to <em>other</em> ABBs from each ABB through the network. <em>How many ABBs can you access within 500m of each ABB?</em></p>
+<p>Note you will need to use the locations of ABBs both as the source and the target for routing in this case.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="moving-along-surfaces">
-<h3><em>Moving</em> along surfaces<a class="headerlink" href="#moving-along-surfaces" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="shortest-path-along-surfaces">
+<h3>Shortest-path along surfaces<a class="headerlink" href="#shortest-path-along-surfaces" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="47e52eaf-ffd3-4abd-b7e8-d290a962bac3" name="42f598bc-ff14-4dc1-b273-1bf1e0082365" type="radio">
-</input><label class="tabbed-label" for="47e52eaf-ffd3-4abd-b7e8-d290a962bac3">
+<input checked="checked" id="c37197d9-8f89-48e1-84fc-38cf1d0bc8c9" name="e85eb2b8-8049-4ae5-8d1c-c49b77a5d9e6" type="radio">
+</input><label class="tabbed-label" for="c37197d9-8f89-48e1-84fc-38cf1d0bc8c9">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">friction_walk</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -1422,8 +1458,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="554f435e-521f-4936-8e9d-175e8415d436" name="42f598bc-ff14-4dc1-b273-1bf1e0082365" type="radio">
-</input><label class="tabbed-label" for="554f435e-521f-4936-8e9d-175e8415d436">
+<input id="d7b97db7-5a6f-45a0-8aac-184debee7858" name="e85eb2b8-8049-4ae5-8d1c-c49b77a5d9e6" type="radio">
+</input><label class="tabbed-label" for="d7b97db7-5a6f-45a0-8aac-184debee7858">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">friction_walk</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -1435,21 +1471,6 @@ Online read</label><div class="tabbed-content docutils">
 <span class="n">cities</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
     <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/b2bc4ad46ffb5fcec467286c022adf14/cambodian_cities.geojson&quot;</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="id1">
-<h4>Shortest-path routing<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
 </pre></div>
 </div>
 </div>
@@ -1475,16 +1496,10 @@ Online read</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/geopandas/geodataframe.py:577: RuntimeWarning: Sequential read of iterator was interrupted. Resetting iterator. This can negatively impact the performance.
-  for feature in features_lst:
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell tag_margin tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_97_0.png" src="../../_images/08-Transport_costs_97_0.png" />
+<img alt="../../_images/08-Transport_costs_101_0.png" src="../../_images/08-Transport_costs_101_0.png" />
 </div>
 </div>
 <p>From the geo-table of roads, we can generate a surface that has a value of 1 on cells where a road crosses, and 0 otherwise (<em>rasterisation</em>).</p>
@@ -1502,12 +1517,6 @@ Online read</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now we turn it into a binary mask:</p>
 <div class="cell docutils container">
@@ -1518,16 +1527,10 @@ Online read</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell tag_remove-input tag_margin docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_102_0.png" src="../../_images/08-Transport_costs_102_0.png" />
+<img alt="../../_images/08-Transport_costs_106_0.png" src="../../_images/08-Transport_costs_106_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1899,27 +1902,15 @@ array([[0, 0, 0, ..., 0, 0, 0],
 Coordinates:
   * y            (y) float64 1.167e+06 1.168e+06 ... 1.539e+06 1.539e+06
   * x            (x) float64 2.348e+05 2.352e+05 ... 6.572e+05 6.578e+05
-    spatial_ref  int64 0</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'one'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 745</li><li><span class='xr-has-index'>x</span>: 847</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-36f13a30-ee5e-4d09-867f-a8dd20c6bf0e' class='xr-array-in' type='checkbox' checked><label for='section-36f13a30-ee5e-4d09-867f-a8dd20c6bf0e' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ... 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span></div><div class='xr-array-data'><pre>array([[0, 0, 0, ..., 0, 0, 0],
+    spatial_ref  int64 0</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'one'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 745</li><li><span class='xr-has-index'>x</span>: 847</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-2147dbd7-687c-40d0-94a5-418e9bba1181' class='xr-array-in' type='checkbox' checked><label for='section-2147dbd7-687c-40d0-94a5-418e9bba1181' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ... 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span></div><div class='xr-array-data'><pre>array([[0, 0, 0, ..., 0, 0, 0],
        [0, 0, 0, ..., 0, 0, 0],
        [0, 0, 0, ..., 0, 0, 0],
        ...,
        [0, 0, 0, ..., 0, 0, 0],
        [0, 0, 0, ..., 0, 0, 0],
-       [0, 0, 0, ..., 0, 0, 0]])</pre></div></div></li><li class='xr-section-item'><input id='section-1376a5fb-cb4a-48b4-9554-2c03992b400b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-1376a5fb-cb4a-48b4-9554-2c03992b400b' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.167e+06 1.168e+06 ... 1.539e+06</div><input id='attrs-2b67c44b-6e2e-41f2-8850-1ac7fc041a67' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2b67c44b-6e2e-41f2-8850-1ac7fc041a67' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a05227b2-ab52-4b0b-a46c-4536ad201ce4' class='xr-var-data-in' type='checkbox'><label for='data-a05227b2-ab52-4b0b-a46c-4536ad201ce4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([1167250., 1167750., 1168250., ..., 1538250., 1538750., 1539250.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.348e+05 2.352e+05 ... 6.578e+05</div><input id='attrs-fcdc6793-5bed-43dd-8f06-85c8ef08e514' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fcdc6793-5bed-43dd-8f06-85c8ef08e514' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f13d41c9-d888-4a4f-862b-8480dc18c8c6' class='xr-var-data-in' type='checkbox'><label for='data-f13d41c9-d888-4a4f-862b-8480dc18c8c6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([234750., 235250., 235750., ..., 656750., 657250., 657750.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0</div><input id='attrs-2af27a64-25bc-4eb6-9a2f-d7927ed67bdc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2af27a64-25bc-4eb6-9a2f-d7927ed67bdc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-09426eaa-93e4-4e25-aca1-d742f261efd3' class='xr-var-data-in' type='checkbox'><label for='data-09426eaa-93e4-4e25-aca1-d742f261efd3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>semi_major_axis :</span></dt><dd>6377276.345</dd><dt><span>semi_minor_axis :</span></dt><dd>6356075.41314024</dd><dt><span>inverse_flattening :</span></dt><dd>300.8017</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>Everest 1830 (1937 Adjustment)</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>Indian 1960</dd><dt><span>horizontal_datum_name :</span></dt><dd>Indian 1960</dd><dt><span>projected_crs_name :</span></dt><dd>Indian 1960 / UTM zone 48N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd></dl></div><div class='xr-var-data'><pre>array(0)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b541bdf6-e07b-4548-8351-ebcf8a4e1004' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-b541bdf6-e07b-4548-8351-ebcf8a4e1004' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       [0, 0, 0, ..., 0, 0, 0]])</pre></div></div></li><li class='xr-section-item'><input id='section-bb189fda-0fe2-4e53-a3ee-aa4dde3ca17c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-bb189fda-0fe2-4e53-a3ee-aa4dde3ca17c' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.167e+06 1.168e+06 ... 1.539e+06</div><input id='attrs-37abd380-6886-4729-9052-304410442a63' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-37abd380-6886-4729-9052-304410442a63' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c73ec67a-22d8-4ae8-8d40-9f061e8b8551' class='xr-var-data-in' type='checkbox'><label for='data-c73ec67a-22d8-4ae8-8d40-9f061e8b8551' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([1167250., 1167750., 1168250., ..., 1538250., 1538750., 1539250.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.348e+05 2.352e+05 ... 6.578e+05</div><input id='attrs-ff64bdee-b121-4fb2-af3e-7458e39424ef' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ff64bdee-b121-4fb2-af3e-7458e39424ef' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-742dbecd-dcea-4f83-89c5-bd342d1ca795' class='xr-var-data-in' type='checkbox'><label for='data-742dbecd-dcea-4f83-89c5-bd342d1ca795' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([234750., 235250., 235750., ..., 656750., 657250., 657750.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0</div><input id='attrs-a039ad98-6af5-45a1-bf00-e07fe6901499' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a039ad98-6af5-45a1-bf00-e07fe6901499' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-52b4543a-e224-4646-8e57-299aac00f59d' class='xr-var-data-in' type='checkbox'><label for='data-52b4543a-e224-4646-8e57-299aac00f59d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>semi_major_axis :</span></dt><dd>6377276.345</dd><dt><span>semi_minor_axis :</span></dt><dd>6356075.41314024</dd><dt><span>inverse_flattening :</span></dt><dd>300.8017</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>Everest 1830 (1937 Adjustment)</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>Indian 1960</dd><dt><span>horizontal_datum_name :</span></dt><dd>Indian 1960</dd><dt><span>projected_crs_name :</span></dt><dd>Indian 1960 / UTM zone 48N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd></dl></div><div class='xr-var-data'><pre>array(0)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-64ba7554-2f8b-481b-a786-ed3027dd1459' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-64ba7554-2f8b-481b-a786-ed3027dd1459' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Then we can generate the routing from, say Phnom Penh to Poipet, using <code class="docutils literal notranslate"><span class="pre">xarray-spatial</span></code>’s A* algorithm:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>a_star_search<span class="o">?</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Object `a_star_search` not found.
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xrspatial</span> <span class="kn">import</span> <span class="n">a_star_search</span>
@@ -1950,39 +1941,13 @@ Coordinates:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/numba/cuda/api.py:112: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-  def device_array(shape, dtype=np.float, strides=None, order=&#39;C&#39;, stream=0):
-/opt/conda/lib/python3.8/site-packages/numba/cuda/api.py:124: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-  def managed_array(shape, dtype=np.float, strides=None, order=&#39;C&#39;, stream=0,
-/opt/conda/lib/python3.8/site-packages/numba/cuda/api.py:154: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-  def pinned_array(shape, dtype=np.float, strides=None, order=&#39;C&#39;):
-/opt/conda/lib/python3.8/site-packages/numba/cuda/api.py:170: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-  def mapped_array(shape, dtype=np.float, strides=None, order=&#39;C&#39;, stream=0,
-/opt/conda/lib/python3.8/site-packages/numba/cuda/simulator/cudadrv/devicearray.py:313: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-  def pinned_array(shape, dtype=np.float, strides=None, order=&#39;C&#39;):
-/opt/conda/lib/python3.8/site-packages/numba/cuda/simulator/cudadrv/devicearray.py:317: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-  def managed_array(shape, dtype=np.float, strides=None, order=&#39;C&#39;):
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell tag_margin tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f00bc362850&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f7c3b7fc370&gt;
-</pre></div>
-</div>
-<img alt="../../_images/08-Transport_costs_107_2.png" src="../../_images/08-Transport_costs_107_2.png" />
+<img alt="../../_images/08-Transport_costs_110_1.png" src="../../_images/08-Transport_costs_110_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2354,13 +2319,13 @@ array([[nan, nan, nan, ..., nan, nan, nan],
 Coordinates:
   * y            (y) float64 1.167e+06 1.168e+06 ... 1.539e+06 1.539e+06
   * x            (x) float64 2.348e+05 2.352e+05 ... 6.572e+05 6.578e+05
-    spatial_ref  int64 0</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 745</li><li><span class='xr-has-index'>x</span>: 847</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-125871a0-ffee-4c4f-8d09-0da8c37cdf13' class='xr-array-in' type='checkbox' checked><label for='section-125871a0-ffee-4c4f-8d09-0da8c37cdf13' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>nan nan nan nan nan nan nan nan ... nan nan nan nan nan nan nan nan</span></div><div class='xr-array-data'><pre>array([[nan, nan, nan, ..., nan, nan, nan],
+    spatial_ref  int64 0</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 745</li><li><span class='xr-has-index'>x</span>: 847</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-5194beb1-b8cd-4852-beb9-3eb902c99ead' class='xr-array-in' type='checkbox' checked><label for='section-5194beb1-b8cd-4852-beb9-3eb902c99ead' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>nan nan nan nan nan nan nan nan ... nan nan nan nan nan nan nan nan</span></div><div class='xr-array-data'><pre>array([[nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
        ...,
        [nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
-       [nan, nan, nan, ..., nan, nan, nan]])</pre></div></div></li><li class='xr-section-item'><input id='section-8b2b6d7d-71f3-431d-9558-418bb852440e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-8b2b6d7d-71f3-431d-9558-418bb852440e' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.167e+06 1.168e+06 ... 1.539e+06</div><input id='attrs-36f0cd1f-dee6-4e5f-93d9-14ab86447fff' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-36f0cd1f-dee6-4e5f-93d9-14ab86447fff' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6da93ca6-750f-4c3b-81ac-3edd19e14822' class='xr-var-data-in' type='checkbox'><label for='data-6da93ca6-750f-4c3b-81ac-3edd19e14822' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([1167250., 1167750., 1168250., ..., 1538250., 1538750., 1539250.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.348e+05 2.352e+05 ... 6.578e+05</div><input id='attrs-770b8c48-cd6a-47a3-b2bb-eed816a6e7f2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-770b8c48-cd6a-47a3-b2bb-eed816a6e7f2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0fc57a70-f730-4ddc-9b72-d36a9c7cfe0d' class='xr-var-data-in' type='checkbox'><label for='data-0fc57a70-f730-4ddc-9b72-d36a9c7cfe0d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([234750., 235250., 235750., ..., 656750., 657250., 657750.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0</div><input id='attrs-588847ab-761f-427c-893c-21982707000f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-588847ab-761f-427c-893c-21982707000f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-facd39a4-1810-47ea-a837-80d9a17b1146' class='xr-var-data-in' type='checkbox'><label for='data-facd39a4-1810-47ea-a837-80d9a17b1146' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>semi_major_axis :</span></dt><dd>6377276.345</dd><dt><span>semi_minor_axis :</span></dt><dd>6356075.41314024</dd><dt><span>inverse_flattening :</span></dt><dd>300.8017</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>Everest 1830 (1937 Adjustment)</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>Indian 1960</dd><dt><span>horizontal_datum_name :</span></dt><dd>Indian 1960</dd><dt><span>projected_crs_name :</span></dt><dd>Indian 1960 / UTM zone 48N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd></dl></div><div class='xr-var-data'><pre>array(0)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-1ed1aa78-d0d0-4398-8357-7e9bc54bb26b' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-1ed1aa78-d0d0-4398-8357-7e9bc54bb26b' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       [nan, nan, nan, ..., nan, nan, nan]])</pre></div></div></li><li class='xr-section-item'><input id='section-add86c90-afbc-40e1-a88a-24c37ff95a50' class='xr-section-summary-in' type='checkbox'  checked><label for='section-add86c90-afbc-40e1-a88a-24c37ff95a50' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.167e+06 1.168e+06 ... 1.539e+06</div><input id='attrs-4f41be9c-de2f-4d6d-9391-e8bf5b177e1e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4f41be9c-de2f-4d6d-9391-e8bf5b177e1e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dbdf10fe-a993-41b1-8a65-483ee519cd0e' class='xr-var-data-in' type='checkbox'><label for='data-dbdf10fe-a993-41b1-8a65-483ee519cd0e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([1167250., 1167750., 1168250., ..., 1538250., 1538750., 1539250.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.348e+05 2.352e+05 ... 6.578e+05</div><input id='attrs-c001641a-6658-472e-b985-8f349b8716ee' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c001641a-6658-472e-b985-8f349b8716ee' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6ec8f4d0-ed7b-4a0e-a7ed-9ea6e24762b3' class='xr-var-data-in' type='checkbox'><label for='data-6ec8f4d0-ed7b-4a0e-a7ed-9ea6e24762b3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([234750., 235250., 235750., ..., 656750., 657250., 657750.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0</div><input id='attrs-9c02d510-fb2b-46ec-9c64-1ee260d72b0d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9c02d510-fb2b-46ec-9c64-1ee260d72b0d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ba9dc901-3326-4230-979f-d7cecb8ffadc' class='xr-var-data-in' type='checkbox'><label for='data-ba9dc901-3326-4230-979f-d7cecb8ffadc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>semi_major_axis :</span></dt><dd>6377276.345</dd><dt><span>semi_minor_axis :</span></dt><dd>6356075.41314024</dd><dt><span>inverse_flattening :</span></dt><dd>300.8017</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>Everest 1830 (1937 Adjustment)</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>Indian 1960</dd><dt><span>horizontal_datum_name :</span></dt><dd>Indian 1960</dd><dt><span>projected_crs_name :</span></dt><dd>Indian 1960 / UTM zone 48N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd></dl></div><div class='xr-var-data'><pre>array(0)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ed310431-f3ea-4826-85cd-91c1fae72076' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-ed310431-f3ea-4826-85cd-91c1fae72076' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>And we can turn the route surface into a line that connects the pixels in the route:</p>
 <div class="cell docutils container">
@@ -2381,172 +2346,12 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_110_0.svg" src="../../_images/08-Transport_costs_110_0.svg" /></div>
+<img alt="../../_images/08-Transport_costs_113_0.svg" src="../../_images/08-Transport_costs_113_0.svg" /></div>
 </div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Calculate the route between Battambang and Sihanoukville. <em>What is the distance?</em></p>
 </div>
-<div class="section" id="continuous-surfaces">
-<h4>Continuous surfaces<a class="headerlink" href="#continuous-surfaces" title="Permalink to this headline">¶</a></h4>
-<p>We can use a continuous surface instead of a road network to set the surface cells where it is allowed to “pass”. For example, with the motorised surface, we can explore the degree of friction:</p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">friction_motor</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
-    <span class="n">friction_motor</span><span class="o">!=</span><span class="n">friction_motor</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
-<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
-    <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_113_0.png" src="../../_images/08-Transport_costs_113_0.png" />
-</div>
-</div>
-<p>We can determine that, above 0.01, a cell is not available for routing. Using this, we can build a mask similar as above that can be used for generating routes:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set surface up</span>
-<span class="n">surface</span> <span class="o">=</span> <span class="n">friction_motor</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
-    <span class="n">friction_motor</span><span class="o">!=</span><span class="n">friction_motor</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
-<span class="p">)</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">reproject</span><span class="p">(</span><span class="mi">3148</span><span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
-    <span class="n">band</span><span class="o">=</span><span class="mi">1</span>
-<span class="p">)</span>
-<span class="c1"># Swap nodata value for N/A</span>
-<span class="n">surface</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
-    <span class="n">surface</span><span class="o">!=</span><span class="n">surface</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
-<span class="p">)</span>
-<span class="c1"># Turn into binary mask</span>
-<span class="c1"># Valid for routing if &lt; 0.01</span>
-<span class="n">surface</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
-    <span class="n">surface</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Swap order of Y coordinate</span>
-<span class="n">surface</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="c1"># Pull out starting point</span>
-<span class="n">start</span> <span class="o">=</span> <span class="n">cities</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
-    <span class="s2">&quot;UC_NM_MN == &#39;Siem Reap&#39;&quot;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
-    <span class="n">epsg</span><span class="o">=</span><span class="mi">3148</span>
-<span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span><span class="o">.</span><span class="n">geometry</span>
-
-<span class="c1"># Pull out ending point</span>
-<span class="n">end</span> <span class="o">=</span> <span class="n">cities</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
-    <span class="s2">&quot;UC_NM_MN == &#39;Sihanoukville&#39;&quot;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
-    <span class="n">epsg</span><span class="o">=</span><span class="mi">3148</span>
-<span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span><span class="o">.</span><span class="n">geometry</span>
-
-<span class="c1"># Routing</span>
-<span class="n">route</span> <span class="o">=</span> <span class="n">a_star_search</span><span class="p">(</span>
-    <span class="n">surface</span><span class="p">,</span>            <span class="c1"># (Reprojected) road surface</span>
-    <span class="p">(</span><span class="n">start</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">start</span><span class="o">.</span><span class="n">y</span><span class="p">),</span> <span class="c1"># Starting point</span>
-    <span class="p">(</span><span class="n">end</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">.</span><span class="n">y</span><span class="p">),</span>     <span class="c1"># Destination point</span>
-    <span class="n">barriers</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>       <span class="c1"># Cell values that cannot be crossed</span>
-    <span class="n">snap_start</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>    <span class="c1"># Snap starting point to valid cells</span>
-    <span class="n">snap_goal</span><span class="o">=</span><span class="kc">True</span>      <span class="c1"># Snap ending point to valid cells  </span>
-<span class="p">)</span>
-
-<span class="c1"># Swap order of Y coordinate back</span>
-<span class="n">surface</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="c1"># Parse route into line</span>
-<span class="n">route_line</span> <span class="o">=</span> <span class="n">LineString</span><span class="p">(</span>
-    <span class="n">route</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
-        <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;order&quot;</span><span class="p">}</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
-        <span class="s2">&quot;order&quot;</span>
-    <span class="p">)[</span>
-        <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">]</span>
-    <span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="p">)</span>
-<span class="n">route_line</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">route_line</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-
-<span class="n">friction_motor</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">reproject</span><span class="p">(</span>
-    <span class="mi">3148</span>
-<span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
-    <span class="n">band</span><span class="o">=</span><span class="mi">1</span>
-<span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
-    <span class="n">friction_motor</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">reproject</span><span class="p">(</span><span class="mi">3148</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span>
-<span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">route_line</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span>
-<span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Motor Friction&quot;</span><span class="p">)</span>
-
-<span class="n">surface</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">route_line</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span>
-<span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Mask&quot;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
-<img alt="../../_images/08-Transport_costs_117_1.png" src="../../_images/08-Transport_costs_117_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
-<span class="n">surface</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">add_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">route_line</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span>
-<span class="p">)</span>
-<span class="n">cities</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">3148</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Main cities&quot;</span>
-<span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
-  and should_run_async(code)
-</pre></div>
-</div>
-<img alt="../../_images/08-Transport_costs_118_1.png" src="../../_images/08-Transport_costs_118_1.png" />
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="over-to-you">
-<h3>Over to you…<a class="headerlink" href="#over-to-you" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Recreate weighted routing using the linearity of street segments. How can you go from A to B avoiding long streets?</p></li>
-<li><p>Explore the differences in the output of weighted routing if you change the weight between distance and the additional variable.</p></li>
-<li><p>Explore the difference in routing when you vary the friction threshold to allow usage of a cell</p></li>
-</ul>
 </div>
 </div>
 <div class="section" id="next-steps">
