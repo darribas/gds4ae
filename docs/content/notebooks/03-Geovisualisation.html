@@ -43,12 +43,11 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -526,16 +525,16 @@
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="e9f4b63d-3b65-426e-bead-5dea0d970e0f" name="1c197882-f85e-4f8d-a74e-1df8fafd419b" type="radio">
-</input><label class="tabbed-label" for="e9f4b63d-3b65-426e-bead-5dea0d970e0f">
+<input checked="checked" id="4dfef743-c118-499e-b50c-4c95bed23bca" name="5750b745-fa0e-4cb4-9acf-16d8cef372a0" type="radio">
+</input><label class="tabbed-label" for="4dfef743-c118-499e-b50c-4c95bed23bca">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="f974fd39-e80d-4469-885d-a9d25cf4eb4d" name="1c197882-f85e-4f8d-a74e-1df8fafd419b" type="radio">
-</input><label class="tabbed-label" for="f974fd39-e80d-4469-885d-a9d25cf4eb4d">
+<input id="b31dafdf-a2fb-43f0-9353-c18bbb63f32e" name="5750b745-fa0e-4cb4-9acf-16d8cef372a0" type="radio">
+</input><label class="tabbed-label" for="b31dafdf-a2fb-43f0-9353-c18bbb63f32e">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -1129,8 +1128,8 @@ memory usage: 9.4+ KB
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="b46d3a8d-19c0-4524-a2d4-963de3de9836" name="19e132e4-e43d-4d1c-aa9c-b95459a25876" type="radio">
-</input><label class="tabbed-label" for="b46d3a8d-19c0-4524-a2d4-963de3de9836">
+<input checked="checked" id="e5e6acef-f5bd-462c-888f-beadb657afed" name="651078d4-f8ff-43b9-8b34-d5ed4c1d85f9" type="radio">
+</input><label class="tabbed-label" for="e5e6acef-f5bd-462c-888f-beadb657afed">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -1139,8 +1138,8 @@ Local files</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="bd8932eb-322f-41a4-a1c2-7a6b42d46021" name="19e132e4-e43d-4d1c-aa9c-b95459a25876" type="radio">
-</input><label class="tabbed-label" for="bd8932eb-322f-41a4-a1c2-7a6b42d46021">
+<input id="424a04a3-465c-4a32-b67f-73840e79d19b" name="651078d4-f8ff-43b9-8b34-d5ed4c1d85f9" type="radio">
+</input><label class="tabbed-label" for="424a04a3-465c-4a32-b67f-73840e79d19b">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
