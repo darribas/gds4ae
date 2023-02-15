@@ -5,7 +5,7 @@ channels:
   - default
   - conda-forge
 dependencies:
-  - python=3.9.*
+  - python=3.7.* # Required for GHA
   - sphinx=4.5.0
   - pip=22.1
   - nbconvert=6.5.0
