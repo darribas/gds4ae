@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,16 +34,19 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -79,12 +82,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
@@ -106,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Overview
  </span>
@@ -123,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Content
  </span>
@@ -170,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Epilogue
  </span>
@@ -207,22 +205,22 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">Toggle navigation</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
-            </div>
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
             
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
@@ -262,7 +260,6 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
-        
         
         
         
@@ -471,16 +468,16 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="section" id="spatial-data">
+  <div class="tex2jax_ignore mathjax_ignore section" id="spatial-data">
 <h1>Spatial Data<a class="headerlink" href="#spatial-data" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="ahead-of-time">
 <h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
 <p>This block is all about understanding spatial data, both conceptually and practically. Before your fingers get on the keyboard, the following readings will help you get going and familiar with core ideas:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/01_geo_thinking.html">Chapter 1</a> of the GDS Book <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id44"><span>RABWng</span></a>]</span>, which provides a conceptual overview of representing Geography in data</p></li>
-<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/03_spatial_data.html">Chapter 3</a> of the GDS Book <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id44"><span>RABWng</span></a>]</span>, a sister chapter with a more applied perspective on how concepts are implemented in computer data structures</p></li>
+<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/01_geo_thinking.html">Chapter 1</a> of the GDS Book <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id44" title="Sergio J. Rey, Daniel Arribas-Bel, and Levi J. Wolf. Geographic Data Science with PySAL and the PyData stack. CRC press, forthcoming.">RABWng</a>]</span>, which provides a conceptual overview of representing Geography in data</p></li>
+<li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/03_spatial_data.html">Chapter 3</a> of the GDS Book <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id44" title="Sergio J. Rey, Daniel Arribas-Bel, and Levi J. Wolf. Geographic Data Science with PySAL and the PyData stack. CRC press, forthcoming.">RABWng</a>]</span>, a sister chapter with a more applied perspective on how concepts are implemented in computer data structures</p></li>
 </ul>
-<p>Additionally, parts of this block are based and source from <a class="reference external" href="https://darribas.org/gds_course/content/bC/lab_C.html">Block C</a> in the GDS Course <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id9"><span>AB19</span></a>]</span>.</p>
+<p>Additionally, parts of this block are based and source from <a class="reference external" href="https://darribas.org/gds_course/content/bC/lab_C.html">Block C</a> in the GDS Course <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id9" title="Dani Arribas-Bel. A course on geographic data science. The Journal of Open Source Education, 2019. doi:https://doi.org/10.21105/jose.00042.">AB19</a>]</span>.</p>
 </div>
 <div class="section" id="hands-on-coding">
 <h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
@@ -504,16 +501,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
 </div>
 <div class="tabbed-set docutils">
-<input checked="checked" id="8b821c08-87cf-4af7-a10a-3b525c091084" name="b510377e-e2c9-4f4c-beab-a5458ff6fdac" type="radio">
-</input><label class="tabbed-label" for="8b821c08-87cf-4af7-a10a-3b525c091084">
+<input checked="checked" id="5202bce7-8192-46d8-97a8-142fcfaaf520" name="7ed2091d-9d78-4623-a4a9-1ea033dd038b" type="radio">
+</input><label class="tabbed-label" for="5202bce7-8192-46d8-97a8-142fcfaaf520">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="fe0d38e1-2e8b-4a5d-b8e7-32e1df92bd41" name="b510377e-e2c9-4f4c-beab-a5458ff6fdac" type="radio">
-</input><label class="tabbed-label" for="fe0d38e1-2e8b-4a5d-b8e7-32e1df92bd41">
+<input id="bec0c5b5-7dbf-40bb-a414-95113884353d" name="7ed2091d-9d78-4623-a4a9-1ea033dd038b" type="radio">
+</input><label class="tabbed-label" for="bec0c5b5-7dbf-40bb-a414-95113884353d">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -729,16 +726,16 @@ memory usage: 2.2+ MB
 <div class="section" id="lines">
 <h4>Lines<a class="headerlink" href="#lines" title="Permalink to this headline">¶</a></h4>
 <div class="tabbed-set docutils">
-<input checked="checked" id="9b31d474-100d-42ee-a847-55715a340740" name="b58cc552-c0d4-4615-82da-967248174cf2" type="radio">
-</input><label class="tabbed-label" for="9b31d474-100d-42ee-a847-55715a340740">
+<input checked="checked" id="ab356574-559a-44f7-b0f5-22210998a4c3" name="5ecb135e-8dc5-425a-acd8-c5d950d9fc9e" type="radio">
+</input><label class="tabbed-label" for="ab356574-559a-44f7-b0f5-22210998a4c3">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="f3fbbfc0-2542-4003-8e67-6825ff23bc00" name="b58cc552-c0d4-4615-82da-967248174cf2" type="radio">
-</input><label class="tabbed-label" for="f3fbbfc0-2542-4003-8e67-6825ff23bc00">
+<input id="41989e85-bce5-4594-a544-c3f49b778333" name="5ecb135e-8dc5-425a-acd8-c5d950d9fc9e" type="radio">
+</input><label class="tabbed-label" for="41989e85-bce5-4594-a544-c3f49b778333">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -792,16 +789,16 @@ memory usage: 4.6+ MB
 <div class="section" id="polygons">
 <h4>Polygons<a class="headerlink" href="#polygons" title="Permalink to this headline">¶</a></h4>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2b0b6f72-8cb5-4bb9-8100-1cc5618bebf5" name="b617a43b-2559-4446-8a0f-8992ab318d11" type="radio">
-</input><label class="tabbed-label" for="2b0b6f72-8cb5-4bb9-8100-1cc5618bebf5">
+<input checked="checked" id="96a3194b-4060-4807-8902-18c4f95baa03" name="0efc2111-7130-492a-b136-dc0335a81d25" type="radio">
+</input><label class="tabbed-label" for="96a3194b-4060-4807-8902-18c4f95baa03">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/neighbourhoods.geojson&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="4827cb81-aed7-4054-8835-cc5072abab7f" name="b617a43b-2559-4446-8a0f-8992ab318d11" type="radio">
-</input><label class="tabbed-label" for="4827cb81-aed7-4054-8835-cc5072abab7f">
+<input id="a636f0f4-50ed-44a3-9c3f-efc97070a559" name="0efc2111-7130-492a-b136-dc0335a81d25" type="radio">
+</input><label class="tabbed-label" for="a636f0f4-50ed-44a3-9c3f-efc97070a559">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">polys</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
@@ -973,16 +970,16 @@ Online read</label><div class="tabbed-content docutils">
 <div class="section" id="surfaces">
 <h3>Surfaces<a class="headerlink" href="#surfaces" title="Permalink to this headline">¶</a></h3>
 <div class="tabbed-set docutils">
-<input checked="checked" id="4901c7ff-2563-434a-8926-62036fa4f436" name="2b63f4f1-0f6b-49ae-8f26-5d6060b9eb72" type="radio">
-</input><label class="tabbed-label" for="4901c7ff-2563-434a-8926-62036fa4f436">
+<input checked="checked" id="7ac31716-88ed-41dd-b21a-1755895a8b40" name="731569e7-db6d-4e4a-ae8c-6e12146ca728" type="radio">
+</input><label class="tabbed-label" for="7ac31716-88ed-41dd-b21a-1755895a8b40">
 Local files</label><div class="tabbed-content docutils">
 <p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="s2">&quot;../data/madrid_scene_s2_10_tc.tif&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="3dcb6123-b420-43b7-a119-4fdbe57568c7" name="2b63f4f1-0f6b-49ae-8f26-5d6060b9eb72" type="radio">
-</input><label class="tabbed-label" for="3dcb6123-b420-43b7-a119-4fdbe57568c7">
+<input id="c618515c-4394-4279-9200-616d6e7d5be9" name="731569e7-db6d-4e4a-ae8c-6e12146ca728" type="radio">
+</input><label class="tabbed-label" for="c618515c-4394-4279-9200-616d6e7d5be9">
 Online read</label><div class="tabbed-content docutils">
 <p>If you’re online, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sat</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
@@ -2629,7 +2626,7 @@ dtype: float64
 <h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>If you are interested in following up on some of the topics explored in this block, the following pointers might be useful:</p>
 <ul class="simple">
-<li><p>Although we have seen here <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> only, all non-geographic operations on geo-tables are really thanks to <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, the workhorse for tabular data in Python. Their <a class="reference external" href="https://pandas.pydata.org/docs/">official documentation</a> is an excellent first stop. If you prefer a book, McKinney (2012) <span id="id4">[<a class="reference internal" href="../pages/z_bibliography.html#id16"><span>McK12</span></a>]</span> is a great one.</p></li>
+<li><p>Although we have seen here <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> only, all non-geographic operations on geo-tables are really thanks to <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, the workhorse for tabular data in Python. Their <a class="reference external" href="https://pandas.pydata.org/docs/">official documentation</a> is an excellent first stop. If you prefer a book, McKinney (2012) <span id="id4">[<a class="reference internal" href="../pages/z_bibliography.html#id16" title="Wes McKinney. Python for data analysis: Data wrangling with Pandas, NumPy, and IPython. O'Reilly Media, Inc., 2012.">McK12</a>]</span> is a great one.</p></li>
 <li><p>For more detail on geographic operations on geo-tables, the <a class="reference external" href="https://geopandas.org/">Geopandas official documentation</a> is a great place to continue the journey.</p></li>
 <li><p>Surfaces, as covered here, are really an example of multi-dimensional labelled arrays. The library we use, <code class="docutils literal notranslate"><span class="pre">xarray</span></code> represents the cutting edge for working with these data structures in Python, and <a class="reference external" href="https://xarray.pydata.org/">their documentation</a> is a great place to wrap your head around how data of this type can be manipulated. For geographic extensions (CRS handling, reprojections, etc.), we have used <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> under the hood, and <a class="reference external" href="https://corteva.github.io/rioxarray/">its documentation</a> is also well worth checking.</p></li>
 </ul>
