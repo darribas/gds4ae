@@ -1,11 +1,11 @@
-- file: content/pages/home
-
-- part: Overview
+format: jb-book
+root: content/pages/home
+parts:
+- caption: Overview
   chapters:
   - file: content/pages/overview
   - file: content/pages/infrastructure
-
-- part: Content
+- caption: Content
   chapters:
   - file: content/notebooks/01-Introduction
   - file: content/notebooks/02-Spatial_data
@@ -15,8 +15,7 @@
   - file: content/notebooks/06-OpenStreetMap
   - file: content/notebooks/07-Spatial_networks
   - file: content/notebooks/08-Transport_costs
-
-- part: Epilogue
+- caption: Epilogue
   chapters:
   - file: content/data/datasets
   - file: content/pages/further
