@@ -447,9 +447,9 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out_f</span> <span class="o">=</span> <span class="s2">&quot;cambodian_cities.geojson&quot;</span>
-<span class="o">!</span> rm -f <span class="nv">$out_f</span>
+<span class="o">!</span><span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$out_f</span>
 <span class="n">khm</span><span class="p">[</span><span class="n">vars_to_keep</span><span class="p">]</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">out_f</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;GeoJSON&quot;</span><span class="p">)</span>
-<span class="o">!</span> du -h <span class="nv">$out_f</span>
+<span class="o">!</span><span class="w"> </span>du<span class="w"> </span>-h<span class="w"> </span><span class="nv">$out_f</span>
 </pre></div>
 </div>
 </div>

@@ -627,13 +627,13 @@ Wall time: 1min 48s
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out_f</span> <span class="o">=</span> <span class="s2">&quot;madrid_scene_s2_10_tc.tif&quot;</span>
-<span class="o">!</span> rm -f <span class="nv">$out_f</span>
+<span class="o">!</span><span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$out_f</span>
 
 <span class="n">mad_scene</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;band&quot;</span><span class="p">)</span>\
          <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">minmax</span><span class="p">)</span>\
          <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">rio</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>\
          <span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">to_raster</span><span class="p">(</span><span class="n">out_f</span><span class="p">)</span>
-<span class="o">!</span> du -h <span class="nv">$out_f</span>
+<span class="o">!</span><span class="w"> </span>du<span class="w"> </span>-h<span class="w"> </span><span class="nv">$out_f</span>
 </pre></div>
 </div>
 </div>
