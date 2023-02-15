@@ -10,5 +10,5 @@ dependencies:
   - pip=22.1
   - nbconvert=6.5.0
   - pip:
-      - jupyter-book=0.12.3
-      - pyppeteer=1.0.2
+      - jupyter-book==0.12.3
+      - pyppeteer==1.0.2
