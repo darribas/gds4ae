@@ -1,418 +1,470 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spatial Networks &#8212; Geographic Data Science for Applied Economists</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-6032674-1"></script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'UA-6032674-1');
-            </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/notebooks/07-Spatial_networks';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Transport costs" href="08-Transport_costs.html" />
     <link rel="prev" title="OpenStreetMap" href="06-OpenStreetMap.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-6032674-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
+    
 
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../pages/home.html">
-  
-  
-  
-  
-  
-    <p class="title logo__title">Geographic Data Science for Applied Economists</p>
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../pages/home.html">
-                    Home
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../pages/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/infrastructure.html">Infrastructure</a></li>
+      
+      
+      <h1 class="site-logo" id="site-title">Geographic Data Science for Applied Economists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/home.html">
+   Home
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Content</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/infrastructure.html">
+   Infrastructure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Content
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01-Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-Spatial_data.html">Spatial Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-Geovisualisation.html">Geovisualisation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-Spatial_feature_eng_i.html">Spatial Feature Engineering (I)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05-Spatial_feature_eng_ii.html">Spatial Feature Engineering (II)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-OpenStreetMap.html">OpenStreetMap</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Spatial Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-Transport_costs.html">Transport costs</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Spatial_data.html">
+   Spatial Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Geovisualisation.html">
+   Geovisualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Spatial_feature_eng_i.html">
+   Spatial Feature Engineering (I)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Spatial_feature_eng_ii.html">
+   Spatial Feature Engineering (II)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-OpenStreetMap.html">
+   OpenStreetMap
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Spatial Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Transport_costs.html">
+   Transport costs
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Epilogue</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Epilogue
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../data/datasets.html">Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/further.html">Further Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/z_bibliography.html">Bibliography</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data/datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/further.html">
+   Further Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/z_bibliography.html">
+   Bibliography
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
 
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/darribas/gds4ae/master?urlpath=tree/content/notebooks/07-Spatial_networks.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-  </ul>
 </div>
 
 
+          
 
 
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/content/notebooks/07-Spatial_networks.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
-              
-              
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Spatial Networks</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
             
-            <div>
-                <h2> Contents </h2>
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/07-Spatial_networks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/darribas/gds4ae/master?urlpath=tree/content/notebooks/07-Spatial_networks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav aria-label="Page">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ahead-of-time">📖 Ahead of time…</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-coding">💻 Hands-on coding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysing-street-geo-tables">Analysing street geo-tables</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#length">Length</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">Linearity</a></li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ahead-of-time">
+   📖 Ahead of time…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hands-on-coding">
+   💻 Hands-on coding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysing-street-geo-tables">
+     Analysing street geo-tables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#length">
+       Length
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#linearity">
+       Linearity
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#streets-as-spatial-graphs">
+     Streets as spatial graphs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysing-graphs">
+     Analysing graphs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#degree">
+       Degree
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#node-centrality">
+       Node centrality
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#meshedness">
+       Meshedness
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#betweenness-centrality">
+       Betweenness centrality
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attaching-information-to-street-segments">
+     Attaching information to street segments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   🐾 Next steps
+  </a>
+ </li>
 </ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streets-as-spatial-graphs">Streets as spatial graphs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysing-graphs">Analysing graphs</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#degree">Degree</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#node-centrality">Node centrality</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#meshedness">Meshedness</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#betweenness-centrality">Betweenness centrality</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attaching-information-to-street-segments">Attaching information to street segments</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">🐾 Next steps</a></li>
-</ul>
+
             </nav>
         </div>
     </div>
 </div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Spatial Networks</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ahead-of-time">
+   📖 Ahead of time…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hands-on-coding">
+   💻 Hands-on coding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysing-street-geo-tables">
+     Analysing street geo-tables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#length">
+       Length
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#linearity">
+       Linearity
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#streets-as-spatial-graphs">
+     Streets as spatial graphs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysing-graphs">
+     Analysing graphs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#degree">
+       Degree
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#node-centrality">
+       Node centrality
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#meshedness">
+       Meshedness
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#betweenness-centrality">
+       Betweenness centrality
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attaching-information-to-street-segments">
+     Attaching information to street segments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   🐾 Next steps
+  </a>
+ </li>
+</ul>
 
-              
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="spatial-networks">
-<h1>Spatial Networks<a class="headerlink" href="#spatial-networks" title="Permalink to this heading">#</a></h1>
-<section id="ahead-of-time">
-<h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this heading">#</a></h2>
-<aside class="margin sidebar">
+  <div class="tex2jax_ignore mathjax_ignore section" id="spatial-networks">
+<h1>Spatial Networks<a class="headerlink" href="#spatial-networks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ahead-of-time">
+<h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Thank you very much to <a class="reference external" href="https://martinfleischmann.net/">Martin Fleischmann</a> for providing support and ideas in the development of this block</p>
-</aside>
+</div>
 <p>In this block we cover some of the analytics you can obtain when you consider street networks as spatial graphs rather than as geo-tables.</p>
 <ul class="simple">
 <li><p>A good example of applying concepts and ideas presented in this block is Boeing (2020) <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id3" title="Geoff Boeing. Off the grid… and back again? the recent evolution of american street network planning and design. Journal of the American Planning Association, pages 1–15, 2020.">Boe20b</a>]</span></p></li>
 <li><p>Boeing (2017) <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id5" title="Geoff Boeing. OSMnx: New Methods for Acquiring, Constructing, Analyzing, and Visualizing Complex Street Networks. Computers, Environment and Urban Systems, 2017. doi:10.1016/j.compenvurbsys.2017.05.004.">Boe17</a>]</span> provides a general overview on the <code class="docutils literal notranslate"><span class="pre">osmnx</span></code> project</p></li>
 <li><p>A brief overview of <code class="docutils literal notranslate"><span class="pre">momepy</span></code>, the package for urban morphometrics, available in Fleischmann (2019) <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id4" title="Martin Fleischmann. Momepy: urban morphology measuring toolkit. Journal of Open Source Software, 4(43):1807, 2019.">Fle19</a>]</span></p></li>
 </ul>
-</section>
-<section id="hands-on-coding">
-<h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="hands-on-coding">
+<h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
@@ -421,6 +473,26 @@ document.write(`
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">contextily</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="6e8b7eeb-c937-4fa4-b3d0-8ecd668e4ee1" name="a78663fb-f848-41f6-a33f-8909ebc11857" type="radio">
+</input><label class="tabbed-label" for="6e8b7eeb-c937-4fa4-b3d0-8ecd668e4ee1">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="88076249-5359-461d-85b5-0d08fc53e1d7" name="a78663fb-f848-41f6-a33f-8909ebc11857" type="radio">
+</input><label class="tabbed-label" for="88076249-5359-461d-85b5-0d08fc53e1d7">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+    <span class="s2">&quot;http://darribas.org/gds4ae/_downloads/67d5480f98453027d59bf49606a7ad92/arturo_streets.gpkg&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -435,7 +507,7 @@ document.write(`
 </div>
 <div class="cell tag_remove-input tag_margin docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/87d67e0ae5cdc3407c32dbe24772df896c916562b9251a2c0ae2849b1b960350.png" src="../../_images/87d67e0ae5cdc3407c32dbe24772df896c916562b9251a2c0ae2849b1b960350.png" />
+<img alt="../../_images/07-Spatial_networks_9_0.png" src="../../_images/07-Spatial_networks_9_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -551,10 +623,10 @@ document.write(`
 </table>
 </div></div></div>
 </div>
-<section id="analysing-street-geo-tables">
-<h3>Analysing street geo-tables<a class="headerlink" href="#analysing-street-geo-tables" title="Permalink to this heading">#</a></h3>
-<section id="length">
-<h4>Length<a class="headerlink" href="#length" title="Permalink to this heading">#</a></h4>
+<div class="section" id="analysing-street-geo-tables">
+<h3>Analysing street geo-tables<a class="headerlink" href="#analysing-street-geo-tables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="length">
+<h4>Length<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="n">db_tab</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
@@ -576,11 +648,6 @@ dtype: float64
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">db_tab</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">length</span><span class="o">=</span><span class="n">length</span>
@@ -603,9 +670,8 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/5b528d630725c03285c496b9d00dd80f8f064964817b65fa3c31b19df668fded.png" src="../../_images/5b528d630725c03285c496b9d00dd80f8f064964817b65fa3c31b19df668fded.png" />
+<img alt="../../_images/07-Spatial_networks_14_0.png" src="../../_images/07-Spatial_networks_14_0.png" />
 </div>
 </div>
 <div class="admonition-challenge admonition">
@@ -617,9 +683,9 @@ subnet = db_tab[db_tab[&#39;dist_barri&#39;].isin(ids)]
 </pre></div>
 </div>
 </div>
-</section>
-<section id="linearity">
-<h4>Linearity<a class="headerlink" href="#linearity" title="Permalink to this heading">#</a></h4>
+</div>
+<div class="section" id="linearity">
+<h4>Linearity<a class="headerlink" href="#linearity" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linearity</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">Linearity</span><span class="p">(</span><span class="n">db_tab</span><span class="p">)</span><span class="o">.</span><span class="n">series</span>
@@ -639,11 +705,6 @@ dtype: float64
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">db_tab</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">linearity</span><span class="o">=</span><span class="n">linearity</span>
@@ -666,19 +727,18 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/95e4d1a9d8b15a87ccf62693793325d5e7747116dd5f6bc5ad4d9e6ef79e2b86.png" src="../../_images/95e4d1a9d8b15a87ccf62693793325d5e7747116dd5f6bc5ad4d9e6ef79e2b86.png" />
+<img alt="../../_images/07-Spatial_networks_18_0.png" src="../../_images/07-Spatial_networks_18_0.png" />
 </div>
 </div>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge</p>
 <p>Create a choropleth of linearity for the <code class="docutils literal notranslate"><span class="pre">subnet</span></code> table you have created above</p>
 </div>
-</section>
-</section>
-<section id="streets-as-spatial-graphs">
-<h3>Streets as spatial graphs<a class="headerlink" href="#streets-as-spatial-graphs" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+<div class="section" id="streets-as-spatial-graphs">
+<h3>Streets as spatial graphs<a class="headerlink" href="#streets-as-spatial-graphs" title="Permalink to this headline">¶</a></h3>
 <p>From geo-table to spatial graph:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -817,7 +877,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4d53d9260eb402da1cc0815039848aa8c26cda4cabc88589aa1dd8054956a25a.svg" src="../../_images/4d53d9260eb402da1cc0815039848aa8c26cda4cabc88589aa1dd8054956a25a.svg" /></div>
+<img alt="../../_images/07-Spatial_networks_35_0.svg" src="../../_images/07-Spatial_networks_35_0.svg" /></div>
 </div>
 <p>If we need all the node IDs:</p>
 <div class="cell docutils container">
@@ -839,13 +899,13 @@ dtype: float64
 </div>
 </div>
 <p>And same for edges:</p>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">edges</span></code> returns a triplet with the origin and destination node IDs, <em>and</em> the ID of the edge, which is linked to the ID of the segment in the geo-table</p>
 </div>
-</aside>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span>
@@ -915,12 +975,12 @@ dtype: float64
 <p class="admonition-title">Challenge</p>
 <p>Create the graph version of <code class="docutils literal notranslate"><span class="pre">subnet</span></code> and consider the street segment indexed in the table as <code class="docutils literal notranslate"><span class="pre">53271</span></code>. Check the adjacencies on both ends of the segment using <code class="docutils literal notranslate"><span class="pre">db_graph</span></code> and <code class="docutils literal notranslate"><span class="pre">subnet</span></code>. <em>Are they the same in both graphs? Why?</em></p>
 </div>
-</section>
-<section id="analysing-graphs">
-<h3>Analysing graphs<a class="headerlink" href="#analysing-graphs" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="analysing-graphs">
+<h3>Analysing graphs<a class="headerlink" href="#analysing-graphs" title="Permalink to this headline">¶</a></h3>
 <p>There are <em>many</em> ways to extract information and descriptives from a graph. In this section we will explore a few that can tell us important information about the position of a node or edge in the network and about the broader characteristics of sections of the graph.</p>
-<section id="degree">
-<h4>Degree<a class="headerlink" href="#degree" title="Permalink to this heading">#</a></h4>
+<div class="section" id="degree">
+<h4>Degree<a class="headerlink" href="#degree" title="Permalink to this headline">¶</a></h4>
 <p>Degree tells us the number of neighbors of every edge, that is how many other nodes it is directly connected to.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -939,9 +999,9 @@ dtype: float64
 </div>
 </div>
 </div>
-</section>
-<section id="node-centrality">
-<h4>Node centrality<a class="headerlink" href="#node-centrality" title="Permalink to this heading">#</a></h4>
+</div>
+<div class="section" id="node-centrality">
+<h4>Node centrality<a class="headerlink" href="#node-centrality" title="Permalink to this headline">¶</a></h4>
 <p>Fraction of nodes a node is connected to:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -970,7 +1030,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/19be44ba4cda390a8722005cd964b36ea9cdf862442c59cc64998e6de85844fe.png" src="../../_images/19be44ba4cda390a8722005cd964b36ea9cdf862442c59cc64998e6de85844fe.png" />
+<img alt="../../_images/07-Spatial_networks_53_0.png" src="../../_images/07-Spatial_networks_53_0.png" />
 </div>
 </div>
 <div class="admonition tip">
@@ -985,9 +1045,9 @@ dtype: float64
 <p class="admonition-title">Challenge</p>
 <p>Create a histogram of degree for <code class="docutils literal notranslate"><span class="pre">db_graph</span></code>. Now replicate the figure for the case of <code class="docutils literal notranslate"><span class="pre">subnet</span></code>. <em>What can you learn about the two graphs by doing this exercise?</em></p>
 </div>
-</section>
-<section id="meshedness">
-<h4>Meshedness<a class="headerlink" href="#meshedness" title="Permalink to this heading">#</a></h4>
+</div>
+<div class="section" id="meshedness">
+<h4>Meshedness<a class="headerlink" href="#meshedness" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference external" href="http://docs.momepy.org/en/stable/generated/momepy.meshedness.html#momepy.meshedness">messedness</a> of a graph captures the degree of node edge density as compared to that of nodes. Higher meshedness is related to denser, more inter-connected grids.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -996,7 +1056,9 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "501506b34cd642a7bdf3e71f5ec948d5", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1min 52s, sys: 792 ms, total: 1min 53s
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "501506b34cd642a7bdf3e71f5ec948d5", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1min 52s, sys: 792 ms, total: 1min 53s
 Wall time: 2min
 </pre></div>
 </div>
@@ -1023,16 +1085,16 @@ Wall time: 2min
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f5e1ed2bb13c5f6fac09b6f2fb49f5b01850d134336a30eca0ff7d2c8d9c39e6.png" src="../../_images/f5e1ed2bb13c5f6fac09b6f2fb49f5b01850d134336a30eca0ff7d2c8d9c39e6.png" />
+<img alt="../../_images/07-Spatial_networks_60_0.png" src="../../_images/07-Spatial_networks_60_0.png" />
 </div>
 </div>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge</p>
 <p>Replicate the computation of meshedness for <code class="docutils literal notranslate"><span class="pre">sub_graph</span></code> using a threshold of 250m and 500m. How do the distributions of both compare with each other?</p>
 </div>
-</section>
-<section id="betweenness-centrality">
-<h4>Betweenness centrality<a class="headerlink" href="#betweenness-centrality" title="Permalink to this heading">#</a></h4>
+</div>
+<div class="section" id="betweenness-centrality">
+<h4>Betweenness centrality<a class="headerlink" href="#betweenness-centrality" title="Permalink to this headline">¶</a></h4>
 <p><em>How often do shortest-path routes pass through a given node?</em></p>
 <p>This is computationally very demanding, so we will work on a subset of the full graph:</p>
 <div class="cell docutils container">
@@ -1073,10 +1135,10 @@ Wall time: 33.4 s
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="attaching-information-to-street-segments">
-<h3>Attaching information to street segments<a class="headerlink" href="#attaching-information-to-street-segments" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+<div class="section" id="attaching-information-to-street-segments">
+<h3>Attaching information to street segments<a class="headerlink" href="#attaching-information-to-street-segments" title="Permalink to this headline">¶</a></h3>
 <p>The trick here is to be able to transfer back the information stored as graphs into geo-tables so we can apply everything we already now about manipulating and mapping data in that structure. With <code class="docutils literal notranslate"><span class="pre">momepy</span></code>, we can bring a graph back into a geo-table:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1171,7 +1233,7 @@ Wall time: 33.4 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8788aa798c0fde2a4facaa7883c1c1395bfb3317fe2d06be776884b2d437a079.png" src="../../_images/8788aa798c0fde2a4facaa7883c1c1395bfb3317fe2d06be776884b2d437a079.png" />
+<img alt="../../_images/07-Spatial_networks_72_0.png" src="../../_images/07-Spatial_networks_72_0.png" />
 </div>
 </div>
 <p>With other measures index on node IDs, we can use joining machinery in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>:</p>
@@ -1392,11 +1454,6 @@ Name: degree, dtype: int64
 </div></div></div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
 <span class="n">vars_to_plot</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span> <span class="s2">&quot;centrality&quot;</span><span class="p">]</span>
@@ -1417,27 +1474,26 @@ Name: degree, dtype: int64
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/74dc44a6141d7b0d321d5c8993eccc2bd278ef43f264cb3888fa961dddcc6e40.png" src="../../_images/74dc44a6141d7b0d321d5c8993eccc2bd278ef43f264cb3888fa961dddcc6e40.png" />
+<img alt="../../_images/07-Spatial_networks_78_0.png" src="../../_images/07-Spatial_networks_78_0.png" />
 </div>
 </div>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge</p>
 <p>Create choropleths for node and betweenness centrality for <code class="docutils literal notranslate"><span class="pre">sub_graph</span></code>. <em>How do they compare?</em></p>
 </div>
-</section>
-</section>
-<section id="next-steps">
-<h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>If you found the content in this block useful, the following resources represent some suggestions on where to go next:</p>
 <ul class="simple">
 <li><p>The <a class="reference external" href="https://networkx.org/documentation/stable/tutorial.html">NetworkX tutorial</a> is a great place to get a better grasp of the data structures we use to represent (spatial) graphs</p></li>
 <li><p>Parts of the block benefit from the section on <a class="reference external" href="https://github.com/gboeing/ppd599/blob/master/modules/07-urban-networks-i/lecture.ipynb">urban networks</a> in Geoff Boeing’s excellent <a class="reference external" href="https://github.com/gboeing/ppd599">course on Urban Data Science</a></p></li>
 <li><p>If you are interested in urban morphometric analysis (the study of the shape of different elements making up cities), the <a class="reference external" href="http://docs.momepy.org/en/stable/"><code class="docutils literal notranslate"><span class="pre">momepy</span></code></a> library is an excellent reference to absorb, including its <a class="reference external" href="http://docs.momepy.org/en/stable/user_guide/intro.html">user guide</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1451,7 +1507,7 @@ Name: degree, dtype: int64
             mode: "gds"
         },
         kernelOptions: {
-            name: "gds",
+            kernelName: "gds",
             path: "./content/notebooks"
         },
         predefinedOutput: true
@@ -1459,116 +1515,47 @@ Name: degree, dtype: int64
     </script>
     <script>kernelName = 'gds'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="06-OpenStreetMap.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">OpenStreetMap</p>
-      </div>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="06-OpenStreetMap.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">OpenStreetMap</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="08-Transport_costs.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="08-Transport_costs.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Transport costs</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
-                </footer>
-              
-            </div>
             
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ahead-of-time">📖 Ahead of time…</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-coding">💻 Hands-on coding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysing-street-geo-tables">Analysing street geo-tables</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#length">Length</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">Linearity</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streets-as-spatial-graphs">Streets as spatial graphs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysing-graphs">Analysing graphs</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#degree">Degree</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#node-centrality">Node centrality</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#meshedness">Meshedness</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#betweenness-centrality">Betweenness centrality</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attaching-information-to-street-segments">Attaching information to street segments</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">🐾 Next steps</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Dani Arribas-Bel & Diego Puga
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-<div class="extra_footer">
-  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-</div>
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+        </div>
     </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+    <footer class="footer">
+  <p>
+    
+      By Dani Arribas-Bel & Diego Puga<br/>
+    
+      <div class="extra_footer">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-  <footer class="bd-footer">
-  </footer>
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
   </body>
 </html>

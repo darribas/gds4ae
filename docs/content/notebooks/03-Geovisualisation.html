@@ -1,415 +1,505 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geovisualisation &#8212; Geographic Data Science for Applied Economists</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-6032674-1"></script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'UA-6032674-1');
-            </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/notebooks/03-Geovisualisation';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Spatial Feature Engineering (I)" href="04-Spatial_feature_eng_i.html" />
     <link rel="prev" title="Spatial Data" href="02-Spatial_data.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-6032674-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
+    
 
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../pages/home.html">
-  
-  
-  
-  
-  
-    <p class="title logo__title">Geographic Data Science for Applied Economists</p>
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../pages/home.html">
-                    Home
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../pages/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/infrastructure.html">Infrastructure</a></li>
+      
+      
+      <h1 class="site-logo" id="site-title">Geographic Data Science for Applied Economists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/home.html">
+   Home
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Content</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/infrastructure.html">
+   Infrastructure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Content
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01-Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-Spatial_data.html">Spatial Data</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Geovisualisation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-Spatial_feature_eng_i.html">Spatial Feature Engineering (I)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05-Spatial_feature_eng_ii.html">Spatial Feature Engineering (II)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-OpenStreetMap.html">OpenStreetMap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-Spatial_networks.html">Spatial Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-Transport_costs.html">Transport costs</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Spatial_data.html">
+   Spatial Data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Geovisualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Spatial_feature_eng_i.html">
+   Spatial Feature Engineering (I)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Spatial_feature_eng_ii.html">
+   Spatial Feature Engineering (II)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-OpenStreetMap.html">
+   OpenStreetMap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Spatial_networks.html">
+   Spatial Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-Transport_costs.html">
+   Transport costs
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Epilogue</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Epilogue
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../data/datasets.html">Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/further.html">Further Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/z_bibliography.html">Bibliography</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data/datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/further.html">
+   Further Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/z_bibliography.html">
+   Bibliography
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
 
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/darribas/gds4ae/master?urlpath=tree/content/notebooks/03-Geovisualisation.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-  </ul>
 </div>
 
 
+          
 
 
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/content/notebooks/03-Geovisualisation.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
-              
-              
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Geovisualisation</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
             
-            <div>
-                <h2> Contents </h2>
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/03-Geovisualisation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/darribas/gds4ae/master?urlpath=tree/content/notebooks/03-Geovisualisation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav aria-label="Page">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ahead-of-time">📖 Ahead of time…</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-coding">💻 Hands-on coding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choropleths">Choropleths</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-classiffication-problem">A classiffication problem</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-assign-colors">How to assign colors?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-many-colors">How <em>many</em> colors?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-right-color">Using the <em>right</em> color</a></li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ahead-of-time">
+   📖 Ahead of time…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hands-on-coding">
+   💻 Hands-on coding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choropleths">
+     Choropleths
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-classiffication-problem">
+       A classiffication problem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-assign-colors">
+       How to assign colors?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-many-colors">
+       How
+       <em>
+        many
+       </em>
+       colors?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-the-right-color">
+       Using the
+       <em>
+        right
+       </em>
+       color
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choropleths-on-geo-tables">
+     Choropleths on Geo-Tables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#streamlined">
+       Streamlined
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#manual-approach">
+       Manual approach
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#value-by-alpha-mapping">
+       Value by alpha mapping
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#legendgrams">
+       <em>
+        Legendgrams
+       </em>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choropleths-on-surfaces">
+     Choropleths on surfaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   🐾 Next steps
+  </a>
+ </li>
 </ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choropleths-on-geo-tables">Choropleths on Geo-Tables</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#streamlined">Streamlined</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-approach">Manual approach</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#value-by-alpha-mapping">Value by alpha mapping</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#legendgrams"><em>Legendgrams</em></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choropleths-on-surfaces">Choropleths on surfaces</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">🐾 Next steps</a></li>
-</ul>
+
             </nav>
         </div>
     </div>
 </div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Geovisualisation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ahead-of-time">
+   📖 Ahead of time…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hands-on-coding">
+   💻 Hands-on coding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choropleths">
+     Choropleths
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-classiffication-problem">
+       A classiffication problem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-assign-colors">
+       How to assign colors?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-many-colors">
+       How
+       <em>
+        many
+       </em>
+       colors?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-the-right-color">
+       Using the
+       <em>
+        right
+       </em>
+       color
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choropleths-on-geo-tables">
+     Choropleths on Geo-Tables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#streamlined">
+       Streamlined
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#manual-approach">
+       Manual approach
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#value-by-alpha-mapping">
+       Value by alpha mapping
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#legendgrams">
+       <em>
+        Legendgrams
+       </em>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choropleths-on-surfaces">
+     Choropleths on surfaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   🐾 Next steps
+  </a>
+ </li>
+</ul>
 
-              
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="geovisualisation">
-<h1>Geovisualisation<a class="headerlink" href="#geovisualisation" title="Permalink to this heading">#</a></h1>
-<section id="ahead-of-time">
-<h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this heading">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="geovisualisation">
+<h1>Geovisualisation<a class="headerlink" href="#geovisualisation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ahead-of-time">
+<h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
 <p>This block is all about visualising statistical data on top of a geography. Although this task looks simple, there are a few technical and conceptual building blocks that it helps to understand before we try to make our own maps. Aim to complete the following readings by the time we get our hands on the keyboard:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://darribas.org/gds_course/content/bD/concepts_D.html">Block D</a> of the GDS course <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id9" title="Dani Arribas-Bel. A course on geographic data science. The Journal of Open Source Education, 2019. doi:https://doi.org/10.21105/jose.00042.">AB19</a>]</span>, which provides an introduction to choropleths (statistical maps)</p></li>
 <li><p><a class="reference external" href="https://geographicdata.science/book/notebooks/05_choropleth.html">Chapter 5</a> of the GDS Book <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id44" title="Sergio J. Rey, Daniel Arribas-Bel, and Levi J. Wolf. Geographic Data Science with PySAL and the PyData stack. CRC press, forthcoming.">RABWng</a>]</span>, discussing choropleths in more detail</p></li>
 </ul>
-</section>
-<section id="hands-on-coding">
-<h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="hands-on-coding">
+<h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span>
@@ -425,18 +515,33 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="data">
-<h3>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h3>
-<aside class="margin sidebar">
+<div class="section" id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
 <p class="sidebar-title">Data</p>
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
-</aside>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="4b4cff16-910c-4561-8ee7-e1989829ee39" name="36f09174-080a-4433-9c90-f1358b517b2c" type="radio">
+</input><label class="tabbed-label" for="4b4cff16-910c-4561-8ee7-e1989829ee39">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodia_regional.gpkg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="b973b081-6c2e-4add-9b63-2e6448b6b191" name="36f09174-080a-4433-9c90-f1358b517b2c" type="radio">
+</input><label class="tabbed-label" for="b973b081-6c2e-4add-9b63-2e6448b6b191">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+    <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/9366d230310a8a68b2ce6cf2787a2f1c/cambodia_regional.gpkg&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_margin tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
     <span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span>
@@ -455,9 +560,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/d82e6e5c08d35e1bbdbc4fcfe25acbcefa58a73e058ed4bc95b239e00ff8de17.png" src="../../_images/d82e6e5c08d35e1bbdbc4fcfe25acbcefa58a73e058ed4bc95b239e00ff8de17.png" />
+<img alt="../../_images/03-Geovisualisation_8_0.png" src="../../_images/03-Geovisualisation_8_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -568,15 +672,10 @@ memory usage: 9.4+ KB
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="choropleths">
-<h3>Choropleths<a class="headerlink" href="#choropleths" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="choropleths">
+<h3>Choropleths<a class="headerlink" href="#choropleths" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
     <span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span>
@@ -593,13 +692,12 @@ memory usage: 9.4+ KB
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/20d72090e22216d381c2529cd58d2773642df2ab1d57d69d176f440ab2578c37.png" src="../../_images/20d72090e22216d381c2529cd58d2773642df2ab1d57d69d176f440ab2578c37.png" />
+<img alt="../../_images/03-Geovisualisation_15_0.png" src="../../_images/03-Geovisualisation_15_0.png" />
 </div>
 </div>
-<section id="a-classiffication-problem">
-<h4>A classiffication problem<a class="headerlink" href="#a-classiffication-problem" title="Permalink to this heading">#</a></h4>
+<div class="section" id="a-classiffication-problem">
+<h4>A classiffication problem<a class="headerlink" href="#a-classiffication-problem" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="s2">&quot;no2_viz&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span>
@@ -621,23 +719,18 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4b7be9cef164981389f808e066ee490a0310d6b33c83507efb85c7ab4ba75906.png" src="../../_images/4b7be9cef164981389f808e066ee490a0310d6b33c83507efb85c7ab4ba75906.png" />
+<img alt="../../_images/03-Geovisualisation_18_0.png" src="../../_images/03-Geovisualisation_18_0.png" />
 </div>
 </div>
-</section>
-<section id="how-to-assign-colors">
-<h4>How to assign colors?<a class="headerlink" href="#how-to-assign-colors" title="Permalink to this heading">#</a></h4>
+</div>
+<div class="section" id="how-to-assign-colors">
+<h4>How to assign colors?<a class="headerlink" href="#how-to-assign-colors" title="Permalink to this headline">¶</a></h4>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>To build an intuition behind each classification algorithm more easily, we create a helper method (<code class="docutils literal notranslate"><span class="pre">plot_classi</span></code>) that generates a visualisation of a given classification.</p>
 <p>Toggle the cell below if you are interested in the code behind it.</p>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_classi</span><span class="p">(</span><span class="n">classi</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -672,7 +765,6 @@ memory usage: 9.4+ KB
 </pre></div>
 </div>
 </div>
-</details>
 </div>
 <ul class="simple">
 <li><p>Equal intervals</p></li>
@@ -702,7 +794,7 @@ memory usage: 9.4+ KB
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/81490322e57ef199f0bb8816ceb6bea0942297d3f7ee6c96656dd7336de26199.png" src="../../_images/81490322e57ef199f0bb8816ceb6bea0942297d3f7ee6c96656dd7336de26199.png" />
+<img alt="../../_images/03-Geovisualisation_24_0.png" src="../../_images/03-Geovisualisation_24_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -733,7 +825,7 @@ memory usage: 9.4+ KB
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/c299d33e7f67322b60d9efc68fb70bc54dc6cbcc42b48e8a714f7a41480577f4.png" src="../../_images/c299d33e7f67322b60d9efc68fb70bc54dc6cbcc42b48e8a714f7a41480577f4.png" />
+<img alt="../../_images/03-Geovisualisation_27_0.png" src="../../_images/03-Geovisualisation_27_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -764,7 +856,7 @@ memory usage: 9.4+ KB
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/2ecdc3479656764eec09708f868f1dff2a6a12f4a902d1f0d2e49cefc26c13aa.png" src="../../_images/2ecdc3479656764eec09708f868f1dff2a6a12f4a902d1f0d2e49cefc26c13aa.png" />
+<img alt="../../_images/03-Geovisualisation_30_0.png" src="../../_images/03-Geovisualisation_30_0.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -836,23 +928,18 @@ memory usage: 9.4+ KB
 </div>
 </div>
 </div>
-</section>
-<section id="how-many-colors">
-<h4>How <em>many</em> colors?<a class="headerlink" href="#how-many-colors" title="Permalink to this heading">#</a></h4>
-<aside class="margin sidebar">
+</div>
+<div class="section" id="how-many-colors">
+<h4>How <em>many</em> colors?<a class="headerlink" href="#how-many-colors" title="Permalink to this headline">¶</a></h4>
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>The code used to generate this figure uses more advanced features than planned for this course.</p>
 <p>If you want to inspect it, toggle the cell below.</p>
 </div>
-</aside>
+</div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
 <span class="n">algos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;equal_interval&quot;</span><span class="p">,</span> <span class="s2">&quot;quantiles&quot;</span><span class="p">,</span> <span class="s2">&quot;fisherjenks&quot;</span><span class="p">]</span>
@@ -880,29 +967,28 @@ memory usage: 9.4+ KB
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/72f0d5a96d88bb12a1278bff65757e9730d1dcf64e584f4eb05f51cef7b80e0c.png" src="../../_images/72f0d5a96d88bb12a1278bff65757e9730d1dcf64e584f4eb05f51cef7b80e0c.png" />
+<img alt="../../_images/03-Geovisualisation_38_0.png" src="../../_images/03-Geovisualisation_38_0.png" />
 </div>
 </div>
-</section>
-<section id="using-the-right-color">
-<h4>Using the <em>right</em> color<a class="headerlink" href="#using-the-right-color" title="Permalink to this heading">#</a></h4>
-<aside class="margin sidebar">
+</div>
+<div class="section" id="using-the-right-color">
+<h4>Using the <em>right</em> color<a class="headerlink" href="#using-the-right-color" title="Permalink to this headline">¶</a></h4>
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>For a safe choice, make sure to visit <a class="reference external" href="https://colorbrewer2.org/">ColorBrewer</a></p>
-</aside>
+</div>
 <ul class="simple">
 <li><p><a class="reference external" href="https://jiffyclub.github.io/palettable/wesanderson/#fantasticfox2_5"><img alt="Qualitative" class="fragment" src="../../_images/l04_pal_qual.png" /></a> <strong>Categories</strong>, non-ordered</p></li>
 <li><p><a class="reference external" href="https://jiffyclub.github.io/palettable/colorbrewer/sequential/#rdpu_5"><img alt="Sequential" class="fragment" src="../../_images/l04_pal_seq.png" /></a> Graduated, <strong>sequential</strong></p></li>
 <li><p><a class="reference external" href="https://jiffyclub.github.io/palettable/colorbrewer/diverging/#rdylgn_5"><img alt="Divergent" class="fragment" src="../../_images/l04_pal_div.png" /></a> Graduated, <strong>divergent</strong></p></li>
 </ul>
-</section>
-</section>
-<section id="choropleths-on-geo-tables">
-<h3>Choropleths on Geo-Tables<a class="headerlink" href="#choropleths-on-geo-tables" title="Permalink to this heading">#</a></h3>
-<section id="streamlined">
-<h4>Streamlined<a class="headerlink" href="#streamlined" title="Permalink to this heading">#</a></h4>
+</div>
+</div>
+<div class="section" id="choropleths-on-geo-tables">
+<h3>Choropleths on Geo-Tables<a class="headerlink" href="#choropleths-on-geo-tables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="streamlined">
+<h4>Streamlined<a class="headerlink" href="#streamlined" title="Permalink to this headline">¶</a></h4>
 <p>How can we create classifications from data on geo-tables? Two ways:</p>
 <ul class="simple">
 <li><p>Directly within <code class="docutils literal notranslate"><span class="pre">plot</span></code> (only for some algorithms)</p></li>
@@ -916,20 +1002,20 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3daaad5bb0746b65cec6c71cad2b9cadf54fe086b0af961b36123d14e36dfa68.png" src="../../_images/3daaad5bb0746b65cec6c71cad2b9cadf54fe086b0af961b36123d14e36dfa68.png" />
+<img alt="../../_images/03-Geovisualisation_44_0.png" src="../../_images/03-Geovisualisation_44_0.png" />
 </div>
 </div>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>See <a class="reference external" href="https://pysal.org/mapclassify/notebooks/03_choropleth.html">this tutorial</a> for more details on fine tuning choropleths manually</p>
-</aside>
+</div>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge</p>
 <p>Create an equal interval map with five bins for <code class="docutils literal notranslate"><span class="pre">no2_viz</span></code></p>
 </div>
-</section>
-<section id="manual-approach">
-<h4>Manual approach<a class="headerlink" href="#manual-approach" title="Permalink to this heading">#</a></h4>
+</div>
+<div class="section" id="manual-approach">
+<h4>Manual approach<a class="headerlink" href="#manual-approach" title="Permalink to this headline">¶</a></h4>
 <p>This is valid for any algorithm and provides much more flexibility at the cost of effort.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -941,16 +1027,16 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7959dfc880b621f2a98be276fcfa7c62347af6ad7fab66777357dfcb9ee428ea.png" src="../../_images/7959dfc880b621f2a98be276fcfa7c62347af6ad7fab66777357dfcb9ee428ea.png" />
+<img alt="../../_images/03-Geovisualisation_46_0.png" src="../../_images/03-Geovisualisation_46_0.png" />
 </div>
 </div>
-</section>
-<section id="value-by-alpha-mapping">
-<h4>Value by alpha mapping<a class="headerlink" href="#value-by-alpha-mapping" title="Permalink to this heading">#</a></h4>
-<aside class="margin sidebar">
+</div>
+<div class="section" id="value-by-alpha-mapping">
+<h4>Value by alpha mapping<a class="headerlink" href="#value-by-alpha-mapping" title="Permalink to this headline">¶</a></h4>
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>See <a class="reference external" href="https://github.com/pysal/splot/blob/main/notebooks/mapping_vba.ipynb">here</a> for more examples of VBA mapping.</p>
-</aside>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="p">[</span><span class="s1">&#39;area_inv&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">db</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">5726</span><span class="p">)</span><span class="o">.</span><span class="n">area</span>
@@ -960,15 +1046,10 @@ memory usage: 9.4+ KB
 </div>
 <div class="cell tag_margin tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/86edb268fbc93ba303bb272df60b1900202042799d8b49925562cf6bc4699dda.png" src="../../_images/86edb268fbc93ba303bb272df60b1900202042799d8b49925562cf6bc4699dda.png" />
+<img alt="../../_images/03-Geovisualisation_49_0.png" src="../../_images/03-Geovisualisation_49_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up figure and axis</span>
 <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
@@ -991,14 +1072,13 @@ memory usage: 9.4+ KB
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/5ea630cdfecb8115515afc600d78dfe546ba65f02182da08834ce91724d6218d.png" src="../../_images/5ea630cdfecb8115515afc600d78dfe546ba65f02182da08834ce91724d6218d.png" />
+<img alt="../../_images/03-Geovisualisation_50_0.png" src="../../_images/03-Geovisualisation_50_0.png" />
 </div>
 </div>
-</section>
-<section id="legendgrams">
-<h4><em>Legendgrams</em><a class="headerlink" href="#legendgrams" title="Permalink to this heading">#</a></h4>
+</div>
+<div class="section" id="legendgrams">
+<h4><em>Legendgrams</em><a class="headerlink" href="#legendgrams" title="Permalink to this headline">¶</a></h4>
 <p>Legendgrams are a way to more closely connect the statistical characteristics of your data to the map display.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1006,11 +1086,6 @@ memory usage: 9.4+ KB
 </div>
 <p>Unfold the cell for an example.</p>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
 
@@ -1034,22 +1109,43 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e1a389c764dc16addaaaca6fddc304df3503e7fff9f6250e7d0372eac57fc907.png" src="../../_images/e1a389c764dc16addaaaca6fddc304df3503e7fff9f6250e7d0372eac57fc907.png" />
+<img alt="../../_images/03-Geovisualisation_52_0.png" src="../../_images/03-Geovisualisation_52_0.png" />
 </div>
-</details>
 </div>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge</p>
 <p>Give <a class="reference external" href="https://darribas.org/gds_course/content/bD/diy_D.html#task-i-ahah-choropleths">Task I</a> in <a class="reference external" href="https://darribas.org/gds_course/content/bD/diy_D.html">this block</a> of the GDS course a go.</p>
 </div>
-</section>
-</section>
-<section id="choropleths-on-surfaces">
-<h3>Choropleths on surfaces<a class="headerlink" href="#choropleths-on-surfaces" title="Permalink to this heading">#</a></h3>
-<aside class="margin sidebar">
+</div>
+</div>
+<div class="section" id="choropleths-on-surfaces">
+<h3>Choropleths on surfaces<a class="headerlink" href="#choropleths-on-surfaces" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
 <p class="sidebar-title">Data</p>
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
-</aside>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="f91d0f9f-6c97-4a11-9ea2-d863c42e1086" name="4105b7fa-753d-45db-b4cd-9d6e83fa1791" type="radio">
+</input><label class="tabbed-label" for="f91d0f9f-6c97-4a11-9ea2-d863c42e1086">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
+    <span class="s2">&quot;../data/cambodia_s5_no2.tif&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">band</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="3394d43c-19fa-4d4a-b96e-dc3c0f413c69" name="4105b7fa-753d-45db-b4cd-9d6e83fa1791" type="radio">
+</input><label class="tabbed-label" for="3394d43c-19fa-4d4a-b96e-dc3c0f413c69">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
+    <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/0d14506cd792aecf73dd0f7f027e95b4/cambodia_s5_no2.tif&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">band</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <ul class="simple">
 <li><p>(Implicit) continuous equal interval</p></li>
 </ul>
@@ -1062,7 +1158,7 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3b171e8a58c15a65e376b3661438ef8795bc3f94331a2ae28264f3df37afc329.png" src="../../_images/3b171e8a58c15a65e376b3661438ef8795bc3f94331a2ae28264f3df37afc329.png" />
+<img alt="../../_images/03-Geovisualisation_58_0.png" src="../../_images/03-Geovisualisation_58_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1074,7 +1170,7 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/33ce73d4aacb91eebbdddec684155979f9186b6484fb4d0da9ce26214536edf6.png" src="../../_images/33ce73d4aacb91eebbdddec684155979f9186b6484fb4d0da9ce26214536edf6.png" />
+<img alt="../../_images/03-Geovisualisation_59_0.png" src="../../_images/03-Geovisualisation_59_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1092,7 +1188,7 @@ memory usage: 9.4+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fdd6012bcd0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/856d56eca37a5eaee8ee80acf396f42e2ba5c8fddfb1c6cfeef864787880bc9b.png" src="../../_images/856d56eca37a5eaee8ee80acf396f42e2ba5c8fddfb1c6cfeef864787880bc9b.png" />
+<img alt="../../_images/03-Geovisualisation_61_1.png" src="../../_images/03-Geovisualisation_61_1.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1116,15 +1212,10 @@ memory usage: 9.4+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2b11f35be46351c9ed29da41db941857a2a322679bd5e4a72440581d95b8c88d.png" src="../../_images/2b11f35be46351c9ed29da41db941857a2a322679bd5e4a72440581d95b8c88d.png" />
+<img alt="../../_images/03-Geovisualisation_63_0.png" src="../../_images/03-Geovisualisation_63_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_nona</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
     <span class="n">grid</span> <span class="o">!=</span> <span class="n">grid</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
@@ -1141,17 +1232,11 @@ memory usage: 9.4+ KB
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/30fb9caaca2cd206b6bd3fb55319016ca8907394e9aa0c98d8a76967f2f90577.png" src="../../_images/30fb9caaca2cd206b6bd3fb55319016ca8907394e9aa0c98d8a76967f2f90577.png" />
+<img alt="../../_images/03-Geovisualisation_64_0.png" src="../../_images/03-Geovisualisation_64_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_nona</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
     <span class="n">grid</span> <span class="o">!=</span> <span class="n">grid</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
@@ -1168,17 +1253,11 @@ memory usage: 9.4+ KB
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/ef9c129f51975b58596e6920c0f85d0ecc6327ccae2e72e2911030df0ea33fe8.png" src="../../_images/ef9c129f51975b58596e6920c0f85d0ecc6327ccae2e72e2911030df0ea33fe8.png" />
+<img alt="../../_images/03-Geovisualisation_65_0.png" src="../../_images/03-Geovisualisation_65_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_nona</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
     <span class="n">grid</span> <span class="o">!=</span> <span class="n">grid</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">nodata</span>
@@ -1195,9 +1274,8 @@ memory usage: 9.4+ KB
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/1ba79c07e72d5987fd8eb661840eade5e765488ae390377184d1721b10fcba84.png" src="../../_images/1ba79c07e72d5987fd8eb661840eade5e765488ae390377184d1721b10fcba84.png" />
+<img alt="../../_images/03-Geovisualisation_66_0.png" src="../../_images/03-Geovisualisation_66_0.png" />
 </div>
 </div>
 <div class="admonition-challenge admonition">
@@ -1209,17 +1287,17 @@ memory usage: 9.4+ KB
 <li><p><em>If so, why do you think that is?</em></p></li>
 </ul>
 </div>
-</section>
-</section>
-<section id="next-steps">
-<h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>If you are interested in statistical maps based on classification, here are two recommendations to check out next:</p>
 <ul class="simple">
 <li><p>On the technical side, the <a class="reference external" href="https://pysal.org/mapclassify/">documentation for <code class="docutils literal notranslate"><span class="pre">mapclassify</span></code></a> (including its <a class="reference external" href="https://pysal.org/mapclassify/tutorial.html">tutorials</a>) provides more detail and illustrates more classification algorithms than those reviewed in this block</p></li>
 <li><p>On a more conceptual note, Cynthia Brewer’s “Designing better maps” <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id43" title="Cynthia Brewer. Designing better Maps: A Guide for GIS users. ESRI press, 2015.">Bre15</a>]</span> is an excellent blueprint for good map making.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1233,7 +1311,7 @@ memory usage: 9.4+ KB
             mode: "gds"
         },
         kernelOptions: {
-            name: "gds",
+            kernelName: "gds",
             path: "./content/notebooks"
         },
         predefinedOutput: true
@@ -1241,118 +1319,47 @@ memory usage: 9.4+ KB
     </script>
     <script>kernelName = 'gds'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="02-Spatial_data.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Spatial Data</p>
-      </div>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02-Spatial_data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Spatial Data</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="04-Spatial_feature_eng_i.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="04-Spatial_feature_eng_i.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Spatial Feature Engineering (I)</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
-                </footer>
-              
-            </div>
             
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ahead-of-time">📖 Ahead of time…</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-coding">💻 Hands-on coding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choropleths">Choropleths</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-classiffication-problem">A classiffication problem</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-assign-colors">How to assign colors?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-many-colors">How <em>many</em> colors?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-right-color">Using the <em>right</em> color</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choropleths-on-geo-tables">Choropleths on Geo-Tables</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#streamlined">Streamlined</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-approach">Manual approach</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#value-by-alpha-mapping">Value by alpha mapping</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#legendgrams"><em>Legendgrams</em></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choropleths-on-surfaces">Choropleths on surfaces</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">🐾 Next steps</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Dani Arribas-Bel & Diego Puga
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-<div class="extra_footer">
-  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-</div>
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+        </div>
     </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+    <footer class="footer">
+  <p>
+    
+      By Dani Arribas-Bel & Diego Puga<br/>
+    
+      <div class="extra_footer">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-  <footer class="bd-footer">
-  </footer>
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
   </body>
 </html>

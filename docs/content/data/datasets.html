@@ -1,69 +1,51 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Datasets &#8212; Geographic Data Science for Applied Economists</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-6032674-1"></script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'UA-6032674-1');
-            </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -72,304 +54,368 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/data/datasets';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Further Resources" href="../pages/further.html" />
     <link rel="prev" title="Transport costs" href="../notebooks/08-Transport_costs.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-6032674-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
+    
 
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../pages/home.html">
-  
-  
-  
-  
-  
-    <p class="title logo__title">Geographic Data Science for Applied Economists</p>
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../pages/home.html">
-                    Home
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../pages/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/infrastructure.html">Infrastructure</a></li>
+      
+      
+      <h1 class="site-logo" id="site-title">Geographic Data Science for Applied Economists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/home.html">
+   Home
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Content</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/01-Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/02-Spatial_data.html">Spatial Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/03-Geovisualisation.html">Geovisualisation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/04-Spatial_feature_eng_i.html">Spatial Feature Engineering (I)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/05-Spatial_feature_eng_ii.html">Spatial Feature Engineering (II)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/06-OpenStreetMap.html">OpenStreetMap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/07-Spatial_networks.html">Spatial Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/08-Transport_costs.html">Transport costs</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/infrastructure.html">
+   Infrastructure
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Epilogue</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Content
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-Spatial_data.html">
+   Spatial Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/03-Geovisualisation.html">
+   Geovisualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04-Spatial_feature_eng_i.html">
+   Spatial Feature Engineering (I)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05-Spatial_feature_eng_ii.html">
+   Spatial Feature Engineering (II)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06-OpenStreetMap.html">
+   OpenStreetMap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07-Spatial_networks.html">
+   Spatial Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/08-Transport_costs.html">
+   Transport costs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Epilogue
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/further.html">Further Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/z_bibliography.html">Bibliography</a></li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/further.html">
+   Further Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/z_bibliography.html">
+   Bibliography
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
 
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/content/data/datasets.md" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.md</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
 </div>
 
 
+          
 
 
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
-              
-              
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Datasets</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
             
-            <div>
-                <h2> Contents </h2>
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/data/datasets.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav aria-label="Page">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#madrid">Madrid</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#airbnb-properties">Airbnb properties</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#airbnb-neighbourhoods">Airbnb neighbourhoods</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arturo">Arturo</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentinel-2-120m-mosaic">Sentinel 2 - 120m mosaic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentinel-2-10m-ghs-composite">Sentinel 2 - 10m GHS composite</a></li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#madrid">
+   Madrid
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#airbnb-properties">
+     Airbnb properties
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#airbnb-neighbourhoods">
+     Airbnb neighbourhoods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arturo">
+     Arturo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-2-120m-mosaic">
+     Sentinel 2 - 120m mosaic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-2-10m-ghs-composite">
+     Sentinel 2 - 10m GHS composite
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cambodia">
+   Cambodia
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pollution">
+     Pollution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#friction-surfaces">
+     Friction surfaces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regional-aggregates">
+     Regional aggregates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cambodian-cities">
+     Cambodian cities
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambodia">Cambodia</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pollution">Pollution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#friction-surfaces">Friction surfaces</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regional-aggregates">Regional aggregates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambodian-cities">Cambodian cities</a></li>
-</ul>
-</li>
-</ul>
+
             </nav>
         </div>
     </div>
 </div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Datasets</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#madrid">
+   Madrid
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#airbnb-properties">
+     Airbnb properties
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#airbnb-neighbourhoods">
+     Airbnb neighbourhoods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arturo">
+     Arturo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-2-120m-mosaic">
+     Sentinel 2 - 120m mosaic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-2-10m-ghs-composite">
+     Sentinel 2 - 10m GHS composite
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cambodia">
+   Cambodia
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pollution">
+     Pollution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#friction-surfaces">
+     Friction surfaces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regional-aggregates">
+     Regional aggregates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cambodian-cities">
+     Cambodian cities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-              
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="datasets">
-<h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="datasets">
+<h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h1>
 <p>This section covers the datasets required to run the course interactively. For archival reasons, all of those listed here have been mirrored in the repository for this course so, if you have <a class="reference internal" href="../pages/infrastructure.html#github-repo"><span class="std std-ref">downloaded the course</span></a>, you already have a local copy of them.</p>
-<section id="madrid">
-<h2>Madrid<a class="headerlink" href="#madrid" title="Permalink to this heading">#</a></h2>
-<section id="airbnb-properties">
-<span id="data-abb"></span><h3>Airbnb properties<a class="headerlink" href="#airbnb-properties" title="Permalink to this heading">#</a></h3>
+<div class="section" id="madrid">
+<h2>Madrid<a class="headerlink" href="#madrid" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="airbnb-properties">
+<span id="data-abb"></span><h3>Airbnb properties<a class="headerlink" href="#airbnb-properties" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-source admonition">
 <p class="admonition-title">Source</p>
 <p>This dataset has been sourced from the course <a class="reference external" href="https://gdsl-ul.github.io/san/">“Spatial Modelling for Data Scientists”</a>. The file imported here corresponds to the <a class="reference external" href="https://github.com/GDSL-UL/san/releases/tag/v0.1.0"><code class="docutils literal notranslate"><span class="pre">v0.1.0</span></code></a> version.</p>
@@ -381,9 +427,9 @@ document.write(`
 <li><p>ℹ️ Furhter information <a class="reference external" href="https://github.com/GDSL-UL/san/blob/v0.1.0/docs/11-datasets.md#madrid-airbnb"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
 </ul>
 <p><a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img alt="License" src="https://licensebuttons.net/l/zero/1.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal Public Domain Dedication</a>.</p>
-</section>
-<section id="airbnb-neighbourhoods">
-<span id="data-abb-neis"></span><h3>Airbnb neighbourhoods<a class="headerlink" href="#airbnb-neighbourhoods" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="airbnb-neighbourhoods">
+<span id="data-abb-neis"></span><h3>Airbnb neighbourhoods<a class="headerlink" href="#airbnb-neighbourhoods" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-source admonition">
 <p class="admonition-title">Source</p>
 <p>This dataset has been directly sourced from the website <a class="reference external" href="http://insideairbnb.com">Inside Airbnb</a>. The file was imported on February 10th 2021.</p>
@@ -394,9 +440,9 @@ document.write(`
 <li><p>ℹ️ Furhter information <a class="reference external" href="http://insideairbnb.com/madrid/"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
 </ul>
 <p><a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img alt="License" src="https://licensebuttons.net/l/zero/1.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal Public Domain Dedication</a>.</p>
-</section>
-<section id="arturo">
-<span id="data-arturo"></span><h3>Arturo<a class="headerlink" href="#arturo" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="arturo">
+<span id="data-arturo"></span><h3>Arturo<a class="headerlink" href="#arturo" title="Permalink to this headline">¶</a></h3>
 <p>This dataset contains the street layout of Madrid as well as scores of habitability, where available, associated with street segments. The data originate from the <a class="reference external" href="http://arturo.300000kms.net">Arturo Project</a>, by <a class="reference external" href="https://300000kms.net">300,000Km/s</a>, and the available file here is a slimmed down version of their official <a class="reference external" href="http://arturo.300000kms.net/#10">street layout</a> distributed by the project.</p>
 <ul class="simple">
 <li><p>🗃️ Data file <a class="reference download internal" download="" href="../../_downloads/67d5480f98453027d59bf49606a7ad92/arturo_streets.gpkg"><code class="xref download docutils literal notranslate"><span class="pre">arturo_streets.gpkg</span></code></a></p></li>
@@ -404,9 +450,9 @@ document.write(`
 <li><p>ℹ️ Furhter information <a class="reference external" href="https://arturo.300000kms.net"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
 </ul>
 <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
-</section>
-<section id="sentinel-2-120m-mosaic">
-<span id="data-s2-120"></span><h3>Sentinel 2 - 120m mosaic<a class="headerlink" href="#sentinel-2-120m-mosaic" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="sentinel-2-120m-mosaic">
+<span id="data-s2-120"></span><h3>Sentinel 2 - 120m mosaic<a class="headerlink" href="#sentinel-2-120m-mosaic" title="Permalink to this headline">¶</a></h3>
 <p>This dataset contains four scenes for the region of Madrid (Spain) extracted from the <a class="reference external" href="https://medium.com/sentinel-hub/digital-twin-sandbox-sentinel-2-collection-available-to-everyone-20f3b5de846e">Digital Twin Sandbox Sentinel-2 collection</a>, by the SentinelHub. Each scene corresponds to the following dates in 2019:</p>
 <ul class="simple">
 <li><p>January 1st</p></li>
@@ -421,9 +467,9 @@ document.write(`
 <li><p>ℹ️ Furhter information <a class="reference external" href="https://github.com/sentinel-hub/public-collections/tree/main/collections/sentinel-s2-l2a-mosaic-120"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
 </ul>
 <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
-</section>
-<section id="sentinel-2-10m-ghs-composite">
-<span id="data-s2-10"></span><h3>Sentinel 2 - 10m GHS composite<a class="headerlink" href="#sentinel-2-10m-ghs-composite" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="sentinel-2-10m-ghs-composite">
+<span id="data-s2-10"></span><h3>Sentinel 2 - 10m GHS composite<a class="headerlink" href="#sentinel-2-10m-ghs-composite" title="Permalink to this headline">¶</a></h3>
 <p>This dataset contains a scene for the region of Madrid (Spain) extracted from the <a class="reference external" href="https://ghsl.jrc.ec.europa.eu/ghs_s2composite.php">GHS Composite S2</a>, by the European Commission.</p>
 <ul class="simple">
 <li><p>🗃️ Data file <a class="reference download internal" download="" href="../../_downloads/cafed4de0cfde63e6d2ffcb92264b431/madrid_scene_s2_10_tc.tif"><code class="xref download docutils literal notranslate"><span class="pre">madrid_scene_s2_10_tc.tif</span></code></a></p></li>
@@ -431,21 +477,21 @@ document.write(`
 <li><p>ℹ️ Furhter information <a class="reference external" href="https://ghsl.jrc.ec.europa.eu/ghs_s2composite.php"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
 </ul>
 <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
-</section>
-</section>
-<section id="cambodia">
-<h2>Cambodia<a class="headerlink" href="#cambodia" title="Permalink to this heading">#</a></h2>
-<section id="pollution">
-<span id="data-cam-s5"></span><h3>Pollution<a class="headerlink" href="#pollution" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+<div class="section" id="cambodia">
+<h2>Cambodia<a class="headerlink" href="#cambodia" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pollution">
+<span id="data-cam-s5"></span><h3>Pollution<a class="headerlink" href="#pollution" title="Permalink to this headline">¶</a></h3>
 <p>Surface with <span class="math notranslate nohighlight">\(NO_2\)</span> measurements (tropospheric column) information attached from Sentinel 5.</p>
 <ul class="simple">
 <li><p>🗃️ Data file <a class="reference download internal" download="" href="../../_downloads/0d14506cd792aecf73dd0f7f027e95b4/cambodia_s5_no2.tif"><code class="xref download docutils literal notranslate"><span class="pre">cambodia_s5_no2.tif</span></code></a></p></li>
 <li><p>🤖 Code used to generate the file <a class="reference internal" href="cambodia_pollution.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">[Page]</span></code></span></a></p></li>
 <li><p>ℹ️ Furhter information <a class="reference external" href="https://github.com/Sentinel-5P/data-on-s3"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
 </ul>
-</section>
-<section id="friction-surfaces">
-<span id="data-cam-friction"></span><h3>Friction surfaces<a class="headerlink" href="#friction-surfaces" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="friction-surfaces">
+<span id="data-cam-friction"></span><h3>Friction surfaces<a class="headerlink" href="#friction-surfaces" title="Permalink to this headline">¶</a></h3>
 <p>This dataset is an extraction of the following two data products by Weiss et al. (2020) <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id7" title="DJ Weiss, A Nelson, CA Vargas-Ruiz, K Gligorić, S Bavadekar, E Gabrilovich, A Bertozzi-Villa, J Rozier, HS Gibson, T Shekel, and others. Global maps of travel time to healthcare facilities. Nature Medicine, 26(12):1835–1838, 2020.">WNVR+20</a>]</span> and distributed through the <a class="reference external" href="https://malariaatlas.org/explorer/#/">Malaria Atlas Project</a>:</p>
 <ul class="simple">
 <li><p>Global friction surface enumerating land-based travel walking-only speed without access to motorized transport for a nominal year 2019 (Minutes required to travel one metre)</p></li>
@@ -457,9 +503,9 @@ document.write(`
 <li><p>🤖 Code used to generate the file <a class="reference internal" href="cambodia_road_friction.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">[Page]</span></code></span></a></p></li>
 <li><p>ℹ️ Furhter information <a class="reference external" href="https://malariaatlas.org"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
 </ul>
-</section>
-<section id="regional-aggregates">
-<span id="data-cam-friction-reg"></span><h3>Regional aggregates<a class="headerlink" href="#regional-aggregates" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="regional-aggregates">
+<span id="data-cam-friction-reg"></span><h3>Regional aggregates<a class="headerlink" href="#regional-aggregates" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-source admonition">
 <p class="admonition-title">Source</p>
 <p>This dataset relies on boundaries from the <a class="reference external" href="https://data.humdata.org/">Humanitarian Data Exchange</a>. <a class="reference external" href="https://data.humdata.org/dataset/wfp-geonode-cambodia-admin-boundaries-level-2-districts?force_layout=desktop">The file</a> is provided by the World Food Programme through the Humanitarian Data Exchange and was accessed on February 15th 2021.</p>
@@ -470,9 +516,9 @@ document.write(`
 <li><p>🤖 Code used to generate the file <a class="reference internal" href="cambodia_regional.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">[Page]</span></code></span></a></p></li>
 </ul>
 <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
-</section>
-<section id="cambodian-cities">
-<span id="data-cam-cities"></span><h3>Cambodian cities<a class="headerlink" href="#cambodian-cities" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="cambodian-cities">
+<span id="data-cam-cities"></span><h3>Cambodian cities<a class="headerlink" href="#cambodian-cities" title="Permalink to this headline">¶</a></h3>
 <p>Extract from the Urban Centre Database (UCDB), version 1.2, of the centroid for Cambodian cities.</p>
 <ul class="simple">
 <li><p>🗃️ Data file <a class="reference download internal" download="" href="../../_downloads/b2bc4ad46ffb5fcec467286c022adf14/cambodian_cities.geojson"><code class="xref download docutils literal notranslate"><span class="pre">cambodian_cities.geojson</span></code></a></p></li>
@@ -480,9 +526,9 @@ document.write(`
 <li><p>ℹ️ Furhter information <a class="reference external" href="https://ghsl.jrc.ec.europa.eu/ucdb2018visual.php"><code class="docutils literal notranslate"><span class="pre">[URL]</span></code></a></p></li>
 </ul>
 <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This dataset is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -496,7 +542,7 @@ document.write(`
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./content/data"
         },
         predefinedOutput: true
@@ -504,112 +550,47 @@ document.write(`
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="../notebooks/08-Transport_costs.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Transport costs</p>
-      </div>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../notebooks/08-Transport_costs.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Transport costs</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="../pages/further.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="../pages/further.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Further Resources</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
-                </footer>
-              
-            </div>
             
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#madrid">Madrid</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#airbnb-properties">Airbnb properties</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#airbnb-neighbourhoods">Airbnb neighbourhoods</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arturo">Arturo</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentinel-2-120m-mosaic">Sentinel 2 - 120m mosaic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentinel-2-10m-ghs-composite">Sentinel 2 - 10m GHS composite</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambodia">Cambodia</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pollution">Pollution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#friction-surfaces">Friction surfaces</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regional-aggregates">Regional aggregates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambodian-cities">Cambodian cities</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Dani Arribas-Bel & Diego Puga
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-<div class="extra_footer">
-  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-</div>
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+        </div>
     </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+    <footer class="footer">
+  <p>
+    
+      By Dani Arribas-Bel & Diego Puga<br/>
+    
+      <div class="extra_footer">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-  <footer class="bd-footer">
-  </footer>
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
   </body>
 </html>
