@@ -1,51 +1,69 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Transport costs &#8212; Geographic Data Science for Applied Economists</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-6032674-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-6032674-1');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -54,391 +72,334 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/notebooks/08-Transport_costs';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Datasets" href="../data/datasets.html" />
     <link rel="prev" title="Spatial Networks" href="07-Spatial_networks.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-6032674-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">Geographic Data Science for Applied Economists</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../pages/home.html">
-   Home
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Overview
- </span>
-</p>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../pages/home.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Geographic Data Science for Applied Economists</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../pages/home.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../pages/overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../pages/infrastructure.html">
-   Infrastructure
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/infrastructure.html">Infrastructure</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Content
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Content</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01-Introduction.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-Spatial_data.html">
-   Spatial Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-Geovisualisation.html">
-   Geovisualisation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-Spatial_feature_eng_i.html">
-   Spatial Feature Engineering (I)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-Spatial_feature_eng_ii.html">
-   Spatial Feature Engineering (II)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06-OpenStreetMap.html">
-   OpenStreetMap
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07-Spatial_networks.html">
-   Spatial Networks
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Transport costs
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="01-Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-Spatial_data.html">Spatial Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-Geovisualisation.html">Geovisualisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-Spatial_feature_eng_i.html">Spatial Feature Engineering (I)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-Spatial_feature_eng_ii.html">Spatial Feature Engineering (II)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-OpenStreetMap.html">OpenStreetMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-Spatial_networks.html">Spatial Networks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Transport costs</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Epilogue
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Epilogue</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../data/datasets.html">
-   Datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../pages/further.html">
-   Further Resources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../pages/z_bibliography.html">
-   Bibliography
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../data/datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/further.html">Further Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/z_bibliography.html">Bibliography</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/notebooks/08-Transport_costs.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/darribas/gds4ae/master?urlpath=tree/content/notebooks/08-Transport_costs.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
         
-        
-        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-</div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
 
-        </div>
+<div class="article-header-buttons">
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ahead-of-time">
-   📖 Ahead of time…
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hands-on-coding">
-   💻 Hands-on coding
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#moving-along-street-networks">
-     <em>
-      Moving
-     </em>
-     along (street) networks
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pandana-graphs">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         pandana
-        </span>
-       </code>
-       graphs
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#shortest-path-routing">
-       Shortest-path routing
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#weighted-routing">
-       Weighted routing
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#proximity">
-       Proximity
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#accessibility">
-       Accessibility
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shortest-path-along-surfaces">
-     Shortest-path along surfaces
-    </a>
-   </li>
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/darribas/gds4ae/master?urlpath=tree/content/notebooks/08-Transport_costs.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#next-steps">
-   🐾 Next steps
-  </a>
- </li>
-</ul>
+</div>
 
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/notebooks/08-Transport_costs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transport costs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ahead-of-time">📖 Ahead of time…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-coding">💻 Hands-on coding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-along-street-networks"><em>Moving</em> along (street) networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pandana-graphs"><code class="docutils literal notranslate"><span class="pre">pandana</span></code> graphs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shortest-path-routing">Shortest-path routing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#weighted-routing">Weighted routing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proximity">Proximity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accessibility">Accessibility</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shortest-path-along-surfaces">Shortest-path along surfaces</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">🐾 Next steps</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Transport costs</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ahead-of-time">
-   📖 Ahead of time…
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hands-on-coding">
-   💻 Hands-on coding
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#moving-along-street-networks">
-     <em>
-      Moving
-     </em>
-     along (street) networks
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pandana-graphs">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         pandana
-        </span>
-       </code>
-       graphs
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#shortest-path-routing">
-       Shortest-path routing
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#weighted-routing">
-       Weighted routing
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#proximity">
-       Proximity
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#accessibility">
-       Accessibility
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shortest-path-along-surfaces">
-     Shortest-path along surfaces
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#next-steps">
-   🐾 Next steps
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="transport-costs">
-<h1>Transport costs<a class="headerlink" href="#transport-costs" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="ahead-of-time">
-<h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="hands-on-coding">
-<h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="transport-costs">
+<h1>Transport costs<a class="headerlink" href="#transport-costs" title="Permalink to this heading">#</a></h1>
+<section id="ahead-of-time">
+<h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="hands-on-coding">
+<h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">momepy</span>
@@ -452,38 +413,25 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="moving-along-street-networks">
-<h3><em>Moving</em> along (street) networks<a class="headerlink" href="#moving-along-street-networks" title="Permalink to this headline">¶</a></h3>
-<div class="tabbed-set docutils">
-<input checked="checked" id="ba67d6c7-924b-4357-98d4-48dd7fdaca79" name="8fadbec7-6d3b-4488-8a2d-cacebfdd4d34" type="radio">
-</input><label class="tabbed-label" for="ba67d6c7-924b-4357-98d4-48dd7fdaca79">
-Local files</label><div class="tabbed-content docutils">
-<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">streets</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/arturo_streets.gpkg&quot;</span><span class="p">)</span>
-<span class="n">abbs</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
-<span class="n">neis</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/neighbourhoods.geojson&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<input id="c32b9426-0760-45fe-8c7f-814b3385355a" name="8fadbec7-6d3b-4488-8a2d-cacebfdd4d34" type="radio">
-</input><label class="tabbed-label" for="c32b9426-0760-45fe-8c7f-814b3385355a">
-Online read</label><div class="tabbed-content docutils">
-<p>If you’re online, you can do:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">streets</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
-    <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/67d5480f98453027d59bf49606a7ad92/arturo_streets.gpkg&quot;</span>
-<span class="p">)</span>
-<span class="n">abbs</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
-    <span class="s2">&quot;https://github.com/GDSL-UL/san/raw/v0.1.0/data/assignment_1_madrid/madrid_abb.gpkg&quot;</span>
-<span class="p">)</span>
-<span class="n">neis</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
-    <span class="s2">&quot;http://darribas.org/gds4ae/_downloads/44b4bc22c042386c2c0f8dc6685ef17c/neighbourhoods.geojson&quot;</span>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ox</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">overpass_settings</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;[out:json][timeout:90][date:&quot;2021-03-07T00:00:00Z&quot;]&#39;</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="section" id="pandana-graphs">
-<h4><code class="docutils literal notranslate"><span class="pre">pandana</span></code> graphs<a class="headerlink" href="#pandana-graphs" title="Permalink to this headline">¶</a></h4>
+<section id="moving-along-street-networks">
+<h3><em>Moving</em> along (street) networks<a class="headerlink" href="#moving-along-street-networks" title="Permalink to this heading">#</a></h3>
+<section id="pandana-graphs">
+<h4><code class="docutils literal notranslate"><span class="pre">pandana</span></code> graphs<a class="headerlink" href="#pandana-graphs" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandana</span>
@@ -497,7 +445,7 @@ Online read</label><div class="tabbed-content docutils">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 <span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">nx_to_gdf</span><span class="p">(</span> <span class="c1"># Convert back to geo-table</span>
     <span class="n">momepy</span><span class="o">.</span><span class="n">gdf_to_nx</span><span class="p">(</span>            <span class="c1"># Convert to a clean NX graph</span>
-        <span class="n">streets</span><span class="o">.</span><span class="n">explode</span><span class="p">()</span>        <span class="c1"># We &quot;explode&quot; to avoid multi-part rows</span>
+        <span class="n">streets</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="n">index_parts</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>        <span class="c1"># We &quot;explode&quot; to avoid multi-part rows</span>
     <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;nodeID&quot;</span><span class="p">)</span><span class="c1"># Reindex nodes on ID</span>
@@ -505,11 +453,8 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;timed exec&gt;:3: FutureWarning: Currently, index_parts defaults to True, but in the future, it will default to False to be consistent with Pandas. Use `index_parts=True` to keep the current behavior and True/False to silence the warning.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.96 s, sys: 48.2 ms, total: 4.01 s
-Wall time: 4.01 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.9 s, sys: 56.2 ms, total: 4.96 s
+Wall time: 5 s
 </pre></div>
 </div>
 </div>
@@ -530,21 +475,21 @@ Wall time: 4.01 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating contraction hierarchies with 8 threads.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating contraction hierarchies with 4 threads.
 Setting CH node vector of size 49985
 Setting CH edge vector of size 66499
 Range graph removed 444 edges of 132998
 . 10% . 20% . 30% . 40% . 50% . 60% . 70% . 80% . 90% . 100%
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandana.network.Network at 0x7f00bd5cfbe0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandana.network.Network at 0x7f2c2d8e63d0&gt;
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="shortest-path-routing">
-<h4>Shortest-path routing<a class="headerlink" href="#shortest-path-routing" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="shortest-path-routing">
+<h4>Shortest-path routing<a class="headerlink" href="#shortest-path-routing" title="Permalink to this heading">#</a></h4>
 <p><em>How do I go from A to B?</em></p>
 <p>For example, from the first Airbnb in the geo-table…</p>
 <div class="cell docutils container">
@@ -592,7 +537,7 @@ Range graph removed 444 edges of 132998
   <tbody>
     <tr>
       <th>0</th>
-      <td>POINT (440247.814 4474264.648)</td>
+      <td>POINT (440284.049 4474264.421)</td>
       <td>Puerta del Sol, Barrio de los Austrias, Sol, C...</td>
     </tr>
   </tbody>
@@ -603,8 +548,8 @@ Range graph removed 444 edges of 132998
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pt_nodes</span> <span class="o">=</span> <span class="n">streets_pdn</span><span class="o">.</span><span class="n">get_node_ids</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">first</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">],</span> 
-    <span class="p">[</span><span class="n">first</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">first</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sol</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> 
+    <span class="p">[</span><span class="n">first</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sol</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
 <span class="p">)</span>
 <span class="n">pt_nodes</span>
 </pre></div>
@@ -612,7 +557,7 @@ Range graph removed 444 edges of 132998
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     3071
-1    35731
+1    35729
 Name: node_id, dtype: int64
 </pre></div>
 </div>
@@ -640,20 +585,20 @@ Name: node_id, dtype: int64
        25102, 25101, 25100, 48518, 47287, 34623, 31187, 29615, 48556,
        22844, 48553, 48555, 40922, 40921, 40923, 48585, 46372, 46371,
        46370, 45675, 45676, 38778, 38777, 19144, 20498, 20497, 20499,
-       47737, 42303, 42302, 35730, 35727, 35729, 35731])
+       47737, 42303, 42302, 35730, 35727, 35729])
 </pre></div>
 </div>
 </div>
 </div>
 <p>With this information, we can build the route line manually:</p>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>The code to generate the route involves writing a function and is a bit more advanced than expected for this course. If this looks too complicated, do not despair.</p>
 <p>Also, please note this builds a <em>simplified</em> line for the route, not one that is based on the original geometries (distance calculations <em>are</em> based on the original network).</p>
 </div>
-</div>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">LineString</span>
@@ -680,7 +625,7 @@ Name: node_id, dtype: int64
 </div>
 <div class="cell tag_margin tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_27_0.png" src="../../_images/08-Transport_costs_27_0.png" />
+<img alt="../../_images/b3ef55197aad057f637008e0004cdb189ac9d330409df8a0e0fed92b5f623829.png" src="../../_images/b3ef55197aad057f637008e0004cdb189ac9d330409df8a0e0fed92b5f623829.png" />
 </div>
 </div>
 <p>And we get it back as a geo-table (with one row):</p>
@@ -736,7 +681,7 @@ Name: node_id, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.514
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.458
 </pre></div>
 </div>
 </div>
@@ -749,19 +694,19 @@ Name: node_id, dtype: int64
 <li><p>BONUS II: if one walks at a speed of 5 Km/h, how long does the walk take you?</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="weighted-routing">
-<h4>Weighted routing<a class="headerlink" href="#weighted-routing" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="weighted-routing">
+<h4>Weighted routing<a class="headerlink" href="#weighted-routing" title="Permalink to this heading">#</a></h4>
 <p><em>How do I go from A to B passing by the “best” buildings?</em></p>
 <p>This is really an extension of standard routing that takes advantage of the flexibility of <code class="docutils literal notranslate"><span class="pre">pandana.Network</span></code> objects.</p>
 <div class="cell tag_remove-input tag_margin docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_35_0.png" src="../../_images/08-Transport_costs_35_0.png" />
+<img alt="../../_images/1feda6abb1e5c2e31bf9d5e8e3bfaa475abf2657f8576cc65d55487ecd881d61.png" src="../../_images/1feda6abb1e5c2e31bf9d5e8e3bfaa475abf2657f8576cc65d55487ecd881d61.png" />
 </div>
 </div>
 <p>The overall process is the same; the main difference is, when we build the <code class="docutils literal notranslate"><span class="pre">Network</span></code> object, to replace distance (<code class="docutils literal notranslate"><span class="pre">mm_len</span></code>) with a measure that <em>combines</em> distance and building quality. Note that we want to <em>maximise</em> building quality, but the routing algorithms use a <em>minimisation</em> function. Hence, our composite index will need to reflect that.</p>
 <p>The strategy is divided in the following steps:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Re-scale distance between 0 and 1</p></li>
 <li><p>Build a measure inverse to building quality in the <span class="math notranslate nohighlight">\([0, 1]\)</span> range</p></li>
 <li><p>Generate a combined measure (<code class="docutils literal notranslate"><span class="pre">wdist</span></code>) by picking a weighting parameter</p></li>
@@ -786,7 +731,7 @@ Name: node_id, dtype: int64
 </div>
 <div class="cell tag_margin tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_41_0.png" src="../../_images/08-Transport_costs_41_0.png" />
+<img alt="../../_images/f4a6dd733d6e42f159dc9515d7b3ef7f6ea6f4331ea947d1f1d3b43993bae49e.png" src="../../_images/f4a6dd733d6e42f159dc9515d7b3ef7f6ea6f4331ea947d1f1d3b43993bae49e.png" />
 </div>
 </div>
 <p>We move on to 2., with a similar approach. We will use the negative of the building quality average (<code class="docutils literal notranslate"><span class="pre">average_quality</span></code>):</p>
@@ -801,7 +746,7 @@ Name: node_id, dtype: int64
 </div>
 <div class="cell tag_margin tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_44_0.png" src="../../_images/08-Transport_costs_44_0.png" />
+<img alt="../../_images/1ccf5c23ca87c34a7d3a65925bf37af6011906012d3775373f4101172a4bd1aa.png" src="../../_images/1ccf5c23ca87c34a7d3a65925bf37af6011906012d3775373f4101172a4bd1aa.png" />
 </div>
 </div>
 <p>Taking 1. and 2. into 3. we can build <code class="docutils literal notranslate"><span class="pre">wdist</span></code>. For this example, we will give each dimension the same weight (0.5), but this is at discretion of the researcher.</p>
@@ -829,8 +774,8 @@ Name: node_id, dtype: int64
 <span class="p">)</span>
 <span class="c1"># Snap locations to their nearest node</span>
 <span class="n">pt_nodes</span> <span class="o">=</span> <span class="n">w_graph</span><span class="o">.</span><span class="n">get_node_ids</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">first</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">],</span> 
-    <span class="p">[</span><span class="n">first</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">first</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sol</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> 
+    <span class="p">[</span><span class="n">first</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sol</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
 <span class="p">)</span>
 <span class="c1"># Generate route</span>
 <span class="n">w_route_nodes</span> <span class="o">=</span> <span class="n">w_graph</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span>
@@ -844,7 +789,7 @@ Name: node_id, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating contraction hierarchies with 8 threads.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating contraction hierarchies with 4 threads.
 Setting CH node vector of size 49985
 Setting CH edge vector of size 66499
 Range graph removed 444 edges of 132998
@@ -855,6 +800,11 @@ Range graph removed 444 edges of 132998
 </div>
 <p>Now we are ready to display it on a map:</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Building quality</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">streets</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
@@ -878,20 +828,21 @@ Range graph removed 444 edges of 132998
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_50_0.png" src="../../_images/08-Transport_costs_50_0.png" />
+<img alt="../../_images/86b6f07275f810a7c16960258f4a5f35b9e7ae637dbe78d307dffd7bf07cb45c.png" src="../../_images/86b6f07275f810a7c16960258f4a5f35b9e7ae637dbe78d307dffd7bf07cb45c.png" />
 </div>
 </div>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Explore the differences in the output of weighted routing if you change the weight between distance and the additional constrain.</p></li>
 <li><p>Recreate weighted routing using the linearity of street segments. How can you go from A to B avoiding long streets?</p></li>
 </ol>
 </div>
-</div>
-<div class="section" id="proximity">
-<h4>Proximity<a class="headerlink" href="#proximity" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="proximity">
+<h4>Proximity<a class="headerlink" href="#proximity" title="Permalink to this heading">#</a></h4>
 <p><em>What is the nearest internet cafe for Airbnb’s without WiFi?</em></p>
 <p>First we identify Airbnb’s without WiFi:</p>
 <div class="cell docutils container">
@@ -906,7 +857,7 @@ Range graph removed 444 edges of 132998
 <p>Then pull WiFi spots in Madrid from OpenStreetMap:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">icafes</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">geometries_from_place</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">icafes</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">features_from_place</span><span class="p">(</span>
     <span class="s2">&quot;Madrid, Spain&quot;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;amenity&quot;</span><span class="p">:</span> <span class="s2">&quot;internet_cafe&quot;</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </pre></div>
@@ -914,6 +865,11 @@ Range graph removed 444 edges of 132998
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">no_wifi</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> 
@@ -936,22 +892,23 @@ Range graph removed 444 edges of 132998
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_58_0.png" src="../../_images/08-Transport_costs_58_0.png" />
+<img alt="../../_images/75d2eeae7c7f0537ad1ded737877f816e9982e900742722a34eb7d3998887090.png" src="../../_images/75d2eeae7c7f0537ad1ded737877f816e9982e900742722a34eb7d3998887090.png" />
 </div>
 </div>
 <p>The logic for this operation is the following:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Add the points of interest (POIs, the internet cafes) to the network object (<code class="docutils literal notranslate"><span class="pre">streets_pdn</span></code>)</p></li>
 <li><p>Find the nearest node to each POI</p></li>
 <li><p>Find the nearest node to each Airbnb without WiFi</p></li>
 <li><p>Connect each Airbnb to its nearest internet cafe</p></li>
 </ol>
 <p>We can add the internet cafes to the network object (1.) with the <code class="docutils literal notranslate"><span class="pre">set_pois</span></code> method:</p>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Note we set <code class="docutils literal notranslate"><span class="pre">maxitems=1</span></code> because we are only going to query for the nearest cafe. This will make computations much faster</p>
-</div>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">streets_pdn</span><span class="o">.</span><span class="n">set_pois</span><span class="p">(</span>
@@ -964,20 +921,12 @@ Range graph removed 444 edges of 132998
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.9/site-packages/pandana/network.py:660: DeprecationWarning: The default dtype for empty Series will be &#39;object&#39; instead of &#39;float64&#39; in a future version. Specify a dtype explicitly to silence this warning.
-  elif isinstance(maxitems, type(pd.Series())):
-/opt/conda/lib/python3.9/site-packages/pandana/network.py:668: DeprecationWarning: The default dtype for empty Series will be &#39;object&#39; instead of &#39;float64&#39; in a future version. Specify a dtype explicitly to silence this warning.
-  elif isinstance(maxdist, type(pd.Series())):
-</pre></div>
-</div>
-</div>
 </div>
 <p>Once the cafes are added to the network, we can find the nearest one to each node (2.):</p>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Note there are some nodes for which we can’t find a nearest cafe. These are related to disconnected parts of the network</p>
-</div>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cafe2nnode</span> <span class="o">=</span> <span class="n">streets_pdn</span><span class="o">.</span><span class="n">nearest_pois</span><span class="p">(</span>
@@ -1185,22 +1134,22 @@ Name: node_id, dtype: int64
 <p class="admonition-title">Challenge</p>
 <p>Calculate distances to nearest internet cafe for ABBs <em>with</em> WiFi. On average, which of the two groups (with and without WiFi) are closer to internet cafes?</p>
 </div>
-</div>
-<div class="section" id="accessibility">
-<h4>Accessibility<a class="headerlink" href="#accessibility" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="accessibility">
+<h4>Accessibility<a class="headerlink" href="#accessibility" title="Permalink to this heading">#</a></h4>
 <p>This flips the previous question on its head and, instead of asking what is the nearest POI to a given point, along the network (irrespective of distance), it asks <em>how many POIs can I access within a network-based distance radious?</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
-<span class="n">parks</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">geometries_from_place</span><span class="p">(</span>
+<span class="n">parks</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">features_from_place</span><span class="p">(</span>
     <span class="s2">&quot;Madrid, Spain&quot;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;leisure&quot;</span><span class="p">:</span> <span class="s2">&quot;park&quot;</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.07 s, sys: 19.7 ms, total: 1.09 s
-Wall time: 1.09 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 551 ms, sys: 13.9 ms, total: 564 ms
+Wall time: 575 ms
 </pre></div>
 </div>
 </div>
@@ -1234,7 +1183,7 @@ Wall time: 1.09 s
 </div>
 <p><em>How many parks are within 500m(-network) of an Airbnb?</em></p>
 <p>We need to approach this as a calculation <em>within</em> the network. The logic of steps thus looks like:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Use the aggregation module in <code class="docutils literal notranslate"><span class="pre">pandana</span></code> to count the number of parks within 500m of each node in the network</p></li>
 <li><p>Extract the counts for the nodes nearest to Airbnb properties</p></li>
 <li><p>Assign park counts to each Airbnb</p></li>
@@ -1338,15 +1287,20 @@ Name: node_id, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_92_0.png" src="../../_images/08-Transport_costs_92_0.png" />
+<img alt="../../_images/a9f7a850132ddc2774b6929097af692189a4a04a8d4dd6b33ff4808633faaa00.png" src="../../_images/a9f7a850132ddc2774b6929097af692189a4a04a8d4dd6b33ff4808633faaa00.png" />
 </div>
 </div>
 <p>And, geographically:</p>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Note there are a few cases where there are more network counts than Euclidean. These are due to the slight inaccuracies introduced by calculating network distances from nodes rather than the locations themselves</p>
-</div>
+</aside>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
@@ -1427,8 +1381,9 @@ Name: node_id, dtype: float64
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_94_0.png" src="../../_images/08-Transport_costs_94_0.png" />
+<img alt="../../_images/a29f76feac58094e002ea0219f0181e4ed3519f6b2dc9d6289a7db93e74e07c1.png" src="../../_images/a29f76feac58094e002ea0219f0181e4ed3519f6b2dc9d6289a7db93e74e07c1.png" />
 </div>
 </div>
 <div class="admonition-challenge admonition">
@@ -1436,48 +1391,21 @@ Name: node_id, dtype: float64
 <p>Calculate accessibility to <em>other</em> ABBs from each ABB through the network. <em>How many ABBs can you access within 500m of each ABB?</em></p>
 <p>Note you will need to use the locations of ABBs both as the source and the target for routing in this case.</p>
 </div>
-</div>
-</div>
-<div class="section" id="shortest-path-along-surfaces">
-<h3>Shortest-path along surfaces<a class="headerlink" href="#shortest-path-along-surfaces" title="Permalink to this headline">¶</a></h3>
-<div class="tabbed-set docutils">
-<input checked="checked" id="1645ef7b-ae8f-4f22-b123-4a93b72657d3" name="392dd708-5cf7-4f8a-8cec-bdfea41f4927" type="radio">
-</input><label class="tabbed-label" for="1645ef7b-ae8f-4f22-b123-4a93b72657d3">
-Local files</label><div class="tabbed-content docutils">
-<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">friction_walk</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
-    <span class="s2">&quot;../data/cambodia_2020_walking_friction_surface.tif&quot;</span>
-<span class="p">)</span>
-<span class="n">friction_motor</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
-    <span class="s2">&quot;../data/cambodia_2020_motorized_friction_surface.tif&quot;</span>
-<span class="p">)</span>
-<span class="n">cities</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/cambodian_cities.geojson&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<input id="30ebb372-7998-4e78-8fa9-4e199302e32f" name="392dd708-5cf7-4f8a-8cec-bdfea41f4927" type="radio">
-</input><label class="tabbed-label" for="30ebb372-7998-4e78-8fa9-4e199302e32f">
-Online read</label><div class="tabbed-content docutils">
-<p>If you’re online, you can do:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">friction_walk</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
-    <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/481f40ab3d2922d5e00b084b3668314b/cambodia_2020_walking_friction_surface.tif&quot;</span>
-<span class="p">)</span>
-<span class="n">friction_motor</span> <span class="o">=</span> <span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span>
-    <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/f41b238a4d072a8a3eb5ce1794cd126a/cambodia_2020_motorized_friction_surface.tif&quot;</span>
-<span class="p">)</span>
-<span class="n">cities</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
-    <span class="s2">&quot;https://darribas.org/gds4ae/_downloads/b2bc4ad46ffb5fcec467286c022adf14/cambodian_cities.geojson&quot;</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+</section>
+<section id="shortest-path-along-surfaces">
+<h3>Shortest-path along surfaces<a class="headerlink" href="#shortest-path-along-surfaces" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">main_roads</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">geometries_from_place</span><span class="p">(</span>
     <span class="s2">&quot;Cambodia&quot;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;highway&quot;</span><span class="p">:</span> <span class="s2">&quot;trunk&quot;</span><span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 <div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try read locally</span>
 <span class="k">try</span><span class="p">:</span>
@@ -1493,10 +1421,11 @@ Online read</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_margin tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_101_0.png" src="../../_images/08-Transport_costs_101_0.png" />
+<img alt="../../_images/4e9c42ba0b561a73e67eb1f3d9424ebda13d607e6a4c8bdfb24ed8c6ef2cdbf7.png" src="../../_images/4e9c42ba0b561a73e67eb1f3d9424ebda13d607e6a4c8bdfb24ed8c6ef2cdbf7.png" />
 </div>
 </div>
 <p>From the geo-table of roads, we can generate a surface that has a value of 1 on cells where a road crosses, and 0 otherwise (<em>rasterisation</em>).</p>
@@ -1527,7 +1456,7 @@ Online read</label><div class="tabbed-content docutils">
 </div>
 <div class="cell tag_remove-input tag_margin docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_106_0.png" src="../../_images/08-Transport_costs_106_0.png" />
+<img alt="../../_images/e26146848ba2fc480ef7fdabeb6f06af0f6e9bbe41cf9b938af8cc0fbb7c9c05.png" src="../../_images/e26146848ba2fc480ef7fdabeb6f06af0f6e9bbe41cf9b938af8cc0fbb7c9c05.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1568,6 +1497,7 @@ Online read</label><div class="tabbed-content docutils">
 }
 
 html[theme=dark],
+body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
   --xr-font-color2: rgba(255, 255, 255, 0.54);
@@ -1580,7 +1510,7 @@ body.vscode-dark {
 }
 
 .xr-wrap {
-  display: block;
+  display: block !important;
   min-width: 300px;
   max-width: 700px;
 }
@@ -1797,6 +1727,11 @@ body.vscode-dark {
   grid-column: 4;
 }
 
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
 .xr-var-name,
 .xr-var-dims,
 .xr-var-dtype,
@@ -1818,14 +1753,16 @@ body.vscode-dark {
 }
 
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   display: none;
   background-color: var(--xr-background-color) !important;
   padding-bottom: 5px !important;
 }
 
 .xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data {
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
   display: block;
 }
 
@@ -1835,13 +1772,16 @@ body.vscode-dark {
 
 .xr-var-name span,
 .xr-var-data,
+.xr-index-name div,
+.xr-index-data,
 .xr-attrs {
   padding-left: 25px !important;
 }
 
 .xr-attrs,
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   grid-column: 1 / -1;
 }
 
@@ -1879,7 +1819,8 @@ dl.xr-attrs {
 }
 
 .xr-icon-database,
-.xr-icon-file-text2 {
+.xr-icon-file-text2,
+.xr-no-icon {
   display: inline-block;
   vertical-align: middle;
   width: 1em;
@@ -1899,13 +1840,23 @@ array([[0, 0, 0, ..., 0, 0, 0],
 Coordinates:
   * y            (y) float64 1.167e+06 1.168e+06 ... 1.539e+06 1.539e+06
   * x            (x) float64 2.348e+05 2.352e+05 ... 6.572e+05 6.578e+05
-    spatial_ref  int64 0</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'one'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 745</li><li><span class='xr-has-index'>x</span>: 847</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-2147dbd7-687c-40d0-94a5-418e9bba1181' class='xr-array-in' type='checkbox' checked><label for='section-2147dbd7-687c-40d0-94a5-418e9bba1181' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ... 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span></div><div class='xr-array-data'><pre>array([[0, 0, 0, ..., 0, 0, 0],
+    spatial_ref  int64 0</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'one'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 745</li><li><span class='xr-has-index'>x</span>: 847</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-1d7a6d7b-4e63-4ff4-b7c9-3615acd80f83' class='xr-array-in' type='checkbox' checked><label for='section-1d7a6d7b-4e63-4ff4-b7c9-3615acd80f83' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ... 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span></div><div class='xr-array-data'><pre>array([[0, 0, 0, ..., 0, 0, 0],
        [0, 0, 0, ..., 0, 0, 0],
        [0, 0, 0, ..., 0, 0, 0],
        ...,
        [0, 0, 0, ..., 0, 0, 0],
        [0, 0, 0, ..., 0, 0, 0],
-       [0, 0, 0, ..., 0, 0, 0]])</pre></div></div></li><li class='xr-section-item'><input id='section-bb189fda-0fe2-4e53-a3ee-aa4dde3ca17c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-bb189fda-0fe2-4e53-a3ee-aa4dde3ca17c' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.167e+06 1.168e+06 ... 1.539e+06</div><input id='attrs-37abd380-6886-4729-9052-304410442a63' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-37abd380-6886-4729-9052-304410442a63' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c73ec67a-22d8-4ae8-8d40-9f061e8b8551' class='xr-var-data-in' type='checkbox'><label for='data-c73ec67a-22d8-4ae8-8d40-9f061e8b8551' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([1167250., 1167750., 1168250., ..., 1538250., 1538750., 1539250.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.348e+05 2.352e+05 ... 6.578e+05</div><input id='attrs-ff64bdee-b121-4fb2-af3e-7458e39424ef' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ff64bdee-b121-4fb2-af3e-7458e39424ef' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-742dbecd-dcea-4f83-89c5-bd342d1ca795' class='xr-var-data-in' type='checkbox'><label for='data-742dbecd-dcea-4f83-89c5-bd342d1ca795' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([234750., 235250., 235750., ..., 656750., 657250., 657750.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0</div><input id='attrs-a039ad98-6af5-45a1-bf00-e07fe6901499' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a039ad98-6af5-45a1-bf00-e07fe6901499' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-52b4543a-e224-4646-8e57-299aac00f59d' class='xr-var-data-in' type='checkbox'><label for='data-52b4543a-e224-4646-8e57-299aac00f59d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>semi_major_axis :</span></dt><dd>6377276.345</dd><dt><span>semi_minor_axis :</span></dt><dd>6356075.41314024</dd><dt><span>inverse_flattening :</span></dt><dd>300.8017</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>Everest 1830 (1937 Adjustment)</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>Indian 1960</dd><dt><span>horizontal_datum_name :</span></dt><dd>Indian 1960</dd><dt><span>projected_crs_name :</span></dt><dd>Indian 1960 / UTM zone 48N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd></dl></div><div class='xr-var-data'><pre>array(0)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-64ba7554-2f8b-481b-a786-ed3027dd1459' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-64ba7554-2f8b-481b-a786-ed3027dd1459' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       [0, 0, 0, ..., 0, 0, 0]])</pre></div></div></li><li class='xr-section-item'><input id='section-1929aa7c-fbd9-455f-a78d-240cff1bd90e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-1929aa7c-fbd9-455f-a78d-240cff1bd90e' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.167e+06 1.168e+06 ... 1.539e+06</div><input id='attrs-0928f4ff-032f-441d-9dd4-d351d65632b6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0928f4ff-032f-441d-9dd4-d351d65632b6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f24b1b62-2375-41f8-910c-f5766f94f9f7' class='xr-var-data-in' type='checkbox'><label for='data-f24b1b62-2375-41f8-910c-f5766f94f9f7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([1167250., 1167750., 1168250., ..., 1538250., 1538750., 1539250.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.348e+05 2.352e+05 ... 6.578e+05</div><input id='attrs-f4e1239b-319c-4b9b-8cf8-98f73d0f66ca' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f4e1239b-319c-4b9b-8cf8-98f73d0f66ca' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e5f22264-f701-4ddc-8088-423b39ac3517' class='xr-var-data-in' type='checkbox'><label for='data-e5f22264-f701-4ddc-8088-423b39ac3517' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([234750., 235250., 235750., ..., 656750., 657250., 657750.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0</div><input id='attrs-8d300195-0412-423c-aba0-efed31ea86b0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8d300195-0412-423c-aba0-efed31ea86b0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-755ad286-9f95-41ce-95b7-b61d653faa9b' class='xr-var-data-in' type='checkbox'><label for='data-755ad286-9f95-41ce-95b7-b61d653faa9b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017,AUTHORITY[&quot;EPSG&quot;,&quot;7015&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0,AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>semi_major_axis :</span></dt><dd>6377276.345</dd><dt><span>semi_minor_axis :</span></dt><dd>6356075.41314024</dd><dt><span>inverse_flattening :</span></dt><dd>300.8017</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>Everest 1830 (1937 Adjustment)</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>Indian 1960</dd><dt><span>horizontal_datum_name :</span></dt><dd>Indian 1960</dd><dt><span>projected_crs_name :</span></dt><dd>Indian 1960 / UTM zone 48N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017,AUTHORITY[&quot;EPSG&quot;,&quot;7015&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0,AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>GeoTransform :</span></dt><dd>234500.0 500.0 0.0 1167000.0 0.0 500.0</dd></dl></div><div class='xr-var-data'><pre>array(0)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6e88f314-4fef-40b2-88c5-69542cd3f7cb' class='xr-section-summary-in' type='checkbox'  ><label for='section-6e88f314-4fef-40b2-88c5-69542cd3f7cb' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>y</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-b8fde196-9b64-4c16-8709-1fd585339a3d' class='xr-index-data-in' type='checkbox'/><label for='index-b8fde196-9b64-4c16-8709-1fd585339a3d' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([1167250.0, 1167750.0, 1168250.0, 1168750.0, 1169250.0, 1169750.0,
+       1170250.0, 1170750.0, 1171250.0, 1171750.0,
+       ...
+       1534750.0, 1535250.0, 1535750.0, 1536250.0, 1536750.0, 1537250.0,
+       1537750.0, 1538250.0, 1538750.0, 1539250.0],
+      dtype=&#x27;float64&#x27;, name=&#x27;y&#x27;, length=745))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>x</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-13f5757d-79f4-4b66-85d6-d5ce14ee2c9d' class='xr-index-data-in' type='checkbox'/><label for='index-13f5757d-79f4-4b66-85d6-d5ce14ee2c9d' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([234750.0, 235250.0, 235750.0, 236250.0, 236750.0, 237250.0, 237750.0,
+       238250.0, 238750.0, 239250.0,
+       ...
+       653250.0, 653750.0, 654250.0, 654750.0, 655250.0, 655750.0, 656250.0,
+       656750.0, 657250.0, 657750.0],
+      dtype=&#x27;float64&#x27;, name=&#x27;x&#x27;, length=847))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e9ab7de8-6c90-4a7f-a111-cddbd3a7c3dc' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-e9ab7de8-6c90-4a7f-a111-cddbd3a7c3dc' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Then we can generate the routing from, say Phnom Penh to Poipet, using <code class="docutils literal notranslate"><span class="pre">xarray-spatial</span></code>’s A* algorithm:</p>
 <div class="cell docutils container">
@@ -1941,10 +1892,10 @@ Coordinates:
 </div>
 <div class="cell tag_margin tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f00bc362850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f2c29110cd0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/08-Transport_costs_110_1.png" src="../../_images/08-Transport_costs_110_1.png" />
+<img alt="../../_images/13a14bc547ea6947141b6bffbe8c1cce4d0623ba480c45016de60e3ccc2d48a4.png" src="../../_images/13a14bc547ea6947141b6bffbe8c1cce4d0623ba480c45016de60e3ccc2d48a4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1985,6 +1936,7 @@ Coordinates:
 }
 
 html[theme=dark],
+body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
   --xr-font-color2: rgba(255, 255, 255, 0.54);
@@ -1997,7 +1949,7 @@ body.vscode-dark {
 }
 
 .xr-wrap {
-  display: block;
+  display: block !important;
   min-width: 300px;
   max-width: 700px;
 }
@@ -2214,6 +2166,11 @@ body.vscode-dark {
   grid-column: 4;
 }
 
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
 .xr-var-name,
 .xr-var-dims,
 .xr-var-dtype,
@@ -2235,14 +2192,16 @@ body.vscode-dark {
 }
 
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   display: none;
   background-color: var(--xr-background-color) !important;
   padding-bottom: 5px !important;
 }
 
 .xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data {
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
   display: block;
 }
 
@@ -2252,13 +2211,16 @@ body.vscode-dark {
 
 .xr-var-name span,
 .xr-var-data,
+.xr-index-name div,
+.xr-index-data,
 .xr-attrs {
   padding-left: 25px !important;
 }
 
 .xr-attrs,
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   grid-column: 1 / -1;
 }
 
@@ -2296,7 +2258,8 @@ dl.xr-attrs {
 }
 
 .xr-icon-database,
-.xr-icon-file-text2 {
+.xr-icon-file-text2,
+.xr-no-icon {
   display: inline-block;
   vertical-align: middle;
   width: 1em;
@@ -2316,13 +2279,23 @@ array([[nan, nan, nan, ..., nan, nan, nan],
 Coordinates:
   * y            (y) float64 1.167e+06 1.168e+06 ... 1.539e+06 1.539e+06
   * x            (x) float64 2.348e+05 2.352e+05 ... 6.572e+05 6.578e+05
-    spatial_ref  int64 0</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 745</li><li><span class='xr-has-index'>x</span>: 847</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-5194beb1-b8cd-4852-beb9-3eb902c99ead' class='xr-array-in' type='checkbox' checked><label for='section-5194beb1-b8cd-4852-beb9-3eb902c99ead' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>nan nan nan nan nan nan nan nan ... nan nan nan nan nan nan nan nan</span></div><div class='xr-array-data'><pre>array([[nan, nan, nan, ..., nan, nan, nan],
+    spatial_ref  int64 0</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 745</li><li><span class='xr-has-index'>x</span>: 847</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-583c8b91-4c47-4c91-b5e2-e92f4b4a12c8' class='xr-array-in' type='checkbox' checked><label for='section-583c8b91-4c47-4c91-b5e2-e92f4b4a12c8' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>nan nan nan nan nan nan nan nan ... nan nan nan nan nan nan nan nan</span></div><div class='xr-array-data'><pre>array([[nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
        ...,
        [nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
-       [nan, nan, nan, ..., nan, nan, nan]])</pre></div></div></li><li class='xr-section-item'><input id='section-add86c90-afbc-40e1-a88a-24c37ff95a50' class='xr-section-summary-in' type='checkbox'  checked><label for='section-add86c90-afbc-40e1-a88a-24c37ff95a50' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.167e+06 1.168e+06 ... 1.539e+06</div><input id='attrs-4f41be9c-de2f-4d6d-9391-e8bf5b177e1e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4f41be9c-de2f-4d6d-9391-e8bf5b177e1e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dbdf10fe-a993-41b1-8a65-483ee519cd0e' class='xr-var-data-in' type='checkbox'><label for='data-dbdf10fe-a993-41b1-8a65-483ee519cd0e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([1167250., 1167750., 1168250., ..., 1538250., 1538750., 1539250.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.348e+05 2.352e+05 ... 6.578e+05</div><input id='attrs-c001641a-6658-472e-b985-8f349b8716ee' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c001641a-6658-472e-b985-8f349b8716ee' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6ec8f4d0-ed7b-4a0e-a7ed-9ea6e24762b3' class='xr-var-data-in' type='checkbox'><label for='data-6ec8f4d0-ed7b-4a0e-a7ed-9ea6e24762b3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([234750., 235250., 235750., ..., 656750., 657250., 657750.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0</div><input id='attrs-9c02d510-fb2b-46ec-9c64-1ee260d72b0d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9c02d510-fb2b-46ec-9c64-1ee260d72b0d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ba9dc901-3326-4230-979f-d7cecb8ffadc' class='xr-var-data-in' type='checkbox'><label for='data-ba9dc901-3326-4230-979f-d7cecb8ffadc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>semi_major_axis :</span></dt><dd>6377276.345</dd><dt><span>semi_minor_axis :</span></dt><dd>6356075.41314024</dd><dt><span>inverse_flattening :</span></dt><dd>300.8017</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>Everest 1830 (1937 Adjustment)</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>Indian 1960</dd><dt><span>horizontal_datum_name :</span></dt><dd>Indian 1960</dd><dt><span>projected_crs_name :</span></dt><dd>Indian 1960 / UTM zone 48N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd></dl></div><div class='xr-var-data'><pre>array(0)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ed310431-f3ea-4826-85cd-91c1fae72076' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-ed310431-f3ea-4826-85cd-91c1fae72076' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       [nan, nan, nan, ..., nan, nan, nan]])</pre></div></div></li><li class='xr-section-item'><input id='section-606bc1e2-32ef-4796-b117-12107f1c2f86' class='xr-section-summary-in' type='checkbox'  checked><label for='section-606bc1e2-32ef-4796-b117-12107f1c2f86' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.167e+06 1.168e+06 ... 1.539e+06</div><input id='attrs-c75863c8-4680-4778-a287-98486aa9ecd3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c75863c8-4680-4778-a287-98486aa9ecd3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-37b35fd0-f687-4bdc-8a78-d51eb08c5ca2' class='xr-var-data-in' type='checkbox'><label for='data-37b35fd0-f687-4bdc-8a78-d51eb08c5ca2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>y coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([1167250., 1167750., 1168250., ..., 1538250., 1538750., 1539250.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.348e+05 2.352e+05 ... 6.578e+05</div><input id='attrs-086b770a-eb05-41b8-85ec-221461f0bb56' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-086b770a-eb05-41b8-85ec-221461f0bb56' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a04f8d2e-d2a3-49cd-9eee-3774dace9989' class='xr-var-data-in' type='checkbox'><label for='data-a04f8d2e-d2a3-49cd-9eee-3774dace9989' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>x coordinate of projection</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>metre</dd></dl></div><div class='xr-var-data'><pre>array([234750., 235250., 235750., ..., 656750., 657250., 657750.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0</div><input id='attrs-491bf66c-5867-48bb-bb38-3a3f19fdc557' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-491bf66c-5867-48bb-bb38-3a3f19fdc557' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e489a672-850c-43bc-833e-660ccfd5bb9b' class='xr-var-data-in' type='checkbox'><label for='data-e489a672-850c-43bc-833e-660ccfd5bb9b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>crs_wkt :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017,AUTHORITY[&quot;EPSG&quot;,&quot;7015&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0,AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>semi_major_axis :</span></dt><dd>6377276.345</dd><dt><span>semi_minor_axis :</span></dt><dd>6356075.41314024</dd><dt><span>inverse_flattening :</span></dt><dd>300.8017</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>Everest 1830 (1937 Adjustment)</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>Indian 1960</dd><dt><span>horizontal_datum_name :</span></dt><dd>Indian 1960</dd><dt><span>projected_crs_name :</span></dt><dd>Indian 1960 / UTM zone 48N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>spatial_ref :</span></dt><dd>PROJCS[&quot;Indian 1960 / UTM zone 48N&quot;,GEOGCS[&quot;Indian 1960&quot;,DATUM[&quot;Indian_1960&quot;,SPHEROID[&quot;Everest 1830 (1937 Adjustment)&quot;,6377276.345,300.8017,AUTHORITY[&quot;EPSG&quot;,&quot;7015&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;6131&quot;]],PRIMEM[&quot;Greenwich&quot;,0,AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4131&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,105],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH],AUTHORITY[&quot;EPSG&quot;,&quot;3148&quot;]]</dd><dt><span>GeoTransform :</span></dt><dd>234500.0 500.0 0.0 1167000.0 0.0 500.0</dd></dl></div><div class='xr-var-data'><pre>array(0)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-7422b56e-c0ac-452e-a3dd-de2a6fe1f498' class='xr-section-summary-in' type='checkbox'  ><label for='section-7422b56e-c0ac-452e-a3dd-de2a6fe1f498' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>y</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-e8af3513-fd6c-428a-82e1-3ae2300510c4' class='xr-index-data-in' type='checkbox'/><label for='index-e8af3513-fd6c-428a-82e1-3ae2300510c4' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([1167250.0, 1167750.0, 1168250.0, 1168750.0, 1169250.0, 1169750.0,
+       1170250.0, 1170750.0, 1171250.0, 1171750.0,
+       ...
+       1534750.0, 1535250.0, 1535750.0, 1536250.0, 1536750.0, 1537250.0,
+       1537750.0, 1538250.0, 1538750.0, 1539250.0],
+      dtype=&#x27;float64&#x27;, name=&#x27;y&#x27;, length=745))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>x</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-87d96924-52a1-4b68-9423-59920406b22a' class='xr-index-data-in' type='checkbox'/><label for='index-87d96924-52a1-4b68-9423-59920406b22a' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([234750.0, 235250.0, 235750.0, 236250.0, 236750.0, 237250.0, 237750.0,
+       238250.0, 238750.0, 239250.0,
+       ...
+       653250.0, 653750.0, 654250.0, 654750.0, 655250.0, 655750.0, 656250.0,
+       656750.0, 657250.0, 657750.0],
+      dtype=&#x27;float64&#x27;, name=&#x27;x&#x27;, length=847))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-dbd37e83-e596-434c-897e-4a2f1be0bf93' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-dbd37e83-e596-434c-897e-4a2f1be0bf93' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>And we can turn the route surface into a line that connects the pixels in the route:</p>
 <div class="cell docutils container">
@@ -2343,23 +2316,23 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/08-Transport_costs_113_0.svg" src="../../_images/08-Transport_costs_113_0.svg" /></div>
+<img alt="../../_images/844885cf3d5c850532383963dfe4bfe95de4ce4544e19501bcd640620bc0364a.svg" src="../../_images/844885cf3d5c850532383963dfe4bfe95de4ce4544e19501bcd640620bc0364a.svg" /></div>
 </div>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge</p>
 <p>Calculate the route between Battambang and Sihanoukville. <em>What is the distance?</em></p>
 </div>
-</div>
-</div>
-<div class="section" id="next-steps">
-<h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="next-steps">
+<h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
 <p>If you found the content in this block useful, the following resources represent some suggestions on where to go next:</p>
 <ul class="simple">
 <li><p>The <a class="reference external" href="https://github.com/UDST/pandana/blob/master/examples/Pandana-demo.ipynb"><code class="docutils literal notranslate"><span class="pre">pandana</span></code> tutorial</a> and <a class="reference external" href="http://udst.github.io/pandana/index.html">documentation</a> are excellent places to get a more detailed and comprehensive view into the functionality of the library</p></li>
 <li><p>More about <code class="docutils literal notranslate"><span class="pre">xarray-spatial</span></code>, the library that provides geospatial techniques on top of surfaces is available at the project’s <a class="reference external" href="https://makepath.github.io/xarray-spatial/">documentation</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2370,58 +2343,122 @@ Coordinates:
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "gds"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "gds",
             path: "./content/notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'gds'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="07-Spatial_networks.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Spatial Networks</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="07-Spatial_networks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Spatial Networks</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../data/datasets.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../data/datasets.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Datasets</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Dani Arribas-Bel & Diego Puga<br/>
-    
-      <div class="extra_footer">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-      </div>
-  </p>
-</footer>
-</main>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ahead-of-time">📖 Ahead of time…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-coding">💻 Hands-on coding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-along-street-networks"><em>Moving</em> along (street) networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pandana-graphs"><code class="docutils literal notranslate"><span class="pre">pandana</span></code> graphs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shortest-path-routing">Shortest-path routing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#weighted-routing">Weighted routing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proximity">Proximity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accessibility">Accessibility</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shortest-path-along-surfaces">Shortest-path along surfaces</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">🐾 Next steps</a></li>
+</ul>
+  </nav></div>
 
-
-      </div>
-    </div>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dani Arribas-Bel & Diego Puga
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
