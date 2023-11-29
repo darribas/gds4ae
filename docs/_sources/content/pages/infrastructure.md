@@ -36,7 +36,7 @@ If you are interested, you can download a compressed `.zip` file with the most u
 ```
 
 ```{toggle}
-> [https://github.com/darribas/data_science_studio/archive/master.zip](https://github.com/darribas/data_science_studio/archive/master.zip)
+> [https://github.com/darribas/gds4ae/archive/master.zip](https://github.com/darribas/gds4ae/archive/master.zip)
 ```
 
 [<img alt="darribas/gds4ae_zip" style="border-width:0;margin-left: 0px" src="../figs/zip-file-format.png" />](https://github.com/darribas/gds4ae/archive/master.zip)
