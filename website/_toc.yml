@@ -13,8 +13,8 @@ parts:
   - file: content/notebooks/04-Spatial_feature_eng_i
   - file: content/notebooks/05-Spatial_feature_eng_ii
   - file: content/notebooks/06-OpenStreetMap
-  - file: content/notebooks/07-Spatial_networks
-  - file: content/notebooks/08-Transport_costs
+  - file: content/notebooks/07-Transport_costs
+  - file: content/notebooks/08-CARTO
 - caption: Epilogue
   chapters:
   - file: content/data/datasets

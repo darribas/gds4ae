@@ -24,8 +24,8 @@ The structure of content is divided in nine blocks:
 - [*Geovisualisation*](../notebooks/03-Geovisualisation): make (good) data maps
 - *Spatial Feature Engineering* ([Part I](../notebooks/04-Spatial_feature_eng_i) and [Part II](../notebooks/05-Spatial_feature_eng_ii)): augment and massage your data using Geography before you feed them into your model
 - [*OpenStreetMap*](../notebooks/06-OpenStreetMap): acquire data from the largest geo-table in the world
-- [*Spatial Networks*](../notebooks/07-Spatial_networks): understand and work with spatial graphs
-- [*Transport Costs*](../notebooks/08-Transport_costs): "getting there" doesn't always cost the same
+- [*Transport Costs*](../notebooks/07-Transport_costs): "getting there" doesn't always cost the same
+- [*CARTO*](../notebooks/08-CARTO): explore publishing web maps with CARTO
 
 Each block has its own section and is designed to be delivered in 1.5 hours approximately. The content of some of these blocks relies on external resources, all of them freely available. When that is the case, enough detail is provided in the  to understand how additional material fits in.
 
