@@ -1,0 +1,1522 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Transport costs &#8212; Geographic Data Science for Applied Economists</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-6032674-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-6032674-1');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/notebooks/07-Transport_costs';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Web mapping with CARTO" href="08-CARTO.html" />
+    <link rel="prev" title="OpenStreetMap" href="06-OpenStreetMap.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../pages/home.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Geographic Data Science for Applied Economists</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../pages/home.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../pages/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/infrastructure.html">Infrastructure</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Content</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-Spatial_data.html">Spatial Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-Geovisualisation.html">Geovisualisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-Spatial_feature_eng_i.html">Spatial Feature Engineering (I)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-Spatial_feature_eng_ii.html">Spatial Feature Engineering (II)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-OpenStreetMap.html">OpenStreetMap</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Transport costs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-CARTO.html">Web mapping with CARTO</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Epilogue</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../data/datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/further.html">Further Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/z_bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/darribas/gds4ae/master?urlpath=tree/content/notebooks/07-Transport_costs.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/notebooks/07-Transport_costs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transport costs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ahead-of-time">📖 Ahead of time…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-coding">💻 Hands-on coding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandana-graphs"><code class="docutils literal notranslate"><span class="pre">pandana</span></code> graphs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shortest-path-routing">Shortest-path routing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weighted-routing">Weighted routing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximity">Proximity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessibility">Accessibility</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">🐾 Next steps</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="transport-costs">
+<h1>Transport costs<a class="headerlink" href="#transport-costs" title="Permalink to this heading">#</a></h1>
+<section id="ahead-of-time">
+<h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="hands-on-coding">
+<h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">momepy</span>
+<span class="kn">import</span> <span class="nn">geopandas</span>
+<span class="kn">import</span> <span class="nn">contextily</span>
+<span class="kn">import</span> <span class="nn">xarray</span><span class="o">,</span> <span class="nn">rioxarray</span>
+<span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ox</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">overpass_settings</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;[out:json][timeout:90][date:&quot;2021-03-07T00:00:00Z&quot;]&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<section id="pandana-graphs">
+<h3><code class="docutils literal notranslate"><span class="pre">pandana</span></code> graphs<a class="headerlink" href="#pandana-graphs" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandana</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before building the routing network, we convert to graph and back in <code class="docutils literal notranslate"><span class="pre">momepy</span></code> to “clean” the network and ensure it complies with requirements for routing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">nx_to_gdf</span><span class="p">(</span> <span class="c1"># Convert back to geo-table</span>
+    <span class="n">momepy</span><span class="o">.</span><span class="n">gdf_to_nx</span><span class="p">(</span>            <span class="c1"># Convert to a clean NX graph</span>
+        <span class="n">streets</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="n">index_parts</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>        <span class="c1"># We &quot;explode&quot; to avoid multi-part rows</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;nodeID&quot;</span><span class="p">)</span><span class="c1"># Reindex nodes on ID</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.2 s, sys: 76.5 ms, total: 3.27 s
+Wall time: 3.24 s
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once we have nodes and edges “clean” from the graph representation, we can build a <code class="docutils literal notranslate"><span class="pre">pandana.Network</span></code> object we will use for routing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">streets_pdn</span> <span class="o">=</span> <span class="n">pandana</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span>
+    <span class="n">nodes</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+    <span class="n">nodes</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+    <span class="n">edges</span><span class="p">[</span><span class="s2">&quot;node_start&quot;</span><span class="p">],</span>
+    <span class="n">edges</span><span class="p">[</span><span class="s2">&quot;node_end&quot;</span><span class="p">],</span>
+    <span class="n">edges</span><span class="p">[[</span><span class="s2">&quot;mm_len&quot;</span><span class="p">]]</span>
+<span class="p">)</span>
+
+<span class="n">streets_pdn</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating contraction hierarchies with 16 threads.
+Setting CH node vector of size 49985
+Setting CH edge vector of size 66499
+Range graph removed 444 edges of 132998
+. 10% . 20% . 30% . 40% . 50% . 60% . 70% . 80% . 90% . 100%
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandana.network.Network at 0x7fbbc3db5d00&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="shortest-path-routing">
+<h3>Shortest-path routing<a class="headerlink" href="#shortest-path-routing" title="Permalink to this heading">#</a></h3>
+<p><em>How do I go from A to B?</em></p>
+<p>For example, from the first Airbnb in the geo-table…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="n">abbs</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">0</span><span class="p">],</span> <span class="p">:]</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>…to Puerta del Sol.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopy</span>
+<span class="n">geopy</span><span class="o">.</span><span class="n">geocoders</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">default_user_agent</span> <span class="o">=</span> <span class="s2">&quot;gds4ae&quot;</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">geocode</span><span class="p">(</span>
+    <span class="s2">&quot;Puerta del Sol, Madrid&quot;</span><span class="p">,</span> <span class="n">geopy</span><span class="o">.</span><span class="n">Nominatim</span>
+<span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="n">sol</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geometry</th>
+      <th>address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>POINT (440247.314 4474264.131)</td>
+      <td>Puerta del Sol, Barrio de los Austrias, Sol, C...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>First we <em>snap</em> locations to the network:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pt_nodes</span> <span class="o">=</span> <span class="n">streets_pdn</span><span class="o">.</span><span class="n">get_node_ids</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">first</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sol</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> 
+    <span class="p">[</span><span class="n">first</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sol</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="p">)</span>
+<span class="n">pt_nodes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     3071
+1    35731
+Name: node_id, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we can route the shortest path:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">route_nodes</span> <span class="o">=</span> <span class="n">streets_pdn</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span>
+    <span class="n">pt_nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pt_nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">route_nodes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3071,  3476,  8268,  8266,  8267, 18695, 18693,  1432,  1430,
+         353,  8175,  8176, 18121, 17476, 16858, 14322, 16857, 17810,
+       44795, 41220, 41217, 41221, 41652, 18924, 18928, 48943, 18931,
+       21094, 21095, 23219, 15398, 15399, 15400, 47446, 47447, 23276,
+       47448, 23259, 23260, 23261, 27951, 27952, 27953, 48327, 11950,
+       11949, 11944, 19475, 19476, 27333, 30088, 43294, 11940, 11941,
+       11942, 48325, 37484, 48316, 15893, 15890, 15891, 29954, 25453,
+        7341, 34991, 23608, 28217, 21648, 21649, 21651, 39075, 25108,
+       25102, 25101, 25100, 48518, 47287, 34623, 31187, 29615, 48556,
+       22844, 48553, 48555, 40922, 40921, 40923, 48585, 46372, 46371,
+       46370, 45675, 45676, 38778, 38777, 19144, 20498, 20497, 20499,
+       47737, 42303, 42302, 35730, 35727, 35729, 35731])
+</pre></div>
+</div>
+</div>
+</div>
+<p>With this information, we can build the route line manually:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The code to generate the route involves writing a function and is a bit more advanced than expected for this course. If this looks too complicated, do not despair.</p>
+<p>Also, please note this builds a <em>simplified</em> line for the route, not one that is based on the original geometries (distance calculations <em>are</em> based on the original network).</p>
+</div>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">LineString</span>
+
+<span class="k">def</span> <span class="nf">route_nodes_to_line</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">network</span><span class="p">):</span>
+    <span class="n">pts</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">nodes</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
+        <span class="p">{</span><span class="s2">&quot;src_node&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="s2">&quot;tgt_node&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">]]},</span>
+        <span class="n">geometry</span><span class="o">=</span><span class="p">[</span><span class="n">LineString</span><span class="p">(</span><span class="n">pts</span><span class="o">.</span><span class="n">values</span><span class="p">)],</span>
+        <span class="n">crs</span><span class="o">=</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can calculate the route:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">route</span> <span class="o">=</span> <span class="n">route_nodes_to_line</span><span class="p">(</span><span class="n">route_nodes</span><span class="p">,</span> <span class="n">streets_pdn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_margin tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/da1b0b75bde20d11c58488db4ebf9b90ae3acdc59f423bc635db05496f0ffac4.png" src="../../_images/da1b0b75bde20d11c58488db4ebf9b90ae3acdc59f423bc635db05496f0ffac4.png" />
+</div>
+</div>
+<p>And we get it back as a geo-table (with one row):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">route</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>src_node</th>
+      <th>tgt_node</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3071</td>
+      <td>3476</td>
+      <td>LINESTRING (442606.507 4478714.516, 442597.100...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If we wanted to obtain the length of the route:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">route_len</span> <span class="o">=</span> <span class="n">streets_pdn</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span>
+    <span class="n">pt_nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pt_nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="nb">round</span><span class="p">(</span><span class="n">route_len</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># Dist in Km</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.514
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<ul class="simple">
+<li><p>What is the network distance between CEMFI and Puerta del Sol?</p></li>
+<li><p>BONUS I: how much longer is it than if you could fly in a straight line?</p></li>
+<li><p>BONUS II: if one walks at a speed of 5 Km/h, how long does the walk take you?</p></li>
+</ul>
+</div>
+</section>
+<section id="weighted-routing">
+<h3>Weighted routing<a class="headerlink" href="#weighted-routing" title="Permalink to this heading">#</a></h3>
+<p><em>How do I go from A to B passing by the “best” buildings?</em></p>
+<p>This is really an extension of standard routing that takes advantage of the flexibility of <code class="docutils literal notranslate"><span class="pre">pandana.Network</span></code> objects.</p>
+<div class="cell tag_remove-input tag_margin docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/7fd4742de9a0d0f191ea5018a5d2383f8d2ef507868a9df20a541e4dca1cb52e.png" src="../../_images/7fd4742de9a0d0f191ea5018a5d2383f8d2ef507868a9df20a541e4dca1cb52e.png" />
+</div>
+</div>
+<p>The overall process is the same; the main difference is, when we build the <code class="docutils literal notranslate"><span class="pre">Network</span></code> object, to replace distance (<code class="docutils literal notranslate"><span class="pre">mm_len</span></code>) with a measure that <em>combines</em> distance and building quality. Note that we want to <em>maximise</em> building quality, but the routing algorithms use a <em>minimisation</em> function. Hence, our composite index will need to reflect that.</p>
+<p>The strategy is divided in the following steps:</p>
+<ol class="arabic simple">
+<li><p>Re-scale distance between 0 and 1</p></li>
+<li><p>Build a measure inverse to building quality in the <span class="math notranslate nohighlight">\([0, 1]\)</span> range</p></li>
+<li><p>Generate a combined measure (<code class="docutils literal notranslate"><span class="pre">wdist</span></code>) by picking a weighting parameter</p></li>
+<li><p>Build a new <code class="docutils literal notranslate"><span class="pre">Network</span></code> object that incorporates <code class="docutils literal notranslate"><span class="pre">wdist</span></code> instead of distance</p></li>
+<li><p>Compute route between the two points of interest</p></li>
+</ol>
+<p>For 1., we can use the scaler in <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">minmax_scale</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then generate and attach to <code class="docutils literal notranslate"><span class="pre">edges</span></code> a scaled version of <code class="docutils literal notranslate"><span class="pre">mm_len</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span><span class="p">[</span><span class="s2">&quot;scaled_dist&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">minmax_scale</span><span class="p">(</span><span class="n">edges</span><span class="p">[</span><span class="s2">&quot;mm_len&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_margin tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/f4a6dd733d6e42f159dc9515d7b3ef7f6ea6f4331ea947d1f1d3b43993bae49e.png" src="../../_images/f4a6dd733d6e42f159dc9515d7b3ef7f6ea6f4331ea947d1f1d3b43993bae49e.png" />
+</div>
+</div>
+<p>We move on to 2., with a similar approach. We will use the negative of the building quality average (<code class="docutils literal notranslate"><span class="pre">average_quality</span></code>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span><span class="p">[</span><span class="s2">&quot;scaled_inv_bquality&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">minmax_scale</span><span class="p">(</span>
+    <span class="o">-</span><span class="n">edges</span><span class="p">[</span><span class="s2">&quot;average_quality&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_margin tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/1ccf5c23ca87c34a7d3a65925bf37af6011906012d3775373f4101172a4bd1aa.png" src="../../_images/1ccf5c23ca87c34a7d3a65925bf37af6011906012d3775373f4101172a4bd1aa.png" />
+</div>
+</div>
+<p>Taking 1. and 2. into 3. we can build <code class="docutils literal notranslate"><span class="pre">wdist</span></code>. For this example, we will give each dimension the same weight (0.5), but this is at discretion of the researcher.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">edges</span><span class="p">[</span><span class="s2">&quot;wdist&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">edges</span><span class="p">[</span><span class="s2">&quot;scaled_dist&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">w</span> <span class="o">+</span>
+    <span class="n">edges</span><span class="p">[</span><span class="s2">&quot;scaled_inv_bquality&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can recreate the <code class="docutils literal notranslate"><span class="pre">Network</span></code> object based on our new measure (4.) and provide routing. Since it is the same process as with distance, we will do it all in one go:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build new graph object</span>
+<span class="n">w_graph</span> <span class="o">=</span> <span class="n">pandana</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span>
+    <span class="n">nodes</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+    <span class="n">nodes</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+    <span class="n">edges</span><span class="p">[</span><span class="s2">&quot;node_start&quot;</span><span class="p">],</span>
+    <span class="n">edges</span><span class="p">[</span><span class="s2">&quot;node_end&quot;</span><span class="p">],</span>
+    <span class="n">edges</span><span class="p">[[</span><span class="s2">&quot;wdist&quot;</span><span class="p">]]</span>
+<span class="p">)</span>
+<span class="c1"># Snap locations to their nearest node</span>
+<span class="n">pt_nodes</span> <span class="o">=</span> <span class="n">w_graph</span><span class="o">.</span><span class="n">get_node_ids</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">first</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sol</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> 
+    <span class="p">[</span><span class="n">first</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sol</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="p">)</span>
+<span class="c1"># Generate route</span>
+<span class="n">w_route_nodes</span> <span class="o">=</span> <span class="n">w_graph</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span>
+    <span class="n">pt_nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pt_nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="c1"># Build LineString</span>
+<span class="n">w_route</span> <span class="o">=</span> <span class="n">route_nodes_to_line</span><span class="p">(</span>
+    <span class="n">w_route_nodes</span><span class="p">,</span> <span class="n">w_graph</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating contraction hierarchies with 16 threads.
+Setting CH node vector of size 49985
+Setting CH edge vector of size 66499
+Range graph removed 444 edges of 132998
+. 10% . 20% . 30% . 40% . 50% . 60% . 70% . 80% . 90% . 100%
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we are ready to display it on a map:</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Building quality</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">streets</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;average_quality&quot;</span><span class="p">,</span> 
+    <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;quantiles&quot;</span><span class="p">,</span> 
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;magma&quot;</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="c1"># Shortest route</span>
+<span class="n">route</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;xkcd:orange red&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Shortest&quot;</span>
+<span class="p">)</span>
+<span class="c1"># Weighted route</span>
+<span class="n">w_route</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;xkcd:easter green&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Weighted&quot;</span>
+<span class="p">)</span>
+<span class="c1"># Styling</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/6a83b7db3726872a5220fd3ef0ae534132bdf08eb24228bd05a13a5db7f6fae5.png" src="../../_images/6a83b7db3726872a5220fd3ef0ae534132bdf08eb24228bd05a13a5db7f6fae5.png" />
+</div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<ol class="arabic simple">
+<li><p>Explore the differences in the output of weighted routing if you change the weight between distance and the additional constrain.</p></li>
+<li><p>Recreate weighted routing using the linearity of street segments. How can you go from A to B avoiding long streets?</p></li>
+</ol>
+</div>
+</section>
+<section id="proximity">
+<h3>Proximity<a class="headerlink" href="#proximity" title="Permalink to this heading">#</a></h3>
+<p><em>What is the nearest internet cafe for Airbnb’s without WiFi?</em></p>
+<p>First we identify Airbnb’s without WiFi:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">no_wifi</span> <span class="o">=</span> <span class="n">abbs</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="s2">&quot;WiFi == &#39;0&#39;&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then pull WiFi spots in Madrid from OpenStreetMap:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">icafes</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">features_from_place</span><span class="p">(</span>
+    <span class="s2">&quot;Madrid, Spain&quot;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;amenity&quot;</span><span class="p">:</span> <span class="s2">&quot;internet_cafe&quot;</span><span class="p">}</span>
+<span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">no_wifi</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> 
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Airbnb no WiFi&quot;</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">icafes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;lime&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Internet cafes&quot;</span>
+<span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span> 
+    <span class="n">crs</span><span class="o">=</span><span class="n">no_wifi</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">Voyager</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/75d2eeae7c7f0537ad1ded737877f816e9982e900742722a34eb7d3998887090.png" src="../../_images/75d2eeae7c7f0537ad1ded737877f816e9982e900742722a34eb7d3998887090.png" />
+</div>
+</div>
+<p>The logic for this operation is the following:</p>
+<ol class="arabic simple">
+<li><p>Add the points of interest (POIs, the internet cafes) to the network object (<code class="docutils literal notranslate"><span class="pre">streets_pdn</span></code>)</p></li>
+<li><p>Find the nearest node to each POI</p></li>
+<li><p>Find the nearest node to each Airbnb without WiFi</p></li>
+<li><p>Connect each Airbnb to its nearest internet cafe</p></li>
+</ol>
+<p>We can add the internet cafes to the network object (1.) with the <code class="docutils literal notranslate"><span class="pre">set_pois</span></code> method:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note we set <code class="docutils literal notranslate"><span class="pre">maxitems=1</span></code> because we are only going to query for the nearest cafe. This will make computations much faster</p>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">streets_pdn</span><span class="o">.</span><span class="n">set_pois</span><span class="p">(</span>
+    <span class="n">category</span><span class="o">=</span><span class="s2">&quot;Internet cafes&quot;</span><span class="p">,</span> <span class="c1"># Our name for the layer in the `Network` object</span>
+    <span class="n">maxitems</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>                <span class="c1"># Use to count only nearest cafe</span>
+    <span class="n">maxdist</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span>            <span class="c1"># 100km so everything is included</span>
+    <span class="n">x_col</span><span class="o">=</span><span class="n">icafes</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>   <span class="c1"># X coords of cafes</span>
+    <span class="n">y_col</span><span class="o">=</span><span class="n">icafes</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>   <span class="c1"># Y coords of cafes</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once the cafes are added to the network, we can find the nearest one to each node (2.):</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note there are some nodes for which we can’t find a nearest cafe. These are related to disconnected parts of the network</p>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cafe2nnode</span> <span class="o">=</span> <span class="n">streets_pdn</span><span class="o">.</span><span class="n">nearest_pois</span><span class="p">(</span>
+    <span class="mi">100000</span><span class="p">,</span>              <span class="c1"># Max distance to look for</span>
+    <span class="s2">&quot;Internet cafes&quot;</span><span class="p">,</span>    <span class="c1"># POIs to look for</span>
+    <span class="n">num_pois</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>          <span class="c1"># No. of POIs to include</span>
+    <span class="n">include_poi_ids</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># Store POI ID</span>
+<span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="c1"># Then add the internet cafee IDs and name</span>
+    <span class="n">icafes</span><span class="p">[[</span><span class="s1">&#39;osmid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]],</span>
+    <span class="n">on</span><span class="o">=</span><span class="s2">&quot;poi1&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="c1"># Rename the distance from node to cafe</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;dist2icafe&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">cafe2nnode</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>dist2icafe</th>
+      <th>poi1</th>
+      <th>osmid</th>
+      <th>name</th>
+    </tr>
+    <tr>
+      <th>nodeID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5101.421875</td>
+      <td>9.0</td>
+      <td>3.770327e+09</td>
+      <td>Silver Envíos 2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5190.265137</td>
+      <td>9.0</td>
+      <td>3.770327e+09</td>
+      <td>Silver Envíos 2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5252.475098</td>
+      <td>9.0</td>
+      <td>3.770327e+09</td>
+      <td>Silver Envíos 2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5095.101074</td>
+      <td>9.0</td>
+      <td>3.770327e+09</td>
+      <td>Silver Envíos 2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5676.117188</td>
+      <td>9.0</td>
+      <td>3.770327e+09</td>
+      <td>Silver Envíos 2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Note that, to make things easier down the line, we can link <code class="docutils literal notranslate"><span class="pre">cafe2nnode</span></code> to the cafe IDs.</p>
+<p>And we can also link Airbnb’s to nodes (3.) following a similar approach as we have seen above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abbs_nnode</span> <span class="o">=</span> <span class="n">streets_pdn</span><span class="o">.</span><span class="n">get_node_ids</span><span class="p">(</span>
+    <span class="n">no_wifi</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">no_wifi</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span>
+<span class="p">)</span>
+<span class="n">abbs_nnode</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26      8872
+50     10905
+62     41158
+63     34257
+221    32215
+Name: node_id, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we can bring together both to find out what is the nearest internet cafe for each Airbnb (4.):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abb_icafe</span> <span class="o">=</span> <span class="n">no_wifi</span><span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span>     <span class="c1"># Keep only geometries of ABBs w/o WiFi</span>
+<span class="p">]</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">nnode</span><span class="o">=</span><span class="n">abbs_nnode</span> <span class="c1"># Attach to thse ABBs the nearest node in the network</span>
+<span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>              <span class="c1"># Join to each ABB the nearest cafe using node IDs</span>
+    <span class="n">cafe2nnode</span><span class="p">,</span> 
+    <span class="n">on</span><span class="o">=</span><span class="s2">&quot;nnode&quot;</span>
+<span class="p">)</span>
+<span class="n">abb_icafe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geometry</th>
+      <th>nnode</th>
+      <th>dist2icafe</th>
+      <th>poi1</th>
+      <th>osmid</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>26</th>
+      <td>POINT (443128.256 4483599.841)</td>
+      <td>8872</td>
+      <td>4926.223145</td>
+      <td>9.0</td>
+      <td>3.770327e+09</td>
+      <td>Silver Envíos 2</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>POINT (441885.677 4475916.602)</td>
+      <td>10905</td>
+      <td>1876.392944</td>
+      <td>19.0</td>
+      <td>6.922981e+09</td>
+      <td>Locutorio</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>POINT (440439.640 4476480.771)</td>
+      <td>41158</td>
+      <td>1164.812988</td>
+      <td>17.0</td>
+      <td>5.573414e+09</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>POINT (438485.311 4471714.377)</td>
+      <td>34257</td>
+      <td>1466.537964</td>
+      <td>5.0</td>
+      <td>2.304485e+09</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>221</th>
+      <td>POINT (439941.104 4473117.914)</td>
+      <td>32215</td>
+      <td>354.268005</td>
+      <td>15.0</td>
+      <td>5.412145e+09</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Calculate distances to nearest internet cafe for ABBs <em>with</em> WiFi. On average, which of the two groups (with and without WiFi) are closer to internet cafes?</p>
+</div>
+</section>
+<section id="accessibility">
+<h3>Accessibility<a class="headerlink" href="#accessibility" title="Permalink to this heading">#</a></h3>
+<p>This flips the previous question on its head and, instead of asking what is the nearest POI to a given point, along the network (irrespective of distance), it asks <em>how many POIs can I access within a network-based distance radious?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">parks</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">features_from_place</span><span class="p">(</span>
+    <span class="s2">&quot;Madrid, Spain&quot;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;leisure&quot;</span><span class="p">:</span> <span class="s2">&quot;park&quot;</span><span class="p">}</span>
+<span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 382 ms, sys: 461 µs, total: 382 ms
+Wall time: 385 ms
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>How many parks are within 500m(-euclidean) of an Airbnb?</em></p>
+<p>We draw a radious of 500m around each AirBnb:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">buffers</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
+    <span class="n">geometry</span><span class="o">=</span><span class="n">abbs</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+        <span class="n">streets</span><span class="o">.</span><span class="n">crs</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span>
+        <span class="mi">500</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then intersect it with the location of parks, and count by buffer (ie. Airbnb):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">park_count</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span>
+    <span class="n">parks</span><span class="p">,</span> <span class="n">buffers</span>
+<span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+    <span class="s2">&quot;index_right&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>How many parks are within 500m(-network) of an Airbnb?</em></p>
+<p>We need to approach this as a calculation <em>within</em> the network. The logic of steps thus looks like:</p>
+<ol class="arabic simple">
+<li><p>Use the aggregation module in <code class="docutils literal notranslate"><span class="pre">pandana</span></code> to count the number of parks within 500m of each node in the network</p></li>
+<li><p>Extract the counts for the nodes nearest to Airbnb properties</p></li>
+<li><p>Assign park counts to each Airbnb</p></li>
+</ol>
+<p>We can set up the aggregate engine (1.). This involves three steps:</p>
+<p>a. Obtain nearest node for each park</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parks_nnode</span> <span class="o">=</span> <span class="n">streets_pdn</span><span class="o">.</span><span class="n">get_node_ids</span><span class="p">(</span>
+    <span class="n">parks</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">parks</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">y</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>b. Insert the parks’ nearest node through <code class="docutils literal notranslate"><span class="pre">set</span></code> so it can be “aggregated”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">streets_pdn</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+    <span class="n">parks_nnode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Parks&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>c. “Aggregate” for a distance of 500m, effectively counting the number of parks within 500m of each node</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parks_by_node</span> <span class="o">=</span> <span class="n">streets_pdn</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+    <span class="n">distance</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Parks&quot;</span>
+<span class="p">)</span>
+<span class="n">parks_by_node</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nodeID
+0    5.0
+1    5.0
+2    6.0
+3    8.0
+4    1.0
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>At this point, we have the number of parks within 500m of <em>every</em> node in the network. To identify those that correspond to each Airbnb (3.), we first pull out the nearest nodes to each ABB:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abbs_xys</span> <span class="o">=</span> <span class="n">abbs</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span><span class="o">.</span><span class="n">geometry</span>
+<span class="n">abbs_nnode</span> <span class="o">=</span> <span class="n">streets_pdn</span><span class="o">.</span><span class="n">get_node_ids</span><span class="p">(</span>
+    <span class="n">abbs_xys</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">abbs_xys</span><span class="o">.</span><span class="n">y</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And use the list to asign the count of the nearest node to each Airbnb:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">park_count_network</span> <span class="o">=</span> <span class="n">abbs_nnode</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+    <span class="n">parks_by_node</span>
+<span class="p">)</span>
+<span class="n">park_count_network</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     4.0
+1     9.0
+2     5.0
+3     0.0
+4    12.0
+Name: node_id, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>For which areas do both differ most?</em></p>
+<p>We can compare the two counts above to explore to what extent the street layout is constraining access to nearby parks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">park_comp</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;Euclidean&quot;</span><span class="p">:</span> <span class="n">park_count</span><span class="p">,</span> 
+        <span class="s2">&quot;Network&quot;</span><span class="p">:</span> <span class="n">park_count_network</span>
+    <span class="p">},</span>
+    <span class="n">geometry</span><span class="o">=</span><span class="n">abbs</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span>
+    <span class="n">crs</span><span class="o">=</span><span class="n">abbs</span><span class="o">.</span><span class="n">crs</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">park_comp</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;Euclidean&quot;</span><span class="p">,</span> <span class="s2">&quot;Network&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">);</span><span class="c1"># 45deg line</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a9f7a850132ddc2774b6929097af692189a4a04a8d4dd6b33ff4808633faaa00.png" src="../../_images/a9f7a850132ddc2774b6929097af692189a4a04a8d4dd6b33ff4808633faaa00.png" />
+</div>
+</div>
+<p>And, geographically:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note there are a few cases where there are more network counts than Euclidean. These are due to the slight inaccuracies introduced by calculating network distances from nodes rather than the locations themselves</p>
+</aside>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Euclidean count</span>
+<span class="n">abbs</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+    <span class="n">streets</span><span class="o">.</span><span class="n">crs</span>
+<span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">n_parks</span><span class="o">=</span><span class="n">park_count</span>
+<span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;n_parks&quot;</span><span class="p">,</span> 
+    <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;fisherjenkssampled&quot;</span><span class="p">,</span> 
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+    <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">crs</span><span class="o">=</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">PositronNoLabels</span>
+<span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Euclidean Distances&quot;</span><span class="p">)</span>
+
+<span class="c1"># Count difference</span>
+<span class="n">with_parks</span> <span class="o">=</span> <span class="n">park_comp</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="s2">&quot;(Network &gt; 0) &amp; (Euclidean &gt; 0)&quot;</span>
+<span class="p">)</span>
+<span class="n">count_diff</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span>
+    <span class="n">with_parks</span><span class="p">[</span><span class="s2">&quot;Euclidean&quot;</span><span class="p">]</span> <span class="o">-</span> 
+    <span class="n">with_parks</span><span class="p">[</span><span class="s2">&quot;Network&quot;</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">/</span> <span class="n">with_parks</span><span class="p">[</span><span class="s2">&quot;Euclidean&quot;</span><span class="p">]</span>
+<span class="n">abbs</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+    <span class="n">streets</span><span class="o">.</span><span class="n">crs</span>
+<span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">n_parks</span><span class="o">=</span><span class="n">count_diff</span>
+<span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;n_parks&quot;</span><span class="p">,</span> 
+    <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;fisherjenkssampled&quot;</span><span class="p">,</span> 
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+    <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+    <span class="n">crs</span><span class="o">=</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">PositronNoLabels</span>
+<span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Count Difference (%)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Network count</span>
+<span class="n">abbs</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
+    <span class="n">streets</span><span class="o">.</span><span class="n">crs</span>
+<span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">n_parks</span><span class="o">=</span><span class="n">park_count_network</span>
+<span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;n_parks&quot;</span><span class="p">,</span> 
+    <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;fisherjenkssampled&quot;</span><span class="p">,</span> 
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+    <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">contextily</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> 
+    <span class="n">crs</span><span class="o">=</span><span class="n">streets</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="n">contextily</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">PositronNoLabels</span>
+<span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Network Distances&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/f11dddfadea7cb615b7b324a472f7a573d1f09a04004b61f940d363e6684278f.png" src="../../_images/f11dddfadea7cb615b7b324a472f7a573d1f09a04004b61f940d363e6684278f.png" />
+</div>
+</div>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Calculate accessibility to <em>other</em> ABBs from each ABB through the network. <em>How many ABBs can you access within 500m of each ABB?</em></p>
+<p>Note you will need to use the locations of ABBs both as the source and the target for routing in this case.</p>
+</div>
+</section>
+</section>
+<section id="next-steps">
+<h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
+<p>If you found the content in this block useful, the following resources represent some suggestions on where to go next:</p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://github.com/UDST/pandana/blob/master/examples/Pandana-demo.ipynb"><code class="docutils literal notranslate"><span class="pre">pandana</span></code> tutorial</a> and <a class="reference external" href="http://udst.github.io/pandana/index.html">documentation</a> are excellent places to get a more detailed and comprehensive view into the functionality of the library</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "gds"
+        },
+        kernelOptions: {
+            name: "gds",
+            path: "./content/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'gds'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="06-OpenStreetMap.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">OpenStreetMap</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="08-CARTO.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Web mapping with CARTO</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ahead-of-time">📖 Ahead of time…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-coding">💻 Hands-on coding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandana-graphs"><code class="docutils literal notranslate"><span class="pre">pandana</span></code> graphs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shortest-path-routing">Shortest-path routing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weighted-routing">Weighted routing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximity">Proximity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessibility">Accessibility</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">🐾 Next steps</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dani Arribas-Bel & Diego Puga
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
