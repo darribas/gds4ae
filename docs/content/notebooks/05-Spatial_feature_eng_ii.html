@@ -1,403 +1,406 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spatial Feature Engineering (II) &#8212; Geographic Data Science for Applied Economists</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-6032674-1"></script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'UA-6032674-1');
-            </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/notebooks/05-Spatial_feature_eng_ii';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="OpenStreetMap" href="06-OpenStreetMap.html" />
     <link rel="prev" title="Spatial Feature Engineering (I)" href="04-Spatial_feature_eng_i.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-6032674-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
+    
 
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../pages/home.html">
-  
-  
-  
-  
-  
-    <p class="title logo__title">Geographic Data Science for Applied Economists</p>
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../pages/home.html">
-                    Home
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../pages/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/infrastructure.html">Infrastructure</a></li>
+      
+      
+      <h1 class="site-logo" id="site-title">Geographic Data Science for Applied Economists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/home.html">
+   Home
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Content</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/infrastructure.html">
+   Infrastructure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Content
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01-Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-Spatial_data.html">Spatial Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-Geovisualisation.html">Geovisualisation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-Spatial_feature_eng_i.html">Spatial Feature Engineering (I)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Spatial Feature Engineering (II)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-OpenStreetMap.html">OpenStreetMap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-Transport_costs.html">Transport costs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-CARTO.html">Web mapping with CARTO</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Spatial_data.html">
+   Spatial Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Geovisualisation.html">
+   Geovisualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Spatial_feature_eng_i.html">
+   Spatial Feature Engineering (I)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Spatial Feature Engineering (II)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-OpenStreetMap.html">
+   OpenStreetMap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Transport_costs.html">
+   Transport costs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-CARTO.html">
+   Web mapping with CARTO
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Epilogue</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Epilogue
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../data/datasets.html">Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/further.html">Further Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pages/z_bibliography.html">Bibliography</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data/datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/further.html">
+   Further Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pages/z_bibliography.html">
+   Bibliography
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
 
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/darribas/gds4ae/master?urlpath=tree/content/notebooks/05-Spatial_feature_eng_ii.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-  </ul>
 </div>
 
 
+          
 
 
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/content/notebooks/05-Spatial_feature_eng_ii.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
-              
-              
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Spatial Feature Engineering (II)</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
             
-            <div>
-                <h2> Contents </h2>
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/notebooks/05-Spatial_feature_eng_ii.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/darribas/gds4ae/master?urlpath=tree/content/notebooks/05-Spatial_feature_eng_ii.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav aria-label="Page">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-synthesis">Map Synthesis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ahead-of-time">📖 Ahead of time…</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-coding">💻 Hands-on coding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-buffers">Distance buffers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-rings">Distance rings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-membership-points">Cluster membership (points)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-membership-polygons">Cluster membership (polygons)</a></li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#map-synthesis">
+   Map Synthesis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ahead-of-time">
+   📖 Ahead of time…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hands-on-coding">
+   💻 Hands-on coding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distance-buffers">
+     Distance buffers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distance-rings">
+     Distance rings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-membership-points">
+     Cluster membership (points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-membership-polygons">
+     Cluster membership (polygons)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   🐾 Next steps
+  </a>
+ </li>
 </ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">🐾 Next steps</a></li>
-</ul>
+
             </nav>
         </div>
     </div>
 </div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Spatial Feature Engineering (II)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#map-synthesis">
+   Map Synthesis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ahead-of-time">
+   📖 Ahead of time…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hands-on-coding">
+   💻 Hands-on coding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distance-buffers">
+     Distance buffers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distance-rings">
+     Distance rings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-membership-points">
+     Cluster membership (points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-membership-polygons">
+     Cluster membership (polygons)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   🐾 Next steps
+  </a>
+ </li>
+</ul>
 
-              
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="spatial-feature-engineering-ii">
-<h1>Spatial Feature Engineering (II)<a class="headerlink" href="#spatial-feature-engineering-ii" title="Permalink to this heading">#</a></h1>
-<section id="map-synthesis">
-<h2>Map Synthesis<a class="headerlink" href="#map-synthesis" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="ahead-of-time">
-<h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this heading">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="spatial-feature-engineering-ii">
+<h1>Spatial Feature Engineering (II)<a class="headerlink" href="#spatial-feature-engineering-ii" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="map-synthesis">
+<h2>Map Synthesis<a class="headerlink" href="#map-synthesis" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="ahead-of-time">
+<h2>📖 Ahead of time…<a class="headerlink" href="#ahead-of-time" title="Permalink to this headline">¶</a></h2>
 <p>In this second part of Spatial Feature Engineering, we turn to Map Synthesis. There is only one reading to complete for this block, <a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html">Chapter 12</a> of the GDS Book <span id="id1">[<a class="reference internal" href="../pages/z_bibliography.html#id44" title="Sergio J. Rey, Daniel Arribas-Bel, and Levi J. Wolf. Geographic Data Science with PySAL and the PyData stack. CRC press, forthcoming.">RABWng</a>]</span>. This block of Spatial Feature Engineering in this course loosely follows the second part of the chapter (<a class="reference external" href="https://geographicdata.science/book/notebooks/12_feature_engineering.html#feature-engineering-using-map-synthesis">Map Synthesis</a>).</p>
-</section>
-<section id="hands-on-coding">
-<h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="hands-on-coding">
+<h2>💻 Hands-on coding<a class="headerlink" href="#hands-on-coding" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span><span class="o">,</span> <span class="nn">geopandas</span>
@@ -408,10 +411,30 @@ document.write(`
 </div>
 </div>
 </div>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title">Data</p>
 <p>If you want to read more about the data sources behind this dataset, head to the <a class="reference internal" href="../data/datasets.html"><span class="doc std std-doc">Datasets</span></a> section</p>
-</aside>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="04017176-af74-4f1c-9a18-15d0076750c8" name="39e5b73f-9a46-429c-a5ba-d650111f8faf" type="radio">
+</input><label class="tabbed-label" for="04017176-af74-4f1c-9a18-15d0076750c8">
+Local files</label><div class="tabbed-content docutils">
+<p>Assuming you have the file locally on the path <code class="docutils literal notranslate"><span class="pre">../data/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;../data/madrid_abb.gpkg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="d7eff995-4e2c-4fa0-9eba-d44239307d29" name="39e5b73f-9a46-429c-a5ba-d650111f8faf" type="radio">
+</input><label class="tabbed-label" for="d7eff995-4e2c-4fa0-9eba-d44239307d29">
+Online read</label><div class="tabbed-content docutils">
+<p>If you’re online, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+    <span class="s2">&quot;https://github.com/GDSL-UL/san/raw/v0.1.0/data/assignment_1_madrid/madrid_abb.gpkg&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>We will be working with a modified version of <code class="docutils literal notranslate"><span class="pre">pts</span></code>:</p>
 <ul class="simple">
 <li><p>Since we will require distance calculations, we will switch to the Spanish official projection</p></li>
@@ -452,8 +475,8 @@ Datum: European Terrestrial Reference System 1989 ensemble
 </div>
 </div>
 </div>
-<section id="distance-buffers">
-<h3>Distance buffers<a class="headerlink" href="#distance-buffers" title="Permalink to this heading">#</a></h3>
+<div class="section" id="distance-buffers">
+<h3>Distance buffers<a class="headerlink" href="#distance-buffers" title="Permalink to this headline">¶</a></h3>
 <p><em>How many Airbnb’s are within 500m of each Airbnb?</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -505,11 +528,6 @@ dtype: int64
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">n_neis</span><span class="o">=</span><span class="n">n_neis</span>
@@ -517,18 +535,17 @@ dtype: int64
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/a946cd6c66e696a137d39cef1e19ca20e89359233a0160303d8c1c780b7ebbb7.png" src="../../_images/a946cd6c66e696a137d39cef1e19ca20e89359233a0160303d8c1c780b7ebbb7.png" />
+<img alt="../../_images/05-Spatial_feature_eng_ii_19_0.png" src="../../_images/05-Spatial_feature_eng_ii_19_0.png" />
 </div>
 </div>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge</p>
 <p>Calculate the number of AirBnb properties within 250m of each other property. <em>What is the average?</em></p>
 </div>
-</section>
-<section id="distance-rings">
-<h3>Distance rings<a class="headerlink" href="#distance-rings" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="distance-rings">
+<h3>Distance rings<a class="headerlink" href="#distance-rings" title="Permalink to this headline">¶</a></h3>
 <p><em>How many Airbnb’s are between 500m and 1km of each Airbnb?</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -597,14 +614,14 @@ Wall time: 995 ms
 <li><p>Another one with the <em>increase</em> of average neighbors for the same distances above</p></li>
 </ul>
 </div>
-</section>
-<section id="cluster-membership-points">
-<h3>Cluster membership (points)<a class="headerlink" href="#cluster-membership-points" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="cluster-membership-points">
+<h3>Cluster membership (points)<a class="headerlink" href="#cluster-membership-points" title="Permalink to this headline">¶</a></h3>
 <p>We can use the spatial configuration of observations to classify them as part of clusters or not, which can then be encoded, for example, as dummy variables in a model.</p>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>These <em>magic</em> numbers need to be pre-set and you can play with both <code class="docutils literal notranslate"><span class="pre">min_pct</span></code> (or <code class="docutils literal notranslate"><span class="pre">min_pts</span></code> directly) and <code class="docutils literal notranslate"><span class="pre">eps</span></code> to see how they affect the results (spoiler: a lot!)</p>
-</aside>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">DBSCAN</span>
@@ -640,13 +657,13 @@ Wall time: 995 ms
 </div>
 </div>
 <p>We can define boundaries to turn point clusters into polygons if that fits our needs better:</p>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>The code in this cell is a bit more advanced than expected for this course, but is used here as an illustration.</p>
 </div>
-</aside>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pysal.lib</span> <span class="kn">import</span> <span class="n">cg</span>
@@ -670,11 +687,6 @@ Wall time: 995 ms
 </div>
 <p>And we can see what the clusters look like:</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span>
     <span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span>
@@ -693,18 +705,17 @@ Wall time: 995 ms
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../../_images/58ab621404b303a437d34e1af578a9a7a14b47570d45cb4352971e17fde70f0c.png" src="../../_images/58ab621404b303a437d34e1af578a9a7a14b47570d45cb4352971e17fde70f0c.png" />
+<img alt="../../_images/05-Spatial_feature_eng_ii_41_0.png" src="../../_images/05-Spatial_feature_eng_ii_41_0.png" />
 </div>
 </div>
 <div class="admonition-challenge admonition">
 <p class="admonition-title">Challenge</p>
 <p><em>How does the map above change if you require 5% of points instead of 2% for a candidate cluster to be considered so?</em></p>
 </div>
-</section>
-<section id="cluster-membership-polygons">
-<h3>Cluster membership (polygons)<a class="headerlink" href="#cluster-membership-polygons" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="cluster-membership-polygons">
+<h3>Cluster membership (polygons)<a class="headerlink" href="#cluster-membership-polygons" title="Permalink to this headline">¶</a></h3>
 <p>We can take a similar approach as above if we have polygon geographies instead of points. Rather than using DBSCAN, here we can rely on local indicators of spatial association (LISAs) to pick up spatial concentrations of high or low values.</p>
 <p>For the illustration, we will aggregate the location of Airbnb properties to a regular hexagonal grid, similar to how we generated it when <a class="reference internal" href="04-Spatial_feature_eng_i.html#sfe-p2p"><span class="std std-ref">transfering from polygons to polygons</span></a>. First we create a polygon covering the extent of points:</p>
 <div class="cell docutils container">
@@ -754,7 +765,7 @@ Wall time: 995 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e659afcd7c130d307fdc054211aab76b97d13ea8875c2b1072498ceedcf07d67.png" src="../../_images/e659afcd7c130d307fdc054211aab76b97d13ea8875c2b1072498ceedcf07d67.png" />
+<img alt="../../_images/05-Spatial_feature_eng_ii_49_0.png" src="../../_images/05-Spatial_feature_eng_ii_49_0.png" />
 </div>
 </div>
 <p>To identify spatial clusters, we rely on <code class="docutils literal notranslate"><span class="pre">esda</span></code>:</p>
@@ -808,7 +819,7 @@ Wall time: 995 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/378f66b580642ce9a5cb0855b8811dda600228e23adb5f112c769634e7a2f1e2.png" src="../../_images/378f66b580642ce9a5cb0855b8811dda600228e23adb5f112c769634e7a2f1e2.png" />
+<img alt="../../_images/05-Spatial_feature_eng_ii_56_0.png" src="../../_images/05-Spatial_feature_eng_ii_56_0.png" />
 </div>
 </div>
 <p>And, if we want to extract the labels for each polygon, we can do so from the <code class="docutils literal notranslate"><span class="pre">lisa</span></code> object:</p>
@@ -838,18 +849,18 @@ Wall time: 995 ms
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="next-steps">
-<h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>🐾 Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>If you want a bit more background into some of the techniques reviewed in this block, the following might be of interest:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://darribas.org/gds_course/content/bE/concepts_E.html">Block E</a> of the GDS Course <span id="id2">[<a class="reference internal" href="../pages/z_bibliography.html#id9" title="Dani Arribas-Bel. A course on geographic data science. The Journal of Open Source Education, 2019. doi:https://doi.org/10.21105/jose.00042.">AB19</a>]</span> will introduce you to more techniques like the LISAs seen above to explore the spatial dimension of the statistical properties of your data. If you want a more detailed read, <a class="reference external" href="https://geographicdata.science/book/notebooks/04_spatial_weights.html">Chapter 4</a> of the GDS Book <span id="id3">[<a class="reference internal" href="../pages/z_bibliography.html#id44" title="Sergio J. Rey, Daniel Arribas-Bel, and Levi J. Wolf. Geographic Data Science with PySAL and the PyData stack. CRC press, forthcoming.">RABWng</a>]</span> will do just that.</p></li>
 <li><p><a class="reference external" href="http://darribas.org/gds_course/content/bF/concepts_F.html">Block F</a> of the GDS Course <span id="id4">[<a class="reference internal" href="../pages/z_bibliography.html#id9" title="Dani Arribas-Bel. A course on geographic data science. The Journal of Open Source Education, 2019. doi:https://doi.org/10.21105/jose.00042.">AB19</a>]</span> will introduce you to more techniques like the LISAs seen above to explore the spatial dimension of the statistical properties of your data. If you want a more detailed read, <a class="reference external" href="https://geographicdata.science/book/notebooks/07_local_autocorrelation.html">Chapter 7</a> of the GDS Book <span id="id5">[<a class="reference internal" href="../pages/z_bibliography.html#id44" title="Sergio J. Rey, Daniel Arribas-Bel, and Levi J. Wolf. Geographic Data Science with PySAL and the PyData stack. CRC press, forthcoming.">RABWng</a>]</span> will do just that.</p></li>
 <li><p><a class="reference external" href="http://darribas.org/gds_course/content/bH/concepts_H.html">Block H</a> of the GDS Course <span id="id6">[<a class="reference internal" href="../pages/z_bibliography.html#id9" title="Dani Arribas-Bel. A course on geographic data science. The Journal of Open Source Education, 2019. doi:https://doi.org/10.21105/jose.00042.">AB19</a>]</span> will introduce you to more techniques for exploring point patterns. If you want a more comprehensive read, <a class="reference external" href="https://geographicdata.science/book/notebooks/08_point_pattern_analysis.html">Chapter 8</a> of the GDS Book <span id="id7">[<a class="reference internal" href="../pages/z_bibliography.html#id44" title="Sergio J. Rey, Daniel Arribas-Bel, and Levi J. Wolf. Geographic Data Science with PySAL and the PyData stack. CRC press, forthcoming.">RABWng</a>]</span> will do just that.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -863,7 +874,7 @@ Wall time: 995 ms
             mode: "gds"
         },
         kernelOptions: {
-            name: "gds",
+            kernelName: "gds",
             path: "./content/notebooks"
         },
         predefinedOutput: true
@@ -871,107 +882,47 @@ Wall time: 995 ms
     </script>
     <script>kernelName = 'gds'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="04-Spatial_feature_eng_i.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Spatial Feature Engineering (I)</p>
-      </div>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="04-Spatial_feature_eng_i.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Spatial Feature Engineering (I)</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="06-OpenStreetMap.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="06-OpenStreetMap.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">OpenStreetMap</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
-                </footer>
-              
-            </div>
             
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-synthesis">Map Synthesis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ahead-of-time">📖 Ahead of time…</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-coding">💻 Hands-on coding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-buffers">Distance buffers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-rings">Distance rings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-membership-points">Cluster membership (points)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-membership-polygons">Cluster membership (polygons)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">🐾 Next steps</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Dani Arribas-Bel & Diego Puga
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-<div class="extra_footer">
-  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-</div>
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+        </div>
     </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+    <footer class="footer">
+  <p>
+    
+      By Dani Arribas-Bel & Diego Puga<br/>
+    
+      <div class="extra_footer">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Science Studio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://darribas.org" property="cc:attributionName" rel="cc:attributionURL">Dani Arribas-Bel</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://diegopuga.org/" property="cc:attributionName" rel="cc:attributionURL">Diego Puga</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-  <footer class="bd-footer">
-  </footer>
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
   </body>
 </html>
