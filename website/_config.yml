@@ -23,6 +23,7 @@ repository:
   url: https://github.com/darribas/gds4ae
 launch_buttons:
   binderhub_url: https://mybinder.org
+  notebook_interface: "jupyterlab"  # or "classic"
   
 html:
   google_analytics_id: UA-6032674-1
